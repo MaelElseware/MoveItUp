@@ -1,0 +1,120 @@
+﻿<Window x:Class="TriviaExercise.QuestionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trivia Question" Height="500" Width="500"
+        WindowStartupLocation="CenterScreen" 
+        Topmost="True"
+        ResizeMode="NoResize">
+    <Grid Margin="15,10,15,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Category Header -->
+        <Border Grid.Row="0" 
+                Background="#F8F9FA" 
+                BorderBrush="#E9ECEF" 
+                BorderThickness="1" 
+                CornerRadius="8" 
+                Padding="10,8" 
+                Margin="0,0,0,8">
+            <TextBlock x:Name="CategoryTextBlock" 
+                       Text="📚 General Culture" 
+                       FontSize="14" 
+                       FontWeight="SemiBold" 
+                       Foreground="#495057"
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Timer Display with Progress Bar -->
+        <Border Grid.Row="1"
+                Background="#2C3E50"
+                BorderBrush="#34495E"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="15,0"
+                Margin="0,0,0,5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Timer Text and Status -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,2">
+                    <TextBlock Text="⏱️" FontSize="16" Margin="0,0,5,2" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock x:Name="TimerTextBlock" 
+                               Text="01:00" 
+                               FontSize="20" 
+                               FontWeight="Bold" 
+                               Foreground="White"
+                               VerticalAlignment="Center"/>
+                    <TextBlock x:Name="TimerStatusTextBlock"
+                               Text=""
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+
+                <!-- Animated Progress Bar -->
+                <Border Grid.Row="1" 
+                        Background="#1A252F" 
+                        CornerRadius="12" 
+                        Height="24" 
+                        BorderThickness="2" 
+                        BorderBrush="#34495E">
+                    <Grid>
+                        <!-- Background track -->
+                        <Border Background="#1A252F" CornerRadius="10"/>
+
+                        <!-- Progress fill -->
+                        <Border x:Name="ProgressFillBorder" 
+                                CornerRadius="10" 
+                                HorizontalAlignment="Left">
+                            <Border.Background>
+                                <LinearGradientBrush x:Name="ProgressGradient" StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop x:Name="GradientStop1" Color="#FFD700" Offset="0"/>
+                                    <GradientStop x:Name="GradientStop2" Color="#FFA500" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+
+                        <!-- Progress text overlay -->
+                        <TextBlock x:Name="ProgressTextBlock"
+                                   Text="Quick Answer Zone!"
+                                   FontSize="11"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Effect="{x:Null}">
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Question Text -->
+        <TextBlock x:Name="QuestionTextBlock" Grid.Row="2" 
+                   Text="Question goes here..." 
+                   FontSize="16" FontWeight="Bold" 
+                   TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+        <!-- Answer Buttons -->
+        <StackPanel x:Name="AnswersPanel" Grid.Row="3" Margin="0,0,0,20">
+            <!-- Answer buttons will be added dynamically -->
+        </StackPanel>
+
+        <!-- Skip Button -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="SkipButton" Content="Skip Question" Width="100" Height="30" 
+                    Click="SkipButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
