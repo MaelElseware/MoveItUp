@@ -16,7 +16,7 @@ namespace TriviaExercise.Helpers
         private bool isEnabled;
         private bool isDisposed;
 
-        // Discord Application ID - You'll need to create a Discord app at https://discord.com/developers/applications
+        // Discord Application ID - You can create a new Discord app at https://discord.com/developers/applications if you like
         private const string DISCORD_APP_ID = "1377554667118268509";
 
         // Current state tracking
