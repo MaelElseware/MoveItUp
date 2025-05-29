@@ -1,17 +1,23 @@
 # Move It Up! 🧠💪
 
-**A fun WPF desktop application that combines trivia questions with physical exercises to keep you mentally sharp and physically active during work or study sessions.**
+**A fun WPF desktop application that combines trivia questions with physical exercises to keep you mentally sharp and physically active during long work or study sessions.**
+
+## 🤔 Why This App Exists
+
+My brain is too small, when I'm deeply focused on coding, I often forget to take breaks and move around. Hours can pass without me getting up from my chair... This sedentary behavior isn't just uncomfortable : **prolonged sitting has been linked to increased risks of cardiovascular disease, diabetes, and musculoskeletal problems**. Research shows that **sitting for extended periods can reduce blood circulation, weaken core muscles, and negatively impact posture and mental clarity**.
+
+Rather than relying on willpower alone (which I clearly lack of), I created this gamified system to automatically remind me to move (itup) while keeping my brain engaged with fun questions. It's much easier to stick to healthy habits when they're fun and rewarding!
 
 ## 🎯 What It Does
 
-Move It Up! periodically interrupts your computer time with trivia questions from various categories. Based on whether you answer correctly or incorrectly, you'll be prompted to do different physical exercises - turning learning into an active, engaging experience!
+Move It Up! periodically reminds you to wake up and do a small exercise, using trivia questions from various categories to keep you engaged. Based on whether you answer correctly or incorrectly, you'll be prompted to do different physical exercises.
 
 ### Key Features
 
-- 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **1000+ pre-made questions included!**
-- 🎲 **Smart Question System**: Questions from 9 categories (Biology, Gaming, History, Geography, Physics, Cinema, Music, Math, General Culture)
+- 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **1000+ pre-made questions included in the release!**
+- 🎲 **Smart Question System**: Questions from 9 categories (Biology, Gaming, History, Geography, Physics, Cinema, Music, Calculus (procedurally generated), General Culture)
 - 🏃‍♂️ **Exercise Integration**: Get correct answers? Reward exercises! Wrong answers? Redemption exercises!
-- 📈 **Progress Tracking**: Level up in different categories, earn points, and unlock difficulty tiers
+- 📈 **Progress Tracking/Progression**: Level up in different categories, earn points, and unlock difficulty tiers
 - ⏰ **Customizable Timers**: Set question intervals (default: 50 minutes) and optional drink reminders
 - 🎮 **Discord Rich Presence**: Show off your trivia prowess to friends
 - 🔊 **Sound Effects**: Audio cues for questions, alerts, and achievements
@@ -111,4 +117,4 @@ For commercial licensing inquiries, please contact the repository owner.
 
 ---
 
-**Stay sharp, stay active, and Move It Up!** 🚀
+**Stay active, stay alive, and Move It Up!** 🚀
