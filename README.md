@@ -3,6 +3,7 @@
 **A fun WPF desktop application that combines trivia questions with physical exercises to keep you mentally sharp and physically active during long work or study sessions.**
 
 Both questions and exercises are easily customizable via a simple notepad. See Customizable Content System section !
+The latest version includes 900 questions and a sample of exercise. If you want to send more my way, I will happily include them in the next release !
 
 ## 🤔 Why This App Exists
 
@@ -98,6 +99,7 @@ The app uses simple JSON files that **anyone** can edit:
 ## 🔧 Creating a Complete Release
 
 To create a fully functioning release of Move It Up!, you'll need to include several additional files alongside the compiled executable:
+All minimal files are included with each rebuild (sounds and icon). And a base json for questions or exercise are also generated apon first launch if none are available.
 
 ### Required Files Structure
 ```
@@ -117,7 +119,7 @@ MoveItUp-Release/
 ```
 
 ### 🎵 Sound Files Setup
-Create a `Sounds` folder in the same directory as your executable and add these WAV files: (provided within latest release)
+Makes sur a `Sounds` folder is in the same directory as your executable or add these WAV files: (provided within latest release)
 - **`pre_question.wav`** - Plays before questions (30-second warning)
 - **`drink_reminder.wav`** - Water break reminder sound
 - **`question_success.wav`** - Correct answer celebration
@@ -127,12 +129,11 @@ Create a `Sounds` folder in the same directory as your executable and add these 
 
 ### 🚀 Release Checklist
 - [ ] Compile in Release mode
-- [ ] Include MoveItUp.ico in executable directory
-- [ ] Create Sounds folder with 6 WAV files
-- [ ] Test all sound effects work
+- [ ] Check that MoveItUp.ico is in executable directory
+- [ ] Check Sounds folder with its 6 WAV files
 - [ ] Verify system tray icon displays correctly
 - [ ] Test question loading and exercise prompts
-- [ ] Ensure Discord Rich Presence works (if Discord is installed)
+- [ ] (optional) Ensure Discord Rich Presence works (if Discord is installed)
 ---
 
 ## 📄 License
