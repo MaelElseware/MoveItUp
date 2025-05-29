@@ -20,7 +20,7 @@ Move It Up! periodically reminds you to wake up and do a small exercise, using t
 
 ### Key Features
 
-- 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **1000+ pre-made questions included in the release!**
+- 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **900+ pre-made questions included in the release!**
 - 🎲 **Smart Question System**: Questions from 9 categories (Biology, Gaming, History, Geography, Physics, Cinema, Music, Calculus (procedurally generated), General Culture)
 - 🏃‍♂️ **Exercise Integration**: Get correct answers? Reward exercises! Wrong answers? Redemption exercises!
 - 📈 **Progress Tracking/Progression**: Level up in different categories, earn points, and unlock difficulty tiers
@@ -29,7 +29,7 @@ Move It Up! periodically reminds you to wake up and do a small exercise, using t
 - 🔊 **Sound Effects**: Audio cues for questions, alerts, and achievements
 - 💾 **Persistent Progress**: Your achievements and category progress are saved locally
 - 🚀 **System Tray Support**: Runs minimized in the background
-- 🧮 **Dynamic Math Questions**: Procedurally generated math problems based on your skill level
+- 🧮 **Dynamic Math Questions**: Procedurally generated math calculus based on your skill level
 
 ## 🏆 Gamification Features
 
@@ -72,7 +72,7 @@ The app uses simple JSON files that **anyone** can edit:
 - ⚛️ **Physics** (90+ questions) - Scientific principles and discoveries
 - 🎬 **Cinema** (130+ questions) - Movies, actors, directors, and film industry
 - 🎵 **Music** (100+ questions) - Musical knowledge, artists, and genres
-- 🔢 **Mathematics** (Infinite) - Dynamically generated math problems
+- 🔢 **Mathematics** (Infinite) - Dynamically generated math mental calculus
 - 🧠 **General Culture** (200+ questions) - Broad knowledge and trivia
 
 **Want more content?** Simply add your own questions to the JSON files or create new category files!
@@ -85,20 +85,6 @@ The app uses simple JSON files that **anyone** can edit:
 - **Local data persistence** in AppData folder
 - **Discord Rich Presence** integration
 - **Sound system** with custom WAV file support
-
-## 🎨 Categories & Icons
-
-**📦 Over 1000 Pre-Made Questions Across 9 Categories:**
-
-- 🧬 **Biology** - From cells to evolution
-- 🎮 **Gaming** - Video game trivia
-- 📜 **History** - Historical events and figures  
-- 🌍 **Geography** - Countries, capitals, and landmarks
-- ⚛️ **Physics** - Scientific principles and discoveries
-- 🎬 **Cinema** - Movies and film industry
-- 🎵 **Music** - Musical knowledge and artists
-- 🔢 **Mathematics** - Dynamically generated math problems
-- 🧠 **General Culture** - Broad knowledge questions
 
 ## 📋 System Requirements
 
