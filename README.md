@@ -2,6 +2,8 @@
 
 **A fun WPF desktop application that combines trivia questions with physical exercises to keep you mentally sharp and physically active during long work or study sessions.**
 
+Both questions and exercises are easily customizable via a simple notepad. See Customizable Content System section !
+
 ## 🤔 Why This App Exists
 
 My brain is too small, when I'm deeply focused on coding, I often forget to take breaks and move around. Hours can pass without me getting up from my chair... This sedentary behavior isn't just uncomfortable : **prolonged sitting has been linked to increased risks of cardiovascular disease, diabetes, and musculoskeletal problems**. Research shows that **sitting for extended periods can reduce blood circulation, weaken core muscles, and negatively impact posture and mental clarity**.
@@ -53,16 +55,16 @@ Move It Up! periodically reminds you to wake up and do a small exercise, using t
 
 ## 🗂️ Customizable Content System
 
-**✨ 1000+ Questions Included Out of the Box!** The released version comes with over 1000 carefully curated trivia questions across all categories.
+**✨ 900+ Questions Included Out of the Box!** The released version comes with over 900 trivia questions across all categories.
 
 ### Easy JSON Customization
-The app uses simple JSON files that anyone can edit:
+The app uses simple JSON files that **anyone** can edit:
 - 📚 **`Questions_[Category].json`**: Add your own trivia questions organized by category
 - 🏃‍♂️ **`exercises.json`**: Customize physical exercises for correct/incorrect answers
 - 🎯 **Multiple Difficulty Levels**: Each question and exercise can have Easy/Medium/Hard difficulty
 - 📁 **Auto-Generated Samples**: Sample files are automatically created on first run for reference
 
-### Content Categories (1000+ Questions Provided):
+### Content Categories (900+ Questions Provided in latest release):
 - 🧬 **Biology** (100+ questions) - From cells to evolution
 - 🎮 **Gaming** (150+ questions) - Video game trivia and industry knowledge
 - 📜 **History** (120+ questions) - Historical events, figures, and timelines
@@ -105,6 +107,46 @@ The app uses simple JSON files that anyone can edit:
 - Discord (optional, for Rich Presence)
 - Audio device (optional, for sound effects)
 
+---
+
+## 🔧 Creating a Complete Release
+
+To create a fully functioning release of Move It Up!, you'll need to include several additional files alongside the compiled executable:
+
+### Required Files Structure
+```
+MoveItUp-Release/
+├── TriviaExercise.exe
+├── TriviaExercise.exe.config
+├── (other .dll files from build)
+├── MoveItUp.ico                    # Application icon
+├── Sounds/                         # Sound effects folder
+│   ├── pre_question.wav
+│   ├── drink_reminder.wav
+│   ├── question_success.wav
+│   ├── question_failure.wav
+│   ├── new_question.wav
+│   └── exercise_start.wav
+└── Questions_GeneralCulture.json   # Sample questions (auto-generated)
+```
+
+### 🎵 Sound Files Setup
+Create a `Sounds` folder in the same directory as your executable and add these WAV files: (provided within latest release)
+- **`pre_question.wav`** - Plays before questions (30-second warning)
+- **`drink_reminder.wav`** - Water break reminder sound
+- **`question_success.wav`** - Correct answer celebration
+- **`question_failure.wav`** - Wrong answer sound
+- **`new_question.wav`** - New question alert
+- **`exercise_start.wav`** - Exercise time notification
+
+### 🚀 Release Checklist
+- [ ] Compile in Release mode
+- [ ] Include MoveItUp.ico in executable directory
+- [ ] Create Sounds folder with 6 WAV files
+- [ ] Test all sound effects work
+- [ ] Verify system tray icon displays correctly
+- [ ] Test question loading and exercise prompts
+- [ ] Ensure Discord Rich Presence works (if Discord is installed)
 ---
 
 ## 📄 License
