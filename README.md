@@ -12,6 +12,8 @@ Rather than relying on willpower alone (which I clearly lack of), I created this
 
 Move It Up! periodically reminds you to wake up and do a small exercise, using trivia questions from various categories to keep you engaged. Based on whether you answer correctly or incorrectly, you'll be prompted to do different physical exercises.
 
+screenshots/AppScreenshot.png
+
 ### Key Features
 
 - 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **1000+ pre-made questions included in the release!**
