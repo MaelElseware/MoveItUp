@@ -38,6 +38,10 @@ namespace TriviaExercise.Helpers
             // Sound settings
             public bool SoundsEnabled { get; set; } = true;
             public double PreQuestionAlertMinutes { get; set; } = 0.5; // 30 seconds default
+
+            // Activity monitoring settings
+            public ActivityBehavior ActivityMonitoringBehavior { get; set; } = ActivityBehavior.PauseOnly;
+            public uint InactivityThresholdMinutes { get; set; } = 10; // Reset timer after 10 minutes of inactivity
         }
 
         /// <summary>
@@ -118,6 +122,12 @@ namespace TriviaExercise.Helpers
             else if (settings.PreQuestionAlertMinutes > 60) // Max 1 hour
                 settings.PreQuestionAlertMinutes = 60;
 
+            // Validate activity monitoring settings
+            if (settings.InactivityThresholdMinutes < 1)
+                settings.InactivityThresholdMinutes = 1;
+            else if (settings.InactivityThresholdMinutes > 1440) // Max 24 hours
+                settings.InactivityThresholdMinutes = 1440;
+
             // Validate data folder path if set
             if (!string.IsNullOrEmpty(settings.DataFolderPath))
             {
@@ -189,6 +199,7 @@ namespace TriviaExercise.Helpers
                    $"Exercise: {settings.ExerciseDifficulty} | " +
                    $"Discord: {(settings.DiscordRichPresenceEnabled ? "On" : "Off")} | " +
                    $"Sounds: {(settings.SoundsEnabled ? "On" : "Off")} | " +
+                   $"Activity Monitor: {settings.ActivityMonitoringBehavior} | " +
                    $"Start Minimized: {(settings.StartMinimized ? "Yes" : "No")}";
         }
     }

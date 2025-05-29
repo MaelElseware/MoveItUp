@@ -27,7 +27,7 @@
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <Border Grid.Row="0" CornerRadius="8,8,0,0" Padding="10,6">
+                                    <Border Grid.Row="0" CornerRadius="8,8,0,0" Padding="10,3" Margin="0,0,0,-5">
                                         <Border.Background>
                                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                                 <!-- Use BorderBrush color -->
@@ -36,10 +36,48 @@
                                             </LinearGradientBrush>
                                         </Border.Background>
                                         <ContentPresenter ContentSource="Header"
-                                                TextElement.FontWeight="SemiBold"
-                                                TextElement.FontSize="13"
+                                                TextElement.FontWeight="Thin"
+                                                TextElement.FontSize="11"
                                                 TextElement.FontFamily="Segoe UI"
                                                 TextElement.Foreground="#2C3E50"/>
+                                    </Border>
+                                    <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- NoName GroupBox Style -->
+        <Style x:Key="NoNameModernGroupBox" TargetType="GroupBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GroupBox">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}"
+                            BorderBrush="#E0E0E0"
+                            BorderThickness="1"
+                            CornerRadius="8">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="5"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Border Grid.Row="0" CornerRadius="8,8,0,0" Padding="0,0" Margin="0,0,0,-15">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <!-- Use BorderBrush color -->
+                                                <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush.Color, FallbackValue=#FFE4ECF0}"/>
+                                                <GradientStop Color="White" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
                                     </Border>
                                     <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}"/>
                                 </Grid>
@@ -243,7 +281,7 @@
             <StackPanel>
 
                 <!-- Player Progress -->
-                <GroupBox Header="Player Progress" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFFFE4B5" Margin="0,0,0,5">
+                <GroupBox Header="Player Progress" Style="{StaticResource NoNameModernGroupBox}" BorderBrush="#FFFFE4B5" Margin="0,0,0,5">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -272,7 +310,7 @@
                 </GroupBox>
 
                 <!-- Timer Status -->
-                <GroupBox Header="Timer Status" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFCDE2F0" Margin="0,0,0,5">
+                <GroupBox Header="Timer Status" Style="{StaticResource NoNameModernGroupBox}" BorderBrush="#FFCDE2F0" Margin="0,0,0,5">
                     <StackPanel>
                         <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
                                    Margin="0,0,0,5" Text="Timer not running" Foreground="#2C3E50"/>
@@ -287,7 +325,7 @@
                 <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFD1F0CD" Margin="0,0,0,5">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <TextBlock Text="Question Interval " VerticalAlignment="Center" Width="141" FontWeight="Medium"/>
+                            <TextBlock Text="Question Interval " VerticalAlignment="Center" Width="141" />
                             <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
                                      Style="{StaticResource ModernTextBox}"
                                      VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="30" HorizontalAlignment="Center"/>
@@ -306,7 +344,7 @@
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Pre-question alert:" VerticalAlignment="Center" Width="140" FontWeight="Medium"/>
+                            <TextBlock Text="Pre-question alert:" VerticalAlignment="Center" Width="140"/>
                             <TextBox x:Name="PreQuestionAlertTextBox" Text="0.5" Width="60" Height="30"
                                      Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
                                      TextChanged="PreQuestionAlertTextBox_TextChanged"/>
@@ -318,7 +356,7 @@
                 <!-- Exercise Settings -->
                 <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFDEDBF0" Margin="0,0,0,5">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Exercise Difficulty:" VerticalAlignment="Center" Width="150" FontWeight="Medium"/>
+                        <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="132"/>
                         <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
                                   Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
                                   SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
@@ -331,6 +369,30 @@
                     </StackPanel>
                 </GroupBox>
 
+                <!-- Activity Monitoring Settings -->
+                <GroupBox Header="Activity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFF0D9D4" Margin="0,0,0,5">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="133"/>
+                            <ComboBox x:Name="ActivityBehaviorComboBox" Width="200" Height="25"
+                      Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
+                      SelectionChanged="ActivityBehaviorComboBox_SelectionChanged" ToolTip="What happens to the timer when you are inactive past the inactivity threshold ?">
+                                <ComboBoxItem Content="Disabled" Tag="Disabled"/>
+                                <ComboBoxItem Content="Pause Only" Tag="PauseOnly"/>
+                                <ComboBoxItem Content="Pause + Reset" Tag="PauseAndReset" IsSelected="True"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                            <TextBlock Text="Inactivity threshold:" VerticalAlignment="Center" Width="132"/>
+                            <TextBox x:Name="InactivityThresholdTextBox" Text="5" Width="60" Height="30"
+                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"
+                     TextChanged="InactivityThresholdTextBox_TextChanged" ToolTip="After how many minutes you are considered inactive and the timer adapts (depending on the behavior set atop)"/>
+                            <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+                
                 <!-- Application Settings -->
                 <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#FFF0EECD" Margin="0,0,0,5">
                     <StackPanel>

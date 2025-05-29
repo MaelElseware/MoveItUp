@@ -17,10 +17,15 @@ namespace TriviaExercise
 {
     public partial class MainWindow : Window
     {
+        // dispatchers
         private DispatcherTimer questionTimer;
         private DispatcherTimer drinkTimer;
         private DispatcherTimer displayUpdateTimer;
         private DispatcherTimer preQuestionAlertTimer;
+
+        // What's going on
+        private bool isQuestionActive = false;
+        private bool isExerciseActive = false;
 
         private TriviaData triviaData;
         private NotifyIcon notifyIcon;
@@ -30,11 +35,15 @@ namespace TriviaExercise
         private PlayerProgress playerProgress;
 
         private DiscordRichPresence discordRPC;
-        private bool isQuestionActive = false;
-        private bool isExerciseActive = false;
 
+        // settings
         private AppSettings.Settings appSettings;
         private bool isLoadingSettings = true;
+
+        // activity monitoring
+        private ActivityMonitor activityMonitor;
+        private bool timerWasPausedByInactivity = false;
+        private DateTime? pausedTime = null;
 
         public MainWindow()
         {
@@ -108,6 +117,8 @@ namespace TriviaExercise
                 DiscordRichPresenceCheckBox_CheckedChanged(null, null);
             }
 
+            InitializeActivityMonitoring();
+
             // Auto-start the timer when the app launches
             StartButton_Click(null, null);
             InitializeSoundSystem();
@@ -141,12 +152,22 @@ namespace TriviaExercise
             // Apply exercise difficulty
             SetExerciseDifficultyFromSettings();
 
+            // Apply activity monitoring settings
+            SetActivityBehaviorFromSettings();
+            InactivityThresholdTextBox.Text = appSettings.InactivityThresholdMinutes.ToString();
+
             // Apply Discord Rich Presence setting
             DiscordRichPresenceCheckBox.IsChecked = appSettings.DiscordRichPresenceEnabled;
 
             // Apply sound settings
             SoundsEnabledCheckBox.IsChecked = appSettings.SoundsEnabled;
             PreQuestionAlertTextBox.Text = appSettings.PreQuestionAlertMinutes.ToString();
+
+            // Apply activity monitoring settings
+            if (activityMonitor != null)
+            {
+                activityMonitor.UpdateThreshold(appSettings.InactivityThresholdMinutes);
+            }
 
             // Data folder path is applied in constructor
         }
@@ -224,16 +245,27 @@ namespace TriviaExercise
 
         private void UpdateTimerDisplay()
         {
+            // Check if timer is paused due to inactivity
+            bool isPausedByInactivity = timerWasPausedByInactivity &&
+                                       appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled;
+
             if (questionTimer?.IsEnabled == true)
             {
-                var timeUntilNext = nextQuestionTime - DateTime.Now;
-                if (timeUntilNext.TotalSeconds > 0)
+                if (isPausedByInactivity)
                 {
-                    NextQuestionTextBlock.Text = $"Next question in: {FormatTimeSpan(timeUntilNext)}";
+                    NextQuestionTextBlock.Text = "⏸️ Timer paused (user inactive)";
                 }
                 else
                 {
-                    NextQuestionTextBlock.Text = "Question due now!";
+                    var timeUntilNext = nextQuestionTime - DateTime.Now;
+                    if (timeUntilNext.TotalSeconds > 0)
+                    {
+                        NextQuestionTextBlock.Text = $"Next question in: {FormatTimeSpan(timeUntilNext)}";
+                    }
+                    else
+                    {
+                        NextQuestionTextBlock.Text = "Question due now!";
+                    }
                 }
             }
             else
@@ -243,16 +275,23 @@ namespace TriviaExercise
 
             if (drinkTimer?.IsEnabled == true)
             {
-                var timeUntilDrink = nextDrinkTime - DateTime.Now;
-                if (timeUntilDrink.TotalSeconds > 0)
+                if (isPausedByInactivity)
                 {
-                    NextDrinkTextBlock.Text = $"Next drink reminder in: {FormatTimeSpan(timeUntilDrink)}";
-                    NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    NextDrinkTextBlock.Text = "⏸️ Drink reminder paused";
                 }
                 else
                 {
-                    NextDrinkTextBlock.Text = "Drink reminder due now!";
-                    NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    var timeUntilDrink = nextDrinkTime - DateTime.Now;
+                    if (timeUntilDrink.TotalSeconds > 0)
+                    {
+                        NextDrinkTextBlock.Text = $"Next drink reminder in: {FormatTimeSpan(timeUntilDrink)}";
+                        NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        NextDrinkTextBlock.Text = "Drink reminder due now!";
+                        NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    }
                 }
             }
             else
@@ -260,7 +299,7 @@ namespace TriviaExercise
                 NextDrinkTextBlock.Visibility = Visibility.Collapsed;
             }
 
-            // Update progress cooldown display
+            // Update progress cooldown display (unchanged)
             if (playerProgress != null)
             {
                 var (canUpdate, timeUntilNext) = PlayerProgressSystem.CanUpdateProgress(playerProgress);
@@ -579,6 +618,12 @@ namespace TriviaExercise
                 StartDrinkTimer();
             }
 
+            // Start activity monitoring
+            if (appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled)
+            {
+                activityMonitor?.StartMonitoring();
+            }
+
             StartButton.IsEnabled = false;
             StopButton.IsEnabled = true;
 
@@ -588,9 +633,14 @@ namespace TriviaExercise
                 $"Drink reminders every {DrinkIntervalTextBox.Text} minute(s)." :
                 "No drink reminders.";
 
+            string activityStatus = appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled ?
+                $"Activity monitoring: {appSettings.ActivityMonitoringBehavior} (threshold: {appSettings.InactivityThresholdMinutes}min)" :
+                "Activity monitoring: Disabled";
+
             StatusTextBox.Text += $"\nTimer started! Questions will appear every {interval} minute(s).\n" +
                                $"Exercise Difficulty: {GetExerciseDifficultyDisplayName(selectedExerciseDifficulty)}\n" +
-                               drinkStatus;
+                               drinkStatus + "\n" +
+                               activityStatus;
 
             if (StartMinimizedCheckBox.IsChecked == true)
             {
@@ -603,6 +653,12 @@ namespace TriviaExercise
             questionTimer?.Stop();
             preQuestionAlertTimer?.Stop();
             StopDrinkTimer();
+            activityMonitor?.StopMonitoring();
+
+            // Reset activity state
+            timerWasPausedByInactivity = false;
+            pausedTime = null;
+
             StartButton.IsEnabled = true;
             StopButton.IsEnabled = false;
             StatusTextBox.Text = "Timer stopped.";
@@ -948,20 +1004,6 @@ namespace TriviaExercise
             base.OnStateChanged(e);
         }
 
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            // Save settings before closing
-            SaveApplicationSettings();
-
-            displayUpdateTimer?.Stop();
-            questionTimer?.Stop();
-            preQuestionAlertTimer?.Stop();
-            drinkTimer?.Stop();
-            notifyIcon?.Dispose();
-            discordRPC?.Dispose();
-            base.OnClosing(e);
-        }
-
         private void StartMinimizedCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             SaveApplicationSettings();
@@ -1102,11 +1144,19 @@ namespace TriviaExercise
                     appSettings.PreQuestionAlertMinutes = preQuestionAlert;
                 }
 
+                // Activity monitoring settings
+                if (uint.TryParse(InactivityThresholdTextBox.Text, out uint inactivityThreshold))
+                {
+                    appSettings.InactivityThresholdMinutes = inactivityThreshold;
+                }
+
                 appSettings.DrinkReminderEnabled = DrinkReminderCheckBox.IsChecked == true;
                 appSettings.StartMinimized = StartMinimizedCheckBox.IsChecked == true;
                 appSettings.DiscordRichPresenceEnabled = DiscordRichPresenceCheckBox.IsChecked == true;
                 appSettings.SoundsEnabled = SoundsEnabledCheckBox.IsChecked == true;
                 appSettings.ExerciseDifficulty = GetSelectedExerciseDifficulty();
+
+                // Activity behavior is saved in the event handler directly
 
                 // Save data folder if it's different from default
                 string defaultFolder = AppDomain.CurrentDomain.BaseDirectory;
@@ -1183,6 +1233,188 @@ namespace TriviaExercise
                 discordRPC?.SetActivity("Idle");
             };
             exerciseWindow.Show();
+        }
+
+        // ========================== ACTIVITY MONITORING STUFF ==========================
+        private void InitializeActivityMonitoring()
+        {
+            if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.Disabled)
+                return;
+
+            activityMonitor = new ActivityMonitor(appSettings.InactivityThresholdMinutes);
+            activityMonitor.UserBecameInactive += OnUserBecameInactive;
+            activityMonitor.UserBecameActive += OnUserBecameActive;
+            activityMonitor.UserStillInactive += OnUserStillInactive;
+
+            StatusTextBox.Text += $"\n🔍 Activity monitoring initialized (threshold: {appSettings.InactivityThresholdMinutes} minutes)";
+        }
+
+        // Activity monitoring event handlers
+        private void OnUserBecameInactive(uint inactiveMinutes)
+        {
+            if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.Disabled)
+                return;
+
+            if (questionTimer?.IsEnabled == true)
+            {
+                // Pause timers while user is away
+                timerWasPausedByInactivity = true;
+                pausedTime = DateTime.Now;
+
+                StatusTextBox.Text += $"\n⏸️ Timer paused - user inactive for {inactiveMinutes} minutes";
+
+                // Update Discord status if enabled
+                discordRPC?.SetActivity("Away", "User is inactive");
+            }
+        }
+
+        private void OnUserBecameActive()
+        {
+            if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.Disabled)
+                return;
+
+            if (!timerWasPausedByInactivity) return;
+
+            uint totalInactiveMinutes = activityMonitor.GetCurrentIdleTimeMinutes();
+            timerWasPausedByInactivity = false;
+
+            if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseAndReset)
+            {
+                // Reset timers if user was away for the threshold period or longer
+                if (totalInactiveMinutes >= appSettings.InactivityThresholdMinutes)
+                {
+                    // Reset question timer
+                    if (questionTimer?.IsEnabled == true)
+                    {
+                        nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
+
+                        // Also reset pre-question alert timer
+                        if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+                        {
+                            preQuestionAlertTimer?.Stop();
+                            if (int.TryParse(IntervalTextBox.Text, out int interval) && interval > 0)
+                            {
+                                StartPreQuestionAlertTimer(interval);
+                            }
+                        }
+                    }
+
+                    // Reset drink timer if enabled
+                    if (drinkTimer?.IsEnabled == true)
+                    {
+                        nextDrinkTime = DateTime.Now.Add(drinkTimer.Interval);
+                    }
+
+                    StatusTextBox.Text += $"\n🔄 Welcome back! Timers reset after {totalInactiveMinutes} minutes away";
+
+                    // Show balloon notification
+                    /*notifyIcon?.ShowBalloonTip(3000, "Welcome Back!",
+                            $"Break timer reset after {totalInactiveMinutes} minutes of inactivity.",
+                            ToolTipIcon.Info);*/
+                }
+                else
+                {
+                    // Just resume timers - user wasn't away long enough
+                    StatusTextBox.Text += $"\n▶️ Timer resumed - you were away for {totalInactiveMinutes} minutes";
+                }
+            }
+            else if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseOnly)
+            {
+                // Just resume - no reset
+                StatusTextBox.Text += $"\n▶️ Timer resumed after {totalInactiveMinutes} minutes away";
+            }
+
+            pausedTime = null;
+            discordRPC?.SetActivity("Idle");
+        }
+
+        private void OnUserStillInactive(uint inactiveMinutes)
+        {
+            // Optional: Update UI to show ongoing inactivity
+            // This fires every 30 seconds while user is inactive
+
+            // Could update Discord status or system tray tooltip with inactivity time
+            discordRPC?.SetActivity("Away", $"Inactive for {inactiveMinutes} minutes");
+        }
+
+        private void ActivityBehaviorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            var selectedItem = ActivityBehaviorComboBox.SelectedItem as ComboBoxItem;
+            if (selectedItem != null && Enum.TryParse<ActivityBehavior>(selectedItem.Tag.ToString(), out var behavior))
+            {
+                appSettings.ActivityMonitoringBehavior = behavior;
+
+                // Update activity monitor if it exists
+                if (behavior == ActivityBehavior.Disabled)
+                {
+                    activityMonitor?.StopMonitoring();
+                    StatusTextBox.Text += "\n🚫 Activity monitoring disabled";
+                }
+                else
+                {
+                    if (activityMonitor == null)
+                    {
+                        InitializeActivityMonitoring();
+                    }
+
+                    if (questionTimer?.IsEnabled == true)
+                    {
+                        activityMonitor?.StartMonitoring();
+                        StatusTextBox.Text += $"\n🔍 Activity monitoring active ({behavior})";
+                    }
+                    else
+                    {
+                        StatusTextBox.Text += $"\n🔍 Activity monitoring ready ({behavior})";
+                    }
+                }
+
+                SaveApplicationSettings();
+            }
+        }
+        private void InactivityThresholdTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            if (uint.TryParse(InactivityThresholdTextBox.Text, out uint threshold) && threshold > 0)
+            {
+                appSettings.InactivityThresholdMinutes = threshold;
+                activityMonitor?.UpdateThreshold(threshold);
+
+                StatusTextBox.Text += $"\n🔍 Inactivity threshold: {threshold} minutes";
+                SaveApplicationSettings();
+            }
+        }
+
+        private void SetActivityBehaviorFromSettings()
+        {
+            foreach (ComboBoxItem item in ActivityBehaviorComboBox.Items)
+            {
+                if (item.Tag != null && Enum.TryParse<ActivityBehavior>(item.Tag.ToString(), out var behavior))
+                {
+                    if (behavior == appSettings.ActivityMonitoringBehavior)
+                    {
+                        ActivityBehaviorComboBox.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            // Save settings before closing
+            SaveApplicationSettings();
+
+            displayUpdateTimer?.Stop();
+            questionTimer?.Stop();
+            preQuestionAlertTimer?.Stop();
+            drinkTimer?.Stop();
+            activityMonitor?.Dispose();
+            notifyIcon?.Dispose();
+            discordRPC?.Dispose();
+            base.OnClosing(e);
         }
     }
 

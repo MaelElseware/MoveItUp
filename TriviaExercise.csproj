@@ -69,6 +69,7 @@
     <Compile Include="ExerciseWindow.xaml.cs">
       <DependentUpon>ExerciseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ActivityMonitor.cs" />
     <Compile Include="Helpers\AppSettings.cs" />
     <Compile Include="Helpers\CategoryHelper.cs" />
     <Compile Include="Helpers\DiscordRichPresence.cs" />
