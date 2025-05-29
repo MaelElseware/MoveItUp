@@ -134,8 +134,5 @@
     </Resource>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Screenshots\AppScreenshot.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
