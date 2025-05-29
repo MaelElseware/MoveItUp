@@ -8,6 +8,7 @@ Move It Up! periodically interrupts your computer time with trivia questions fro
 
 ### Key Features
 
+- 📝 **Fully Customizable Content**: Easily modify questions and exercises through JSON files - **1000+ pre-made questions included!**
 - 🎲 **Smart Question System**: Questions from 9 categories (Biology, Gaming, History, Geography, Physics, Cinema, Music, Math, General Culture)
 - 🏃‍♂️ **Exercise Integration**: Get correct answers? Reward exercises! Wrong answers? Redemption exercises!
 - 📈 **Progress Tracking**: Level up in different categories, earn points, and unlock difficulty tiers
@@ -40,12 +41,29 @@ Move It Up! periodically interrupts your computer time with trivia questions fro
 - **Easy/Medium/Hard**: Fixed difficulty regardless of question
 - **Mixed**: Random exercise difficulty for variety
 
-## 🗂️ Data Files
+## 🗂️ Customizable Content System
 
-The app uses JSON files for easy customization:
-- `Questions_[Category].json`: Trivia questions organized by category
-- `exercises.json`: Physical exercises for correct/incorrect answers
-- Sample files are automatically created on first run
+**✨ 1000+ Questions Included Out of the Box!** The released version comes with over 1000 carefully curated trivia questions across all categories.
+
+### Easy JSON Customization
+The app uses simple JSON files that anyone can edit:
+- 📚 **`Questions_[Category].json`**: Add your own trivia questions organized by category
+- 🏃‍♂️ **`exercises.json`**: Customize physical exercises for correct/incorrect answers
+- 🎯 **Multiple Difficulty Levels**: Each question and exercise can have Easy/Medium/Hard difficulty
+- 📁 **Auto-Generated Samples**: Sample files are automatically created on first run for reference
+
+### Content Categories (1000+ Questions Provided):
+- 🧬 **Biology** (100+ questions) - From cells to evolution
+- 🎮 **Gaming** (150+ questions) - Video game trivia and industry knowledge
+- 📜 **History** (120+ questions) - Historical events, figures, and timelines
+- 🌍 **Geography** (110+ questions) - Countries, capitals, landmarks, and cultures
+- ⚛️ **Physics** (90+ questions) - Scientific principles and discoveries
+- 🎬 **Cinema** (130+ questions) - Movies, actors, directors, and film industry
+- 🎵 **Music** (100+ questions) - Musical knowledge, artists, and genres
+- 🔢 **Mathematics** (Infinite) - Dynamically generated math problems
+- 🧠 **General Culture** (200+ questions) - Broad knowledge and trivia
+
+**Want more content?** Simply add your own questions to the JSON files or create new category files!
 
 ## 🔧 Technical Features
 
@@ -57,6 +75,8 @@ The app uses JSON files for easy customization:
 - **Sound system** with custom WAV file support
 
 ## 🎨 Categories & Icons
+
+**📦 Over 1000 Pre-Made Questions Across 9 Categories:**
 
 - 🧬 **Biology** - From cells to evolution
 - 🎮 **Gaming** - Video game trivia
