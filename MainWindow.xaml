@@ -38,8 +38,8 @@
                                         <ContentPresenter ContentSource="Header"
                                                 TextElement.FontWeight="Thin"
                                                 TextElement.FontSize="11"
-                                                TextElement.FontFamily="Segoe UI"
-                                                TextElement.Foreground="#2C3E50"/>
+                                                TextElement.FontFamily="Alef"
+                                                TextElement.Foreground="#878787"/>
                                     </Border>
                                     <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}"/>
                                 </Grid>
@@ -252,13 +252,13 @@
         Padding="15,5" 
         Margin="0,0,0,5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="🏃‍♂️" FontSize="32" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                <TextBlock Text="🏃‍♂️" FontSize="32" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
                 <TextBlock Text="Move It Up !" 
                    FontSize="32" 
                    FontWeight="Thin" 
                    Foreground="#2C3E50" 
                    HorizontalAlignment="Center"
-                   Margin="0,0,0,2"/>
+                   Margin="0,0,0,0"/>
             </StackPanel>
         </Border>
 
@@ -295,8 +295,8 @@
                             <TextBlock x:Name="PlayerTitleTextBlock" 
                                        Text="Level 1 | Knowledge Seeker | 0 pts" 
                                        Margin="0,-4,0,-2"
-                                       FontSize="15" FontWeight="Bold" 
-                                       Foreground="#2C3E50"/>
+                                       FontSize="15" FontWeight="Thin" 
+                                       Foreground="#2C3E50" FontFamily="Ink Free"/>
                         </StackPanel>
 
                         <!-- Category Details -->
@@ -313,22 +313,20 @@
                 </GroupBox>
 
                 <!-- Timer Status -->
-                <GroupBox Header="Timer Status" Style="{StaticResource NoNameModernGroupBox}" Margin="0,0,0,5">
-                    <GroupBox.BorderBrush>
-                        <SolidColorBrush Color="#BFCDE2F0" Opacity="1"/>
-                    </GroupBox.BorderBrush>
+                <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
+                        BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
                     <StackPanel>
                         <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,-2,0,5" Text="Timer not running" Foreground="#2C3E50"/>
+                                   Margin="0,0,0,0" Text="Timer not running" Foreground="#2C3E50" TextAlignment="Center"/>
                         <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,5" Text="" Visibility="Collapsed" Foreground="#27AE60"/>
+                                   Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#27AE60" TextAlignment="Center"/>
                         <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22"/>
+                                   Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22" TextAlignment="Center"/>
                     </StackPanel>
-                </GroupBox>
+                </Border>
 
                 <!-- Timer Settings -->
-                <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
+                <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                             <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="141" />
@@ -400,7 +398,7 @@
                 </GroupBox>
 
                 <!-- Application Settings -->
-                <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3D9D9" Margin="0,0,0,5">
+                <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                     <StackPanel>
                         <CheckBox x:Name="DiscordRichPresenceCheckBox" Content="🎮 Enable Discord Rich Presence" 
                                   Checked="DiscordRichPresenceCheckBox_CheckedChanged" Unchecked="DiscordRichPresenceCheckBox_CheckedChanged" 
@@ -420,7 +418,7 @@
                 </GroupBox>
 
                 <!-- File Settings -->
-                <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
+                <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                             <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="81" FontWeight="Medium"/>
