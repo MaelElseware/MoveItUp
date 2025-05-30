@@ -292,6 +292,7 @@
                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,7">
                             <TextBlock x:Name="PlayerTitleTextBlock" 
                                        Text="Level 1 | Knowledge Seeker | 0 pts" 
+                                       Margin="0,-4,0,-2"
                                        FontSize="15" FontWeight="Bold" 
                                        Foreground="#2C3E50"/>
                         </StackPanel>
@@ -313,7 +314,7 @@
                 <GroupBox Header="Timer Status" Style="{StaticResource NoNameModernGroupBox}" BorderBrush="#FFCDE2F0" Margin="0,0,0,5">
                     <StackPanel>
                         <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,5" Text="Timer not running" Foreground="#2C3E50"/>
+                                   Margin="0,-4,0,5" Text="Timer not running" Foreground="#2C3E50"/>
                         <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
                                    Margin="0,0,0,5" Text="" Visibility="Collapsed" Foreground="#27AE60"/>
                         <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 

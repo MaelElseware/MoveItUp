@@ -17,11 +17,9 @@ namespace TriviaExercise
 {
     public partial class MainWindow : Window
     {
-        // dispatchers
-        private DispatcherTimer questionTimer;
-        private DispatcherTimer drinkTimer;
+        // Timer management - much cleaner now!
+        private TimerManager timerManager;
         private DispatcherTimer displayUpdateTimer;
-        private DispatcherTimer preQuestionAlertTimer;
 
         // What's going on
         private bool isQuestionActive = false;
@@ -30,8 +28,6 @@ namespace TriviaExercise
         private TriviaData triviaData;
         private NotifyIcon notifyIcon;
         private Random random = new Random();
-        private DateTime nextQuestionTime;
-        private DateTime nextDrinkTime;
         private PlayerProgress playerProgress;
 
         private DiscordRichPresence discordRPC;
@@ -52,6 +48,10 @@ namespace TriviaExercise
 
             discordRPC = new DiscordRichPresence();
 
+            // Initialize timer management
+            timerManager = new TimerManager();
+            SetupTimerEventHandlers();
+
             // Load settings before setting defaults
             LoadApplicationSettings();
 
@@ -70,6 +70,54 @@ namespace TriviaExercise
 
             // Auto-start the timer when the app launches
             Loaded += MainWindow_Loaded;
+        }
+
+        private void SetupTimerEventHandlers()
+        {
+            // Subscribe to timer events
+            timerManager.QuestionTimerTriggered += OnQuestionTimerTriggered;
+            timerManager.DrinkReminderTriggered += OnDrinkReminderTriggered;
+            timerManager.PreQuestionAlertTriggered += OnPreQuestionAlertTriggered;
+        }
+
+        private void OnQuestionTimerTriggered(object sender, TimerEventArgs e)
+        {
+            // Don't show question if one is already active or exercise is running
+            if (isQuestionActive || isExerciseActive)
+            {
+                StatusTextBox.Text += "\n⏸️ Question skipped - another window is active";
+                return;
+            }
+
+            ShowRandomQuestion();
+
+            // Restart pre-question alert for next question if enabled
+            if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+            {
+                StartPreQuestionAlert();
+            }
+        }
+
+        private void OnDrinkReminderTriggered(object sender, TimerEventArgs e)
+        {
+            ShowDrinkReminder();
+        }
+
+        private void OnPreQuestionAlertTriggered(object sender, TimerEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine($"OnPreQuestionAlertTriggered called - SoundsEnabled: {appSettings.SoundsEnabled}");
+
+            if (appSettings.SoundsEnabled)
+            {
+                System.Diagnostics.Debug.WriteLine("Playing pre-question alert sound...");
+                SoundHelper.PlayPreQuestionAlert();
+                StatusTextBox.Text += "\n🔔 Pre-question alert played\n";
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Pre-question alert triggered but sounds are disabled");
+                StatusTextBox.Text += "\n🔔 Pre-question alert (sound disabled)\n";
+            }
         }
 
         // Method to load settings and apply them to UI
@@ -249,7 +297,8 @@ namespace TriviaExercise
             bool isPausedByInactivity = timerWasPausedByInactivity &&
                                        appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled;
 
-            if (questionTimer?.IsEnabled == true)
+            var questionTimer = timerManager.QuestionTimer;
+            if (questionTimer?.IsActive == true)
             {
                 if (isPausedByInactivity)
                 {
@@ -257,7 +306,7 @@ namespace TriviaExercise
                 }
                 else
                 {
-                    var timeUntilNext = nextQuestionTime - DateTime.Now;
+                    var timeUntilNext = questionTimer.NextTriggerTime - DateTime.Now;
                     if (timeUntilNext.TotalSeconds > 0)
                     {
                         NextQuestionTextBlock.Text = $"Next question in: {FormatTimeSpan(timeUntilNext)}";
@@ -273,7 +322,8 @@ namespace TriviaExercise
                 NextQuestionTextBlock.Text = "Timer not running";
             }
 
-            if (drinkTimer?.IsEnabled == true)
+            var drinkTimer = timerManager.DrinkTimer;
+            if (drinkTimer?.IsActive == true)
             {
                 if (isPausedByInactivity)
                 {
@@ -281,7 +331,7 @@ namespace TriviaExercise
                 }
                 else
                 {
-                    var timeUntilDrink = nextDrinkTime - DateTime.Now;
+                    var timeUntilDrink = drinkTimer.NextTriggerTime - DateTime.Now;
                     if (timeUntilDrink.TotalSeconds > 0)
                     {
                         NextDrinkTextBlock.Text = $"Next drink reminder in: {FormatTimeSpan(timeUntilDrink)}";
@@ -338,17 +388,43 @@ namespace TriviaExercise
 
         private void IntervalTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Update the question timer if it's running
-            if (questionTimer?.IsEnabled == true)
+            // Don't process during loading
+            if (isLoadingSettings) return;
+
+            if (int.TryParse(IntervalTextBox.Text, out int interval) && interval > 0)
             {
-                UpdateQuestionTimer();
-                // Restart pre-question alert timer with new interval
+                var newInterval = TimeSpan.FromMinutes(interval);
+
+                // Update the main question timer
+                var wasQuestionTimerActive = timerManager.QuestionTimer?.IsActive == true;
+                var timeUntilNextQuestion = wasQuestionTimerActive ?
+                    timerManager.QuestionTimer.NextTriggerTime - DateTime.Now :
+                    TimeSpan.Zero;
+
+                timerManager.QuestionTimer?.UpdateInterval(newInterval);
+
+                // Update pre-question alert if it exists and sounds are enabled
                 if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
                 {
-                    preQuestionAlertTimer?.Stop();
-                    if (int.TryParse(IntervalTextBox.Text, out int interval) && interval > 0)
+                    if (timerManager.PreQuestionTimer != null)
                     {
-                        StartPreQuestionAlertTimer(interval);
+                        // Update for new question interval
+                        timerManager.PreQuestionTimer.UpdateForNewQuestionInterval(newInterval);
+
+                        // If question timer was active, adjust for remaining time
+                        if (wasQuestionTimerActive && timeUntilNextQuestion > TimeSpan.Zero)
+                        {
+                            // Calculate new remaining time based on the timer reset
+                            var newTimeUntilQuestion = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
+                            timerManager.PreQuestionTimer.UpdateForRemainingQuestionTime(newTimeUntilQuestion);
+                        }
+
+                        StatusTextBox.Text += $"\n🔔 Pre-question alert updated for new {interval}-minute interval";
+                    }
+                    else if (timerManager.QuestionTimer?.IsActive == true)
+                    {
+                        // Create pre-question alert if timer is running but alert doesn't exist
+                        StartPreQuestionAlert();
                     }
                 }
             }
@@ -357,26 +433,32 @@ namespace TriviaExercise
 
         private void DrinkIntervalTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Update the drink timer if it's running
-            if (drinkTimer?.IsEnabled == true)
+            if (isLoadingSettings) return;
+            if (int.TryParse(DrinkIntervalTextBox.Text, out int interval) && interval > 0)
             {
-                UpdateDrinkTimer();
+                var newInterval = TimeSpan.FromMinutes(interval);
+                timerManager.DrinkTimer?.UpdateInterval(newInterval);
             }
             SaveApplicationSettings();
         }
 
         private void DrinkReminderCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
+            if (isLoadingSettings) return;
             if (DrinkReminderCheckBox.IsChecked == true)
             {
-                if (questionTimer?.IsEnabled == true) // Only start if main timer is running
+                if (timerManager.QuestionTimer?.IsActive == true) // Only start if main timer is running
                 {
-                    StartDrinkTimer();
+                    if (int.TryParse(DrinkIntervalTextBox.Text, out int interval) && interval > 0)
+                    {
+                        timerManager.InitializeDrinkTimer(TimeSpan.FromMinutes(interval));
+                        timerManager.DrinkTimer?.Activate();
+                    }
                 }
             }
             else
             {
-                StopDrinkTimer();
+                timerManager.DrinkTimer?.Deactivate();
             }
             SaveApplicationSettings();
         }
@@ -388,67 +470,104 @@ namespace TriviaExercise
 
         private void SoundsEnabledCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
+            bool soundsEnabled = SoundsEnabledCheckBox.IsChecked == true;
+
+            if (soundsEnabled)
+            {
+                // Enable pre-question alert if main timer is running and alert time is set
+                if (timerManager.QuestionTimer?.IsActive == true && appSettings.PreQuestionAlertMinutes > 0)
+                {
+                    StartPreQuestionAlert();
+                    StatusTextBox.Text += "\n🔔 Pre-question alerts enabled with sounds";
+                }
+            }
+            else
+            {
+                // Disable pre-question alert when sounds are disabled
+                timerManager.PreQuestionTimer?.Deactivate();
+                StatusTextBox.Text += "\n🔕 Pre-question alerts disabled with sounds";
+            }
+
             SaveApplicationSettings();
         }
 
         private void PreQuestionAlertTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // Don't process during loading
+            if (isLoadingSettings) return;
+
+            // Save the new setting first
+            if (double.TryParse(PreQuestionAlertTextBox.Text, out double alertMinutes))
+            {
+                appSettings.PreQuestionAlertMinutes = alertMinutes;
+            }
+
+            // Update pre-question alert if timer is running and sounds are enabled
+            if (timerManager.QuestionTimer?.IsActive == true && appSettings.SoundsEnabled)
+            {
+                if (alertMinutes > 0)
+                {
+                    if (int.TryParse(IntervalTextBox.Text, out int questionIntervalMinutes) && questionIntervalMinutes > 0)
+                    {
+                        var questionInterval = TimeSpan.FromMinutes(questionIntervalMinutes);
+                        var alertOffset = TimeSpan.FromMinutes(alertMinutes);
+
+                        // Calculate remaining time until next question
+                        var timeUntilNextQuestion = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
+
+                        if (timerManager.PreQuestionTimer != null)
+                        {
+                            // Update the alert offset first
+                            timerManager.PreQuestionTimer.UpdateAlertOffset(alertOffset);
+                            // Then set it for the remaining time
+                            timerManager.PreQuestionTimer.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
+                            // Ensure it's activated
+                            if (!timerManager.PreQuestionTimer.IsActive)
+                            {
+                                timerManager.PreQuestionTimer.Activate();
+                                System.Diagnostics.Debug.WriteLine("Force-activated pre-question alert timer");
+                            }
+                        }
+                        else
+                        {
+                            // Create new timer and set for remaining time
+                            timerManager.InitializePreQuestionTimer(questionInterval, alertOffset);
+                            timerManager.PreQuestionTimer?.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
+                            timerManager.PreQuestionTimer?.Activate();
+                            System.Diagnostics.Debug.WriteLine("Created and activated new pre-question alert timer");
+                        }
+
+                        StatusTextBox.Text += $"\n🔔 Pre-question alert updated to {alertMinutes} minutes before each question";
+                    }
+                }
+                else
+                {
+                    // Invalid or zero alert time - disable timer
+                    timerManager.PreQuestionTimer?.Deactivate();
+                    StatusTextBox.Text += "\n🔕 Pre-question alert disabled (invalid time)";
+                }
+            }
+
             SaveApplicationSettings();
         }
 
-        private void UpdateQuestionTimer()
+        private void StartPreQuestionAlert()
         {
-            if (!int.TryParse(IntervalTextBox.Text, out int interval) || interval <= 0)
+            if (!double.TryParse(PreQuestionAlertTextBox.Text, out double alertMinutes) || alertMinutes <= 0)
             {
                 return;
             }
 
-            questionTimer.Stop();
-            questionTimer.Interval = TimeSpan.FromMinutes(interval);
-            nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
-            questionTimer.Start();
-        }
-
-        private void UpdateDrinkTimer()
-        {
-            if (!int.TryParse(DrinkIntervalTextBox.Text, out int interval) || interval <= 0)
+            if (!int.TryParse(IntervalTextBox.Text, out int questionIntervalMinutes) || questionIntervalMinutes <= 0)
             {
                 return;
             }
 
-            if (drinkTimer != null)
-            {
-                drinkTimer.Stop();
-                drinkTimer.Interval = TimeSpan.FromMinutes(interval);
-                nextDrinkTime = DateTime.Now.Add(drinkTimer.Interval);
-                drinkTimer.Start();
-            }
-        }
+            var questionInterval = TimeSpan.FromMinutes(questionIntervalMinutes);
+            var alertOffset = TimeSpan.FromMinutes(alertMinutes);
 
-        private void StartDrinkTimer()
-        {
-            if (!int.TryParse(DrinkIntervalTextBox.Text, out int interval) || interval <= 0)
-            {
-                return;
-            }
-
-            drinkTimer = new DispatcherTimer();
-            drinkTimer.Interval = TimeSpan.FromMinutes(interval);
-            drinkTimer.Tick += DrinkTimer_Tick;
-            nextDrinkTime = DateTime.Now.Add(drinkTimer.Interval);
-            drinkTimer.Start();
-        }
-
-        private void StopDrinkTimer()
-        {
-            drinkTimer?.Stop();
-            drinkTimer = null;
-        }
-
-        private void DrinkTimer_Tick(object sender, EventArgs e)
-        {
-            ShowDrinkReminder();
-            nextDrinkTime = DateTime.Now.Add(drinkTimer.Interval);
+            timerManager.InitializePreQuestionTimer(questionInterval, alertOffset);
+            timerManager.PreQuestionTimer?.Activate();
         }
 
         private void ShowDrinkReminder()
@@ -567,7 +686,6 @@ namespace TriviaExercise
 
             detailedInfo += ExerciseFileStatus;
 
-
             // Add the detailed info to status log
             StatusTextBox.Text += $"\n{detailedInfo}\n";
         }
@@ -599,23 +717,20 @@ namespace TriviaExercise
                 return;
             }
 
-            // Start question timer
-            questionTimer = new DispatcherTimer();
-            questionTimer.Interval = TimeSpan.FromMinutes(interval);
-            questionTimer.Tick += QuestionTimer_Tick;
-            nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
-            questionTimer.Start();
+            // Initialize and start timers
+            timerManager.InitializeQuestionTimer(TimeSpan.FromMinutes(interval));
 
-            // Start pre-question alert timer if sounds are enabled
-            if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
-            {
-                StartPreQuestionAlertTimer(interval);
-            }
-
-            // Start drink timer if enabled
             if (DrinkReminderCheckBox.IsChecked == true)
             {
-                StartDrinkTimer();
+                if (int.TryParse(DrinkIntervalTextBox.Text, out int drinkInterval) && drinkInterval > 0)
+                {
+                    timerManager.InitializeDrinkTimer(TimeSpan.FromMinutes(drinkInterval));
+                }
+            }
+
+            if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+            {
+                StartPreQuestionAlert();
             }
 
             // Start activity monitoring
@@ -623,6 +738,9 @@ namespace TriviaExercise
             {
                 activityMonitor?.StartMonitoring();
             }
+
+            // Start all timers
+            timerManager.StartAll();
 
             StartButton.IsEnabled = false;
             StopButton.IsEnabled = true;
@@ -650,9 +768,8 @@ namespace TriviaExercise
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            questionTimer?.Stop();
-            preQuestionAlertTimer?.Stop();
-            StopDrinkTimer();
+            // Stop all timers cleanly
+            timerManager.StopAll();
             activityMonitor?.StopMonitoring();
 
             // Reset activity state
@@ -806,28 +923,6 @@ namespace TriviaExercise
             {
                 StatusTextBox.Text = $"Error loading data files: {ex.Message}";
                 return false;
-            }
-        }
-
-        private void QuestionTimer_Tick(object sender, EventArgs e)
-        {
-            // Don't show question if one is already active or exercise is running
-            if (isQuestionActive || isExerciseActive)
-            {
-                StatusTextBox.Text += "\n⏸️ Question skipped - another window is active";
-                nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
-                return;
-            }
-
-            ShowRandomQuestion();
-            nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
-            if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
-            {
-                preQuestionAlertTimer?.Stop();
-                if (int.TryParse(IntervalTextBox.Text, out int interval) && interval > 0)
-                {
-                    StartPreQuestionAlertTimer(interval);
-                }
             }
         }
 
@@ -997,7 +1092,7 @@ namespace TriviaExercise
 
         protected override void OnStateChanged(EventArgs e)
         {
-            if (WindowState == WindowState.Minimized && questionTimer?.IsEnabled == true)
+            if (WindowState == WindowState.Minimized && timerManager.QuestionTimer?.IsActive == true)
             {
                 MinimizeToTray();
             }
@@ -1008,6 +1103,7 @@ namespace TriviaExercise
         {
             SaveApplicationSettings();
         }
+
         private void StartupCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             bool isChecked = StartupCheckBox.IsChecked == true;
@@ -1069,40 +1165,6 @@ namespace TriviaExercise
                 StatusTextBox.Text += "\nStartup status: Not registered\n";
             }
         }
-
-        // ========================== PREQUESTION STUFF ==========================
-        private void StartPreQuestionAlertTimer(int questionIntervalMinutes)
-        {
-            if (!double.TryParse(PreQuestionAlertTextBox.Text, out double alertMinutes) || alertMinutes <= 0)
-            {
-                return;
-            }
-
-            // Don't set alert if it's longer than or equal to the question interval
-            if (alertMinutes >= questionIntervalMinutes)
-            {
-                StatusTextBox.Text += $"\n⚠️ Pre-question alert ({alertMinutes}min) disabled - longer than question interval ({questionIntervalMinutes}min)";
-                return;
-            }
-
-            double alertIntervalMinutes = questionIntervalMinutes - alertMinutes;
-
-            preQuestionAlertTimer = new DispatcherTimer();
-            preQuestionAlertTimer.Interval = TimeSpan.FromMinutes(alertIntervalMinutes);
-            preQuestionAlertTimer.Tick += PreQuestionAlertTimer_Tick;
-            preQuestionAlertTimer.Start();
-        }
-
-        private void PreQuestionAlertTimer_Tick(object sender, EventArgs e)
-        {
-            if (appSettings.SoundsEnabled)
-            {
-                SoundHelper.PlayPreQuestionAlert();
-                StatusTextBox.Text += "\n🔔 Pre-question alert played\n";
-            }
-        }
-
-        // ========================== SAVING STUFF ==========================
 
         // method to set exercise difficulty combo box from settings
         private void SetExerciseDifficultyFromSettings()
@@ -1168,16 +1230,16 @@ namespace TriviaExercise
                 bool success = AppSettings.SaveSettings(appSettings);
                 if (success)
                 {
-                    StatusTextBox.Text += "\n✅ Settings saved successfully.\n";
+                    StatusTextBox.Text += "\n✅ Settings saved successfully.";
                 }
                 else
                 {
-                    StatusTextBox.Text += "\n❌ Failed to save settings.\n";
+                    StatusTextBox.Text += "\n❌ Failed to save settings.";
                 }
             }
             catch (Exception ex)
             {
-                StatusTextBox.Text += $"\n❌ Error saving settings: {ex.Message}\n";
+                StatusTextBox.Text += $"\n❌ Error saving settings: {ex.Message}";
             }
         }
 
@@ -1188,7 +1250,7 @@ namespace TriviaExercise
             if (isLoadingSettings) return;
 
             bool isEnabled = DiscordRichPresenceCheckBox.IsChecked == true;
-            
+
             if (isEnabled)
             {
                 bool success = discordRPC.Initialize(true);
@@ -1255,15 +1317,13 @@ namespace TriviaExercise
             if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.Disabled)
                 return;
 
-            if (questionTimer?.IsEnabled == true)
+            if (timerManager.AnyTimerActive)
             {
-                // Pause timers while user is away
+                timerManager.PauseAll();
                 timerWasPausedByInactivity = true;
                 pausedTime = DateTime.Now;
 
-                StatusTextBox.Text += $"\n⏸️ Timer paused - user inactive for {inactiveMinutes} minutes";
-
-                // Update Discord status if enabled
+                StatusTextBox.Text += $"\n⏸️ Timers paused - user inactive for {inactiveMinutes} minutes";
                 discordRPC?.SetActivity("Away", "User is inactive");
             }
         }
@@ -1280,48 +1340,27 @@ namespace TriviaExercise
 
             if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseAndReset)
             {
-                // Reset timers if user was away for the threshold period or longer
                 if (totalInactiveMinutes >= appSettings.InactivityThresholdMinutes)
                 {
-                    // Reset question timer
-                    if (questionTimer?.IsEnabled == true)
-                    {
-                        nextQuestionTime = DateTime.Now.Add(questionTimer.Interval);
-
-                        // Also reset pre-question alert timer
-                        if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
-                        {
-                            preQuestionAlertTimer?.Stop();
-                            if (int.TryParse(IntervalTextBox.Text, out int interval) && interval > 0)
-                            {
-                                StartPreQuestionAlertTimer(interval);
-                            }
-                        }
-                    }
-
-                    // Reset drink timer if enabled
-                    if (drinkTimer?.IsEnabled == true)
-                    {
-                        nextDrinkTime = DateTime.Now.Add(drinkTimer.Interval);
-                    }
-
+                    timerManager.ResetAll();
                     StatusTextBox.Text += $"\n🔄 Welcome back! Timers reset after {totalInactiveMinutes} minutes away";
 
-                    // Show balloon notification
-                    /*notifyIcon?.ShowBalloonTip(3000, "Welcome Back!",
-                            $"Break timer reset after {totalInactiveMinutes} minutes of inactivity.",
-                            ToolTipIcon.Info);*/
+                    // Restart pre-question alert if needed
+                    if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+                    {
+                        StartPreQuestionAlert();
+                    }
                 }
                 else
                 {
-                    // Just resume timers - user wasn't away long enough
-                    StatusTextBox.Text += $"\n▶️ Timer resumed - you were away for {totalInactiveMinutes} minutes";
+                    timerManager.ResumeAll();
+                    StatusTextBox.Text += $"\n▶️ Timers resumed - you were away for {totalInactiveMinutes} minutes";
                 }
             }
             else if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseOnly)
             {
-                // Just resume - no reset
-                StatusTextBox.Text += $"\n▶️ Timer resumed after {totalInactiveMinutes} minutes away";
+                timerManager.ResumeAll();
+                StatusTextBox.Text += $"\n▶️ Timers resumed after {totalInactiveMinutes} minutes away";
             }
 
             pausedTime = null;
@@ -1359,7 +1398,7 @@ namespace TriviaExercise
                         InitializeActivityMonitoring();
                     }
 
-                    if (questionTimer?.IsEnabled == true)
+                    if (timerManager.QuestionTimer?.IsActive == true)
                     {
                         activityMonitor?.StartMonitoring();
                         StatusTextBox.Text += $"\n🔍 Activity monitoring active ({behavior})";
@@ -1373,6 +1412,7 @@ namespace TriviaExercise
                 SaveApplicationSettings();
             }
         }
+
         private void InactivityThresholdTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (isLoadingSettings) return;
@@ -1404,13 +1444,10 @@ namespace TriviaExercise
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            // Save settings before closing
+            // Clean disposal
             SaveApplicationSettings();
-
             displayUpdateTimer?.Stop();
-            questionTimer?.Stop();
-            preQuestionAlertTimer?.Stop();
-            drinkTimer?.Stop();
+            timerManager?.Dispose();
             activityMonitor?.Dispose();
             notifyIcon?.Dispose();
             discordRPC?.Dispose();
