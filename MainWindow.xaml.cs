@@ -468,6 +468,11 @@ namespace TriviaExercise
             SaveApplicationSettings();
         }
 
+        private void StatusTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Auto-scroll to bottom when text is added
+            StatusTextBox.ScrollToEnd();
+        }
         private void SoundsEnabledCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             bool soundsEnabled = SoundsEnabledCheckBox.IsChecked == true;
