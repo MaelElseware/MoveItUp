@@ -37,11 +37,11 @@ namespace TriviaExercise.Helpers
 
             // Sound settings
             public bool SoundsEnabled { get; set; } = true;
-            public double PreQuestionAlertMinutes { get; set; } = 0.5; // 30 seconds default
+            public double PreQuestionAlertMinutes { get; set; } = 1; // 1 minute default
 
             // Activity monitoring settings
             public ActivityBehavior ActivityMonitoringBehavior { get; set; } = ActivityBehavior.PauseOnly;
-            public uint InactivityThresholdMinutes { get; set; } = 10; // Reset timer after 10 minutes of inactivity
+            public uint InactivityThresholdMinutes { get; set; } = 5; // Reset timer after 5 minutes of inactivity
         }
 
         /// <summary>

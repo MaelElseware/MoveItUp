@@ -17,7 +17,7 @@ namespace TriviaExercise
 {
     public partial class MainWindow : Window
     {
-        // Timer management - much cleaner now!
+        // Timer management
         private TimerManager timerManager;
         private DispatcherTimer displayUpdateTimer;
 
@@ -349,7 +349,7 @@ namespace TriviaExercise
                 NextDrinkTextBlock.Visibility = Visibility.Collapsed;
             }
 
-            // Update progress cooldown display (unchanged)
+            // Update progress cooldown display
             if (playerProgress != null)
             {
                 var (canUpdate, timeUntilNext) = PlayerProgressSystem.CanUpdateProgress(playerProgress);
@@ -496,56 +496,118 @@ namespace TriviaExercise
             // Don't process during loading
             if (isLoadingSettings) return;
 
-            // Save the new setting first
-            if (double.TryParse(PreQuestionAlertTextBox.Text, out double alertMinutes))
+            // Parse the alert minutes with better error handling
+            double alertMinutes = 0;
+            bool isValidValue = false;
+
+            // Try parsing with current culture first, then with invariant culture
+            if (double.TryParse(PreQuestionAlertTextBox.Text, out alertMinutes))
             {
-                appSettings.PreQuestionAlertMinutes = alertMinutes;
+                isValidValue = true;
+            }
+            else if (double.TryParse(PreQuestionAlertTextBox.Text, System.Globalization.NumberStyles.Float,
+                                   System.Globalization.CultureInfo.InvariantCulture, out alertMinutes))
+            {
+                isValidValue = true;
             }
 
-            // Update pre-question alert if timer is running and sounds are enabled
-            if (timerManager.QuestionTimer?.IsActive == true && appSettings.SoundsEnabled)
+            if (isValidValue && alertMinutes >= 0)
             {
-                if (alertMinutes > 0)
+                // Update settings
+                appSettings.PreQuestionAlertMinutes = alertMinutes;
+
+                // Debug output
+                System.Diagnostics.Debug.WriteLine($"Pre-question alert set to {alertMinutes} minutes ({alertMinutes * 60} seconds)");
+
+                // Update pre-question alert if timer is running and sounds are enabled
+                if (timerManager.QuestionTimer?.IsActive == true && appSettings.SoundsEnabled)
                 {
-                    if (int.TryParse(IntervalTextBox.Text, out int questionIntervalMinutes) && questionIntervalMinutes > 0)
+                    if (alertMinutes > 0)
                     {
-                        var questionInterval = TimeSpan.FromMinutes(questionIntervalMinutes);
-                        var alertOffset = TimeSpan.FromMinutes(alertMinutes);
-
-                        // Calculate remaining time until next question
-                        var timeUntilNextQuestion = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
-
-                        if (timerManager.PreQuestionTimer != null)
+                        if (int.TryParse(IntervalTextBox.Text, out int questionIntervalMinutes) && questionIntervalMinutes > 0)
                         {
-                            // Update the alert offset first
-                            timerManager.PreQuestionTimer.UpdateAlertOffset(alertOffset);
-                            // Then set it for the remaining time
-                            timerManager.PreQuestionTimer.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
-                            // Ensure it's activated
-                            if (!timerManager.PreQuestionTimer.IsActive)
+                            var questionInterval = TimeSpan.FromMinutes(questionIntervalMinutes);
+                            var alertOffset = TimeSpan.FromMinutes(alertMinutes);
+
+                            // Validate that alert offset is less than question interval
+                            if (alertOffset >= questionInterval)
                             {
-                                timerManager.PreQuestionTimer.Activate();
-                                System.Diagnostics.Debug.WriteLine("Force-activated pre-question alert timer");
+                                StatusTextBox.Text += $"\n🔕 Pre-question alert disabled - alert time ({alertMinutes}min) >= question interval ({questionIntervalMinutes}min)";
+                                timerManager.PreQuestionTimer?.Deactivate();
+                                SaveApplicationSettings();
+                                return;
                             }
-                        }
-                        else
-                        {
-                            // Create new timer and set for remaining time
-                            timerManager.InitializePreQuestionTimer(questionInterval, alertOffset);
-                            timerManager.PreQuestionTimer?.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
-                            timerManager.PreQuestionTimer?.Activate();
-                            System.Diagnostics.Debug.WriteLine("Created and activated new pre-question alert timer");
-                        }
 
-                        StatusTextBox.Text += $"\n🔔 Pre-question alert updated to {alertMinutes} minutes before each question";
+                            // Calculate remaining time until next question
+                            var timeUntilNextQuestion = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
+
+                            if (timerManager.PreQuestionTimer != null)
+                            {
+                                // Update the alert offset first
+                                timerManager.PreQuestionTimer.UpdateAlertOffset(alertOffset);
+
+                                // Then set it for the remaining time if there's enough time left
+                                if (timeUntilNextQuestion > alertOffset)
+                                {
+                                    timerManager.PreQuestionTimer.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
+
+                                    // Ensure it's activated
+                                    if (!timerManager.PreQuestionTimer.IsActive)
+                                    {
+                                        timerManager.PreQuestionTimer.Activate();
+                                        System.Diagnostics.Debug.WriteLine("Force-activated pre-question alert timer");
+                                    }
+                                }
+                                else
+                                {
+                                    // Not enough time remaining for this alert
+                                    timerManager.PreQuestionTimer.Deactivate();
+                                    System.Diagnostics.Debug.WriteLine($"Not enough time remaining ({timeUntilNextQuestion.TotalMinutes:F1}min) for alert ({alertMinutes}min)");
+                                }
+                            }
+                            else
+                            {
+                                // Create new timer and set for remaining time
+                                timerManager.InitializePreQuestionTimer(questionInterval, alertOffset);
+
+                                // Only set for remaining time if there's enough time left
+                                if (timeUntilNextQuestion > alertOffset)
+                                {
+                                    timerManager.PreQuestionTimer?.UpdateForRemainingQuestionTime(timeUntilNextQuestion);
+                                    timerManager.PreQuestionTimer?.Activate();
+                                    System.Diagnostics.Debug.WriteLine("Created and activated new pre-question alert timer");
+                                }
+                                else
+                                {
+                                    System.Diagnostics.Debug.WriteLine($"Created pre-question alert timer but not enough time remaining for this cycle");
+                                }
+                            }
+
+                            StatusTextBox.Text += $"\n🔔 Pre-question alert updated to {alertMinutes} minutes ({alertMinutes * 60} seconds) before each question";
+                        }
+                    }
+                    else
+                    {
+                        // Zero alert time - disable timer
+                        timerManager.PreQuestionTimer?.Deactivate();
+                        StatusTextBox.Text += "\n🔕 Pre-question alert disabled (set to 0)";
                     }
                 }
-                else
+                else if (alertMinutes > 0 && !appSettings.SoundsEnabled)
                 {
-                    // Invalid or zero alert time - disable timer
-                    timerManager.PreQuestionTimer?.Deactivate();
-                    StatusTextBox.Text += "\n🔕 Pre-question alert disabled (invalid time)";
+                    StatusTextBox.Text += "\n🔕 Pre-question alert configured but sounds are disabled";
                 }
+            }
+            else
+            {
+                // Invalid value entered
+                System.Diagnostics.Debug.WriteLine($"Invalid pre-question alert value: '{PreQuestionAlertTextBox.Text}'");
+
+                // Don't save invalid values
+                if (isLoadingSettings) return;
+
+                // Could optionally show a warning or reset to a default value
+                StatusTextBox.Text += $"\n⚠️ Invalid alert time value: '{PreQuestionAlertTextBox.Text}'";
             }
 
             SaveApplicationSettings();

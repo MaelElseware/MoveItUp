@@ -273,37 +273,50 @@ namespace TriviaExercise.Helpers
         /// Update the alert timer based on when the next question is due
         /// </summary>
         /// <param name="timeUntilNextQuestion">How much time is left until the next question</param>
+        /// <summary>
+        /// Update the alert timer based on when the next question is due
+        /// </summary>
+        /// <param name="timeUntilNextQuestion">How much time is left until the next question</param>
         public void UpdateForRemainingQuestionTime(TimeSpan timeUntilNextQuestion)
         {
             var timeUntilAlert = timeUntilNextQuestion - alertOffset;
 
+            System.Diagnostics.Debug.WriteLine($"UpdateForRemainingQuestionTime: timeUntilNextQuestion={timeUntilNextQuestion.TotalMinutes:F2}min, alertOffset={alertOffset.TotalMinutes:F2}min, timeUntilAlert={timeUntilAlert.TotalMinutes:F2}min");
+
             if (timeUntilAlert > TimeSpan.Zero)
             {
                 bool wasActive = IsActive;
+
+                // Stop current timer if running
                 if (wasActive)
                 {
-                    Deactivate();
+                    timer.Stop();
                 }
 
-                // Update the interval property and timer
+                // Update the interval property and timer with the calculated time
                 interval = timeUntilAlert;
                 timer.Interval = timeUntilAlert;
                 nextTriggerTime = DateTime.Now.Add(timeUntilAlert);
 
+                // Restart if it was active
                 if (wasActive)
                 {
                     timer.Start();
+                    IsPaused = false;
                     OnStateChanged(TimerState.Active);
-                    System.Diagnostics.Debug.WriteLine($"Pre-question alert restarted to fire in {timeUntilAlert}");
+                    System.Diagnostics.Debug.WriteLine($"Pre-question alert restarted to fire in {timeUntilAlert.TotalSeconds:F1} seconds ({timeUntilAlert.TotalMinutes:F2} minutes)");
                 }
 
-                System.Diagnostics.Debug.WriteLine($"Pre-question alert set to fire in {timeUntilAlert} (question in {timeUntilNextQuestion}, alert offset {alertOffset})");
+                System.Diagnostics.Debug.WriteLine($"Pre-question alert configured: will fire at {nextTriggerTime:HH:mm:ss.fff} (in {timeUntilAlert.TotalSeconds:F1}s)");
             }
             else
             {
                 // Not enough time left for an alert
-                Deactivate();
-                System.Diagnostics.Debug.WriteLine($"Pre-question alert skipped - not enough time remaining ({timeUntilNextQuestion}) for alert offset ({alertOffset})");
+                if (IsActive)
+                {
+                    Deactivate();
+                }
+                System.Diagnostics.Debug.WriteLine($"Pre-question alert skipped - not enough time remaining ({timeUntilNextQuestion.TotalMinutes:F1}min) for alert offset ({alertOffset.TotalMinutes:F1}min)");
             }
         }
 
