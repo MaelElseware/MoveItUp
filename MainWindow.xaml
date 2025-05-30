@@ -151,18 +151,35 @@
             <Setter Property="BorderBrush" Value="#BDC3C7"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
-                        <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
+                        <Border x:Name="Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4">
                             <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"/>
                         </Border>
                         <ControlTemplate.Triggers>
+                            <!-- Hover effect - same as ComboBox -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#3498DB"/>
+                            </Trigger>
+
+                            <!-- Focus effect -->
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="BorderBrush" Value="#3498DB"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#3498DB"/>
+                            </Trigger>
+
+                            <!-- Disabled state -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#F8F9FA"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#E9ECEF"/>
+                                <Setter Property="Foreground" Value="#95A5A6"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -476,7 +493,7 @@
                 <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
-                            <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="141" />
+                            <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
                             <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
                                      Style="{StaticResource ModernTextBox}"
                                      VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" ToolTip="At which interval question (and thus exercises) will pop ?"/>
