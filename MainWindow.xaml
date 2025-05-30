@@ -587,8 +587,8 @@
                 <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                            <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="81" FontWeight="Medium"/>
-                            <TextBox x:Name="DataFolderPathTextBox" Width="325" Height="30"
+                            <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
+                            <TextBox x:Name="DataFolderPathTextBox" Width="335" Height="25" IsReadOnly="True" Padding="2,1,2,2"
                      Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" ToolTip="where the question and exercise json are located (by default your app location)"/>
                             <Button x:Name="BrowseFolderButton" Content="Browse" Width="80"
                     Style="{StaticResource SecondaryButton}"
