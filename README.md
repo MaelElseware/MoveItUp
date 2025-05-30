@@ -15,7 +15,7 @@ Rather than relying on willpower alone (which I clearly lack of), I created this
 
 Move It Up! periodically reminds you to wake up and do a small exercise, using trivia questions from various categories to keep you engaged. Based on whether you answer correctly or incorrectly, you'll be prompted to do different physical exercises.
 
-![AppScreenshot](https://github.com/user-attachments/assets/0e31f315-9597-4abf-abb4-3bd64d6f5425)
+![AppScreenshot](https://github.com/user-attachments/assets/4ccb616b-8353-4682-9d7c-ef4e12f43d1e)
 
 *The main control panel showing timer settings, progress tracking, and category statistics*
 
