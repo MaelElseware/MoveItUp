@@ -1539,6 +1539,17 @@ namespace TriviaExercise
         {
             DragMove();
         }
+
+        // Title bar button event handlers
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             // Clean disposal

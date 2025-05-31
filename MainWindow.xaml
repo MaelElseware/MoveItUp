@@ -4,11 +4,67 @@
         Title="Move It Up !" Width="530" MaxHeight="700"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Background="WhiteSmoke"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        SizeToContent="Height">
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        SizeToContent="Height"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
     <Window.Resources>
+        <!-- Custom Title Bar Button Style -->
+        <Style x:Key="TitleBarButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="46"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E5E5E5"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Close Button Style (Red on hover) -->
+        <Style x:Key="CloseButton" TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="0,8,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF746C"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#C50E1F"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!-- Modern GroupBox Style -->
         <Style x:Key="ModernGroupBox" TargetType="GroupBox">
             <Setter Property="Background" Value="White"/>
@@ -404,253 +460,310 @@
 
     </Window.Resources>
 
-    <Grid Margin="10,7,10,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <!-- Main window container with custom title bar -->
+    <Border Background="WhiteSmoke" CornerRadius="8" BorderThickness="1" BorderBrush="#E0E0E0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <!-- Custom title bar height -->
+                <RowDefinition Height="*"/>
+                <!-- Main content -->
+            </Grid.RowDefinitions>
 
-        <!-- Header -->
-        <Border Grid.Row="0" 
+            <!-- Custom Title Bar -->
+            <Border Grid.Row="0" Background="#F8F9FA" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" CornerRadius="8,8,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <!-- Left padding -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- App icon -->
+                        <ColumnDefinition Width="10"/>
+                        <!-- Icon padding -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Title -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Window controls -->
+                    </Grid.ColumnDefinitions>
 
-        BorderThickness="0,0,0,1" 
-        Padding="15,5" 
-        Margin="0,0,0,5">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="🏃‍♂️" FontSize="32" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
-                <TextBlock Text="Move It Up !" 
-                   FontSize="32" 
-                   FontWeight="Thin" 
-                   Foreground="#2C3E50" 
-                   HorizontalAlignment="Center"
-                   Margin="0,0,0,0"/>
-            </StackPanel>
-        </Border>
+                    <!-- App Icon -->
+                    <TextBlock Grid.Column="1" Text="" FontSize="16" VerticalAlignment="Center"/>
 
-        <!-- Control Buttons -->
-        <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
-                BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="StartButton" Content="Start Timer" Width="110" Height="35" 
-                        Style="{StaticResource ModernButton}"
-                        Margin="0,0,10,0" Click="StartButton_Click"/>
-                <Button x:Name="StopButton" Content="Stop Timer" Width="110" Height="35" 
-                        Style="{StaticResource SecondaryButton}"
-                        Margin="0,0,10,0" Click="StopButton_Click" IsEnabled="False"/>
-                <Button x:Name="TestButton" Content="Quizz me" Width="110" Height="35" 
-                        Style="{StaticResource TestButton}"
-                        Click="TestButton_Click"/>
-            </StackPanel>
-        </Border>
+                    <!-- Window Title -->
+                    <TextBlock Grid.Column="3" Text="" 
+                               FontSize="14" FontWeight="SemiBold" 
+                               Foreground="#2C3E50" 
+                               VerticalAlignment="Center"
+                               x:Name="TitleBarTitle"/>
 
-        <!-- Scrollable Content Area -->
-        <ScrollViewer x:Name="MainScrollView" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
-            <StackPanel>
+                    <!-- Window Control Buttons -->
+                    <StackPanel Grid.Column="4" Orientation="Horizontal">
+                        <!-- Minimize Button -->
+                        <Button x:Name="MinimizeButton" 
+                                Style="{StaticResource TitleBarButton}"
+                                Content="&#xE921;" 
+                                ToolTip="Minimize"
+                                Click="MinimizeButton_Click"/>
 
-                <!-- Player Progress -->
-                <GroupBox Header="Player Progress" Style="{StaticResource NoNameModernGroupBox}" Margin="0,0,0,5" BorderBrush="#BFE0E0E0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="457*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
+                        <!-- Close Button -->
+                        <Button x:Name="CloseButton" 
+                                Style="{StaticResource CloseButton}"
+                                Content="&#xE8BB;" 
+                                ToolTip="Close"
+                                Click="CloseButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-                        <!-- Main Status -->
-                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,7" Grid.Column="1" Width="Auto">
-                            <TextBlock x:Name="PlayerTitleTextBlock" 
-                                       Text="Level 1 | Knowledge Seeker | 0 pts" 
-                                       Margin="0,-4,0,-2"
-                                       FontSize="15" FontWeight="Thin" 
-                                       Foreground="#2C3E50" FontFamily="Ink Free" Width="Auto"/>
-                        </StackPanel>
+            <!-- Main Content Area -->
+            <Grid Grid.Row="1" Margin="10,7,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                        <!-- Category Details -->
-                        <Border Grid.Row="1" Background="#F8F9FA" BorderBrush="#E9ECEF" 
-                                BorderThickness="1" CornerRadius="4" Padding="10" Grid.ColumnSpan="2">
-                            <ScrollViewer MaxHeight="120" VerticalScrollBarVisibility="Auto">
-                                <TextBlock x:Name="CategoryProgressTextBlock" 
-                                           Text="Category progress loading..."
-                                           FontSize="11" FontFamily="Consolas"
-                                           TextWrapping="Wrap"/>
-                            </ScrollViewer>
-                        </Border>
-                    </Grid>
-                </GroupBox>
+                <!-- Header -->
+                <Border Grid.Row="0" 
+                BorderThickness="0,0,0,1" 
+                Padding="15,5" 
+                Margin="0,-2,0,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="🏃‍♂️" FontSize="32" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
+                        <TextBlock Text="Move It Up !" 
+                           FontSize="32" 
+                           FontWeight="Thin" 
+                           Foreground="#2C3E50" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,0"/>
+                    </StackPanel>
+                </Border>
 
-                <!-- Timer Status -->
+                <!-- Control Buttons -->
                 <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
                         BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="StartButton" Content="Start Timer" Width="110" Height="35" 
+                                Style="{StaticResource ModernButton}"
+                                Margin="0,0,10,0" Click="StartButton_Click"/>
+                        <Button x:Name="StopButton" Content="Stop Timer" Width="110" Height="35" 
+                                Style="{StaticResource SecondaryButton}"
+                                Margin="0,0,10,0" Click="StopButton_Click" IsEnabled="False"/>
+                        <Button x:Name="TestButton" Content="Quizz me" Width="110" Height="35" 
+                                Style="{StaticResource TestButton}"
+                                Click="TestButton_Click"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Scrollable Content Area -->
+                <ScrollViewer x:Name="MainScrollView" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
                     <StackPanel>
-                        <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,0" Text="Timer not running" Foreground="#2C3E50" TextAlignment="Center"/>
-                        <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#27AE60" TextAlignment="Center"/>
-                        <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 
-                                   Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22" TextAlignment="Center"/>
+
+                        <!-- Player Progress -->
+                        <GroupBox Header="Player Progress" Style="{StaticResource NoNameModernGroupBox}" Margin="0,0,0,5" BorderBrush="#BFE0E0E0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="457*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- Main Status -->
+                                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,7" Grid.Column="1" Width="Auto">
+                                    <TextBlock x:Name="PlayerTitleTextBlock" 
+                                               Text="Level 1 | Knowledge Seeker | 0 pts" 
+                                               Margin="0,-4,0,-2"
+                                               FontSize="15" FontWeight="Thin" 
+                                               Foreground="#2C3E50" FontFamily="Ink Free" Width="Auto"/>
+                                </StackPanel>
+
+                                <!-- Category Details -->
+                                <Border Grid.Row="1" Background="#F8F9FA" BorderBrush="#E9ECEF" 
+                                        BorderThickness="1" CornerRadius="4" Padding="10" Grid.ColumnSpan="2">
+                                    <ScrollViewer MaxHeight="120" VerticalScrollBarVisibility="Auto">
+                                        <TextBlock x:Name="CategoryProgressTextBlock" 
+                                                   Text="Category progress loading..."
+                                                   FontSize="11" FontFamily="Consolas"
+                                                   TextWrapping="Wrap"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </GroupBox>
+
+                        <!-- Timer Status -->
+                        <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
+                                BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
+                            <StackPanel>
+                                <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
+                                           Margin="0,0,0,0" Text="Timer not running" Foreground="#2C3E50" TextAlignment="Center"/>
+                                <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
+                                           Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#27AE60" TextAlignment="Center"/>
+                                <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 
+                                           Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22" TextAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Toggle Options with Soft Gray Line -->
+                        <Border 
+                                BorderBrush="#E9ECEF" 
+                                BorderThickness="0,2,0,2" 
+                                Margin="0,-5,0,8">
+                            <StackPanel Orientation="Horizontal" 
+                                        HorizontalAlignment="Center"
+                                        x:Name="ToggleOptionsLink"
+                                        Cursor="Hand"
+                                        MouseLeftButtonDown="ToggleOptionsTextBlock_MouseLeftButtonDown">
+                                <TextBlock x:Name="ToggleOptionsTextBlock" 
+                                           Text="Show options ▼" 
+                                           FontSize="13" 
+                                           FontWeight="Medium"
+                                           Foreground="#007ACC"
+                                           VerticalAlignment="Center"
+                                           TextDecorations="None"/>
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Opacity" Value="0.8"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel x:Name="OptionsPanel" Visibility="Visible">
+                            <!-- Timer Settings -->
+                            <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="At which interval question (and thus exercises) will pop ?">
+                                        <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
+                                        <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
+                                             Style="{StaticResource ModernTextBox}"
+                                             VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" />
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Don't forget to drink ! Simple window reminder will pop every X minutes">
+                                        <CheckBox x:Name="DrinkReminderCheckBox" Content="Drink reminder every" Width="140"
+                                              VerticalAlignment="Center" Margin="0,0,0,0" 
+                                              Checked="DrinkReminderCheckBox_CheckedChanged" 
+                                              Unchecked="DrinkReminderCheckBox_CheckedChanged"/>
+                                        <TextBox x:Name="DrinkIntervalTextBox" Text="90" Width="60" Height="25" 
+                                             Style="{StaticResource ModernTextBox}"
+                                             VerticalAlignment="Center" TextChanged="DrinkIntervalTextBox_TextChanged" />
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" ToolTip="A nice and soothing sound before the exercise arrive, so you'll be prepared. Set to 0 to remove behavior.">
+                                        <TextBlock Text="Pre-question alert:" VerticalAlignment="Center" Width="140"/>
+                                        <TextBox x:Name="PreQuestionAlertTextBox" Text="1" Width="60" Height="25"
+                                             Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
+                                             TextChanged="PreQuestionAlertTextBox_TextChanged" />
+                                        <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- Exercise Settings -->
+                            <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
+                                <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
+                                    <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
+                                    <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
+                                          Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
+                                          ItemContainerStyle="{StaticResource ModernComboBoxItem}"
+                                          SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
+                                        <ComboBoxItem Content="Easy" Tag="Easy"/>
+                                        <ComboBoxItem Content="Medium" Tag="Medium"/>
+                                        <ComboBoxItem Content="Hard" Tag="Hard"/>
+                                        <ComboBoxItem Content="Match Question" Tag="MatchQuestion" IsSelected="True"/>
+                                        <ComboBoxItem Content="Mixed (Random)" Tag="Mixed"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- Inactivity Monitoring Settings -->
+                            <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFEEF0CD" Margin="0,0,0,5">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Determines what happens to the timer when you are inactive (past the inactivity threshold) ?">
+                                        <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="140"/>
+                                        <ComboBox x:Name="ActivityBehaviorComboBox" Width="200" Height="25"
+                              Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
+                              ItemContainerStyle="{StaticResource ModernComboBoxItem}"
+                              SelectionChanged="ActivityBehaviorComboBox_SelectionChanged" >
+                                            <ComboBoxItem Content="Disabled" Tag="Disabled"/>
+                                            <ComboBoxItem Content="Pause Only" Tag="PauseOnly"/>
+                                            <ComboBoxItem Content="Pause + Reset" Tag="PauseAndReset" IsSelected="True"/>
+                                        </ComboBox>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" ToolTip="After how many minutes you are considered inactive and the timer adapts (depending on the behavior set atop)">
+                                        <TextBlock Text="Inactivity threshold:" VerticalAlignment="Center" Width="140"/>
+                                        <TextBox x:Name="InactivityThresholdTextBox" Text="5" Width="60" Height="25"
+                             Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"
+                             TextChanged="InactivityThresholdTextBox_TextChanged" />
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- Application Settings -->
+                            <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
+                                <StackPanel>
+                                    <CheckBox x:Name="DiscordRichPresenceCheckBox" Content="🎮 Enable Discord Rich Presence" 
+                                          Checked="DiscordRichPresenceCheckBox_CheckedChanged" Unchecked="DiscordRichPresenceCheckBox_CheckedChanged" 
+                                          Margin="0,0,0,8" ToolTip="Enable rich presence - Basically showing on discord your level and main title."/>
+                                    <CheckBox x:Name="SoundsEnabledCheckBox" Content="🔊 Enable sound effects" 
+                                          Margin="0,0,0,8"
+                                          Checked="SoundsEnabledCheckBox_CheckedChanged"
+                                          Unchecked="SoundsEnabledCheckBox_CheckedChanged" ToolTip="enable or disable all sound effects started via the app."/>
+                                    <CheckBox x:Name="StartMinimizedCheckBox" Content="Start minimized to system tray" 
+                                          Margin="0,0,0,8"
+                                          Checked="StartMinimizedCheckBox_CheckedChanged"
+                                          Unchecked="StartMinimizedCheckBox_CheckedChanged" ToolTip="Will always start minimized apon launch. (doesn't need to be set when the app is started by window on startup."/>
+                                    <CheckBox x:Name="StartupCheckBox" Content="Start with Windows" 
+                                          Checked="StartupCheckBox_CheckedChanged" 
+                                          Unchecked="StartupCheckBox_CheckedChanged" ToolTip="Do we start the app with window ? Will always start minimized (to the tray)"/>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- File Settings -->
+                            <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto" ToolTip="where the question and exercise json are located (by default your app location)">
+                                        <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
+                                        <TextBox x:Name="DataFolderPathTextBox" Width="295" Height="25" IsReadOnly="True" Padding="2,1,2,2"
+                             Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"/>
+                                        <Button x:Name="BrowseFolderButton" Content="Browse" Width="80"
+                            Style="{StaticResource SecondaryButton}"
+                            Margin="10,0,0,0" Click="BrowseFolderButton_Click"/>
+                                    </StackPanel>
+
+                                    <TextBlock x:Name="LoadedFilesTextBlock"
+                                           Text=""
+                                           TextWrapping="Wrap" 
+                                           Foreground="#666666" 
+                                           FontSize="11" 
+                                           Margin="0,0,0,0"/>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- Status Log -->
+                            <GroupBox Header="Status Log" Style="{StaticResource ModernGroupBox}" Margin="0,0,0,5">
+                                <TextBox x:Name="StatusTextBox" IsReadOnly="True" 
+                                     TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                                     Background="#FAFAFA" BorderBrush="#E0E0E0"
+                                     MinHeight="100" MaxHeight="150"
+                                     Padding="8" FontFamily="Consolas" FontSize="11"
+                                     TextChanged="StatusTextBox_TextChanged"/>
+                            </GroupBox>
+                        </StackPanel>
                     </StackPanel>
-                </Border>
-
-                <!-- Toggle Options with Soft Gray Line -->
-                <Border 
-                        BorderBrush="#E9ECEF" 
-                        BorderThickness="0,2,0,2" 
-                        Margin="0,-5,0,8">
-                    <StackPanel Orientation="Horizontal" 
-                                HorizontalAlignment="Center"
-                                x:Name="ToggleOptionsLink"
-                                Cursor="Hand"
-                                MouseLeftButtonDown="ToggleOptionsTextBlock_MouseLeftButtonDown">   
-                        <TextBlock x:Name="ToggleOptionsTextBlock" 
-                                   Text="Show options ▼" 
-                                   FontSize="13" 
-                                   FontWeight="Medium"
-                                   Foreground="#007ACC"
-                                   VerticalAlignment="Center"
-                                   TextDecorations="None"/>
-                        <StackPanel.Style>
-                            <Style TargetType="StackPanel">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Opacity" Value="0.8"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </StackPanel.Style>
-                    </StackPanel>
-                </Border>
-
-                <StackPanel x:Name="OptionsPanel" Visibility="Visible">
-                    <!-- Timer Settings -->
-                    <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="At which interval question (and thus exercises) will pop ?">
-                                <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
-                                <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
-                                     Style="{StaticResource ModernTextBox}"
-                                     VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" />
-                                <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
-                            </StackPanel>
-
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Don't forget to drink ! Simple window reminder will pop every X minutes">
-                                <CheckBox x:Name="DrinkReminderCheckBox" Content="Drink reminder every" Width="140"
-                                      VerticalAlignment="Center" Margin="0,0,0,0" 
-                                      Checked="DrinkReminderCheckBox_CheckedChanged" 
-                                      Unchecked="DrinkReminderCheckBox_CheckedChanged"/>
-                                <TextBox x:Name="DrinkIntervalTextBox" Text="90" Width="60" Height="25" 
-                                     Style="{StaticResource ModernTextBox}"
-                                     VerticalAlignment="Center" TextChanged="DrinkIntervalTextBox_TextChanged" />
-                                <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
-                            </StackPanel>
-
-                            <StackPanel Orientation="Horizontal" ToolTip="A nice and soothing sound before the exercise arrive, so you'll be prepared. Set to 0 to remove behavior.">
-                                <TextBlock Text="Pre-question alert:" VerticalAlignment="Center" Width="140"/>
-                                <TextBox x:Name="PreQuestionAlertTextBox" Text="1" Width="60" Height="25"
-                                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
-                                     TextChanged="PreQuestionAlertTextBox_TextChanged" />
-                                <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <!-- Exercise Settings -->
-                    <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
-                        <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
-                            <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
-                            <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
-                                  Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
-                                  ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                                  SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
-                                <ComboBoxItem Content="Easy" Tag="Easy"/>
-                                <ComboBoxItem Content="Medium" Tag="Medium"/>
-                                <ComboBoxItem Content="Hard" Tag="Hard"/>
-                                <ComboBoxItem Content="Match Question" Tag="MatchQuestion" IsSelected="True"/>
-                                <ComboBoxItem Content="Mixed (Random)" Tag="Mixed"/>
-                            </ComboBox>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <!-- Inactivity Monitoring Settings -->
-                    <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFEEF0CD" Margin="0,0,0,5">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Determines what happens to the timer when you are inactive (past the inactivity threshold) ?">
-                                <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="140"/>
-                                <ComboBox x:Name="ActivityBehaviorComboBox" Width="200" Height="25"
-                      Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
-                      ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                      SelectionChanged="ActivityBehaviorComboBox_SelectionChanged" >
-                                    <ComboBoxItem Content="Disabled" Tag="Disabled"/>
-                                    <ComboBoxItem Content="Pause Only" Tag="PauseOnly"/>
-                                    <ComboBoxItem Content="Pause + Reset" Tag="PauseAndReset" IsSelected="True"/>
-                                </ComboBox>
-                            </StackPanel>
-
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" ToolTip="After how many minutes you are considered inactive and the timer adapts (depending on the behavior set atop)">
-                                <TextBlock Text="Inactivity threshold:" VerticalAlignment="Center" Width="140"/>
-                                <TextBox x:Name="InactivityThresholdTextBox" Text="5" Width="60" Height="25"
-                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"
-                     TextChanged="InactivityThresholdTextBox_TextChanged" />
-                                <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <!-- Application Settings -->
-                    <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
-                        <StackPanel>
-                            <CheckBox x:Name="DiscordRichPresenceCheckBox" Content="🎮 Enable Discord Rich Presence" 
-                                  Checked="DiscordRichPresenceCheckBox_CheckedChanged" Unchecked="DiscordRichPresenceCheckBox_CheckedChanged" 
-                                  Margin="0,0,0,8" ToolTip="Enable rich presence - Basically showing on discord your level and main title."/>
-                            <CheckBox x:Name="SoundsEnabledCheckBox" Content="🔊 Enable sound effects" 
-                                  Margin="0,0,0,8"
-                                  Checked="SoundsEnabledCheckBox_CheckedChanged"
-                                  Unchecked="SoundsEnabledCheckBox_CheckedChanged" ToolTip="enable or disable all sound effects started via the app."/>
-                            <CheckBox x:Name="StartMinimizedCheckBox" Content="Start minimized to system tray" 
-                                  Margin="0,0,0,8"
-                                  Checked="StartMinimizedCheckBox_CheckedChanged"
-                                  Unchecked="StartMinimizedCheckBox_CheckedChanged" ToolTip="Will always start minimized apon launch. (doesn't need to be set when the app is started by window on startup."/>
-                            <CheckBox x:Name="StartupCheckBox" Content="Start with Windows" 
-                                  Checked="StartupCheckBox_CheckedChanged" 
-                                  Unchecked="StartupCheckBox_CheckedChanged" ToolTip="Do we start the app with window ? Will always start minimized (to the tray)"/>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <!-- File Settings -->
-                    <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto" ToolTip="where the question and exercise json are located (by default your app location)">
-                                <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
-                                <TextBox x:Name="DataFolderPathTextBox" Width="295" Height="25" IsReadOnly="True" Padding="2,1,2,2"
-                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"/>
-                                <Button x:Name="BrowseFolderButton" Content="Browse" Width="80"
-                    Style="{StaticResource SecondaryButton}"
-                    Margin="10,0,0,0" Click="BrowseFolderButton_Click"/>
-                            </StackPanel>
-
-                            <TextBlock x:Name="LoadedFilesTextBlock"
-                                   Text=""
-                                   TextWrapping="Wrap" 
-                                   Foreground="#666666" 
-                                   FontSize="11" 
-                                   Margin="0,0,0,0"/>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <!-- Status Log -->
-                    <GroupBox Header="Status Log" Style="{StaticResource ModernGroupBox}" Margin="0,0,0,5">
-                        <TextBox x:Name="StatusTextBox" IsReadOnly="True" 
-                             TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
-                             Background="#FAFAFA" BorderBrush="#E0E0E0"
-                             MinHeight="100" MaxHeight="150"
-                             Padding="8" FontFamily="Consolas" FontSize="11"
-                             TextChanged="StatusTextBox_TextChanged"/>
-                    </GroupBox>
-                </StackPanel>
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>
