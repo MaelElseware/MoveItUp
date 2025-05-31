@@ -11,9 +11,12 @@ We all tend to ignore notifications so asking a general culture question seemed 
 But don't worry, the app will tell you X minutes (configurable) before a new exercise happens and if you are in a meeting you can using the window tray context menu to reset the timer.
 The app also features an inactivity checker (mouse and keyboard input) which will stop the timer if you are gone for Y minutes (configurable).
 
-![AppScreenshot](https://github.com/user-attachments/assets/4ccb616b-8353-4682-9d7c-ef4e12f43d1e)
+
+![AppScreenshot](https://github.com/user-attachments/assets/1c8a9c3f-d542-4692-83a8-610df5775d1e)
 
 *The main control panel showing timer settings, progress tracking, and category statistics*
+
+
 
 ### Key Features
 
