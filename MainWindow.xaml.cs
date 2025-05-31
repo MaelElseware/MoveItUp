@@ -674,6 +674,7 @@ namespace TriviaExercise
                 "Drink Reminder", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        // ================================== TRAY =========================================
         private void InitializeSystemTray()
         {
             notifyIcon = new NotifyIcon();
@@ -704,10 +705,153 @@ namespace TriviaExercise
 
             var contextMenu = new ContextMenuStrip();
             contextMenu.Items.Add("Show", null, (s, e) => ShowWindow());
+
+            // Add Stop Timer option - only show if timer is running
+            var stopTimerItem = contextMenu.Items.Add("Stop Timer", null, (s, e) => StopTimerFromTray());
+            stopTimerItem.Name = "StopTimerItem";
+
+            // Add Start Timer option - only show if timer is not running
+            var startTimerItem = contextMenu.Items.Add("Start Timer", null, (s, e) => StartTimerFromTray());
+            startTimerItem.Name = "StartTimerItem";
+
+            // Add Reset Timer option - only show if timer is running
+            var resetTimerItem = contextMenu.Items.Add("Reset Timer", null, (s, e) => ResetTimerFromTray());
+            resetTimerItem.Name = "ResetTimerItem";
+
+            contextMenu.Items.Add("-"); // Separator
             contextMenu.Items.Add("Exit", null, (s, e) => System.Windows.Application.Current.Shutdown());
+
+            // Update context menu when it's about to show
+            contextMenu.Opening += ContextMenu_Opening;
+
             notifyIcon.ContextMenuStrip = contextMenu;
         }
 
+        private void ContextMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var contextMenu = sender as ContextMenuStrip;
+            if (contextMenu == null) return;
+
+            // Find the timer control items
+            var stopTimerItem = contextMenu.Items.Find("StopTimerItem", false).FirstOrDefault();
+            var startTimerItem = contextMenu.Items.Find("StartTimerItem", false).FirstOrDefault();
+            var resetTimerItem = contextMenu.Items.Find("ResetTimerItem", false).FirstOrDefault();
+
+            if (stopTimerItem != null && startTimerItem != null && resetTimerItem != null)
+            {
+                // Show/hide based on timer state
+                bool isTimerRunning = timerManager?.QuestionTimer?.IsActive == true;
+
+                stopTimerItem.Visible = isTimerRunning;
+                startTimerItem.Visible = !isTimerRunning;
+                resetTimerItem.Visible = isTimerRunning; // Only show reset when timer is running
+
+                // Update text to show current status
+                if (isTimerRunning)
+                {
+                    var timeUntilNext = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
+                    if (timeUntilNext.TotalSeconds > 0)
+                    {
+                        string timeText = timeUntilNext.TotalHours >= 1
+                            ? $"{(int)timeUntilNext.TotalHours}h {timeUntilNext.Minutes}m"
+                            : $"{timeUntilNext.Minutes}m {timeUntilNext.Seconds}s";
+                        stopTimerItem.Text = $"Stop Timer (next in {timeText})";
+                        resetTimerItem.Text = $"Reset Timer (restart countdown)";
+                    }
+                    else
+                    {
+                        stopTimerItem.Text = "Stop Timer (due now)";
+                        resetTimerItem.Text = "Reset Timer (restart countdown)";
+                    }
+                }
+                else
+                {
+                    startTimerItem.Text = "Start Timer";
+                }
+            }
+        }
+
+        private void StopTimerFromTray()
+        {
+            // Use the existing stop button logic
+            StopButton_Click(null, null);
+
+            // Update tray icon tooltip to show stopped state
+            notifyIcon.Text = "Move It Up ! - Timer Stopped";
+
+            // Optional: Show a balloon tip notification
+            notifyIcon.ShowBalloonTip(2000, "Timer Stopped",
+                "The exercise timer has been stopped.", ToolTipIcon.Info);
+        }
+
+        private void StartTimerFromTray()
+        {
+            // Use the existing start button logic
+            StartButton_Click(null, null);
+
+            // Update tray icon tooltip
+            notifyIcon.Text = "Move It Up ! - Timer Running";
+
+            // Optional: Show a balloon tip notification
+            notifyIcon.ShowBalloonTip(2000, "Timer Started",
+                "The exercise timer has been started.", ToolTipIcon.Info);
+        }
+
+        private void ResetTimerFromTray()
+        {
+            // Check if timer is running before resetting
+            if (timerManager?.QuestionTimer?.IsActive == true)
+            {
+                // Reset all timers (this restarts the countdown)
+                timerManager.ResetAll();
+
+                // Restart pre-question alert if needed
+                if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+                {
+                    StartPreQuestionAlert();
+                }
+
+                // Update tray icon tooltip
+                UpdateTrayIconTooltip();
+
+                // Show a balloon tip notification
+                notifyIcon.ShowBalloonTip(2000, "Timer Reset",
+                    "The exercise timer has been reset and restarted.", ToolTipIcon.Info);
+
+                // Add to status log (if we could access it)
+                // Since we can't easily access StatusTextBox from here, we'll just use Debug output
+                System.Diagnostics.Debug.WriteLine("Timer reset from system tray");
+            }
+        }
+
+        private void UpdateTrayIconTooltip()
+        {
+            if (notifyIcon == null) return;
+
+            bool isTimerRunning = timerManager?.QuestionTimer?.IsActive == true;
+
+            if (isTimerRunning)
+            {
+                var timeUntilNext = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
+                if (timeUntilNext.TotalSeconds > 0)
+                {
+                    string timeText = timeUntilNext.TotalHours >= 1
+                        ? $"{(int)timeUntilNext.TotalHours}h {timeUntilNext.Minutes}m"
+                        : $"{timeUntilNext.Minutes}m {timeUntilNext.Seconds}s";
+                    notifyIcon.Text = $"Move It Up ! - Next question in {timeText}";
+                }
+                else
+                {
+                    notifyIcon.Text = "Move It Up ! - Question due now!";
+                }
+            }
+            else
+            {
+                notifyIcon.Text = "Move It Up ! - Timer stopped";
+            }
+        }
+
+        // ================================== UI =========================================
         private void NotifyIcon_DoubleClick(object sender, EventArgs e)
         {
             ShowWindow();

@@ -537,6 +537,11 @@ namespace TriviaExercise
         public bool WasAnsweredQuickly => answeredQuickly;
         public bool WasAnswered => isAnswered;
         public TimeSpan? AnswerTime => isAnswered ? DateTime.Now - questionStartTime : (TimeSpan?)null;
+
+        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
     public class ExerciseRequestedEventArgs : EventArgs
     {
