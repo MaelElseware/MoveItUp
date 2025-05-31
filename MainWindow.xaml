@@ -4,7 +4,8 @@
         Title="Move It Up !" Width="530" MaxHeight="700"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Background="#F5F5F5"
+        Background="WhiteSmoke"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         SizeToContent="Height">
 
     <Window.Resources>

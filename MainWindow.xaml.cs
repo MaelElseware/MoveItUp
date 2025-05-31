@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using TriviaExercise.Helpers;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace TriviaExercise
 {
@@ -1534,6 +1535,10 @@ namespace TriviaExercise
             }
         }
 
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             // Clean disposal
