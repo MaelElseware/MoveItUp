@@ -480,13 +480,13 @@ namespace TriviaExercise
             {
                 // Hide options
                 OptionsPanel.Visibility = Visibility.Collapsed;
-                ToggleOptionsTextBlock.Text = "▼ Show options";
+                ToggleOptionsTextBlock.Text = "Show options ▼";
             }
             else
             {
                 // Show options
                 OptionsPanel.Visibility = Visibility.Visible;
-                ToggleOptionsTextBlock.Text = "▲ Hide options";
+                ToggleOptionsTextBlock.Text = "Hide options ▲";
             }
         }
 

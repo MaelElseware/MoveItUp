@@ -494,14 +494,34 @@
                     </StackPanel>
                 </Border>
 
-                <TextBlock x:Name="ToggleOptionsTextBlock" 
-                           Text="▼ Show options" 
-                           VerticalAlignment="Center" 
-                           Foreground="#FF02A4FF" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,-5,7,4"
-                           Cursor="Hand"
-                           MouseLeftButtonDown="ToggleOptionsTextBlock_MouseLeftButtonDown"/>
+                <!-- Toggle Options with Soft Gray Line -->
+                <Border 
+                        BorderBrush="#E9ECEF" 
+                        BorderThickness="0,2,0,2" 
+                        Margin="0,-5,0,8">
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Center"
+                                x:Name="ToggleOptionsLink"
+                                Cursor="Hand"
+                                MouseLeftButtonDown="ToggleOptionsTextBlock_MouseLeftButtonDown">   
+                        <TextBlock x:Name="ToggleOptionsTextBlock" 
+                                   Text="Show options ▼" 
+                                   FontSize="13" 
+                                   FontWeight="Medium"
+                                   Foreground="#007ACC"
+                                   VerticalAlignment="Center"
+                                   TextDecorations="None"/>
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.8"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                    </StackPanel>
+                </Border>
 
                 <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
                     <!-- Timer Settings -->
