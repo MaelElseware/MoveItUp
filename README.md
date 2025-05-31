@@ -64,15 +64,15 @@ The app uses simple JSON files that **anyone** can edit:
 - 📁 **Auto-Generated Samples**: Sample files are automatically created on first run for reference if none were downloaded
 
 ### Content Categories:
-- 🧬 **Biology** (100+ questions) - From cells to evolution
-- 🎮 **Gaming** (150+ questions) - Video game trivia and industry knowledge
-- 📜 **History** (120+ questions) - Historical events, figures, and timelines
-- 🌍 **Geography** (110+ questions) - Countries, capitals, landmarks, and cultures
-- ⚛️ **Physics** (90+ questions) - Scientific principles and discoveries
-- 🎬 **Cinema** (130+ questions) - Movies, actors, directors, and film industry
-- 🎵 **Music** (100+ questions) - Musical knowledge, artists, and genres
-- 🔢 **Mathematics** (Infinite) - Dynamically generated math mental calculus
-- 🧠 **General Culture** (200+ questions) - Broad knowledge and trivia
+- 🧬 **Biology** - From cells to evolution
+- 🎮 **Gaming** - Video game trivia and industry knowledge
+- 📜 **History** - Historical events, figures, and timelines
+- 🌍 **Geography** - Countries, capitals, landmarks, and cultures
+- ⚛️ **Physics** - Scientific principles and discoveries
+- 🎬 **Cinema** - Movies, actors, directors, and film industry
+- 🎵 **Music** - Musical knowledge, artists, and genres
+- 🔢 **Mathematics** - Dynamically generated math mental calculus
+- 🧠 **General Culture** - Broad knowledge and trivia
 
 **Want more content?** Simply add your own questions to the JSON files or create new category files!
 
