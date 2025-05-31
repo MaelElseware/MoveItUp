@@ -473,6 +473,23 @@ namespace TriviaExercise
             // Auto-scroll to bottom when text is added
             StatusTextBox.ScrollToEnd();
         }
+
+        private void ToggleOptionsTextBlock_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (OptionsPanel.Visibility == Visibility.Visible)
+            {
+                // Hide options
+                OptionsPanel.Visibility = Visibility.Collapsed;
+                ToggleOptionsTextBlock.Text = "▼ Show options";
+            }
+            else
+            {
+                // Show options
+                OptionsPanel.Visibility = Visibility.Visible;
+                ToggleOptionsTextBlock.Text = "▲ Hide options";
+            }
+        }
+
         private void SoundsEnabledCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             bool soundsEnabled = SoundsEnabledCheckBox.IsChecked == true;
