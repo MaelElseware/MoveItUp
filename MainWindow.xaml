@@ -444,7 +444,7 @@
         </Border>
 
         <!-- Scrollable Content Area -->
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
+        <ScrollViewer x:Name="MainScrollView" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
             <StackPanel>
 
                 <!-- Player Progress -->
@@ -523,34 +523,34 @@
                     </StackPanel>
                 </Border>
 
-                <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
+                <StackPanel x:Name="OptionsPanel" Visibility="Visible">
                     <!-- Timer Settings -->
                     <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="At which interval question (and thus exercises) will pop ?">
                                 <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
                                 <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
                                      Style="{StaticResource ModernTextBox}"
-                                     VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" ToolTip="At which interval question (and thus exercises) will pop ?"/>
+                                     VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" />
                                 <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Don't forget to drink ! Simple window reminder will pop every X minutes">
                                 <CheckBox x:Name="DrinkReminderCheckBox" Content="Drink reminder every" Width="140"
                                       VerticalAlignment="Center" Margin="0,0,0,0" 
                                       Checked="DrinkReminderCheckBox_CheckedChanged" 
                                       Unchecked="DrinkReminderCheckBox_CheckedChanged"/>
                                 <TextBox x:Name="DrinkIntervalTextBox" Text="90" Width="60" Height="25" 
                                      Style="{StaticResource ModernTextBox}"
-                                     VerticalAlignment="Center" TextChanged="DrinkIntervalTextBox_TextChanged" ToolTip="Don't forget to drink ! Simple window reminder will pop every X minutes"/>
+                                     VerticalAlignment="Center" TextChanged="DrinkIntervalTextBox_TextChanged" />
                                 <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" ToolTip="A nice and soothing sound before the exercise arrive, so you'll be prepared. Set to 0 to remove behavior.">
                                 <TextBlock Text="Pre-question alert:" VerticalAlignment="Center" Width="140"/>
                                 <TextBox x:Name="PreQuestionAlertTextBox" Text="1" Width="60" Height="25"
                                      Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
-                                     TextChanged="PreQuestionAlertTextBox_TextChanged" ToolTip="A nice and soothing sound before the exercise arrive, so you'll be prepared."/>
+                                     TextChanged="PreQuestionAlertTextBox_TextChanged" />
                                 <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                             </StackPanel>
                         </StackPanel>
@@ -558,13 +558,12 @@
 
                     <!-- Exercise Settings -->
                     <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
-                        <!--Visibility="Collapsed">-->
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
                             <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
                             <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
                                   Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
                                   ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                                  SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
+                                  SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
                                 <ComboBoxItem Content="Easy" Tag="Easy"/>
                                 <ComboBoxItem Content="Medium" Tag="Medium"/>
                                 <ComboBoxItem Content="Hard" Tag="Hard"/>
@@ -576,25 +575,24 @@
 
                     <!-- Inactivity Monitoring Settings -->
                     <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFEEF0CD" Margin="0,0,0,5">
-                        <!--Visibility="Collapsed">-->
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Determines what happens to the timer when you are inactive (past the inactivity threshold) ?">
                                 <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="140"/>
                                 <ComboBox x:Name="ActivityBehaviorComboBox" Width="200" Height="25"
                       Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
                       ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                      SelectionChanged="ActivityBehaviorComboBox_SelectionChanged" ToolTip="What happens to the timer when you are inactive past the inactivity threshold ?">
+                      SelectionChanged="ActivityBehaviorComboBox_SelectionChanged" >
                                     <ComboBoxItem Content="Disabled" Tag="Disabled"/>
                                     <ComboBoxItem Content="Pause Only" Tag="PauseOnly"/>
                                     <ComboBoxItem Content="Pause + Reset" Tag="PauseAndReset" IsSelected="True"/>
                                 </ComboBox>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" ToolTip="After how many minutes you are considered inactive and the timer adapts (depending on the behavior set atop)">
                                 <TextBlock Text="Inactivity threshold:" VerticalAlignment="Center" Width="140"/>
                                 <TextBox x:Name="InactivityThresholdTextBox" Text="5" Width="60" Height="25"
                      Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"
-                     TextChanged="InactivityThresholdTextBox_TextChanged" ToolTip="After how many minutes you are considered inactive and the timer adapts (depending on the behavior set atop)"/>
+                     TextChanged="InactivityThresholdTextBox_TextChanged" />
                                 <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                             </StackPanel>
                         </StackPanel>
@@ -623,10 +621,10 @@
                     <!-- File Settings -->
                     <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto" ToolTip="where the question and exercise json are located (by default your app location)">
                                 <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
                                 <TextBox x:Name="DataFolderPathTextBox" Width="295" Height="25" IsReadOnly="True" Padding="2,1,2,2"
-                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" ToolTip="where the question and exercise json are located (by default your app location)"/>
+                     Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"/>
                                 <Button x:Name="BrowseFolderButton" Content="Browse" Width="80"
                     Style="{StaticResource SecondaryButton}"
                     Margin="10,0,0,0" Click="BrowseFolderButton_Click"/>

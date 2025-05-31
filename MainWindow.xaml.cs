@@ -46,6 +46,9 @@ namespace TriviaExercise
             InitializeComponent();
             InitializeSystemTray();
 
+            OptionsPanel.Visibility = Visibility.Collapsed;
+            ToggleOptionsTextBlock.Text = "Show options ▼";
+
             discordRPC = new DiscordRichPresence();
 
             // Initialize timer management
@@ -137,18 +140,12 @@ namespace TriviaExercise
             }
         }
 
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             // Check command line arguments for minimized startup
-            string[] args = Environment.GetCommandLineArgs();
-            bool shouldStartMinimized = args.Length > 1 && args[1] == "--minimized";
-
-            // Override with settings if command line says to start minimized
-            if (shouldStartMinimized)
-            {
-                StartMinimizedCheckBox.IsChecked = true;
-                appSettings.StartMinimized = true;
-            }
+            string[] arguments = Environment.GetCommandLineArgs();
+            bool shouldStartMinimized = arguments.Length > 1 && arguments[1] == "--minimized";
 
             // Update startup checkbox state
             RefreshStartupStatus();
@@ -172,9 +169,19 @@ namespace TriviaExercise
             InitializeSoundSystem();
 
             // Start minimized if setting is enabled or launched from startup
+            // Use a short delay to ensure window is fully rendered
             if (appSettings.StartMinimized || shouldStartMinimized)
             {
-                MinimizeToTray();
+                var minimizeTimer = new DispatcherTimer
+                {
+                    Interval = TimeSpan.FromMilliseconds(100)
+                };
+                minimizeTimer.Tick += (s, args) =>
+                {
+                    minimizeTimer.Stop();
+                    MinimizeToTray();
+                };
+                minimizeTimer.Start();
             }
         }
 
@@ -487,6 +494,7 @@ namespace TriviaExercise
                 // Show options
                 OptionsPanel.Visibility = Visibility.Visible;
                 ToggleOptionsTextBlock.Text = "Hide options ▲";
+                MainScrollView.ScrollToTop();
             }
         }
 
