@@ -251,6 +251,7 @@ namespace TriviaExercise
             playerProgress = PlayerProgressSystem.LoadProgress();
         }
 
+
         private void UpdatePlayerProgressDisplay()
         {
             if (playerProgress == null) return;
@@ -262,7 +263,7 @@ namespace TriviaExercise
 
             PlayerTitleTextBlock.Text = $"Level {level} | {title} | {totalScore} pts";
 
-            // Update category details
+            // Update category details with better formatting
             var categoryDetails = new List<string>();
 
             foreach (var category in Enum.GetValues(typeof(QuestionCategory)).Cast<QuestionCategory>())
@@ -273,9 +274,11 @@ namespace TriviaExercise
                     string icon = CategoryHelper.GetCategoryIcon(category);
                     string name = CategoryHelper.GetCategoryDisplayName(category);
                     string difficulty = progress.CurrentDifficulty.ToString();
-                    string categoryTitle = PlayerProgressSystem.GetCategoryTitle(category, progress.Score);
 
-                    categoryDetails.Add($"{icon} {name}: {progress.Score}pts [{difficulty}] \"{categoryTitle}\"");
+                    // Format with consistent spacing for alignment
+                    // Icon(2) + Name(18) + Score(8) + Difficulty(8) = aligned columns
+                    string formattedLine = $"{icon}  {name,-16} {progress.Score,-3}pts      {difficulty,-6}";
+                    categoryDetails.Add(formattedLine);
                 }
             }
 

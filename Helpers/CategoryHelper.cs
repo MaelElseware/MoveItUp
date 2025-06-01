@@ -75,10 +75,10 @@ namespace TriviaExercise.Helpers
                 case QuestionCategory.Musique:
                     return "Music";
                 case QuestionCategory.Math:
-                    return "Mathematics";
+                    return "Calculus";
                 case QuestionCategory.GeneralCulture:
                 default:
-                    return "General Culture";
+                    return "General";
             }
         }
 

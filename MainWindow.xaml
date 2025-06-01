@@ -510,6 +510,8 @@
                 <!-- Custom title bar height -->
                 <RowDefinition Height="*"/>
                 <!-- Main content -->
+                <RowDefinition Height="3"/>
+                <!-- Footer spacing -->
             </Grid.RowDefinitions>
 
             <!-- Custom Title Bar -->
@@ -649,7 +651,7 @@
                                             <TextBlock x:Name="CategoryProgressTextBlock" 
                                                        Text="Category progress loading..."
                                                        FontSize="11" FontFamily="Consolas"
-                                                       TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                                                       TextWrapping="Wrap" HorizontalAlignment="Center"/>
                                         </ScrollViewer>
                                     </Border>
                                 </Grid>
