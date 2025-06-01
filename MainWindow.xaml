@@ -674,7 +674,7 @@
                         <!-- TIMER SETTINGS CONTENT -->
                         <StackPanel x:Name="TimerPanel" Visibility="Collapsed">
                             <!-- Timer Intervals -->
-                            <GroupBox Header="Timer Intervals" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
+                            <GroupBox Header="Timer Intervals" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFD9EAF3" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="At which interval question (and thus exercises) will pop ?">
                                         <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
@@ -706,7 +706,7 @@
                             </GroupBox>
 
                             <!-- Schedule Settings -->
-                            <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDCDEE" Margin="0,0,0,5">
+                            <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,7" ToolTip="Restrict timer to only run between specific hours of the day. Supports decimal hours (e.g., 9.5 = 9:30)">
                                         <CheckBox x:Name="OnlyBetweenHoursCheckBox" Content="Only between hours:" Width="140"
@@ -738,7 +738,7 @@
                             </GroupBox>
 
                             <!-- Inactivity Monitoring Settings -->
-                            <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF0E5CD" Margin="0,0,0,5">
+                            <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFD9EAF3" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Determines what happens to the timer when you are inactive (past the inactivity threshold) ?">
                                         <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="140"/>
@@ -766,7 +766,7 @@
                         <!-- SETTINGS CONTENT -->
                         <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
                             <!-- Exercise Settings -->
-                            <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
+                            <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
                                     <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
                                     <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
@@ -783,7 +783,7 @@
                             </GroupBox>
 
                             <!-- Application Settings -->
-                            <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
+                            <GroupBox Header="Application Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFD9EAF3" Margin="0,0,0,5">
                                 <StackPanel>
                                     <CheckBox x:Name="DiscordRichPresenceCheckBox" Content="🎮 Enable Discord Rich Presence" 
                                           Checked="DiscordRichPresenceCheckBox_CheckedChanged" Unchecked="DiscordRichPresenceCheckBox_CheckedChanged" 
@@ -803,7 +803,7 @@
                             </GroupBox>
 
                             <!-- File Settings -->
-                            <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDF0E2" Margin="0,0,0,5">
+                            <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto" ToolTip="where the question and exercise json are located (by default your app location)">
                                         <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
