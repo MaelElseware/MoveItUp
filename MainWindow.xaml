@@ -139,7 +139,7 @@
                                                 TextElement.FontWeight="Thin"
                                                 TextElement.FontSize="11"
                                                 TextElement.FontFamily="Alef"
-                                                TextElement.Foreground="#878787"/>
+                                                TextElement.Foreground="#686868"/>
                                     </Border>
                                     <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}"/>
                                 </Grid>
@@ -651,6 +651,7 @@
                                             <TextBlock x:Name="CategoryProgressTextBlock" 
                                                        Text="Category progress loading..."
                                                        FontSize="11" FontFamily="Consolas"
+                                                       Margin="-5,0,0,0"
                                                        TextWrapping="Wrap" HorizontalAlignment="Center"/>
                                         </ScrollViewer>
                                     </Border>
@@ -681,7 +682,7 @@
                                         <TextBox x:Name="IntervalTextBox" Text="50" Width="60" 
                                              Style="{StaticResource ModernTextBox}"
                                              VerticalAlignment="Top" TextChanged="IntervalTextBox_TextChanged" Height="25" HorizontalAlignment="Center" />
-                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Don't forget to drink ! Simple window reminder will pop every X minutes">
@@ -692,7 +693,7 @@
                                         <TextBox x:Name="DrinkIntervalTextBox" Text="90" Width="60" Height="25" 
                                              Style="{StaticResource ModernTextBox}"
                                              VerticalAlignment="Center" TextChanged="DrinkIntervalTextBox_TextChanged" />
-                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" ToolTip="A nice and soothing sound before the exercise arrive, so you'll be prepared. Set to 0 to remove behavior.">
@@ -700,7 +701,7 @@
                                         <TextBox x:Name="PreQuestionAlertTextBox" Text="1" Width="60" Height="25"
                                              Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
                                              TextChanged="PreQuestionAlertTextBox_TextChanged" />
-                                        <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>
@@ -724,7 +725,7 @@
                                                  VerticalAlignment="Center" TextChanged="ScheduleEndHourTextBox_TextChanged" 
                                                  MaxLength="4"
                                                  ToolTip="End hour (supports decimals: 17 = 17:00, 17.5 = 17:30, 17.75 = 17:45)"/>
-                                        <TextBlock Text="(24h format)" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="(24h format)" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,0" ToolTip="Restrict timer to only run during weekdays (Monday to Friday)">
@@ -732,7 +733,7 @@
                                                   Checked="OnlyWeekdaysCheckBox_CheckedChanged" 
                                                   Unchecked="OnlyWeekdaysCheckBox_CheckedChanged" 
                                                   Margin="0,0,0,0"/>
-                                        <TextBlock Text="(Monday - Friday)" VerticalAlignment="Center" Margin="10,-2,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="(Monday - Friday)" VerticalAlignment="Center" Margin="10,-2,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>
@@ -757,7 +758,7 @@
                                         <TextBox x:Name="InactivityThresholdTextBox" Text="5" Width="60" Height="25"
                              Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"
                              TextChanged="InactivityThresholdTextBox_TextChanged" />
-                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                        <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555" FontStyle="Italic"/>
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>
@@ -806,8 +807,8 @@
                             <GroupBox Header="File Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="Auto" ToolTip="where the question and exercise json are located (by default your app location)">
-                                        <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Medium"/>
-                                        <TextBox x:Name="DataFolderPathTextBox" Width="295" Height="25" IsReadOnly="True" Padding="2,1,2,2"
+                                        <TextBlock Text="Data Folder:" VerticalAlignment="Center" Width="75" FontWeight="Bold"/>
+                                        <TextBox x:Name="DataFolderPathTextBox" Width="307" Height="25" IsReadOnly="True" Padding="2,1,2,2"
                              Style="{StaticResource ModernTextBox}" VerticalAlignment="Center"/>
                                         <Button x:Name="BrowseFolderButton" Content="Browse" Width="80"
                             Style="{StaticResource SecondaryButton}"
