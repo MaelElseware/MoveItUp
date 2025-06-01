@@ -111,6 +111,13 @@ namespace TriviaExercise
 
         private void OnDrinkReminderTriggered(object sender, TimerEventArgs e)
         {
+            // Don't show drink reminder if outside schedule
+            if (scheduleHelper?.IsScheduleEnabled == true && !scheduleHelper.IsWithinSchedule)
+            {
+                StatusTextBox.Text += "\n📅 Drink reminder skipped - outside schedule";
+                return;
+            }
+
             ShowDrinkReminder();
         }
 
