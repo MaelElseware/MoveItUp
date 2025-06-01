@@ -11,9 +11,11 @@ We all tend to ignore notifications so asking a general culture question seemed 
 But don't worry, the app will tell you X minutes (configurable) before a new exercise happens and if you are in a meeting you can using the window tray context menu to reset the timer.
 The app also features an inactivity checker (mouse and keyboard input) which will stop the timer if you are gone for Y minutes (configurable).
 
-![AppScreenshot](https://github.com/user-attachments/assets/640cabd4-0082-4119-9fa1-a52bd394180c)
+![AppScreenshot](https://github.com/user-attachments/assets/f61e4ac5-7af9-4abc-b3fd-52fabf9c6f4d)
+![AppScreenshot2](https://github.com/user-attachments/assets/d36d4a39-8ec1-48d0-8bed-4f2db85d9659)
+![AppScreenshot3](https://github.com/user-attachments/assets/5ad5b947-33e1-4a2d-ab36-799217fa051a)
 
-*The main control panel showing timer settings, progress tracking, and category statistics*
+*The different windows of the app, progress tracking, and category statistics*
 
 
 
@@ -111,7 +113,8 @@ MoveItUp-Release/
 │   ├── question_failure.wav
 │   ├── new_question.wav
 │   └── exercise_start.wav
-└── Questions_GeneralCulture.json   # Sample questions (auto-generated)
+└── Data/
+│   ├── all the question and exercise json
 ```
 
 ### 🎵 Sound Files Setup
