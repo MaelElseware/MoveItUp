@@ -830,11 +830,11 @@ namespace TriviaExercise
                 }
                 else if (isTimerRunning && timerWasPausedBySchedule)
                 {
-                    stopTimerItem.Text = "Timer Paused (out of schedule)";
+                    stopTimerItem.Text = "Stop Timer (Paused - out of schedule)";
                 }
                 else if (isTimerRunning && timerWasPausedByInactivity)
                 {
-                    stopTimerItem.Text = "Timer Paused (inactivity)";
+                    stopTimerItem.Text = "Stop Timer (Paused - inactivity)";
                 }
                 else
                 {
@@ -1878,8 +1878,8 @@ namespace TriviaExercise
                         // Show schedule info if enabled
                         if (isScheduleEnabled)
                         {
-                            string scheduleStatus = isWithinSchedule ? "✅" : "⚠️";
-                            NextQuestionTextBlock.Text = $"Next question in: {timeText} {scheduleStatus}";
+                            string scheduleStatus = isWithinSchedule ? "" : "⚠️";
+                            NextQuestionTextBlock.Text = $"Next question in: {timeText}  {scheduleStatus}";
                         }
                         else
                         {
