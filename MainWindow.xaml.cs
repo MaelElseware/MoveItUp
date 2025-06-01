@@ -965,7 +965,7 @@ namespace TriviaExercise
 
                 // Update the setting to remember this choice
                 appSettings.DataFolderPath = dataDirectory;
-                SaveApplicationSettings();
+                //SaveApplicationSettings();
             }
             else
             {
@@ -1589,6 +1589,7 @@ namespace TriviaExercise
 
                 // Save data folder if it's different from default
                 string defaultFolder = AppDomain.CurrentDomain.BaseDirectory;
+                defaultFolder = Path.Combine(defaultFolder, "Data");
                 appSettings.DataFolderPath = DataFolderPathTextBox.Text.Equals(defaultFolder, StringComparison.OrdinalIgnoreCase)
                     ? string.Empty
                     : DataFolderPathTextBox.Text;
