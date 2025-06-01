@@ -164,8 +164,28 @@ namespace TriviaExercise.Helpers
                     // Check if path is valid and accessible
                     if (!Directory.Exists(settings.DataFolderPath))
                     {
-                        // Reset to default if folder doesn't exist
-                        settings.DataFolderPath = string.Empty;
+                        // Try to create the directory if it's a Data subfolder
+                        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        string dataDirectory = Path.Combine(baseDirectory, "Data");
+
+                        if (settings.DataFolderPath.Equals(dataDirectory, StringComparison.OrdinalIgnoreCase))
+                        {
+                            try
+                            {
+                                Directory.CreateDirectory(dataDirectory);
+                                // Successfully created, keep the setting
+                            }
+                            catch
+                            {
+                                // Reset to default if Data folder can't be created
+                                settings.DataFolderPath = string.Empty;
+                            }
+                        }
+                        else
+                        {
+                            // Reset to default if custom folder doesn't exist
+                            settings.DataFolderPath = string.Empty;
+                        }
                     }
                 }
                 catch

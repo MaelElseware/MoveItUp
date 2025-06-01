@@ -1,0 +1,1114 @@
+{
+  "Questions": [
+    {
+      "Text": "What is the name of the AI companion in Portal that becomes increasingly hostile?",
+      "Answers": ["SHODAN", "GLaDOS", "Cortana", "HAL 9000"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Dark Souls, what is the name of the currency used to level up and purchase items?",
+      "Answers": ["Blood Echoes", "Souls", "Runes", "Humanity"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game introduced the concept of 'bullet time' mechanics?",
+      "Answers": ["The Matrix: Path of Neo", "Max Payne", "F.E.A.R.", "Dead Eye"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the maximum level Link can reach in The Legend of Zelda: Breath of the Wild?",
+      "Answers": ["There is no level system", "50", "99", "120"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Counter-Strike, what does the acronym 'AWP' stand for?",
+      "Answers": ["Automatic Weapon Platform", "Arctic Warfare Police", "Advanced Warfare Projectile", "All-Weather Precision"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which FromSoftware game was the studio's first major departure from the Souls formula?",
+      "Answers": ["Bloodborne", "Sekiro: Shadows Die Twice", "Elden Ring", "Armored Core VI"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the protagonist in the Witcher series?",
+      "Answers": ["Geralt of Rivia", "Vesemir", "Lambert", "Eskel"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Minecraft, what material is needed to craft a Nether Portal?",
+      "Answers": ["Netherrack", "Obsidian", "Blackstone", "Crying Obsidian"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game popularized the Battle Royale genre on a massive scale?",
+      "Answers": ["H1Z1: King of the Kill", "PlayerUnknown's Battlegrounds", "Fortnite", "Apex Legends"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the space station in Dead Space?",
+      "Answers": ["USG Kellion", "USG Ishimura", "USM Valor", "USG O'Bannon"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In World of Warcraft, what is the level cap in the original 'Vanilla' game?",
+      "Answers": ["50", "60", "70", "80"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which fighting game series is known for its 'Fatality' finishing moves?",
+      "Answers": ["Street Fighter", "Tekken", "Mortal Kombat", "King of Fighters"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the main character in the Half-Life series?",
+      "Answers": ["Adrian Shephard", "Barney Calhoun", "Gordon Freeman", "Alyx Vance"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Overwatch, which character is known for the catchphrase 'It's High Noon'?",
+      "Answers": ["Soldier: 76", "McCree/Cassidy", "Reaper", "Ashe"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What does 'RNG' stand for in gaming terminology?",
+      "Answers": ["Really Nice Graphics", "Random Number Generator", "Rapid Network Gaming", "Real Network Gaming"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game engine powers most Source games like Half-Life 2 and Team Fortress 2?",
+      "Answers": ["Unreal Engine", "Source Engine", "id Tech", "CryEngine"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In League of Legends, what is the name of the map used for ranked 5v5 matches?",
+      "Answers": ["Twisted Treeline", "Howling Abyss", "Summoner's Rift", "Crystal Scar"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What company developed the Fallout series before Bethesda acquired it?",
+      "Answers": ["BioWare", "Obsidian Entertainment", "Black Isle Studios", "Interplay Entertainment"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Doom (2016), what is the protagonist commonly referred to as?",
+      "Answers": ["Doom Marine", "Doom Slayer", "Doom Guy", "Hell Walker"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game series is known for the quote 'Would you kindly'?",
+      "Answers": ["System Shock", "BioShock", "Prey", "Dishonored"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the currency in Animal Crossing?",
+      "Answers": ["Coins", "Bells", "Stars", "Leaves"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Super Mario Bros., what power-up allows Mario to throw fireballs?",
+      "Answers": ["Super Mushroom", "Fire Flower", "Star Power", "Cape Feather"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game introduced the mechanic of 'wall-running' that influenced many subsequent shooters?",
+      "Answers": ["Mirror's Edge", "Titanfall", "Prince of Persia", "Assassin's Creed"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the final boss in the original Metroid?",
+      "Answers": ["Mother Brain", "Ridley", "Kraid", "Dark Samus"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Terraria, what is the hardest naturally spawning block?",
+      "Answers": ["Stone", "Obsidian", "Lihzahrd Brick", "Dungeon Brick"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which developer created the Persona series?",
+      "Answers": ["Square Enix", "Atlus", "Capcom", "Konami"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Metal Gear Solid, what is Solid Snake's real name?",
+      "Answers": ["Jack", "John", "David", "Sam"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the AI that controls the city in Deus Ex?",
+      "Answers": ["SHODAN", "Helios", "Morpheus", "Icarus"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In StarCraft, which race has the unit called 'Dragoon'?",
+      "Answers": ["Terran", "Protoss", "Zerg", "Xel'Naga"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What engine does The Elder Scrolls V: Skyrim run on?",
+      "Answers": ["Gamebryo", "Creation Engine", "id Tech 5", "Unreal Engine 3"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Bloodborne, what are the cosmic beings that grant insight called?",
+      "Answers": ["Old Ones", "Great Ones", "Outer Gods", "Ancient Ones"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which company originally developed the S.T.A.L.K.E.R. series?",
+      "Answers": ["4A Games", "GSC Game World", "Deep Silver", "Bohemia Interactive"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Resident Evil 2, what is the name of the police station where most of the game takes place?",
+      "Answers": ["Raccoon Police Department", "R.P.D. Station", "Raccoon City Police Station", "R.C.P.D. Building"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the maximum number of players in a single Civilization VI multiplayer game?",
+      "Answers": ["8", "10", "12", "16"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Final Fantasy VII, what is the name of Cloud's hometown?",
+      "Answers": ["Midgar", "Kalm", "Nibelheim", "Corel"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game popularized the 'cover-based shooting' mechanic?",
+      "Answers": ["Gears of War", "Rainbow Six: Vegas", "Kill.Switch", "Time Crisis"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Halo, what is the name of the AI that assists Master Chief?",
+      "Answers": ["Serina", "Cortana", "Isabel", "Roland"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the currency in the Souls series that's used for upgrading equipment?",
+      "Answers": ["Souls", "Titanite", "Humanity", "Embers"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Street Fighter, what country is Ryu from?",
+      "Answers": ["China", "Japan", "Korea", "Thailand"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game engine was used to create Crysis?",
+      "Answers": ["CryEngine", "Unreal Engine 3", "id Tech 4", "Source Engine"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Mass Effect, what is Commander Shepard's first name if playing as the default male character?",
+      "Answers": ["Marcus", "John", "David", "Michael"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the main antagonist in System Shock 2?",
+      "Answers": ["SHODAN", "The Many", "Xerxes", "Marie Delacroix"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Quake, what is the name of the dimension that most of the game takes place in?",
+      "Answers": ["Hell", "The Abyss", "Dimension of the Doomed", "The Slipgate Complex"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game introduced the mechanic that would later become known as 'bullet time'?",
+      "Answers": ["Max Payne", "F.E.A.R.", "Red Dead Redemption", "Blade of Darkness"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Diablo II, what is the maximum character level?",
+      "Answers": ["90", "95", "99", "100"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What programming language was Minecraft originally written in?",
+      "Answers": ["C++", "Java", "C#", "Python"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Grand Theft Auto: Vice City, what decade is the game set in?",
+      "Answers": ["1970s", "1980s", "1990s", "2000s"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game was the first to feature ragdoll physics as a major gameplay element?",
+      "Answers": ["Half-Life 2", "Max Payne", "Hitman: Codename 47", "Jurassic Park: Trespasser"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In The Binding of Isaac, what is the name of Isaac's mother?",
+      "Answers": ["Magdalene", "Eve", "Mom", "It's never revealed"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the corporation in the Alien: Isolation game?",
+      "Answers": ["Umbrella Corporation", "Weyland-Yutani", "Seegson", "Sevastopol Station"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Hollow Knight, what is the name of the kingdom where the game takes place?",
+      "Answers": ["Hollownest", "Dirtmouth", "Hallownest", "The Abyss"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game engine powers the Call of Duty: Modern Warfare (2019) reboot?",
+      "Answers": ["id Tech 7", "IW 8.0", "Advanced Warfare Engine", "Treyarch Engine"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Cuphead, what did Cuphead and Mugman lose to the Devil in their dice game?",
+      "Answers": ["Their money", "Their souls", "Their freedom", "Their home"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the fictional metal in the X-Men universe that appears in several video games?",
+      "Answers": ["Vibranium", "Unobtainium", "Adamantium", "Carbonadium"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Dota 2, what is the maximum level a hero can reach?",
+      "Answers": ["25", "30", "50", "There is no level cap"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game first introduced the concept of 'New Game Plus'?",
+      "Answers": ["Chrono Trigger", "The Legend of Zelda: A Link to the Past", "Secret of Mana", "Dragon Quest"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Kerbal Space Program, what is the name of the home planet?",
+      "Answers": ["Kerbin", "Kerbal", "Kerman", "Kerberos"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the AI companion in F.E.A.R.?",
+      "Answers": ["ARIA", "Alma", "ATC", "There is no AI companion"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Titanfall 2, what is the name of the protagonist's Titan?",
+      "Answers": ["BT-7274", "Atlas", "Stryder", "Ogre"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game engine was used to create the original Unreal Tournament?",
+      "Answers": ["Unreal Engine 1", "id Tech 3", "Quake Engine", "GoldSrc"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Stardew Valley, how many years does it take for fruit trees to fully mature?",
+      "Answers": ["2 years", "3 years", "4 years", "5 years"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the fictional programming language used in Hacknet?",
+      "Answers": ["Unix", "Hacknet OS", "UNIX-like", "It uses real Unix commands"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Dwarf Fortress, what is the name of the procedurally generated world creation process?",
+      "Answers": ["Worldgen", "Universe Creation", "Reality Synthesis", "Dimension Forging"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which game was the first to implement real-time soft shadows using shadow mapping?",
+      "Answers": ["Doom 3", "Far Cry", "Half-Life 2", "F.E.A.R."],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In the original Deus Ex, what is the name of the technology that allows for human augmentation?",
+      "Answers": ["Nanotechnology", "Biomechanical Implants", "Cybernetic Enhancement", "Neural Interface"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What graphics API does Vulkan replace/compete with primarily?",
+      "Answers": ["DirectX 12", "OpenGL", "DirectX 11", "Metal"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Planescape: Torment, what is the protagonist's name?",
+      "Answers": ["The Nameless One", "Morte", "Torment", "It's never revealed"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which programming paradigm is functional programming based on?",
+      "Answers": ["Lambda calculus", "Object-oriented design", "Procedural logic", "Imperative commands"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In EVE Online, what is the largest type of player-controllable ship?",
+      "Answers": ["Dreadnought", "Carrier", "Titan", "Supercarrier"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the anti-aliasing technique that analyzes temporal information across frames?",
+      "Answers": ["MSAA", "FXAA", "TAA", "SSAA"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Crusader Kings II, what is the minimum age for a character to become a ruler?",
+      "Answers": ["12", "14", "16", "18"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which game first implemented deferred rendering as its primary rendering pipeline?",
+      "Answers": ["Killzone 2", "Crysis", "Gears of War", "S.T.A.L.K.E.R.: Shadow of Chernobyl"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In NetHack, what is the maximum character level?",
+      "Answers": ["30", "50", "99", "There is no maximum level"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What does 'GPGPU' stand for in computer graphics?",
+      "Answers": ["Graphics Processing General Purpose Unit", "General Purpose Graphics Processing Unit", "Graphics Processing GPU Unit", "General Purpose computing on Graphics Processing Units"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Factorio, what is the name of the alien species that attacks the player?",
+      "Answers": ["Aliens", "Bugs", "Biters", "Xenos"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which game engine feature allows for level-of-detail (LOD) switching based on distance?",
+      "Answers": ["Occlusion Culling", "Frustum Culling", "Mipmapping", "LOD Groups/Systems"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Escape from Tarkov, what does 'PMC' stand for?",
+      "Answers": ["Private Military Company", "Player Military Character", "Private Mercenary Corps", "Player Military Contractor"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the compression algorithm commonly used for texture compression in games?",
+      "Answers": ["JPEG", "PNG", "DXT/BC", "TIFF"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Aurora 4X, what type of game engine does it use for its calculations?",
+      "Answers": ["Real-time engine", "Turn-based engine", "Hybrid real-time/turn-based", "Database-driven simulation"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which shader language is primarily used with Vulkan?",
+      "Answers": ["HLSL", "GLSL", "SPIR-V", "Cg"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Rimworld, what is the name of the AI storyteller that provides the most challenging experience?",
+      "Answers": ["Cassandra Classic", "Phoebe Chillax", "Randy Random", "Igor Invader"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the primary difference between immediate mode and retained mode rendering?",
+      "Answers": ["Frame rate", "Memory usage", "State management", "Shader complexity"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Space Engineers, what is the name of the in-game programming language?",
+      "Answers": ["C#", "Lua", "Python", "BASIC"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which technique is used to simulate realistic water rendering in modern games?",
+      "Answers": ["Ray tracing", "Screen Space Reflections", "Planar reflections", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Oxygen Not Included, what is the base unit of thermal measurement?",
+      "Answers": ["Celsius", "Kelvin", "Fahrenheit", "DTU (Thermal Unit)"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What does 'Z-fighting' refer to in 3D graphics?",
+      "Answers": ["Polygon intersection", "Depth buffer precision issues", "Texture filtering problems", "Vertex shader conflicts"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Caves of Qud, what is the maximum character level?",
+      "Answers": ["30", "50", "There is no level cap", "It depends on the character build"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which anti-aliasing technique works by analyzing edge information post-processing?",
+      "Answers": ["MSAA", "SSAA", "FXAA", "CSAA"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In UnReal World, what type of historical period does the game simulate?",
+      "Answers": ["Medieval Finland", "Iron Age Finland", "Viking Age Scandinavia", "Stone Age Finland"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the purpose of a geometry shader in the graphics pipeline?",
+      "Answers": ["Vertex transformation", "Pixel shading", "Primitive generation/modification", "Texture sampling"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Cataclysm: Dark Days Ahead, what caused the apocalyptic scenario?",
+      "Answers": ["Nuclear war", "Zombie virus", "Interdimensional invasion", "Climate change"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which technique is commonly used for large-scale terrain rendering?",
+      "Answers": ["Heightmaps", "Voxels", "Mesh decimation", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In The Battle for Wesnoth, what is the maximum level for most units?",
+      "Answers": ["3", "4", "5", "There is no maximum"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What does 'PBR' stand for in modern game rendering?",
+      "Answers": ["Pixel-Based Rendering", "Physically Based Rendering", "Progressive Bi-directional Rendering", "Parametric Brush Rendering"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In ADOM (Ancient Domains of Mystery), what is the corruption system based on?",
+      "Answers": ["Time spent in dungeons", "Exposure to chaotic forces", "Character alignment", "Equipment degradation"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which data structure is commonly used for spatial partitioning in 3D games?",
+      "Answers": ["Binary Search Tree", "Hash Table", "Octree", "Linked List"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Angband, what is the name of the final boss?",
+      "Answers": ["Sauron", "Morgoth", "The Balrog", "Ungoliant"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the primary advantage of using instanced rendering?",
+      "Answers": ["Better texture quality", "Reduced draw calls", "Improved lighting", "Faster loading times"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Liberal Crime Squad, what is the primary goal of the player?",
+      "Answers": ["Gain money", "Survive", "Change political landscape", "Defeat enemies"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which algorithm is commonly used for pathfinding in video games?",
+      "Answers": ["Dijkstra's algorithm", "A* algorithm", "Breadth-first search", "Depth-first search"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In CDDA (Cataclysm: Dark Days Ahead), what is the name of the mutation system?",
+      "Answers": ["Evolution", "Adaptation", "Mutation Trees", "Genetic Drift"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What rendering technique allows for realistic global illumination in real-time?",
+      "Answers": ["Shadow mapping", "Light mapping", "Ray tracing", "Ambient occlusion"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Brogue, what happens when you step on a spiderweb?",
+      "Answers": ["You take damage", "You become entangled", "Spiders are alerted", "You move slower"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which compression format is specifically designed for normal maps?",
+      "Answers": ["DXT1", "DXT5", "3Dc/BC5", "ETC2"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Cogmind, what type of entity is the player character?",
+      "Answers": ["Human", "Android", "Robot", "AI"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the main purpose of a compute shader?",
+      "Answers": ["Vertex processing", "Pixel shading", "General purpose GPU computing", "Geometry processing"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Tales of Maj'Eyal, what is the maximum character level?",
+      "Answers": ["40", "50", "60", "There is no maximum"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which technique is used to reduce texture memory usage while maintaining quality?",
+      "Answers": ["Texture streaming", "Mipmapping", "Texture compression", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Dungeon Crawl Stone Soup, what happens when you worship Xom?",
+      "Answers": ["You gain consistent bonuses", "Random good and bad effects occur", "You become immortal", "All enemies become friendly"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the primary benefit of using a deferred rendering pipeline?",
+      "Answers": ["Faster geometry processing", "More efficient lighting calculations with many lights", "Better texture quality", "Reduced memory usage"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Spelunky, what is the name of the shopkeeper species?",
+      "Answers": ["Tunnelers", "Merchants", "They are just called shopkeepers", "Spelunkers"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which API allows for low-level graphics programming with minimal driver overhead?",
+      "Answers": ["OpenGL", "DirectX 11", "Vulkan", "Metal"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In FTL: Faster Than Light, what does 'RNG' most commonly refer to among players?",
+      "Answers": ["Reactor Number Generator", "Random Number Generator", "Rebel Navigation Grid", "Rapid Network Gaming"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the purpose of tessellation in modern graphics pipelines?",
+      "Answers": ["Texture filtering", "Dynamic mesh subdivision", "Shadow generation", "Color correction"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Risk of Rain, what is the scaling system called that makes enemies stronger over time?",
+      "Answers": ["Difficulty scaling", "Time pressure", "Monsoon effect", "The game doesn't have this mechanic"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which technique helps prevent texture 'swimming' or 'crawling' in perspective projection?",
+      "Answers": ["Anisotropic filtering", "Trilinear filtering", "Perspective-correct interpolation", "Texture clamping"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Papers, Please, what is the name of the fictional country where the game takes place?",
+      "Answers": ["Arstotzka", "Kolechian", "Antegrian", "Republia"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What does 'GPU occupancy' refer to in CUDA/compute programming?",
+      "Answers": ["Memory usage", "Ratio of active warps to maximum possible warps", "Processing speed", "Power consumption"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Invisible, Inc., what is the name of the AI that assists the player?",
+      "Answers": ["Incognita", "Central", "Oracle", "Cipher"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which rendering technique simulates subsurface light scattering for realistic skin/organic materials?",
+      "Answers": ["Phong shading", "Subsurface scattering", "Ambient occlusion", "Fresnel reflection"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In Crypt of the NecroDancer, what determines the timing for player actions?",
+      "Answers": ["Real-time input", "Music beat", "Turn-based system", "Enemy movement"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the main advantage of using texture atlases in game development?",
+      "Answers": ["Better image quality", "Reduced draw calls", "Smaller file sizes", "Faster loading"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In One Finger Death Punch, what is the primary control scheme?",
+      "Answers": ["WASD movement", "Mouse clicking", "Two-button system", "Gamepad only"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which algorithm is commonly used for real-time ambient occlusion?",
+      "Answers": ["SSAO (Screen Space Ambient Occlusion)", "Ray tracing", "Light mapping", "Shadow volumes"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "In The Stanley Parable, what is the name of the narrator?",
+      "Answers": ["Stanley", "The Narrator", "It's never explicitly named", "Mr. Stanley"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the main character in the God of War series?",
+      "Answers": ["Ares", "Zeus", "Kratos", "Hercules"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Rocket League, what sport is the game based on?",
+      "Answers": ["Basketball", "Soccer/Football", "Hockey", "Tennis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game series features a character named Nathan Drake?",
+      "Answers": ["Tomb Raider", "Indiana Jones", "Uncharted", "Assassin's Creed"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Fortnite, what is the name of the game mode that made it famous?",
+      "Answers": ["Save the World", "Battle Royale", "Creative Mode", "Team Rumble"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the currency called in Fortnite?",
+      "Answers": ["Gold", "Coins", "V-Bucks", "Credits"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Valorant, how many players are on each team?",
+      "Answers": ["4", "5", "6", "3"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which company developed the Assassin's Creed series?",
+      "Answers": ["EA", "Activision", "Ubisoft", "Bethesda"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Among Us, what are the players trying to find?",
+      "Answers": ["Treasure", "The exit", "The impostor", "Hidden items"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the battle royale mode in Call of Duty?",
+      "Answers": ["Blackout", "Warzone", "Battle Ops", "Combat Zone"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Apex Legends, what are the playable characters called?",
+      "Answers": ["Heroes", "Legends", "Champions", "Fighters"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game popularized the 'battle pass' system?",
+      "Answers": ["Fortnite", "PUBG", "Overwatch", "Call of Duty"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Cyberpunk 2077, what is the name of the main character?",
+      "Answers": ["Johnny Silverhand", "V", "Morgan Blackhand", "Alt Cunningham"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What type of game is Fall Guys?",
+      "Answers": ["Racing", "Battle Royale Party Game", "Fighting", "Puzzle"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Red Dead Redemption 2, what is the name of the protagonist?",
+      "Answers": ["John Marston", "Arthur Morgan", "Dutch van der Linde", "Micah Bell"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game series is known for the phrase 'Finish Him!'?",
+      "Answers": ["Street Fighter", "Tekken", "Mortal Kombat", "Soul Calibur"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Genshin Impact, what is the name of the main world?",
+      "Answers": ["Mondstadt", "Teyvat", "Liyue", "Inazuma"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the green dinosaur companion in Super Mario games?",
+      "Answers": ["Bowser", "Koopa", "Yoshi", "Goomba"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Pokemon, what type is Pikachu?",
+      "Answers": ["Fire", "Water", "Electric", "Normal"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game series features Master Chief?",
+      "Answers": ["Gears of War", "Halo", "Destiny", "Call of Duty"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Sonic the Hedgehog, what does Sonic primarily collect?",
+      "Answers": ["Stars", "Coins", "Rings", "Gems"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the main objective in Tetris?",
+      "Answers": ["Score points by clearing lines", "Reach the top", "Collect items", "Defeat enemies"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In which game do you play as a space marine fighting demons on Mars?",
+      "Answers": ["Quake", "Doom", "Wolfenstein", "Duke Nukem"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of Link's horse in The Legend of Zelda: Breath of the Wild?",
+      "Answers": ["Roach", "Epona", "You name it yourself", "Zelda"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Grand Theft Auto games, what do the wanted stars represent?",
+      "Answers": ["Achievement level", "Police attention level", "Skill points", "Mission progress"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game series is known for its 'Waaagh!' battle cry?",
+      "Answers": ["StarCraft", "Warhammer 40,000", "Command & Conquer", "Age of Empires"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Pac-Man, what are the ghosts' names?",
+      "Answers": ["Red, Blue, Pink, Orange", "Blinky, Pinky, Inky, Sue", "Alpha, Beta, Gamma, Delta", "North, South, East, West"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name of the cake-obsessed AI in Portal?",
+      "Answers": ["SHODAN", "HAL", "GLaDOS", "Cortana"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Splatoon, what do players use instead of bullets?",
+      "Answers": ["Water", "Paint/Ink", "Slime", "Bubbles"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which game popularized the tower defense genre?",
+      "Answers": ["Plants vs. Zombies", "Defense of the Ancients", "Warcraft III custom maps", "Command & Conquer"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "In Stardew Valley, what is the player character's profession?",
+      "Answers": ["Blacksmith", "Farmer", "Merchant", "Miner"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the currency in World of Warcraft?",
+      "Answers": ["Coins", "Gold", "Crowns", "Credits"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Dead by Daylight, how many survivors can escape in a single match?",
+      "Answers": ["2", "3", "4", "5"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game series is known for its 'Covenant' alien alliance?",
+      "Answers": ["Mass Effect", "Halo", "Destiny", "XCOM"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Rainbow Six Siege, what is the name of the anti-terrorism unit?",
+      "Answers": ["Team Rainbow", "Six Squad", "CTU Force", "Rainbow Team"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the infection in The Last of Us?",
+      "Answers": ["T-Virus", "Cordyceps", "Blacklight", "Rage Virus"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Overwatch, which character is known for teleportation abilities?",
+      "Answers": ["Tracer", "Reaper", "Sombra", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the maximum team size in CS:GO competitive matches?",
+      "Answers": ["4", "5", "6", "8"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Destiny, what are the player characters called?",
+      "Answers": ["Spartans", "Guardians", "Tenno", "Pilots"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game engine does Fortnite use?",
+      "Answers": ["Unity", "Unreal Engine", "CryEngine", "Source Engine"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Monster Hunter, what are the large creatures you hunt called?",
+      "Answers": ["Bosses", "Monsters", "Large Monsters", "Elder Dragons"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the battle royale map in PUBG?",
+      "Answers": ["Erangel", "The Island", "Battleground", "Survival Island"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Warframe, what are the player characters called?",
+      "Answers": ["Spartans", "Guardians", "Tenno", "Operators"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game series popularized the 'zombie horde' survival mode?",
+      "Answers": ["Resident Evil", "Dead Rising", "Call of Duty", "Left 4 Dead"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Rocket League, what is the maximum number of players per team?",
+      "Answers": ["2", "3", "4", "5"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the sword in The Elder Scrolls V: Skyrim that absorbs dragon souls?",
+      "Answers": ["Dragonbane", "Dragonslayer", "There is no specific sword", "Dragonrend"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Apex Legends, what is the name of the arena where matches take place?",
+      "Answers": ["Kings Canyon", "World's Edge", "Olympus", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game series features the character Ezio Auditore?",
+      "Answers": ["Prince of Persia", "Assassin's Creed", "Thief", "Dishonored"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Valorant, what are the special abilities powered by?",
+      "Answers": ["Mana", "Energy", "Radianite", "Nothing, they're on cooldowns"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the company that created League of Legends?",
+      "Answers": ["Blizzard", "Riot Games", "Valve", "Epic Games"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Fall Guys, what happens when you get eliminated?",
+      "Answers": ["Game over", "You spectate", "You become a ghost", "You respawn next round"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game introduced the concept of a 'battle pass'?",
+      "Answers": ["Fortnite", "Dota 2", "Team Fortress 2", "Counter-Strike"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Genshin Impact, what is the gacha system called?",
+      "Answers": ["Summon", "Wish", "Draw", "Pull"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the zombie mode in Call of Duty games?",
+      "Answers": ["Zombie Mode", "Undead", "Zombies", "Survival"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Sea of Thieves, what type of game is it primarily?",
+      "Answers": ["Battle Royale", "MMORPG", "Pirate Adventure", "Racing"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game series is known for its 'Fatalities' and 'Brutalities'?",
+      "Answers": ["Street Fighter", "Tekken", "Mortal Kombat", "Soul Calibur"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Minecraft, what dimension do you access through End Portals?",
+      "Answers": ["The Nether", "The End", "The Void", "The Aether"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the digital card game by Blizzard?",
+      "Answers": ["Magic Online", "Hearthstone", "Gwent", "Artifact"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Among Us, what is the maximum number of impostors in a game?",
+      "Answers": ["1", "2", "3", "4"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which game popularized the 'extraction shooter' genre?",
+      "Answers": ["Escape from Tarkov", "Hunt: Showdown", "The Cycle", "Marauders"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "In Hades, who is the main character?",
+      "Answers": ["Hades", "Zagreus", "Persephone", "Thanatos"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    }
+  ]
+}

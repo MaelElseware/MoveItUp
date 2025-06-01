@@ -60,14 +60,7 @@ namespace TriviaExercise
             LoadApplicationSettings();
 
             // Set default data folder if not already set in settings
-            if (string.IsNullOrEmpty(appSettings.DataFolderPath))
-            {
-                SetDefaultDataFolder();
-            }
-            else
-            {
-                DataFolderPathTextBox.Text = appSettings.DataFolderPath;
-            }
+            SetDefaultDataFolder();
 
             InitializeDisplayUpdateTimer();
             LoadPlayerProgress();
@@ -155,7 +148,6 @@ namespace TriviaExercise
                 isLoadingSettings = false;
             }
         }
-
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -949,8 +941,31 @@ namespace TriviaExercise
         {
             if (string.IsNullOrEmpty(appSettings.DataFolderPath))
             {
+                // Use "Data" subfolder within the app directory
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                DataFolderPathTextBox.Text = baseDirectory;
+                string dataDirectory = Path.Combine(baseDirectory, "Data");
+
+                // Create the Data folder if it doesn't exist
+                try
+                {
+                    if (!Directory.Exists(dataDirectory))
+                    {
+                        Directory.CreateDirectory(dataDirectory);
+                        StatusTextBox.Text += $"\n📁 Created Data folder: {dataDirectory}";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    StatusTextBox.Text += $"\n❌ Could not create Data folder: {ex.Message}";
+                    // Fallback to app directory if Data folder creation fails
+                    dataDirectory = baseDirectory;
+                }
+
+                DataFolderPathTextBox.Text = dataDirectory;
+
+                // Update the setting to remember this choice
+                appSettings.DataFolderPath = dataDirectory;
+                SaveApplicationSettings();
             }
             else
             {
@@ -960,7 +975,12 @@ namespace TriviaExercise
             string sourceDirectory = DataFolderPathTextBox.Text;
             string questionsPath = Path.Combine(sourceDirectory, "Questions_GeneralCulture.json");
             string exercisesPath = Path.Combine(sourceDirectory, "exercises.json");
-            StatusTextBox.Text += JsonHelper.CreateSampleJsonFilesIfNotExist(questionsPath, exercisesPath);
+            string result = JsonHelper.CreateSampleJsonFilesIfNotExist(questionsPath, exercisesPath);
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                StatusTextBox.Text += $"\n{result}";
+            }
         }
 
         private void UpdateLoadedFilesDisplay()

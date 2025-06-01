@@ -1,0 +1,688 @@
+{
+  "Questions": [
+    {
+      "Text": "What is the speed of light in a vacuum?",
+      "Answers": ["3.00 × 10⁸ m/s", "2.99 × 10⁸ m/s", "3.01 × 10⁸ m/s", "2.98 × 10⁸ m/s"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the chemical symbol for sodium?",
+      "Answers": ["So", "Sd", "Na", "S"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the unit of electric current?",
+      "Answers": ["Volt", "Ampere", "Ohm", "Watt"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which gas makes up approximately 78% of Earth's atmosphere?",
+      "Answers": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the formula for water?",
+      "Answers": ["H₂O", "HO₂", "H₃O", "H₂O₂"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What type of bond forms between a metal and a non-metal?",
+      "Answers": ["Covalent", "Ionic", "Metallic", "Hydrogen"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the acceleration due to gravity on Earth?",
+      "Answers": ["9.8 m/s²", "10.0 m/s²", "9.6 m/s²", "8.9 m/s²"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which element has the atomic number 1?",
+      "Answers": ["Helium", "Hydrogen", "Lithium", "Carbon"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the SI unit of force?",
+      "Answers": ["Pascal", "Newton", "Joule", "Watt"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the pH of pure water at 25°C?",
+      "Answers": ["6", "7", "8", "9"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which law states that energy cannot be created or destroyed?",
+      "Answers": ["Newton's First Law", "Law of Conservation of Energy", "Ohm's Law", "Boyle's Law"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the chemical formula for methane?",
+      "Answers": ["CH₄", "C₂H₆", "CH₃", "C₂H₄"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What particle has no electric charge?",
+      "Answers": ["Proton", "Electron", "Neutron", "Positron"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the most abundant element in the universe?",
+      "Answers": ["Oxygen", "Carbon", "Helium", "Hydrogen"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which color of light has the longest wavelength?",
+      "Answers": ["Blue", "Green", "Yellow", "Red"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the formula for calculating kinetic energy?",
+      "Answers": ["KE = mv", "KE = ½mv²", "KE = mv²", "KE = ½mv"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which element is essential for organic compounds?",
+      "Answers": ["Nitrogen", "Oxygen", "Carbon", "Sulfur"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the unit of electrical resistance?",
+      "Answers": ["Ampere", "Volt", "Ohm", "Coulomb"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which gas is produced during photosynthesis?",
+      "Answers": ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the atomic number of carbon?",
+      "Answers": ["4", "6", "8", "12"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which fundamental force is responsible for holding atomic nuclei together?",
+      "Answers": ["Electromagnetic", "Gravitational", "Weak nuclear", "Strong nuclear"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the chemical formula for table salt?",
+      "Answers": ["NaCl", "KCl", "CaCl₂", "MgCl₂"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What happens to the wavelength of light when its frequency increases?",
+      "Answers": ["Increases", "Decreases", "Stays the same", "Becomes zero"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which state of matter has a definite shape and volume?",
+      "Answers": ["Gas", "Liquid", "Solid", "Plasma"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the charge of an electron?",
+      "Answers": ["+1", "-1", "0", "+2"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which process involves the splitting of atomic nuclei?",
+      "Answers": ["Nuclear fusion", "Nuclear fission", "Radioactive decay", "Beta decay"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the molar mass of water (H₂O)?",
+      "Answers": ["16 g/mol", "18 g/mol", "20 g/mol", "22 g/mol"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which type of electromagnetic radiation has the highest energy?",
+      "Answers": ["Radio waves", "Microwaves", "X-rays", "Gamma rays"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the temperature of absolute zero in Celsius?",
+      "Answers": ["-273.15°C", "-273°C", "-270°C", "-300°C"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which element has the highest electronegativity?",
+      "Answers": ["Oxygen", "Nitrogen", "Fluorine", "Chlorine"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the relationship between pressure and volume in Boyle's Law?",
+      "Answers": ["Directly proportional", "Inversely proportional", "No relationship", "Exponentially related"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the tunnel effect in quantum physics?",
+      "Answers": ["Particles can pass through barriers they classically shouldn't", "Light bends around corners", "Electrons move in circular orbits", "Atoms emit light when heated"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which scientist developed the theory of relativity?",
+      "Answers": ["Isaac Newton", "Albert Einstein", "Niels Bohr", "Max Planck"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What does E = mc² represent?",
+      "Answers": ["Energy equals mass times the speed of light squared", "Electric field equals magnetic field", "Entropy equals molecular chaos", "Electron energy in atoms"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the Doppler effect?",
+      "Answers": ["Change in frequency due to relative motion", "Bending of light around objects", "Splitting of white light", "Interference of sound waves"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which gas law relates temperature and volume?",
+      "Answers": ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Avogadro's Law"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the photoelectric effect?",
+      "Answers": ["Emission of electrons when light hits a surface", "Bending of light in water", "Interference of light waves", "Reflection of light from mirrors"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is an isotope?",
+      "Answers": ["Atoms with the same number of protons but different neutrons", "Atoms with the same mass", "Charged atoms", "Atoms in excited states"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the greenhouse effect?",
+      "Answers": ["Trapping of heat by atmospheric gases", "Reflection of sunlight by clouds", "Absorption of UV radiation", "Cooling of Earth's surface"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which principle explains why hot air balloons rise?",
+      "Answers": ["Bernoulli's principle", "Archimedes' principle", "Pascal's principle", "Boyle's principle"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the uncertainty principle?",
+      "Answers": ["You cannot know both position and momentum of a particle exactly", "Energy levels in atoms are uncertain", "Chemical reactions are unpredictable", "Temperature measurements are always approximate"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is sublimation?",
+      "Answers": ["Liquid to gas", "Solid to liquid", "Solid to gas", "Gas to liquid"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which scientist discovered radioactivity?",
+      "Answers": ["Marie Curie", "Henri Becquerel", "Ernest Rutherford", "Wilhelm Röntgen"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is an acid according to the Brønsted-Lowry definition?",
+      "Answers": ["Proton donor", "Proton acceptor", "Electron donor", "Electron acceptor"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the half-life of a radioactive element?",
+      "Answers": ["Time for half the atoms to decay", "Time for complete decay", "Time for double the atoms", "Time for energy release"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which law states that force equals mass times acceleration?",
+      "Answers": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravitation"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the difference between heat and temperature?",
+      "Answers": ["Heat is energy transfer, temperature is average kinetic energy", "They are the same thing", "Heat is cold, temperature is hot", "Heat is molecular, temperature is atomic"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is a catalyst?",
+      "Answers": ["Substance that speeds up reactions without being consumed", "Substance that slows down reactions", "Product of a chemical reaction", "Reactant in a chemical reaction"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the ideal gas law?",
+      "Answers": ["PV = nRT", "P + V = nRT", "PV = nR/T", "P/V = nRT"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of radiation has no mass and no charge?",
+      "Answers": ["Alpha", "Beta", "Gamma", "Neutron"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is Le Chatelier's principle?",
+      "Answers": ["System adjusts to counteract changes in equilibrium", "Energy is always conserved", "Pressure and volume are related", "Temperature affects reaction rates"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the molecular shape of water?",
+      "Answers": ["Linear", "Bent", "Trigonal planar", "Tetrahedral"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which particle mediates the electromagnetic force?",
+      "Answers": ["Gluon", "W boson", "Photon", "Graviton"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the first law of thermodynamics?",
+      "Answers": ["Energy cannot be created or destroyed", "Entropy always increases", "Heat flows from hot to cold", "Work equals force times distance"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is electronegativity?",
+      "Answers": ["Ability of an atom to attract electrons", "Number of electrons in an atom", "Charge of an atom", "Size of an atom"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which scientist proposed the planetary model of the atom?",
+      "Answers": ["J.J. Thomson", "Ernest Rutherford", "Niels Bohr", "John Dalton"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the speed of sound in air at room temperature?",
+      "Answers": ["340 m/s", "3000 m/s", "30 m/s", "3400 m/s"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is oxidation?",
+      "Answers": ["Loss of electrons", "Gain of electrons", "Gain of protons", "Loss of neutrons"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which gas is used in light bulbs to prevent the filament from oxidizing?",
+      "Answers": ["Oxygen", "Nitrogen", "Argon", "Helium"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the difference between fusion and fission?",
+      "Answers": ["Fusion combines nuclei, fission splits nuclei", "Fusion splits nuclei, fission combines nuclei", "They are the same process", "Fusion uses electrons, fission uses protons"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is Avogadro's number?",
+      "Answers": ["6.022 × 10²³", "6.022 × 10²²", "6.022 × 10²⁴", "6.022 × 10²¹"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which law explains why planets orbit the sun?",
+      "Answers": ["Newton's law of gravitation", "Coulomb's law", "Ohm's law", "Boyle's law"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is a polymer?",
+      "Answers": ["Large molecule made of repeating units", "Small reactive molecule", "Ionic compound", "Metallic substance"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the Van der Waals force?",
+      "Answers": ["Weak intermolecular attraction", "Strong covalent bond", "Ionic attraction", "Nuclear force"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which principle explains why oil and water don't mix?",
+      "Answers": ["Like dissolves like", "Opposites attract", "Density differences", "Temperature effects"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the Pauli exclusion principle?",
+      "Answers": ["No two electrons can have the same quantum state", "Electrons always pair up", "Atoms prefer full electron shells", "Energy levels increase with distance"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is resonance in chemistry?",
+      "Answers": ["Multiple valid structures for a molecule", "Vibration of molecules", "Electron transitions", "Nuclear oscillations"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of bond is strongest?",
+      "Answers": ["Ionic", "Covalent", "Metallic", "Hydrogen"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the purpose of a buffer solution?",
+      "Answers": ["Maintain constant pH", "Speed up reactions", "Separate mixtures", "Conduct electricity"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is superconductivity?",
+      "Answers": ["Zero electrical resistance at low temperatures", "Very high electrical resistance", "Ability to conduct heat well", "Magnetic levitation"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which scientist discovered the electron?",
+      "Answers": ["Ernest Rutherford", "J.J. Thomson", "Niels Bohr", "Max Planck"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is entropy?",
+      "Answers": ["Measure of disorder in a system", "Total energy of a system", "Temperature of a system", "Pressure of a system"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the bond angle in methane (CH₄)?",
+      "Answers": ["90°", "109.5°", "120°", "180°"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the Schrödinger equation used for?",
+      "Answers": ["Describing quantum mechanical systems", "Calculating chemical equilibrium", "Predicting reaction rates", "Measuring atomic masses"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the principle behind MRI (Magnetic Resonance Imaging)?",
+      "Answers": ["Nuclear magnetic resonance", "X-ray absorption", "Ultrasound waves", "Radioactive decay"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the Higgs boson?",
+      "Answers": ["Particle that gives mass to other particles", "Type of electromagnetic radiation", "Chemical catalyst", "Atomic nucleus component"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is quantum entanglement?",
+      "Answers": ["Particles remain connected regardless of distance", "Particles annihilate each other", "Particles change into energy", "Particles split into smaller pieces"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the double-slit experiment?",
+      "Answers": ["Demonstrates wave-particle duality", "Proves atomic structure", "Shows chemical bonding", "Measures light speed"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is dark matter?",
+      "Answers": ["Invisible matter that doesn't interact with light", "Matter inside black holes", "Extremely dense matter", "Matter at absolute zero"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the purpose of a particle accelerator?",
+      "Answers": ["Accelerate particles to high speeds for research", "Generate electricity", "Create nuclear weapons", "Treat cancer patients"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the Casimir effect?",
+      "Answers": ["Attractive force between uncharged plates in vacuum", "Repulsive force between magnets", "Bending of light in gravitational fields", "Change in atomic energy levels"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is supersymmetry in particle physics?",
+      "Answers": ["Theory relating fermions and bosons", "Perfect symmetry in crystals", "Balance between matter and antimatter", "Equilibrium in chemical reactions"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of absolute zero temperature?",
+      "Answers": ["All molecular motion stops", "Water freezes instantly", "All matter becomes gas", "Chemical reactions stop"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is antimatter?",
+      "Answers": ["Matter with opposite charge properties", "Matter without mass", "Invisible matter", "Extremely cold matter"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the weak nuclear force responsible for?",
+      "Answers": ["Radioactive beta decay", "Holding protons together", "Chemical bonding", "Gravitational attraction"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the principle behind laser operation?",
+      "Answers": ["Stimulated emission of radiation", "Nuclear fission", "Chemical combustion", "Electromagnetic induction"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of spacetime?",
+      "Answers": ["Four-dimensional combination of space and time", "Time travel through space", "Speed of light in different materials", "Distance between planets"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is Bose-Einstein condensate?",
+      "Answers": ["State of matter at extremely low temperatures", "High-energy plasma", "Supercritical fluid", "Crystalline solid"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the speed of light being constant?",
+      "Answers": ["Basis for Einstein's theory of relativity", "Allows for time travel", "Proves the universe is expanding", "Shows energy conservation"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is quantum tunneling used for in technology?",
+      "Answers": ["Scanning tunneling microscopes and computer chips", "Nuclear power generation", "Medical imaging", "Solar panel efficiency"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the difference between bosons and fermions?",
+      "Answers": ["Bosons have integer spin, fermions have half-integer spin", "Bosons are heavy, fermions are light", "Bosons are positive, fermions are negative", "Bosons are stable, fermions decay"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the holographic principle in physics?",
+      "Answers": ["3D information can be encoded on a 2D surface", "Light creates 3D images", "Universe is a computer simulation", "Time is an illusion"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the fine structure constant?",
+      "Answers": ["Fundamental constant describing electromagnetic interactions", "Ratio of electron to proton mass", "Speed of light in different materials", "Temperature at which atoms vibrate"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the many-worlds interpretation of quantum mechanics?",
+      "Answers": ["Every quantum measurement creates parallel universes", "Quantum particles exist in multiple locations", "Universe contains multiple dimensions", "Matter can exist in different forms"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the Planck scale?",
+      "Answers": ["Smallest meaningful length and time scales", "Largest possible distances in universe", "Standard measurement units", "Scale of atomic particles"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of virtual particles?",
+      "Answers": ["Temporary particles that exist due to quantum fluctuations", "Computer simulations of particles", "Particles that don't interact with matter", "Particles moving faster than light"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of CP violation?",
+      "Answers": ["Explains why universe has more matter than antimatter", "Shows charge is not conserved", "Proves energy can be created", "Demonstrates time travel is possible"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of zero-point energy?",
+      "Answers": ["Lowest possible energy of a quantum system", "Energy at absolute zero temperature", "Energy needed to start nuclear fusion", "Energy required to break chemical bonds"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the anthropic principle?",
+      "Answers": ["Universe's properties allow for human existence", "Humans can understand the universe", "Universe was created for humans", "Human observation affects reality"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the cosmic microwave background?",
+      "Answers": ["Remnant radiation from the Big Bang", "Heat from distant stars", "Radio waves from black holes", "Magnetic field of the galaxy"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is string theory attempting to unify?",
+      "Answers": ["All fundamental forces", "Matter and energy", "Space and time", "Quantum mechanics and chemistry"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the Heisenberg uncertainty principle for everyday life?",
+      "Answers": ["Effects are negligible at macroscopic scales", "Explains why predictions are impossible", "Shows all measurements are wrong", "Proves free will exists"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of emergence in physics?",
+      "Answers": ["Complex behaviors arising from simple rules", "New particles appearing spontaneously", "Evolution of the universe", "Discovery of new physical laws"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the black hole information paradox?",
+      "Answers": ["Questions whether information can be destroyed", "Proves black holes don't exist", "Shows time travel is possible", "Explains dark matter"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of phase transitions?",
+      "Answers": ["Changes between different states of matter", "Movement of electrons between atoms", "Chemical reactions in living organisms", "Nuclear transformations"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the double helix structure?",
+      "Answers": ["Structure of DNA molecules", "Shape of galaxies", "Pattern of magnetic fields", "Form of atomic orbitals"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the principle behind nuclear magnetic resonance (NMR)?",
+      "Answers": ["Nuclear spins align in magnetic fields", "Atoms emit radiation when heated", "Electrons jump between energy levels", "Chemical bonds vibrate at specific frequencies"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of critical temperature in superconductors?",
+      "Answers": ["Temperature below which resistance becomes zero", "Temperature at which materials melt", "Temperature needed for nuclear fusion", "Temperature of absolute zero"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the Chandrasekhar limit?",
+      "Answers": ["Maximum mass of a white dwarf star", "Speed limit for spacecraft", "Maximum temperature in nuclear reactors", "Limit of human perception"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of chirality in chemistry?",
+      "Answers": ["Non-superimposable mirror images of molecules", "Spiral motion of electrons", "Rotating magnetic fields", "Circular polarization of light"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the principle behind electron microscopy?",
+      "Answers": ["Uses electron beams instead of light for imaging", "Magnifies using electric fields", "Detects electromagnetic radiation", "Measures atomic vibrations"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the concept of delocalized electrons?",
+      "Answers": ["Electrons shared across multiple atoms", "Electrons moving at light speed", "Electrons outside the atom", "Electrons with uncertain position"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the significance of the mass-energy equivalence?",
+      "Answers": ["Mass can be converted to energy and vice versa", "Heavy objects move slowly", "Energy has weight", "Mass determines chemical properties"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the principle behind carbon dating?",
+      "Answers": ["Decay of radioactive carbon-14 isotope", "Chemical reactions with carbon", "Magnetic properties of carbon", "Spectroscopic analysis of carbon"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    }
+  ]
+}

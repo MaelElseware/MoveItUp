@@ -1,0 +1,78 @@
+{
+  "CorrectAnswerExercises": [
+    {
+      "Description": "Great job! Stand up and do 5 jumping jacks!",
+      "DurationSeconds": null,
+      "Difficulty": 0,
+      "Category": "Cardio"
+    },
+    {
+      "Description": "Excellent! Get up, take 10 deep breaths and stretch your arms above your head.",
+      "DurationSeconds": 30,
+      "Difficulty": 0,
+      "Category": "Stretching"
+    },
+    {
+      "Description": "Well done! Do 5 push-ups or wall push-ups if needed.",
+      "DurationSeconds": null,
+      "Difficulty": 1,
+      "Category": "Strength"
+    },
+    {
+      "Description": "Perfect! Hold a plank position for as long as you can.",
+      "DurationSeconds": 60,
+      "Difficulty": 1,
+      "Category": "Strength"
+    },
+    {
+      "Description": "Outstanding! Do 15 squats - you've earned this challenge!",
+      "DurationSeconds": 90,
+      "Difficulty": 2,
+      "Category": "Cardio"
+    },
+    {
+      "Description": "Amazing! Run in place for 2 minutes at good intensity.",
+      "DurationSeconds": 120,
+      "Difficulty": 2,
+      "Category": "Cardio"
+    }
+  ],
+  "WrongAnswerExercises": [
+    {
+      "Description": "Oops! Walk around your room 5 times to get those brain cells moving.",
+      "DurationSeconds": 45,
+      "Difficulty": 0,
+      "Category": "Mental Break"
+    },
+    {
+      "Description": "Not quite! Do get up and jump 5 times.",
+      "DurationSeconds": 30,
+      "Difficulty": 0,
+      "Category": "Stretching"
+    },
+    {
+      "Description": "Close, but not quite! Do 15 squats to boost your energy.",
+      "DurationSeconds": null,
+      "Difficulty": 1,
+      "Category": "Strength"
+    },
+    {
+      "Description": "Try again next time! March in place for 90 seconds.",
+      "DurationSeconds": 90,
+      "Difficulty": 1,
+      "Category": "Cardio"
+    },
+    {
+      "Description": "Tough question! Do 30 mountain climbers to reset your focus.",
+      "DurationSeconds": null,
+      "Difficulty": 2,
+      "Category": "Cardio"
+    },
+    {
+      "Description": "No worries! Jump 10 times standing on one leg then switch legs and do it again !",
+      "DurationSeconds": 90,
+      "Difficulty": 2,
+      "Category": "Mental Break"
+    }
+  ]
+}

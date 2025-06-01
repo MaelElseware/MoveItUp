@@ -1,0 +1,748 @@
+{
+  "Questions": [
+    {
+      "Text": "In which year did World War II end?",
+      "Answers": ["1944", "1945", "1946", "1947"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the first President of the United States?",
+      "Answers": ["Thomas Jefferson", "George Washington", "John Adams", "Benjamin Franklin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which ancient wonder of the world was located in Alexandria?",
+      "Answers": ["Colossus of Rhodes", "Lighthouse of Alexandria", "Hanging Gardens", "Temple of Artemis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Berlin Wall fell in which year?",
+      "Answers": ["1987", "1988", "1989", "1990"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which empire was ruled by Julius Caesar?",
+      "Answers": ["Greek Empire", "Roman Empire", "Persian Empire", "Byzantine Empire"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who painted the ceiling of the Sistine Chapel?",
+      "Answers": ["Leonardo da Vinci", "Raphael", "Michelangelo", "Donatello"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which war was fought between the North and South in America?",
+      "Answers": ["Revolutionary War", "Civil War", "War of 1812", "Spanish-American War"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was known as the 'Iron Lady'?",
+      "Answers": ["Queen Elizabeth II", "Margaret Thatcher", "Golda Meir", "Indira Gandhi"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Titanic sank in which year?",
+      "Answers": ["1910", "1911", "1912", "1913"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which country gifted the Statue of Liberty to the United States?",
+      "Answers": ["Britain", "Spain", "France", "Italy"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the Egyptian queen who had relationships with Julius Caesar and Mark Antony?",
+      "Answers": ["Nefertiti", "Hatshepsut", "Cleopatra", "Ankhesenamun"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Great Wall of China was primarily built to defend against which group?",
+      "Answers": ["Mongols", "Japanese", "Russians", "Koreans"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which explorer is credited with discovering America in 1492?",
+      "Answers": ["Vasco da Gama", "Christopher Columbus", "Ferdinand Magellan", "Amerigo Vespucci"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The French Revolution began in which year?",
+      "Answers": ["1789", "1790", "1791", "1792"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the British Prime Minister during most of World War II?",
+      "Answers": ["Neville Chamberlain", "Winston Churchill", "Clement Attlee", "Anthony Eden"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which ancient city was destroyed by the eruption of Mount Vesuvius?",
+      "Answers": ["Rome", "Athens", "Pompeii", "Troy"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Declaration of Independence was signed in which year?",
+      "Answers": ["1774", "1775", "1776", "1777"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the leader of Nazi Germany?",
+      "Answers": ["Heinrich Himmler", "Adolf Hitler", "Hermann Göring", "Rudolf Hess"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Industrial Revolution began in which country?",
+      "Answers": ["France", "Germany", "Britain", "United States"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the first person to walk on the moon?",
+      "Answers": ["Buzz Aldrin", "Neil Armstrong", "John Glenn", "Alan Shepard"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Renaissance period originated in which country?",
+      "Answers": ["France", "Germany", "Italy", "Spain"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which war ended with the Treaty of Versailles?",
+      "Answers": ["World War I", "World War II", "Franco-Prussian War", "Napoleonic Wars"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who wrote the 'I Have a Dream' speech?",
+      "Answers": ["Malcolm X", "Martin Luther King Jr.", "Rosa Parks", "Frederick Douglass"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Boston Tea Party occurred in which year?",
+      "Answers": ["1771", "1772", "1773", "1774"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which empire was known for building Machu Picchu?",
+      "Answers": ["Aztec", "Maya", "Inca", "Olmec"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Cold War was primarily between which two superpowers?",
+      "Answers": ["USA and China", "USA and USSR", "Britain and USSR", "France and Germany"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was known as the 'Sun King'?",
+      "Answers": ["Louis XIV", "Louis XVI", "Napoleon", "Henry VIII"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Magna Carta was signed in which year?",
+      "Answers": ["1214", "1215", "1216", "1217"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which ancient Greek city-state was known for its military prowess?",
+      "Answers": ["Athens", "Sparta", "Corinth", "Thebes"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Black Death occurred during which century?",
+      "Answers": ["13th century", "14th century", "15th century", "16th century"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the last Tsar of Russia?",
+      "Answers": ["Alexander III", "Nicholas II", "Alexander II", "Nicholas I"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Suez Canal connects which two bodies of water?",
+      "Answers": ["Red Sea and Persian Gulf", "Mediterranean and Red Sea", "Atlantic and Pacific", "Black Sea and Mediterranean"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which revolution overthrew the Tsar in Russia?",
+      "Answers": ["1905 Revolution", "February Revolution", "October Revolution", "December Revolution"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Hundred Years' War was fought between which two countries?",
+      "Answers": ["England and Spain", "France and Germany", "England and France", "Spain and France"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who discovered penicillin?",
+      "Answers": ["Louis Pasteur", "Alexander Fleming", "Marie Curie", "Jonas Salk"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The ancient Olympic Games were held in which Greek city?",
+      "Answers": ["Athens", "Sparta", "Olympia", "Corinth"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which document established the United States government?",
+      "Answers": ["Declaration of Independence", "Articles of Confederation", "Constitution", "Bill of Rights"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Battle of Hastings took place in which year?",
+      "Answers": ["1064", "1065", "1066", "1067"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Who was the first woman to win a Nobel Prize?",
+      "Answers": ["Marie Curie", "Rosalind Franklin", "Dorothy Hodgkin", "Lise Meitner"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Silk Road was a trade route connecting which two regions?",
+      "Answers": ["Europe and Africa", "Asia and Europe", "Asia and America", "Europe and America"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which battle marked Napoleon's final defeat?",
+      "Answers": ["Battle of Austerlitz", "Battle of Waterloo", "Battle of Leipzig", "Battle of Borodino"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Thirty Years' War ended with which treaty?",
+      "Answers": ["Treaty of Utrecht", "Treaty of Westphalia", "Peace of Augsburg", "Treaty of Versailles"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the Mongol leader who conquered much of Asia and Europe?",
+      "Answers": ["Kublai Khan", "Genghis Khan", "Ögedei Khan", "Möngke Khan"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Meiji Restoration occurred in which country?",
+      "Answers": ["China", "Korea", "Japan", "Thailand"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which dynasty built the Forbidden City in Beijing?",
+      "Answers": ["Tang Dynasty", "Song Dynasty", "Ming Dynasty", "Qing Dynasty"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Scramble for Africa primarily took place during which century?",
+      "Answers": ["18th century", "19th century", "20th century", "17th century"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who wrote 'The Communist Manifesto'?",
+      "Answers": ["Vladimir Lenin", "Karl Marx and Friedrich Engels", "Joseph Stalin", "Leon Trotsky"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Carolingian Empire was founded by which ruler?",
+      "Answers": ["Charlemagne", "Pepin the Short", "Charles Martel", "Louis the Pious"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which conference divided Africa among European powers?",
+      "Answers": ["Congress of Vienna", "Berlin Conference", "Paris Peace Conference", "Treaty of Berlin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Opium Wars were fought between China and which country?",
+      "Answers": ["France", "Britain", "United States", "Russia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the leader of the Bolsheviks during the Russian Revolution?",
+      "Answers": ["Leon Trotsky", "Vladimir Lenin", "Joseph Stalin", "Nikolai Bukharin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Battle of Tours (732 AD) stopped the advance of which group into Europe?",
+      "Answers": ["Vikings", "Huns", "Muslims", "Mongols"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which treaty ended the Seven Years' War?",
+      "Answers": ["Treaty of Paris (1763)", "Treaty of Utrecht", "Treaty of Aix-la-Chapelle", "Treaty of Westphalia"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Taiping Rebellion occurred in which country?",
+      "Answers": ["Japan", "Korea", "China", "Vietnam"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the founder of the Ottoman Empire?",
+      "Answers": ["Osman I", "Mehmed II", "Suleiman the Magnificent", "Bayezid I"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Glorious Revolution took place in which country?",
+      "Answers": ["France", "England", "Spain", "Netherlands"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which empire was ruled by Cyrus the Great?",
+      "Answers": ["Roman Empire", "Persian Empire", "Greek Empire", "Babylonian Empire"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Reconquista was the Christian reconquest of which region?",
+      "Answers": ["Holy Land", "Iberian Peninsula", "Sicily", "Balkans"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the first Holy Roman Emperor?",
+      "Answers": ["Otto I", "Charlemagne", "Frederick Barbarossa", "Henry IV"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Boxer Rebellion occurred in which country?",
+      "Answers": ["Japan", "China", "Korea", "Philippines"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which battle ended the Byzantine Empire?",
+      "Answers": ["Battle of Manzikert", "Fall of Constantinople", "Battle of Adrianople", "Siege of Nicaea"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Investiture Controversy was a conflict between which two institutions?",
+      "Answers": ["Church and State", "Nobles and Peasants", "East and West", "Catholics and Protestants"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the last emperor of the Western Roman Empire?",
+      "Answers": ["Romulus Augustulus", "Julius Nepos", "Majorian", "Anthemius"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Congress of Vienna took place after which leader's defeat?",
+      "Answers": ["Louis XIV", "Napoleon Bonaparte", "Frederick the Great", "Charles XII"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which dynasty ruled China during the height of the Silk Road trade?",
+      "Answers": ["Han Dynasty", "Tang Dynasty", "Song Dynasty", "Ming Dynasty"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Siege of Vienna (1683) was undertaken by which empire?",
+      "Answers": ["Russian Empire", "Ottoman Empire", "Austrian Empire", "Polish Empire"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the leader of the Carthaginians during the Second Punic War?",
+      "Answers": ["Hamilcar Barca", "Hannibal", "Hasdrubal", "Mago"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Treaty of Tordesillas divided newly discovered lands between which two countries?",
+      "Answers": ["Spain and France", "Spain and Portugal", "Portugal and England", "Spain and England"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which rebellion led to the end of the Qing Dynasty in China?",
+      "Answers": ["Taiping Rebellion", "Boxer Rebellion", "Xinhai Revolution", "White Lotus Rebellion"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Battle of Agincourt was fought during which war?",
+      "Answers": ["War of the Roses", "Hundred Years' War", "Thirty Years' War", "Seven Years' War"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who established the first unified German state?",
+      "Answers": ["Otto von Bismarck", "Frederick the Great", "Kaiser Wilhelm I", "Helmut Kohl"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Defenestration of Prague sparked which major conflict?",
+      "Answers": ["Seven Years' War", "Thirty Years' War", "War of Austrian Succession", "Silesian Wars"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which ancient Greek historian is known as the 'Father of History'?",
+      "Answers": ["Thucydides", "Herodotus", "Xenophon", "Plutarch"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Partition of India occurred in which year?",
+      "Answers": ["1946", "1947", "1948", "1949"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the first Caliph after Muhammad's death?",
+      "Answers": ["Ali ibn Abi Talib", "Umar ibn al-Khattab", "Abu Bakr", "Uthman ibn Affan"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Crimean War was fought primarily on which peninsula?",
+      "Answers": ["Iberian Peninsula", "Italian Peninsula", "Crimean Peninsula", "Balkan Peninsula"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which treaty established the League of Nations?",
+      "Answers": ["Treaty of Versailles", "Treaty of Saint-Germain", "Treaty of Trianon", "Treaty of Sèvres"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Peasants' Revolt in England occurred during which century?",
+      "Answers": ["13th century", "14th century", "15th century", "16th century"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Who was the Byzantine Emperor during the construction of Hagia Sophia?",
+      "Answers": ["Constantine I", "Justinian I", "Basil II", "Leo III"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The War of Spanish Succession ended with which treaty?",
+      "Answers": ["Treaty of Utrecht", "Treaty of Rastatt", "Treaty of Baden", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which ancient civilization developed cuneiform writing?",
+      "Answers": ["Egyptians", "Sumerians", "Babylonians", "Assyrians"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Great Schism of 1054 split which institution?",
+      "Answers": ["Roman Empire", "Christian Church", "Islamic Caliphate", "Holy Roman Empire"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Synod of Whitby (664 AD) resolved disputes between which two Christian traditions?",
+      "Answers": ["Catholic and Orthodox", "Roman and Celtic", "Eastern and Western", "Latin and Greek"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which treaty ended the War of the League of Augsburg?",
+      "Answers": ["Treaty of Ryswick", "Treaty of Utrecht", "Treaty of Nijmegen", "Treaty of Aix-la-Chapelle"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Donation of Constantine was later proven to be what?",
+      "Answers": ["Authentic document", "Medieval forgery", "Lost original", "Papal bull"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Byzantine emperor initiated the Iconoclastic period?",
+      "Answers": ["Leo III", "Constantine V", "Justinian II", "Michael III"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Battle of Kadesh was fought between Egypt and which other power?",
+      "Answers": ["Assyria", "Babylon", "Hittite Empire", "Persia"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Merovingian ruler was known as 'the Hammer'?",
+      "Answers": ["Clovis I", "Charles Martel", "Pepin the Short", "Childeric III"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Pragmatic Sanction of 1549 established what principle?",
+      "Answers": ["Divine right of kings", "Religious tolerance", "Female succession", "Parliamentary supremacy"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Chinese philosophy emphasizes wu wei (non-action)?",
+      "Answers": ["Confucianism", "Legalism", "Taoism", "Mohism"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Peace of Augsburg established which principle?",
+      "Answers": ["Cuius regio, eius religio", "Jus gentium", "Prima facie", "Res ipsa loquitur"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Sassanid ruler was known as 'King of Kings'?",
+      "Answers": ["Ardashir I", "Shapur I", "Khosrow I", "Yazdegerd III"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Edict of Milan was issued by which Roman emperors?",
+      "Answers": ["Constantine and Diocletian", "Constantine and Licinius", "Diocletian and Maximian", "Galerius and Constantine"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which treaty established the principle of balance of power in Europe?",
+      "Answers": ["Treaty of Westphalia", "Treaty of Utrecht", "Congress of Vienna", "Treaty of Paris (1856)"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Decree of Canopus was written in how many scripts?",
+      "Answers": ["Two", "Three", "Four", "Five"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Fatimid caliph ordered the destruction of the Church of the Holy Sepulchre?",
+      "Answers": ["Al-Mu'izz", "Al-Aziz", "Al-Hakim", "Al-Zahir"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Constitutio Antoniniana granted citizenship to whom?",
+      "Answers": ["Roman nobles only", "All free inhabitants of the empire", "Military veterans", "Provincial governors"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which medieval scholar translated Aristotle's works into Latin?",
+      "Answers": ["Thomas Aquinas", "William of Moerbeke", "Albertus Magnus", "Roger Bacon"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Khazar Khaganate converted to which religion?",
+      "Answers": ["Christianity", "Islam", "Judaism", "Zoroastrianism"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which treaty ended the Livonian War?",
+      "Answers": ["Treaty of Tyavzino", "Treaty of Teusina", "Treaty of Jam Zapolski", "Treaty of Plussa"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Corpus Juris Civilis was compiled under which emperor?",
+      "Answers": ["Constantine I", "Theodosius I", "Justinian I", "Leo I"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Chinese invention reached Europe via the Islamic world first?",
+      "Answers": ["Gunpowder", "Paper", "Compass", "Printing press"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Double Eagle was the symbol of which empire?",
+      "Answers": ["Ottoman Empire", "Russian Empire", "Holy Roman Empire", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Carolingian ruler divided the empire among his sons in 843?",
+      "Answers": ["Charlemagne", "Louis the Pious", "Charles the Bald", "Lothair I"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Babylonian Talmud was completed during which century?",
+      "Answers": ["4th century", "5th century", "6th century", "7th century"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Ummayad caliph established the Dome of the Rock?",
+      "Answers": ["Mu'awiya I", "Abd al-Malik", "Al-Walid I", "Umar ibn Abd al-Aziz"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Capitulare de villis regulated what aspect of Carolingian administration?",
+      "Answers": ["Military service", "Royal estates", "Church governance", "Trade regulations"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Byzantine military theme system was established first?",
+      "Answers": ["Anatolic Theme", "Opsician Theme", "Thracesian Theme", "Armenian Theme"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Ostrogothic Kingdom in Italy was established by which ruler?",
+      "Answers": ["Alaric I", "Theodoric the Great", "Totila", "Vitiges"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which treaty established the medieval Holy Roman Empire's relationship with the Papacy?",
+      "Answers": ["Concordat of Worms", "Golden Bull of 1356", "Peace of Augsburg", "Investiture Controversy"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Mandate of Heaven was a political concept from which civilization?",
+      "Answers": ["Indian", "Chinese", "Persian", "Mesopotamian"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Abbasid caliph founded the House of Wisdom in Baghdad?",
+      "Answers": ["Harun al-Rashid", "Al-Ma'mun", "Al-Mansur", "Al-Mutawakkil"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Heliand was an epic poem written in which language?",
+      "Answers": ["Old High German", "Old Saxon", "Old Norse", "Middle High German"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which medieval Islamic scholar wrote 'The Incoherence of the Philosophers'?",
+      "Answers": ["Al-Farabi", "Ibn Sina", "Al-Ghazali", "Ibn Rushd"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Rus' Khaganate was centered around which river system?",
+      "Answers": ["Volga River", "Dnieper River", "Don River", "Dvina River"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Byzantine emperor reconquered much of the former Western Roman Empire?",
+      "Answers": ["Heraclius", "Basil II", "Justinian I", "John I Tzimiskes"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Salic Law excluded women from inheriting which throne?",
+      "Answers": ["English", "French", "Spanish", "Portuguese"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Chinese dynasty was known for its porcelain and maritime expeditions?",
+      "Answers": ["Tang Dynasty", "Song Dynasty", "Yuan Dynasty", "Ming Dynasty"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Liber Pontificalis chronicles the history of what institution?",
+      "Answers": ["Holy Roman Empire", "Papacy", "Carolingian Dynasty", "Byzantine Empire"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Visigothic king converted to Catholicism, ending Arianism in Spain?",
+      "Answers": ["Alaric II", "Reccared I", "Leovigild", "Sisebut"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Annales regni Francorum chronicled which dynasty?",
+      "Answers": ["Merovingian", "Carolingian", "Capetian", "Ottonian"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which medieval university was founded first?",
+      "Answers": ["University of Bologna", "University of Paris", "Oxford University", "University of Salamanca"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Libri Carolini was a response to which religious controversy?",
+      "Answers": ["Investiture Controversy", "Great Schism", "Iconoclastic Controversy", "Donatist Controversy"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which Umayyad prince founded the Emirate of Córdoba?",
+      "Answers": ["Abd al-Rahman I", "Abd al-Rahman II", "Abd al-Rahman III", "Al-Hakam I"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    }
+  ]
+}

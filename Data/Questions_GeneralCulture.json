@@ -1,0 +1,977 @@
+{
+  "Questions": [
+    {
+      "Text": "Who wrote the famous novel '1984'?",
+      "Answers": [ "Aldous Huxley", "George Orwell", "Ray Bradbury", "Philip K. Dick" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the first book in the Harry Potter series?",
+      "Answers": [ "Chamber of Secrets", "Philosopher's Stone", "Prisoner of Azkaban", "Goblet of Fire" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which artist painted 'The Starry Night'?",
+      "Answers": [ "Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Leonardo da Vinci" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'WWW' stand for in internet terminology?",
+      "Answers": [ "World Wide Web", "World Web Wide", "Wide World Web", "Web World Wide" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In which sport would you perform a slam dunk?",
+      "Answers": [ "Tennis", "Basketball", "Volleyball", "Soccer" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the main ingredient in guacamole?",
+      "Answers": [ "Tomato", "Avocado", "Lettuce", "Cucumber" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'I have a dream'?",
+      "Answers": [ "Malcolm X", "Martin Luther King Jr.", "Nelson Mandela", "Gandhi" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the most commonly used letter in the English language?",
+      "Answers": [ "A", "E", "T", "O" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the telephone?",
+      "Answers": [ "Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Benjamin Franklin" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'CPU' stand for in computers?",
+      "Answers": [ "Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "How many players are on a soccer team on the field at one time?",
+      "Answers": [ "10", "11", "12", "9" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which Italian dish is made with rice?",
+      "Answers": [ "Pasta", "Pizza", "Risotto", "Lasagna" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the fastest land animal?",
+      "Answers": [ "Lion", "Cheetah", "Horse", "Gazelle" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'Romeo and Juliet'?",
+      "Answers": [ "Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the primary color that, when mixed with blue, makes green?",
+      "Answers": [ "Red", "Yellow", "Orange", "Purple" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'HTTP' stand for?",
+      "Answers": [ "HyperText Transfer Protocol", "High Transfer Text Protocol", "HyperText Transport Protocol", "High Text Transfer Protocol" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In tennis, what is a score of zero called?",
+      "Answers": [ "Nothing", "Love", "Nil", "Zero" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What spice is derived from the Crocus flower?",
+      "Answers": [ "Paprika", "Saffron", "Turmeric", "Cinnamon" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'To be or not to be, that is the question'?",
+      "Answers": [ "Romeo", "Hamlet", "Macbeth", "King Lear" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the hardest natural substance on Earth?",
+      "Answers": [ "Gold", "Iron", "Diamond", "Platinum" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'RAM' stand for in computers?",
+      "Answers": [ "Random Access Memory", "Rapid Access Memory", "Read Access Memory", "Real Access Memory" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "How many holes are there in a standard game of golf?",
+      "Answers": [ "16", "18", "20", "22" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What type of pastry is used to make profiteroles?",
+      "Answers": [ "Puff pastry", "Shortcrust pastry", "Choux pastry", "Filo pastry" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which planet is known as the 'Red Planet'?",
+      "Answers": [ "Venus", "Mars", "Jupiter", "Saturn" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'PDF' stand for?",
+      "Answers": [ "Portable Document Format", "Personal Document Format", "Print Document Format", "Public Document Format" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In which sport would you use a puck?",
+      "Answers": [ "Baseball", "Hockey", "Cricket", "Rugby" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the main ingredient in hummus?",
+      "Answers": [ "Lentils", "Chickpeas", "Black beans", "Kidney beans" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who painted the Mona Lisa?",
+      "Answers": [ "Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the smallest unit of computer memory?",
+      "Answers": [ "Bit", "Byte", "Kilobyte", "Megabyte" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "How many strings does a standard guitar have?",
+      "Answers": [ "4", "5", "6", "7" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the French word for 'hello'?",
+      "Answers": [ "Bonjour", "Bonsoir", "Salut", "Au revoir" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the light bulb?",
+      "Answers": [ "Nikola Tesla", "Thomas Edison", "Benjamin Franklin", "Alexander Graham Bell" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'URL' stand for?",
+      "Answers": [ "Universal Resource Locator", "Uniform Resource Locator", "Universal Reference Link", "Uniform Reference Link" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In bowling, what is it called when you knock down all pins with your first ball?",
+      "Answers": [ "Spare", "Strike", "Split", "Turkey" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What type of cuisine is sushi?",
+      "Answers": [ "Chinese", "Japanese", "Korean", "Thai" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'I think, therefore I am'?",
+      "Answers": [ "Socrates", "René Descartes", "Aristotle", "Plato" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the most abundant gas in Earth's atmosphere?",
+      "Answers": [ "Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which novel begins with 'It was the best of times, it was the worst of times'?",
+      "Answers": [ "Great Expectations", "A Tale of Two Cities", "Oliver Twist", "David Copperfield" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the term for a word that reads the same forwards and backwards?",
+      "Answers": [ "Anagram", "Palindrome", "Synonym", "Homophone" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which art movement was Pablo Picasso associated with?",
+      "Answers": [ "Impressionism", "Cubism", "Surrealism", "Expressionism" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'IoT' stand for in technology?",
+      "Answers": [ "Internet of Things", "Integration of Technology", "Interface of Tools", "Innovation of Tech" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In which sport would you perform a slam?",
+      "Answers": [ "Tennis", "Badminton", "Squash", "All of the above" ],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'umami' in culinary terms?",
+      "Answers": [ "A cooking technique", "A type of spice", "The fifth taste", "A kitchen tool" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'The Great Gatsby'?",
+      "Answers": [ "Ernest Hemingway", "F. Scott Fitzgerald", "John Steinbeck", "William Faulkner" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the origin of the word 'robot'?",
+      "Answers": [ "German", "Czech", "Russian", "Polish" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which artist cut off his own ear?",
+      "Answers": [ "Paul Gauguin", "Vincent van Gogh", "Henri Toulouse-Lautrec", "Édouard Manet" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the binary equivalent of the decimal number 10?",
+      "Answers": [ "1010", "1100", "1001", "1011" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In golf, what is an 'eagle'?",
+      "Answers": [ "One under par", "Two under par", "Three under par", "Par" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the main ingredient in aioli?",
+      "Answers": [ "Mayonnaise", "Garlic", "Olive oil", "Lemon" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'The only thing we have to fear is fear itself'?",
+      "Answers": [ "Winston Churchill", "Franklin D. Roosevelt", "John F. Kennedy", "Abraham Lincoln" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the hardest rock?",
+      "Answers": [ "Granite", "Quartzite", "Diamond", "Basalt" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the World Wide Web?",
+      "Answers": [ "Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Mark Zuckerberg" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'JSON' stand for in programming?",
+      "Answers": [ "JavaScript Object Notation", "Java Source Object Name", "JavaScript Online Network", "Java Script Object Number" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In tennis, what is the term for a serve that the opponent cannot return?",
+      "Answers": [ "Ace", "Fault", "Let", "Deuce" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'molecular gastronomy'?",
+      "Answers": [ "Fast food preparation", "Traditional cooking", "Scientific approach to cooking", "Vegetarian cuisine" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which poet wrote 'The Road Not Taken'?",
+      "Answers": [ "Robert Frost", "Emily Dickinson", "Walt Whitman", "Edgar Allan Poe" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'etymology' study?",
+      "Answers": [ "Insects", "Word origins", "Ancient civilizations", "Plant life" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who painted 'The Persistence of Memory' (melting clocks)?",
+      "Answers": [ "René Magritte", "Salvador Dalí", "Max Ernst", "Joan Miró" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'cloud computing'?",
+      "Answers": [ "Weather prediction", "Internet-based computing services", "Aerial photography", "Satellite communication" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In cricket, what is a 'hat-trick'?",
+      "Answers": [ "Three runs in a row", "Three wickets in consecutive balls", "Three catches in one over", "Three boundaries in a row" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the difference between baking soda and baking powder?",
+      "Answers": [ "No difference", "Baking powder contains acid", "Baking soda is stronger", "Different chemical composition" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'Pride and Prejudice'?",
+      "Answers": [ "Charlotte Brontë", "Jane Austen", "Emily Brontë", "George Eliot" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is a 'portmanteau' word?",
+      "Answers": [ "A foreign word", "A blend of two words", "A very long word", "An archaic word" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which artist is known for his 'Blue Period'?",
+      "Answers": [ "Henri Matisse", "Pablo Picasso", "Paul Cézanne", "Edgar Degas" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'AI' stand for in computing?",
+      "Answers": [ "Automated Intelligence", "Artificial Intelligence", "Advanced Interface", "Adaptive Integration" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In boxing, what is a 'TKO'?",
+      "Answers": [ "Total Knockout", "Technical Knockout", "Timed Knockout", "Triple Knockout" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'sous vide' cooking?",
+      "Answers": [ "Grilling method", "Vacuum-sealed low temperature cooking", "French frying technique", "Steaming method" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'Give me liberty, or give me death'?",
+      "Answers": [ "Benjamin Franklin", "Patrick Henry", "Thomas Jefferson", "John Adams" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the study of flags called?",
+      "Answers": [ "Vexillology", "Heraldry", "Cartography", "Philately" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the printing press?",
+      "Answers": [ "Johann Gutenberg", "Leonardo da Vinci", "Benjamin Franklin", "William Caxton" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'machine learning'?",
+      "Answers": [ "Computer repair", "AI system that learns from data", "Hardware optimization", "Software installation" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In swimming, what stroke is used in the butterfly?",
+      "Answers": [ "Alternating arms", "Both arms simultaneously", "One arm at a time", "No specific pattern" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'fermentation' in cooking?",
+      "Answers": [ "Heating process", "Chemical breakdown by microorganisms", "Freezing technique", "Mixing ingredients" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which novel features the character Atticus Finch?",
+      "Answers": [ "The Catcher in the Rye", "To Kill a Mockingbird", "Of Mice and Men", "The Grapes of Wrath" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'onomatopoeia'?",
+      "Answers": [ "A type of poem", "Words that imitate sounds", "A figure of speech", "A writing style" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who painted 'The Scream'?",
+      "Answers": [ "Vincent van Gogh", "Edvard Munch", "Paul Gauguin", "Henri de Toulouse-Lautrec" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'GUI' stand for in computing?",
+      "Answers": [ "General User Interface", "Graphical User Interface", "Global User Interface", "Generated User Interface" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In baseball, what is a 'home run'?",
+      "Answers": [ "Running to first base", "Hit that allows batter to run all bases", "Winning the game", "Catching a fly ball" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'umeboshi'?",
+      "Answers": [ "Japanese pickled plum", "Korean fermented vegetable", "Chinese tea", "Thai curry" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'One Hundred Years of Solitude'?",
+      "Answers": [ "Mario Vargas Llosa", "Gabriel García Márquez", "Isabel Allende", "Jorge Luis Borges" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the difference between 'affect' and 'effect'?",
+      "Answers": [ "No difference", "Affect is a verb, effect is a noun", "Effect is a verb, affect is a noun", "They're synonyms" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which art movement did Andy Warhol belong to?",
+      "Answers": [ "Abstract Expressionism", "Pop Art", "Minimalism", "Conceptual Art" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'blockchain' technology?",
+      "Answers": [ "A type of computer", "Distributed ledger technology", "Internet security", "Data storage device" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In rugby, how many points is a try worth?",
+      "Answers": [ "3", "5", "6", "7" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'kimchi'?",
+      "Answers": [ "Japanese soup", "Korean fermented cabbage", "Chinese dumpling", "Thai salad" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'Be yourself; everyone else is already taken'?",
+      "Answers": [ "Mark Twain", "Oscar Wilde", "George Bernard Shaw", "Winston Churchill" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the most recycled material in the world?",
+      "Answers": [ "Paper", "Plastic", "Steel", "Glass" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the first computer algorithm?",
+      "Answers": [ "Charles Babbage", "Ada Lovelace", "Alan Turing", "John von Neumann" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'API' stand for in programming?",
+      "Answers": [ "Application Programming Interface", "Advanced Programming Instructions", "Automated Program Integration", "Application Process Interface" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In volleyball, how many times can a team hit the ball before sending it over the net?",
+      "Answers": [ "2", "3", "4", "5" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'tempering' in chocolate making?",
+      "Answers": [ "Adding flavor", "Controlling temperature for crystal formation", "Mixing ingredients", "Cooling rapidly" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which dystopian novel features the concept of 'Big Brother'?",
+      "Answers": [ "Brave New World", "1984", "Fahrenheit 451", "The Handmaid's Tale" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'synecdoche'?",
+      "Answers": [ "A type of rhythm", "Figure of speech using part for whole", "A poetic form", "A rhyme scheme" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who painted 'Water Lilies'?",
+      "Answers": [ "Pierre-Auguste Renoir", "Claude Monet", "Edgar Degas", "Camille Pissarro" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'quantum computing'?",
+      "Answers": [ "Very fast regular computing", "Computing using quantum mechanics principles", "Computing with multiple processors", "Computing with advanced graphics" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In American football, how many points is a touchdown worth?",
+      "Answers": [ "3", "6", "7", "8" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'mise en place'?",
+      "Answers": [ "A cooking technique", "Organizing ingredients before cooking", "A French sauce", "A kitchen tool" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'The Canterbury Tales'?",
+      "Answers": [ "William Shakespeare", "Geoffrey Chaucer", "Edmund Spenser", "Christopher Marlowe" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the difference between 'syntax' and 'semantics' in linguistics?",
+      "Answers": [ "No difference", "Syntax is structure, semantics is meaning", "Semantics is structure, syntax is meaning", "Both refer to grammar" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which artistic technique involves applying paint thickly so brush strokes are visible?",
+      "Answers": [ "Glazing", "Impasto", "Sfumato", "Chiaroscuro" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the difference between 'machine learning' and 'deep learning'?",
+      "Answers": [ "No difference", "Deep learning uses neural networks", "Machine learning is faster", "Deep learning uses more data" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In cricket, what is a 'googly'?",
+      "Answers": [ "A type of catch", "A deceptive bowling delivery", "A batting technique", "A fielding position" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the 'Maillard reaction'?",
+      "Answers": [ "A chemical process causing browning in cooking", "A fermentation process", "A preservation method", "A baking technique" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'Ulysses'?",
+      "Answers": [ "Virginia Woolf", "James Joyce", "D.H. Lawrence", "T.S. Eliot" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'tmesis'?",
+      "Answers": [ "A type of meter", "Splitting a word with another word", "A rhetorical question", "A poetic device" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who developed the technique of 'action painting'?",
+      "Answers": [ "Willem de Kooning", "Jackson Pollock", "Mark Rothko", "Barnett Newman" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'neural network' architecture in AI?",
+      "Answers": [ "Computer hardware design", "Interconnected nodes mimicking brain neurons", "Network security system", "Database structure" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In sailing, what is a 'spinnaker'?",
+      "Answers": [ "A type of anchor", "A large sail for downwind sailing", "A navigation tool", "A type of knot" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'spherification' in molecular gastronomy?",
+      "Answers": [ "Making round shapes", "Creating liquid-filled spheres", "Crystallizing sugar", "Vacuum-sealing food" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'The medium is the message'?",
+      "Answers": [ "Marshall McLuhan", "Neil Postman", "Walter Benjamin", "Jean Baudrillard" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the 'uncanny valley' in robotics?",
+      "Answers": [ "A manufacturing defect", "Discomfort with almost-human robots", "A programming error", "A design principle" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the Turing machine?",
+      "Answers": [ "John von Neumann", "Alan Turing", "Charles Babbage", "Ada Lovelace" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'LISP' in programming?",
+      "Answers": [ "A hardware component", "A programming language", "A database system", "An operating system" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In chess, what is 'en passant'?",
+      "Answers": [ "A check move", "A special pawn capture", "A castling move", "A promotion rule" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'confit' in cooking?",
+      "Answers": [ "A type of sauce", "Slow cooking in fat", "A spice blend", "A cutting technique" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which novel features the stream-of-consciousness technique prominently?",
+      "Answers": [ "The Sound and the Fury", "The Old Man and the Sea", "For Whom the Bell Tolls", "The Sun Also Rises" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'polysemy' in linguistics?",
+      "Answers": [ "Multiple pronunciations", "Multiple meanings of one word", "Multiple spellings", "Multiple grammatical functions" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who created the 'Campbell's Soup Cans' artwork?",
+      "Answers": [ "Roy Lichtenstein", "Andy Warhol", "Jasper Johns", "Robert Rauschenberg" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'fuzzy logic' in computing?",
+      "Answers": [ "Unclear programming", "Logic with degrees of truth", "Random algorithms", "Error-prone code" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In fencing, what are the three weapons used?",
+      "Answers": [ "Sword, saber, rapier", "Foil, épée, saber", "Blade, point, edge", "Light, medium, heavy" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'gelification' in cooking?",
+      "Answers": [ "Freezing process", "Converting liquid to gel", "Adding flavor", "Heating technique" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who wrote 'Finnegans Wake'?",
+      "Answers": [ "Samuel Beckett", "James Joyce", "Oscar Wilde", "W.B. Yeats" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'metalepsis' in rhetoric?",
+      "Answers": [ "A type of metaphor", "Substitution of cause for effect", "A questioning technique", "A persuasive strategy" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which artist pioneered the 'drip painting' technique?",
+      "Answers": [ "Franz Kline", "Jackson Pollock", "Robert Motherwell", "Helen Frankenthaler" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'recursive' function in programming?",
+      "Answers": [ "A repeated function", "A function that calls itself", "A broken function", "A complex function" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In badminton, what is the object hit back and forth called?",
+      "Answers": [ "Shuttle", "Shuttlecock", "Birdie", "All of the above" ],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'emulsification' in cooking?",
+      "Answers": [ "Mixing oil and water-based ingredients", "Heating at high temperature", "Cutting finely", "Adding acid" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who said 'In the future, everyone will be world-famous for 15 minutes'?",
+      "Answers": [ "Marshall McLuhan", "Andy Warhol", "John Lennon", "Bob Dylan" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is the 'halting problem' in computer science?",
+      "Answers": [ "When computers stop working", "Determining if a program will terminate", "Network connectivity issues", "Memory allocation problems" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who invented the integrated circuit?",
+      "Answers": [ "Jack Kilby", "Robert Noyce", "Both Jack Kilby and Robert Noyce", "Gordon Moore" ],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What does 'SQL' stand for in databases?",
+      "Answers": [ "Structured Query Language", "Standard Query Language", "Simple Query Language", "System Query Language" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In water polo, how many players are in the water per team at one time?",
+      "Answers": [ "6", "7", "8", "9" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'clarification' in cooking?",
+      "Answers": [ "Adding spices", "Making liquids clear", "Explaining recipes", "Measuring ingredients" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Which poet wrote 'The Waste Land'?",
+      "Answers": [ "W.H. Auden", "T.S. Eliot", "Ezra Pound", "Robert Frost" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'zeugma' in rhetoric?",
+      "Answers": [ "A type of question", "Using one word to modify two others", "A repetition technique", "A comparison method" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "Who developed the color field painting technique?",
+      "Answers": [ "Jackson Pollock", "Mark Rothko", "Willem de Kooning", "Franz Kline" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'polymorphism' in programming?",
+      "Answers": [ "Multiple file formats", "Objects taking multiple forms", "Network protocols", "Database structures" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "In table tennis, what is the maximum score in a standard game?",
+      "Answers": [ "11", "15", "21", "25" ],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    },
+    {
+      "Text": "What is 'chiffonade' in culinary terms?",
+      "Answers": [ "A sauce", "A cutting technique for herbs", "A cooking method", "A type of pastry" ],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "GeneralCulture"
+    }
+  ]
+}

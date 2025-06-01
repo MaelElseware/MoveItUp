@@ -1,0 +1,730 @@
+{
+  "Questions": [
+    {
+      "Text": "Which mountain range forms the natural border between Europe and Asia?",
+      "Answers": ["Alps", "Himalayas", "Ural Mountains", "Carpathians"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the deepest point in Earth's oceans?",
+      "Answers": ["Puerto Rico Trench", "Mariana Trench", "Java Trench", "Tonga Trench"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which African country is completely surrounded by South Africa?",
+      "Answers": ["Swaziland", "Lesotho", "Botswana", "Namibia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Ring of Fire is associated with which geological phenomenon?",
+      "Answers": ["Desert formation", "Volcanic activity", "Glacial movement", "River deltas"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which strait separates Europe from Africa?",
+      "Answers": ["Bering Strait", "Strait of Hormuz", "Strait of Gibraltar", "Bass Strait"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What type of climate is characterized by hot, dry summers and mild, wet winters?",
+      "Answers": ["Continental", "Mediterranean", "Tropical", "Tundra"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which desert is the largest hot desert in the world?",
+      "Answers": ["Gobi Desert", "Kalahari Desert", "Sahara Desert", "Arabian Desert"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Mekong River flows through how many countries?",
+      "Answers": ["4", "5", "6", "7"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which tectonic plate is the largest?",
+      "Answers": ["North American Plate", "Eurasian Plate", "Pacific Plate", "African Plate"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for a narrow strip of land connecting two larger land areas?",
+      "Answers": ["Peninsula", "Archipelago", "Isthmus", "Fjord"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has the most time zones?",
+      "Answers": ["Russia", "United States", "China", "France"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Atacama Desert is located in which continent?",
+      "Answers": ["Africa", "Asia", "South America", "Australia"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which sea is the saltiest body of water on Earth?",
+      "Answers": ["Dead Sea", "Red Sea", "Caspian Sea", "Aral Sea"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the longest mountain range in the world?",
+      "Answers": ["Rocky Mountains", "Himalayas", "Andes", "Alps"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is both in Europe and Asia?",
+      "Answers": ["Georgia", "Turkey", "Kazakhstan", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Great Rift Valley runs through which continent?",
+      "Answers": ["Asia", "Africa", "South America", "North America"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which island nation is located southeast of India?",
+      "Answers": ["Maldives", "Sri Lanka", "Madagascar", "Mauritius"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for the boundary between two tectonic plates?",
+      "Answers": ["Fault line", "Plate margin", "Subduction zone", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which African lake is the source of the Blue Nile?",
+      "Answers": ["Lake Victoria", "Lake Tanganyika", "Lake Tana", "Lake Malawi"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Silk Road historically connected which two regions?",
+      "Answers": ["Europe and Africa", "Asia and Europe", "Asia and Americas", "Africa and Americas"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has coastlines on both the Pacific and Atlantic oceans?",
+      "Answers": ["Chile", "Colombia", "Panama", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the highest waterfall in the world?",
+      "Answers": ["Niagara Falls", "Angel Falls", "Victoria Falls", "Iguazu Falls"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Caucasus Mountains separate which two seas?",
+      "Answers": ["Black Sea and Caspian Sea", "Black Sea and Mediterranean", "Caspian Sea and Aral Sea", "Red Sea and Arabian Sea"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country is known as the 'Land of a Thousand Hills'?",
+      "Answers": ["Nepal", "Rwanda", "Switzerland", "Bhutan"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Tropic of Capricorn passes through how many continents?",
+      "Answers": ["2", "3", "4", "5"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which body of water separates Saudi Arabia from Africa?",
+      "Answers": ["Persian Gulf", "Red Sea", "Arabian Sea", "Gulf of Aden"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the smallest country in South America?",
+      "Answers": ["Uruguay", "Guyana", "Suriname", "French Guiana"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Pampas grasslands are located in which country?",
+      "Answers": ["Brazil", "Argentina", "Uruguay", "Both B and C"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which volcano destroyed Pompeii in 79 AD?",
+      "Answers": ["Mount Etna", "Mount Vesuvius", "Stromboli", "Mount Vulcano"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Gobi Desert spans across which two countries?",
+      "Answers": ["China and India", "Mongolia and China", "Russia and Mongolia", "Kazakhstan and China"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which European country has the most islands?",
+      "Answers": ["Norway", "Finland", "Sweden", "Denmark"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Amazon rainforest covers approximately what percentage of Brazil?",
+      "Answers": ["40%", "50%", "60%", "70%"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which river forms part of the border between Mexico and the United States?",
+      "Answers": ["Colorado River", "Rio Grande", "Gila River", "Pecos River"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Federated States of Micronesia is located in which ocean?",
+      "Answers": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which mountain peak is known as K2?",
+      "Answers": ["Second highest peak in the world", "Second peak discovered in Karakoram", "Located in Kashmir region", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Suez Canal connects which two bodies of water?",
+      "Answers": ["Red Sea and Mediterranean Sea", "Persian Gulf and Red Sea", "Mediterranean and Black Sea", "Red Sea and Arabian Sea"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has the longest coastline in the world?",
+      "Answers": ["Russia", "Canada", "Norway", "Indonesia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Sahel region of Africa is characterized by what type of landscape?",
+      "Answers": ["Dense forest", "Semi-arid grassland", "Mountain ranges", "Coastal wetlands"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which strait connects the Atlantic and Pacific oceans at the southern tip of South America?",
+      "Answers": ["Drake Passage", "Strait of Magellan", "Beagle Channel", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Tibetan Plateau is often called the 'Roof of the World' because of its:",
+      "Answers": ["Large size", "High elevation", "Cultural significance", "Remote location"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is home to the ancient city of Petra?",
+      "Answers": ["Egypt", "Jordan", "Syria", "Lebanon"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Bosphorus strait separates which two continents?",
+      "Answers": ["Europe and Africa", "Asia and Africa", "Europe and Asia", "North and South America"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which is the largest island in the Caribbean?",
+      "Answers": ["Jamaica", "Cuba", "Hispaniola", "Puerto Rico"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Murray River is the longest river in which country?",
+      "Answers": ["New Zealand", "Australia", "Papua New Guinea", "Indonesia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which geological feature is formed by the collision of tectonic plates?",
+      "Answers": ["Rift valley", "Ocean trench", "Mountain range", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Ganges River is considered sacred in which religion?",
+      "Answers": ["Buddhism", "Hinduism", "Sikhism", "Jainism"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which country has the most neighbors (bordering countries)?",
+      "Answers": ["Russia", "China", "Brazil", "Germany"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Pantanal wetlands are primarily located in which country?",
+      "Answers": ["Argentina", "Paraguay", "Brazil", "Bolivia"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which ocean current helps moderate Western Europe's climate?",
+      "Answers": ["Canary Current", "Gulf Stream", "Labrador Current", "North Atlantic Drift"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Dardanelles strait connects which two seas?",
+      "Answers": ["Black Sea and Sea of Marmara", "Aegean Sea and Sea of Marmara", "Mediterranean and Aegean Sea", "Black Sea and Mediterranean"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country is known as the 'Land of the Rising Sun'?",
+      "Answers": ["China", "South Korea", "Japan", "Thailand"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Okavango Delta is located in which African country?",
+      "Answers": ["Namibia", "Botswana", "Zambia", "Zimbabwe"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which mountain range runs along the western coast of South America?",
+      "Answers": ["Rocky Mountains", "Appalachian Mountains", "Andes Mountains", "Sierra Madre"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Great Barrier Reef is located off the coast of which Australian state?",
+      "Answers": ["Western Australia", "New South Wales", "Queensland", "Northern Territory"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which lake is the largest by surface area in Africa?",
+      "Answers": ["Lake Tanganyika", "Lake Victoria", "Lake Malawi", "Lake Chad"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The steppes are vast grasslands found primarily in which region?",
+      "Answers": ["Eastern Europe and Central Asia", "Western North America", "Southern Africa", "Central Australia"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which European country is shaped like a boot?",
+      "Answers": ["Greece", "Spain", "Italy", "Portugal"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Huang He (Yellow River) is located in which country?",
+      "Answers": ["Japan", "China", "Mongolia", "North Korea"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has both Amsterdam as its constitutional capital and The Hague as its seat of government?",
+      "Answers": ["Belgium", "Netherlands", "Luxembourg", "Denmark"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Empty Quarter (Rub' al Khali) is a desert located in which region?",
+      "Answers": ["North Africa", "Arabian Peninsula", "Central Asia", "Australian Outback"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which two countries share the longest international border?",
+      "Answers": ["USA and Mexico", "Russia and China", "Canada and USA", "Brazil and Argentina"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Fjords are most commonly associated with which country?",
+      "Answers": ["Sweden", "Finland", "Norway", "Iceland"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which sea is gradually disappearing due to water diversion?",
+      "Answers": ["Dead Sea", "Aral Sea", "Caspian Sea", "Sea of Galilee"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Roof of Africa refers to which mountain?",
+      "Answers": ["Mount Kenya", "Mount Kilimanjaro", "Mount Elgon", "Atlas Mountains"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is the world's largest archipelago?",
+      "Answers": ["Philippines", "Indonesia", "Japan", "Greece"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Yangtze River is the longest river in which continent?",
+      "Answers": ["Europe", "Africa", "Asia", "North America"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is home to Machu Picchu?",
+      "Answers": ["Ecuador", "Bolivia", "Peru", "Colombia"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Taiga biome is characterized by:",
+      "Answers": ["Tropical rainforests", "Coniferous forests", "Grasslands", "Deserts"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which strait separates Alaska from Russia?",
+      "Answers": ["Bering Strait", "Davis Strait", "Hudson Strait", "Cook Strait"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Ring of Fire is most active around which ocean?",
+      "Answers": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which African country was never colonized by Europeans?",
+      "Answers": ["Ethiopia", "Liberia", "Both A and B", "South Africa"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Monsoon climate pattern most significantly affects which region?",
+      "Answers": ["Mediterranean", "South and Southeast Asia", "Northern Europe", "Western North America"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has the most UNESCO World Heritage Sites?",
+      "Answers": ["France", "Germany", "Italy", "Spain"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Altiplano plateau is located in which mountain range?",
+      "Answers": ["Himalayas", "Rockies", "Andes", "Alps"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country is both the smallest and least populous in Central America?",
+      "Answers": ["Belize", "El Salvador", "Costa Rica", "Panama"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Zambezi River flows into which ocean?",
+      "Answers": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which continent has the most countries?",
+      "Answers": ["Asia", "Africa", "Europe", "South America"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Sundarbans mangrove forest is shared between which two countries?",
+      "Answers": ["India and Sri Lanka", "India and Bangladesh", "Myanmar and Bangladesh", "Thailand and Myanmar"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country is known as the 'Pearl of the Orient'?",
+      "Answers": ["Thailand", "Philippines", "Singapore", "Malaysia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Volga River flows into which body of water?",
+      "Answers": ["Black Sea", "Baltic Sea", "Caspian Sea", "White Sea"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which desert is known as the 'Cold Desert'?",
+      "Answers": ["Sahara", "Gobi", "Atacama", "Kalahari"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Lena River is located in which country?",
+      "Answers": ["Mongolia", "China", "Russia", "Kazakhstan"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country has three capitals?",
+      "Answers": ["Bolivia", "South Africa", "Netherlands", "Switzerland"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Deccan Plateau is located in which country?",
+      "Answers": ["Pakistan", "India", "Bangladesh", "Sri Lanka"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which ocean is the smallest?",
+      "Answers": ["Indian", "Arctic", "Atlantic", "Pacific"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Fertile Crescent is located in which modern-day region?",
+      "Answers": ["North Africa", "Middle East", "Central Asia", "Eastern Europe"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is home to the source of the Nile River?",
+      "Answers": ["Egypt", "Sudan", "Uganda", "Ethiopia"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Strait of Hormuz controls access to which body of water?",
+      "Answers": ["Red Sea", "Persian Gulf", "Arabian Sea", "Caspian Sea"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which mountain range separates France from Spain?",
+      "Answers": ["Alps", "Pyrenees", "Carpathians", "Apennines"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Kalahari Desert covers most of which country?",
+      "Answers": ["South Africa", "Namibia", "Botswana", "Zimbabwe"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has the most active volcanoes?",
+      "Answers": ["Japan", "Indonesia", "Philippines", "Chile"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Patagonia region is shared between which two countries?",
+      "Answers": ["Brazil and Uruguay", "Chile and Argentina", "Peru and Bolivia", "Colombia and Venezuela"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which sea is located between Italy and the Balkans?",
+      "Answers": ["Tyrrhenian Sea", "Adriatic Sea", "Ionian Sea", "Aegean Sea"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Great Dividing Range runs along which coast of Australia?",
+      "Answers": ["Western", "Northern", "Eastern", "Southern"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country is known as the 'Crossroads of Europe'?",
+      "Answers": ["Germany", "Poland", "Austria", "Belgium"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Indus River primarily flows through which country?",
+      "Answers": ["India", "Pakistan", "Afghanistan", "China"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which geological formation is Uluru (Ayers Rock)?",
+      "Answers": ["Volcano", "Monolith", "Mesa", "Plateau"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Maldives consists of approximately how many islands?",
+      "Answers": ["500", "1,000", "1,200", "2,000"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country has the highest average elevation?",
+      "Answers": ["Nepal", "Bhutan", "Tibet (China)", "Afghanistan"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Sahara Desert is approximately the size of which continent?",
+      "Answers": ["Australia", "Europe", "United States", "South America"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country is home to the ancient trading city of Timbuktu?",
+      "Answers": ["Morocco", "Algeria", "Mali", "Niger"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the capital of Australia?",
+      "Answers": ["Sydney", "Melbourne", "Canberra", "Perth"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which continent is Egypt located in?",
+      "Answers": ["Asia", "Africa", "Europe", "Middle East"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the largest ocean on Earth?",
+      "Answers": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which river flows through London?",
+      "Answers": ["Thames", "Severn", "Trent", "Mersey"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the smallest continent?",
+      "Answers": ["Europe", "Antarctica", "Australia", "South America"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which mountain range contains Mount Everest?",
+      "Answers": ["Andes", "Rocky Mountains", "Himalayas", "Alps"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the capital of Canada?",
+      "Answers": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which country is famous for the pyramids?",
+      "Answers": ["Mexico", "Egypt", "Peru", "Cambodia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the longest river in the world?",
+      "Answers": ["Amazon River", "Nile River", "Mississippi River", "Yangtze River"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which continent is Brazil located in?",
+      "Answers": ["North America", "South America", "Central America", "Caribbean"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "The Carpathian Mountains primarily extend through which region?",
+      "Answers": ["Western Europe", "Eastern Europe", "Northern Europe", "Southern Europe"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which country has the most natural lakes?",
+      "Answers": ["Russia", "Canada", "Finland", "Sweden"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Iberian Peninsula consists primarily of which two countries?",
+      "Answers": ["France and Italy", "Spain and Portugal", "Greece and Turkey", "Poland and Germany"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which sea borders Turkey to the north?",
+      "Answers": ["Mediterranean Sea", "Aegean Sea", "Black Sea", "Caspian Sea"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "The Danube River flows into which sea?",
+      "Answers": ["North Sea", "Baltic Sea", "Black Sea", "Mediterranean Sea"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which micronation is completely surrounded by Italy?",
+      "Answers": ["Monaco", "Liechtenstein", "San Marino", "Andorra"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The McMurdo Dry Valleys are located in which continent?",
+      "Answers": ["Arctic", "Antarctica", "Greenland", "Siberia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which country has sovereignty over the Socotra Island?",
+      "Answers": ["Oman", "Yemen", "Somalia", "Eritrea"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "The Kamchatka Peninsula belongs to which country?",
+      "Answers": ["Alaska (USA)", "Canada", "Russia", "Norway"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which African country has three time zones?",
+      "Answers": ["Algeria", "Democratic Republic of Congo", "Libya", "South Africa"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    }
+  ]
+}

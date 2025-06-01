@@ -1,0 +1,689 @@
+{
+  "Questions": [
+    {
+      "Text": "What is the largest organ in the human body?",
+      "Answers": ["Heart", "Liver", "Skin", "Brain"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "How many chambers does a human heart have?",
+      "Answers": ["Two", "Three", "Four", "Five"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What gas do plants absorb from the atmosphere during photosynthesis?",
+      "Answers": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which part of the plant conducts photosynthesis?",
+      "Answers": ["Roots", "Stem", "Leaves", "Flowers"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the basic unit of life?",
+      "Answers": ["Atom", "Cell", "Tissue", "Organ"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which animal is known as the 'King of the Jungle'?",
+      "Answers": ["Tiger", "Elephant", "Lion", "Leopard"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What do bees collect from flowers?",
+      "Answers": ["Water", "Nectar", "Leaves", "Seeds"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "How many legs does a spider have?",
+      "Answers": ["Six", "Eight", "Ten", "Twelve"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What type of animal is a dolphin?",
+      "Answers": ["Fish", "Mammal", "Reptile", "Amphibian"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which vitamin is produced when skin is exposed to sunlight?",
+      "Answers": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the main function of red blood cells?",
+      "Answers": ["Fight infection", "Carry oxygen", "Clot blood", "Produce hormones"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which organ filters blood in the human body?",
+      "Answers": ["Liver", "Lungs", "Kidneys", "Stomach"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What do we call animals that eat only plants?",
+      "Answers": ["Carnivores", "Herbivores", "Omnivores", "Predators"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which part of the eye controls how much light enters?",
+      "Answers": ["Cornea", "Lens", "Pupil", "Retina"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the hardest substance in the human body?",
+      "Answers": ["Bone", "Tooth enamel", "Cartilage", "Nail"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which gas do humans exhale?",
+      "Answers": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the largest mammal in the world?",
+      "Answers": ["African elephant", "Blue whale", "Giraffe", "Hippopotamus"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which part of a plant absorbs water and nutrients?",
+      "Answers": ["Leaves", "Stem", "Roots", "Flowers"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What do we call the process by which caterpillars become butterflies?",
+      "Answers": ["Evolution", "Metamorphosis", "Adaptation", "Migration"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which blood type is known as the universal donor?",
+      "Answers": ["A", "B", "AB", "O"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the main component of chromosomes?",
+      "Answers": ["Protein", "Fat", "DNA", "Sugar"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which animal changes color to blend with its surroundings?",
+      "Answers": ["Zebra", "Chameleon", "Tiger", "Leopard"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the normal human body temperature in Celsius?",
+      "Answers": ["35°C", "36°C", "37°C", "38°C"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which organ produces insulin?",
+      "Answers": ["Liver", "Kidney", "Pancreas", "Stomach"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What do plants need besides sunlight and carbon dioxide for photosynthesis?",
+      "Answers": ["Oxygen", "Nitrogen", "Water", "Minerals"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which part of the brain controls balance?",
+      "Answers": ["Cerebrum", "Cerebellum", "Brain stem", "Hypothalamus"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the name for animals that are active at night?",
+      "Answers": ["Diurnal", "Nocturnal", "Crepuscular", "Hibernating"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which type of blood vessel carries blood away from the heart?",
+      "Answers": ["Veins", "Arteries", "Capillaries", "Lymph vessels"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the largest bone in the human body?",
+      "Answers": ["Humerus", "Tibia", "Femur", "Radius"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "Which animal is known for its ability to regenerate its tail?",
+      "Answers": ["Snake", "Lizard", "Frog", "Bird"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy"
+    },
+    {
+      "Text": "What is the function of white blood cells?",
+      "Answers": ["Carry oxygen", "Fight infections", "Clot blood", "Transport nutrients"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which process do plants use to transport water from roots to leaves?",
+      "Answers": ["Osmosis", "Diffusion", "Transpiration", "Active transport"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the gestation period of a human pregnancy?",
+      "Answers": ["36 weeks", "38 weeks", "40 weeks", "42 weeks"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which hormone regulates blood sugar levels?",
+      "Answers": ["Adrenaline", "Insulin", "Thyroxine", "Cortisol"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the powerhouse of the cell?",
+      "Answers": ["Nucleus", "Ribosome", "Mitochondria", "Endoplasmic reticulum"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of joint is found in the shoulder?",
+      "Answers": ["Hinge joint", "Ball and socket joint", "Pivot joint", "Fixed joint"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the scientific name for the kneecap?",
+      "Answers": ["Fibula", "Tibia", "Patella", "Femur"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the digestive system absorbs most nutrients?",
+      "Answers": ["Stomach", "Large intestine", "Small intestine", "Liver"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the most abundant gas in Earth's atmosphere?",
+      "Answers": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which vitamin deficiency causes scurvy?",
+      "Answers": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for the death of tissue due to lack of blood supply?",
+      "Answers": ["Necrosis", "Apoptosis", "Mitosis", "Meiosis"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which organ system includes the spleen?",
+      "Answers": ["Digestive system", "Respiratory system", "Lymphatic system", "Endocrine system"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the process by which plants lose water through their leaves?",
+      "Answers": ["Respiration", "Photosynthesis", "Transpiration", "Fermentation"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which blood cells are responsible for clotting?",
+      "Answers": ["Red blood cells", "White blood cells", "Platelets", "Plasma cells"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the largest artery in the human body?",
+      "Answers": ["Pulmonary artery", "Carotid artery", "Aorta", "Femoral artery"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the neuron receives signals from other neurons?",
+      "Answers": ["Axon", "Dendrite", "Cell body", "Synapse"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the pH of normal human blood?",
+      "Answers": ["6.8", "7.0", "7.4", "7.8"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of muscle is found in the heart?",
+      "Answers": ["Skeletal muscle", "Smooth muscle", "Cardiac muscle", "Voluntary muscle"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the tube that connects the throat to the stomach?",
+      "Answers": ["Trachea", "Esophagus", "Larynx", "Pharynx"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which gland is often called the 'master gland'?",
+      "Answers": ["Thyroid", "Adrenal", "Pituitary", "Pancreas"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for animals that maintain constant body temperature?",
+      "Answers": ["Cold-blooded", "Warm-blooded", "Poikilothermic", "Ectothermic"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which structure in plants is responsible for gas exchange?",
+      "Answers": ["Xylem", "Phloem", "Stomata", "Cambium"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the average lifespan of a red blood cell?",
+      "Answers": ["60 days", "90 days", "120 days", "150 days"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the plant cell provides structural support?",
+      "Answers": ["Cell membrane", "Cell wall", "Cytoplasm", "Vacuole"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the voice box?",
+      "Answers": ["Pharynx", "Larynx", "Trachea", "Epiglottis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which chromosome combination determines a male in humans?",
+      "Answers": ["XX", "XY", "YY", "XZ"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the main function of the liver?",
+      "Answers": ["Pump blood", "Filter air", "Detoxify blood", "Produce hormones"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of reproduction involves only one parent?",
+      "Answers": ["Sexual reproduction", "Binary fission", "Fertilization", "Pollination"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the smallest unit of heredity?",
+      "Answers": ["Chromosome", "Gene", "DNA", "Allele"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the ear is responsible for balance?",
+      "Answers": ["Outer ear", "Middle ear", "Inner ear", "Eardrum"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for the study of fungi?",
+      "Answers": ["Botany", "Zoology", "Mycology", "Ecology"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which organ produces bile?",
+      "Answers": ["Pancreas", "Liver", "Gallbladder", "Stomach"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the process by which cells divide to produce gametes?",
+      "Answers": ["Mitosis", "Meiosis", "Binary fission", "Budding"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the brain controls voluntary movements?",
+      "Answers": ["Cerebellum", "Brain stem", "Cerebrum", "Hypothalamus"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Type": "Text",
+      "Text": "What is the term for the study of how organisms interact with their environment?",
+      "Answers": ["Genetics", "Anatomy", "Ecology", "Physiology"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which structure connects muscle to bone?",
+      "Answers": ["Ligament", "Tendon", "Cartilage", "Joint"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the primary function of hemoglobin?",
+      "Answers": ["Fight infection", "Clot blood", "Carry oxygen", "Digest food"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which plant hormone is responsible for fruit ripening?",
+      "Answers": ["Auxin", "Gibberellin", "Ethylene", "Cytokinin"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the medical term for high blood pressure?",
+      "Answers": ["Hypotension", "Hypertension", "Tachycardia", "Bradycardia"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the cell controls what enters and exits?",
+      "Answers": ["Nucleus", "Cell membrane", "Cytoplasm", "Ribosome"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the name of the sugar found in DNA?",
+      "Answers": ["Glucose", "Fructose", "Ribose", "Deoxyribose"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which type of blood vessel has the thickest walls?",
+      "Answers": ["Arteries", "Veins", "Capillaries", "Venules"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "What is the term for organisms that can produce their own food?",
+      "Answers": ["Heterotrophs", "Autotrophs", "Decomposers", "Parasites"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium"
+    },
+    {
+      "Text": "Which part of the nephron is responsible for filtration?",
+      "Answers": ["Loop of Henle", "Collecting duct", "Glomerulus", "Proximal tubule"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the theory that explains how species change over time?",
+      "Answers": ["Cell theory", "Germ theory", "Theory of evolution", "Atomic theory"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which enzyme breaks down starch in the mouth?",
+      "Answers": ["Pepsin", "Lipase", "Amylase", "Trypsin"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the process by which DNA makes a copy of itself?",
+      "Answers": ["Transcription", "Translation", "Replication", "Mutation"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which structure in the cell is responsible for protein synthesis?",
+      "Answers": ["Golgi apparatus", "Endoplasmic reticulum", "Ribosome", "Lysosome"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the term for the maintenance of stable internal conditions in organisms?",
+      "Answers": ["Metabolism", "Homeostasis", "Adaptation", "Evolution"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the nervous system includes the brain and spinal cord?",
+      "Answers": ["Peripheral nervous system", "Central nervous system", "Autonomic nervous system", "Somatic nervous system"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the membrane that surrounds the lungs?",
+      "Answers": ["Pericardium", "Peritoneum", "Pleura", "Meninges"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which genetic disorder is caused by the absence of one X chromosome in females?",
+      "Answers": ["Down syndrome", "Turner syndrome", "Klinefelter syndrome", "Cystic fibrosis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the process by which RNA is made from DNA?",
+      "Answers": ["Replication", "Transcription", "Translation", "Mutation"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which hormone is responsible for regulating the sleep-wake cycle?",
+      "Answers": ["Insulin", "Cortisol", "Melatonin", "Adrenaline"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the condition where the immune system attacks the body's own tissues?",
+      "Answers": ["Immunodeficiency", "Autoimmune disease", "Allergy", "Infection"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the chloroplast contains chlorophyll?",
+      "Answers": ["Stroma", "Thylakoid", "Granum", "Lamella"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the term for the programmed death of cells?",
+      "Answers": ["Necrosis", "Apoptosis", "Mitosis", "Cytokinesis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which type of immunity is acquired through vaccination?",
+      "Answers": ["Innate immunity", "Natural active immunity", "Artificial active immunity", "Passive immunity"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the junction between two neurons?",
+      "Answers": ["Gap junction", "Tight junction", "Synapse", "Dendrite"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which organelle is responsible for cellular respiration?",
+      "Answers": ["Chloroplast", "Nucleus", "Mitochondrion", "Ribosome"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the protein that carries oxygen in red blood cells?",
+      "Answers": ["Myoglobin", "Hemoglobin", "Albumin", "Fibrinogen"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which process describes the movement of water across a semipermeable membrane?",
+      "Answers": ["Diffusion", "Active transport", "Osmosis", "Filtration"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the disease caused by a deficiency of vitamin B1?",
+      "Answers": ["Scurvy", "Rickets", "Beriberi", "Pellagra"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the brain regulates hunger and thirst?",
+      "Answers": ["Cerebellum", "Hypothalamus", "Medulla", "Pons"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the protective covering around nerve fibers?",
+      "Answers": ["Dendrite", "Axon", "Myelin sheath", "Schwann cell"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which enzyme is responsible for unwinding DNA during replication?",
+      "Answers": ["DNA polymerase", "Helicase", "Ligase", "Primase"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the term for the study of the structure and function of tissues?",
+      "Answers": ["Anatomy", "Histology", "Physiology", "Pathology"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which type of RNA carries amino acids to the ribosome?",
+      "Answers": ["mRNA", "tRNA", "rRNA", "snRNA"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the condition where blood sugar levels are consistently high?",
+      "Answers": ["Hypoglycemia", "Diabetes mellitus", "Insulin resistance", "Metabolic syndrome"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the flower contains the female reproductive organs?",
+      "Answers": ["Stamen", "Pistil", "Petal", "Sepal"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the process by which plants bend toward light?",
+      "Answers": ["Geotropism", "Phototropism", "Thigmotropism", "Chemotropism"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which blood component is primarily responsible for maintaining blood pressure?",
+      "Answers": ["Red blood cells", "White blood cells", "Platelets", "Plasma proteins"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the membrane that lines the inside of the heart?",
+      "Answers": ["Epicardium", "Myocardium", "Endocardium", "Pericardium"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which organelle contains digestive enzymes?",
+      "Answers": ["Golgi apparatus", "Lysosome", "Peroxisome", "Vacuole"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the term for the study of heredity and variation?",
+      "Answers": ["Ecology", "Genetics", "Evolution", "Taxonomy"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which structure in bacteria contains the genetic material?",
+      "Answers": ["Nucleus", "Nucleoid", "Plasmid", "Ribosome"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the valve between the left atrium and left ventricle?",
+      "Answers": ["Tricuspid valve", "Pulmonary valve", "Mitral valve", "Aortic valve"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which process involves the conversion of glucose to pyruvate?",
+      "Answers": ["Glycolysis", "Krebs cycle", "Electron transport", "Fermentation"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the hormone that stimulates milk production?",
+      "Answers": ["Estrogen", "Progesterone", "Prolactin", "Oxytocin"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the immune system produces antibodies?",
+      "Answers": ["T cells", "B cells", "Macrophages", "Neutrophils"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the process by which plants reproduce without seeds?",
+      "Answers": ["Sexual reproduction", "Vegetative propagation", "Pollination", "Fertilization"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which neurotransmitter is associated with Parkinson's disease?",
+      "Answers": ["Serotonin", "Dopamine", "Acetylcholine", "GABA"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "What is the name of the condition where bones become brittle and fragile?",
+      "Answers": ["Arthritis", "Osteoporosis", "Osteomalacia", "Rickets"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    },
+    {
+      "Text": "Which part of the plant conducts sugars from leaves to other parts?",
+      "Answers": ["Xylem", "Phloem", "Cambium", "Cortex"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard"
+    }
+  ]
+}

@@ -1,0 +1,844 @@
+{
+  "Questions": [
+    {
+      "Text": "Who directed the 1975 thriller 'Jaws'?",
+      "Answers": ["George Lucas", "Steven Spielberg", "Francis Ford Coppola", "Martin Scorsese"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which movie features the famous line 'May the Force be with you'?",
+      "Answers": ["Star Trek", "Star Wars", "Blade Runner", "E.T."],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'Titanic' (1997)?",
+      "Answers": ["Brad Pitt", "Leonardo DiCaprio", "Tom Cruise", "Johnny Depp"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film won the Academy Award for Best Picture in 1994?",
+      "Answers": ["Forrest Gump", "The Lion King", "Pulp Fiction", "The Shawshank Redemption"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Godfather' (1972)?",
+      "Answers": ["Martin Scorsese", "Francis Ford Coppola", "Steven Spielberg", "George Lucas"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actor played James Bond in 'Goldfinger' (1964)?",
+      "Answers": ["Roger Moore", "Timothy Dalton", "Sean Connery", "Pierce Brosnan"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "What is the name of the hobbit in 'The Lord of the Rings' trilogy?",
+      "Answers": ["Bilbo", "Frodo", "Sam", "Merry"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Amélie' (2001)?",
+      "Answers": ["François Truffaut", "Jean-Luc Godard", "Jean-Pierre Jeunet", "Luc Besson"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which Disney movie features the song 'Let It Go'?",
+      "Answers": ["Moana", "Frozen", "Tangled", "Encanto"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played Harry Potter in the film series?",
+      "Answers": ["Daniel Radcliffe", "Rupert Grint", "Tom Felton", "Matthew Lewis"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features a giant shark terrorizing a beach town?",
+      "Answers": ["Deep Blue Sea", "Jaws", "The Meg", "Shark Tale"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Jurassic Park' (1993)?",
+      "Answers": ["George Lucas", "Steven Spielberg", "James Cameron", "Ridley Scott"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actor played the Joker in 'The Dark Knight' (2008)?",
+      "Answers": ["Jack Nicholson", "Joaquin Phoenix", "Heath Ledger", "Jared Leto"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "What is the name of the ship in 'Titanic' (1997)?",
+      "Answers": ["Britannic", "Olympic", "Titanic", "Lusitania"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Casablanca' (1942)?",
+      "Answers": ["Michael Curtiz", "Billy Wilder", "John Huston", "Howard Hawks"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the character Darth Vader?",
+      "Answers": ["Star Trek", "Star Wars", "Battlestar Galactica", "Guardians of the Galaxy"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played Rose in 'Titanic' (1997)?",
+      "Answers": ["Nicole Kidman", "Kate Winslet", "Charlize Theron", "Cate Blanchett"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which movie features a clownfish looking for his son?",
+      "Answers": ["Finding Nemo", "The Little Mermaid", "Shark Tale", "Moana"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'E.T. the Extra-Terrestrial' (1982)?",
+      "Answers": ["George Lucas", "Steven Spielberg", "James Cameron", "Ridley Scott"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British comedy group created 'Monty Python and the Holy Grail'?",
+      "Answers": ["The Beatles", "Monty Python", "The Rolling Stones", "Led Zeppelin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played Neo in 'The Matrix' (1999)?",
+      "Answers": ["Brad Pitt", "Keanu Reeves", "Tom Cruise", "Will Smith"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film won the Academy Award for Best Picture in 1976?",
+      "Answers": ["Rocky", "Taxi Driver", "All the President's Men", "Network"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Lion King' (1994)?",
+      "Answers": ["John Lasseter", "Roger Allers", "Brad Bird", "Pete Docter"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actress won the Academy Award for Best Actress for 'La La Land' (2016)?",
+      "Answers": ["Emma Stone", "Amy Adams", "Natalie Portman", "Meryl Streep"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who composed the music for 'Jaws' (1975)?",
+      "Answers": ["Hans Zimmer", "John Williams", "Danny Elfman", "James Horner"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the line 'Here's looking at you, kid'?",
+      "Answers": ["Gone with the Wind", "Casablanca", "The Maltese Falcon", "Citizen Kane"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'Forrest Gump' (1994)?",
+      "Answers": ["Tom Hanks", "Tom Cruise", "Brad Pitt", "Kevin Costner"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French director is known for 'The 400 Blows' (1959)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Claude Chabrol", "Jacques Rivette"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Psycho' (1960)?",
+      "Answers": ["Alfred Hitchcock", "Billy Wilder", "John Ford", "Howard Hawks"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features a young wizard attending Hogwarts School?",
+      "Answers": ["The Chronicles of Narnia", "Harry Potter", "The Lord of the Rings", "Percy Jackson"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'The Shawshank Redemption' released?",
+      "Answers": ["1993", "1994", "1995", "1996"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Pulp Fiction' (1994)?",
+      "Answers": ["Martin Scorsese", "Quentin Tarantino", "David Lynch", "Joel Coen"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the character of Hannibal Lecter?",
+      "Answers": ["Seven", "The Silence of the Lambs", "Zodiac", "Heat"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played Vito Corleone in 'The Godfather' (1972)?",
+      "Answers": ["Al Pacino", "Robert De Niro", "Marlon Brando", "James Caan"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French film won the Palme d'Or at Cannes in 2013?",
+      "Answers": ["Blue Is the Warmest Color", "Amour", "The Artist", "Rust and Bone"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Lawrence of Arabia' (1962)?",
+      "Answers": ["David Lean", "John Ford", "William Wyler", "George Stevens"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actor won the Academy Award for Best Actor for 'There Will Be Blood' (2007)?",
+      "Answers": ["Daniel Day-Lewis", "George Clooney", "Johnny Depp", "Tommy Lee Jones"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'Goodfellas' released?",
+      "Answers": ["1989", "1990", "1991", "1992"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Vertigo' (1958)?",
+      "Answers": ["Alfred Hitchcock", "Billy Wilder", "John Ford", "Howard Hawks"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the character of Travis Bickle?",
+      "Answers": ["Goodfellas", "Taxi Driver", "Mean Streets", "Raging Bull"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who composed the music for 'The Lion King' (1994)?",
+      "Answers": ["Alan Menken", "Hans Zimmer", "Danny Elfman", "James Horner"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British director made 'A Clockwork Orange' (1971)?",
+      "Answers": ["Stanley Kubrick", "Ridley Scott", "Danny Boyle", "Guy Ritchie"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'Casablanca' released?",
+      "Answers": ["1941", "1942", "1943", "1944"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'Raging Bull' (1980)?",
+      "Answers": ["Al Pacino", "Robert De Niro", "Joe Pesci", "Harvey Keitel"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French director made 'Breathless' (1960)?",
+      "Answers": ["François Truffaut", "Jean-Luc Godard", "Claude Chabrol", "Jacques Rivette"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Apocalypse Now' (1979)?",
+      "Answers": ["Martin Scorsese", "Francis Ford Coppola", "Michael Cimino", "William Friedkin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film won the Academy Award for Best Picture in 1975?",
+      "Answers": ["One Flew Over the Cuckoo's Nest", "Jaws", "Nashville", "Dog Day Afternoon"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'Scarface' (1983)?",
+      "Answers": ["Robert De Niro", "Al Pacino", "Joe Pesci", "Ray Liotta"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British film won the Academy Award for Best Picture in 1996?",
+      "Answers": ["Trainspotting", "The English Patient", "Secrets & Lies", "Brassed Off"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Third Man' (1949)?",
+      "Answers": ["Carol Reed", "David Lean", "Michael Powell", "Alexander Korda"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'Citizen Kane' released?",
+      "Answers": ["1940", "1941", "1942", "1943"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'Amadeus' (1984)?",
+      "Answers": ["Tom Hulce", "F. Murray Abraham", "Jeffrey Jones", "Roy Dotrice"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French actress won the Academy Award for Best Actress for 'La Vie en Rose' (2007)?",
+      "Answers": ["Marion Cotillard", "Audrey Tautou", "Julie Delpy", "Isabelle Huppert"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Bicycle Thief' (1948)?",
+      "Answers": ["Federico Fellini", "Vittorio De Sica", "Roberto Rossellini", "Luchino Visconti"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the character of Michael Corleone?",
+      "Answers": ["Goodfellas", "The Godfather", "Scarface", "Casino"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who composed the music for 'Psycho' (1960)?",
+      "Answers": ["Bernard Herrmann", "Miklós Rózsa", "Max Steiner", "Franz Waxman"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'The Wizard of Oz' released?",
+      "Answers": ["1938", "1939", "1940", "1941"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Rules of the Game' (1939)?",
+      "Answers": ["Jean Renoir", "Marcel Carné", "Julien Duvivier", "Jacques Feyder"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actor played the main character in 'The Deer Hunter' (1978)?",
+      "Answers": ["Robert De Niro", "Christopher Walken", "John Savage", "John Cazale"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Some Like It Hot' (1959)?",
+      "Answers": ["Billy Wilder", "Frank Capra", "Howard Hawks", "George Cukor"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film won the Palme d'Or at Cannes in 1994?",
+      "Answers": ["Pulp Fiction", "The Lion King", "Four Weddings and a Funeral", "Quiz Show"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'My Fair Lady' (1964)?",
+      "Answers": ["Julie Andrews", "Audrey Hepburn", "Deborah Kerr", "Grace Kelly"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British director made 'The Bridge on the River Kwai' (1957)?",
+      "Answers": ["David Lean", "Carol Reed", "Michael Powell", "Alexander Korda"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'Gone with the Wind' released?",
+      "Answers": ["1938", "1939", "1940", "1941"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Jules and Jim' (1962)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Claude Chabrol", "Jacques Rivette"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which actor won the Academy Award for Best Actor for 'One Flew Over the Cuckoo's Nest' (1975)?",
+      "Answers": ["Jack Nicholson", "Walter Matthau", "Al Pacino", "Gene Hackman"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who composed the music for 'Lawrence of Arabia' (1962)?",
+      "Answers": ["Maurice Jarre", "Miklós Rózsa", "Alex North", "Jerry Goldsmith"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French film won the Academy Award for Best Foreign Language Film in 2011?",
+      "Answers": ["The Artist", "Amour", "Of Gods and Men", "A Prophet"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Singin' in the Rain' (1952)?",
+      "Answers": ["Gene Kelly", "Stanley Donen", "Both Gene Kelly and Stanley Donen", "Vincente Minnelli"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'The Maltese Falcon' released?",
+      "Answers": ["1940", "1941", "1942", "1943"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'The Treasure of the Sierra Madre' (1948)?",
+      "Answers": ["Humphrey Bogart", "James Cagney", "Edward G. Robinson", "George Raft"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British director made 'Brief Encounter' (1945)?",
+      "Answers": ["David Lean", "Carol Reed", "Michael Powell", "Alexander Korda"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Umbrellas of Cherbourg' (1964)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Jacques Demy", "Claude Lelouch"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film features the character of Rick Blaine?",
+      "Answers": ["The Maltese Falcon", "Casablanca", "To Have and Have Not", "The Big Sleep"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who played the main character in 'The French Connection' (1971)?",
+      "Answers": ["Gene Hackman", "Roy Scheider", "Fernando Rey", "Tony Lo Bianco"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'The Graduate' released?",
+      "Answers": ["1966", "1967", "1968", "1969"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'A Man for All Seasons' (1966)?",
+      "Answers": ["Fred Zinnemann", "David Lean", "William Wyler", "George Stevens"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French actress starred in 'And God Created Woman' (1956)?",
+      "Answers": ["Catherine Deneuve", "Brigitte Bardot", "Jeanne Moreau", "Françoise Dorléac"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who composed the music for 'The Godfather' (1972)?",
+      "Answers": ["Ennio Morricone", "Nino Rota", "Lalo Schifrin", "Jerry Goldsmith"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was 'Sunset Boulevard' released?",
+      "Answers": ["1949", "1950", "1951", "1952"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Persona' (1966)?",
+      "Answers": ["Ingmar Bergman", "Andrei Tarkovsky", "Akira Kurosawa", "Luis Buñuel"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French director made 'Last Year at Marienbad' (1961)?",
+      "Answers": ["Jean-Luc Godard", "Alain Resnais", "François Truffaut", "Claude Chabrol"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the production designer for 'The Cabinet of Dr. Caligari' (1920)?",
+      "Answers": ["Hermann Warm", "Walter Röhrig", "Walter Reimann", "All three"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year did the Hays Code officially end in Hollywood?",
+      "Answers": ["1966", "1967", "1968", "1969"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Cleo from 5 to 7' (1962)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Agnès Varda", "Claude Chabrol"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British director made 'Peeping Tom' (1960)?",
+      "Answers": ["Michael Powell", "Carol Reed", "David Lean", "Alexander Mackendrick"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the editor of 'Battleship Potemkin' (1925)?",
+      "Answers": ["Sergei Eisenstein", "Grigori Aleksandrov", "Both Eisenstein and Aleksandrov", "Dziga Vertov"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the first Venice International Film Festival held?",
+      "Answers": ["1932", "1933", "1934", "1935"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Hiroshima Mon Amour' (1959)?",
+      "Answers": ["Jean-Luc Godard", "Alain Resnais", "François Truffaut", "Chris Marker"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which film introduced the concept of the 'MacGuffin' term to cinema theory?",
+      "Answers": ["The 39 Steps", "North by Northwest", "Vertigo", "The term predates specific films"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the cinematographer for 'The Conformist' (1970)?",
+      "Answers": ["Vittorio Storaro", "Gianni Di Venanzo", "Giuseppe Rotunno", "Pasqualino De Santis"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year did the Berlin International Film Festival first award the Golden Bear?",
+      "Answers": ["1951", "1952", "1953", "1954"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Playtime' (1967)?",
+      "Answers": ["Jean-Luc Godard", "Jacques Tati", "François Truffaut", "Claude Lelouch"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British studio system was known for its Technicolor productions in the 1940s?",
+      "Answers": ["Ealing Studios", "Pinewood Studios", "The Archers", "Gainsborough Pictures"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the sound designer for 'Apocalypse Now' (1979)?",
+      "Answers": ["Walter Murch", "Ben Burtt", "Gary Rydstrom", "Richard King"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the first film noir generally considered to be released?",
+      "Answers": ["1940", "1941", "1942", "1943"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'India Song' (1975)?",
+      "Answers": ["Agnès Varda", "Marguerite Duras", "Chantal Akerman", "Claire Denis"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French production company was founded by Georges Méliès?",
+      "Answers": ["Pathé", "Gaumont", "Star Film Company", "Éclair"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the production designer for '2001: A Space Odyssey' (1968)?",
+      "Answers": ["Ken Adam", "Tony Masters", "Harry Lange", "Both Tony Masters and Harry Lange"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year did the French New Wave movement officially begin?",
+      "Answers": ["1958", "1959", "1960", "1961"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Weekend' (1967)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Claude Chabrol", "Jacques Rivette"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British director was part of the Free Cinema movement?",
+      "Answers": ["Tony Richardson", "Karel Reisz", "Lindsay Anderson", "All three"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the costume designer for 'Barry Lyndon' (1975)?",
+      "Answers": ["Ulla-Britt Söderlund", "Milena Canonero", "Ruth Myers", "Sandy Powell"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the Motion Picture Association of America (MPAA) rating system introduced?",
+      "Answers": ["1966", "1967", "1968", "1969"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Le Mépris' (Contempt) (1963)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Claude Chabrol", "Jacques Rivette"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which cinematographer pioneered the use of deep focus photography in 'Citizen Kane'?",
+      "Answers": ["Gregg Toland", "James Wong Howe", "George Barnes", "Arthur Miller"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the founder of the Cinémathèque Française?",
+      "Answers": ["André Bazin", "Henri Langlois", "Jean-Luc Godard", "François Truffaut"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the first film with synchronized sound released?",
+      "Answers": ["1926", "1927", "1928", "1929"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'The Night of the Hunter' (1955)?",
+      "Answers": ["John Huston", "Charles Laughton", "Orson Welles", "Nicholas Ray"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British film movement emerged in the late 1950s and early 1960s?",
+      "Answers": ["British New Wave", "Kitchen Sink Realism", "Free Cinema", "All three terms refer to the same movement"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the editor of 'Lawrence of Arabia' (1962)?",
+      "Answers": ["Anne V. Coates", "Dede Allen", "Hal Ashby", "Ralph E. Winters"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year did the collapse of the Hollywood studio system traditionally occur?",
+      "Answers": ["1948", "1949", "1950", "1951"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Masculine Feminine' (1966)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Claude Chabrol", "Eric Rohmer"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which French critic coined the term 'auteur theory'?",
+      "Answers": ["André Bazin", "François Truffaut", "Jean-Luc Godard", "Alexandre Astruc"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the cinematographer for 'Blow-Up' (1966)?",
+      "Answers": ["Carlo Di Palma", "Gianni Di Venanzo", "Giuseppe Rotunno", "Vittorio Storaro"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the first Dolby stereo sound system used in cinema?",
+      "Answers": ["1975", "1976", "1977", "1978"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who directed 'Celine and Julie Go Boating' (1974)?",
+      "Answers": ["Jean-Luc Godard", "François Truffaut", "Jacques Rivette", "Eric Rohmer"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Which British production company was responsible for the 'Carry On' film series?",
+      "Answers": ["Hammer Film Productions", "Anglo-Amalgamated", "Peter Rogers Productions", "Rank Organisation"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "Who was the costume designer for 'The Red Shoes' (1948)?",
+      "Answers": ["Hein Heckroth", "Cecil Beaton", "Adrian", "Edith Head"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    },
+    {
+      "Text": "In which year was the Paramount Decree enacted, breaking up the Hollywood studio system?",
+      "Answers": ["1947", "1948", "1949", "1950"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Cinema"
+    }
+  ]
+}

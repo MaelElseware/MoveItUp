@@ -1,0 +1,830 @@
+{
+  "Questions": [
+    {
+      "Text": "Which Beatles album is often considered their masterpiece and features 'Lucy in the Sky with Diamonds'?",
+      "Answers": ["Abbey Road", "Sgt. Pepper's Lonely Hearts Club Band", "Revolver", "The White Album"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does the song 'Hotel California' by the Eagles metaphorically represent according to the band?",
+      "Answers": ["A luxury hotel", "The excesses of 1970s America", "A prison", "A love story"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer wrote 'Ne me quitte pas', later covered by many international artists?",
+      "Answers": ["Charles Aznavour", "Jacques Brel", "Yves Montand", "Gilbert Bécaud"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did David Bowie release 'The Rise and Fall of Ziggy Stardust and the Spiders from Mars'?",
+      "Answers": ["1971", "1972", "1973", "1974"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American jazz standard was written by George Gershwin in 1935 and became one of the most covered songs in music history?",
+      "Answers": ["Summertime", "Body and Soul", "All of Me", "Autumn Leaves"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What is the meaning behind Pink Floyd's 'The Wall' concept album?",
+      "Answers": ["A love story", "Political revolution", "Mental isolation and breakdown", "War memories"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French electronic music duo won the Grammy for Best Electronic/Dance Album in 2014?",
+      "Answers": ["Justice", "Modjo", "Daft Punk", "Air"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Led Zeppelin release 'Stairway to Heaven'?",
+      "Answers": ["1970", "1971", "1972", "1973"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American singer-songwriter wrote 'The Times They Are a-Changin'' as a response to the civil rights movement?",
+      "Answers": ["Leonard Cohen", "Bob Dylan", "Paul Simon", "Neil Young"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does 'La Vie en Rose' by Édith Piaf translate to in English?",
+      "Answers": ["Life in Pink", "Life in Rose", "The Rose Life", "Life through Rose-colored Glasses"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Rolling Stones album marked their transition from blues covers to original songwriting?",
+      "Answers": ["Out of Our Heads", "Aftermath", "Between the Buttons", "Beggars Banquet"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What controversial topic does Johnny Cash's 'Folsom Prison Blues' address?",
+      "Answers": ["Drug addiction", "Murder and imprisonment", "Broken relationships", "Social inequality"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer is known as 'The Little Sparrow' (La Môme Piaf)?",
+      "Answers": ["Brigitte Bardot", "Édith Piaf", "Françoise Hardy", "Sylvie Vartan"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did The Who release their rock opera 'Tommy'?",
+      "Answers": ["1968", "1969", "1970", "1971"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American blues musician is considered the 'King of the Blues' and influenced Eric Clapton?",
+      "Answers": ["Muddy Waters", "B.B. King", "Howlin' Wolf", "Robert Johnson"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does The Beatles' song 'Norwegian Wood' supposedly reference?",
+      "Answers": ["A furniture style", "John Lennon's affair", "A trip to Norway", "Paul McCartney's house"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French composer wrote the musical 'Les Misérables'?",
+      "Answers": ["Michel Legrand", "Claude-Michel Schönberg", "Jacques Brel", "Charles Aznavour"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Jimi Hendrix perform his legendary version of 'The Star-Spangled Banner' at Woodstock?",
+      "Answers": ["1968", "1969", "1970", "1971"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band's album 'OK Computer' is often cited as one of the most influential albums of the 1990s?",
+      "Answers": ["Oasis", "Blur", "Radiohead", "Coldplay"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What is the significance of American Pie by Don McLean's 'the day the music died'?",
+      "Answers": ["Elvis's death", "The plane crash that killed Buddy Holly", "John Lennon's murder", "The end of Woodstock"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer performed 'Je t'aime... moi non plus' with Serge Gainsbourg?",
+      "Answers": ["Françoise Hardy", "Brigitte Bardot", "Jane Birkin", "Sylvie Vartan"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What concept does Queen's 'Bohemian Rhapsody' represent according to Freddie Mercury?",
+      "Answers": ["A fantasy story", "His struggle with identity", "A mock opera", "Random nonsense"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American folk singer wrote 'This Land Is Your Land' as a response to 'God Bless America'?",
+      "Answers": ["Pete Seeger", "Woody Guthrie", "Bob Dylan", "Joan Baez"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did The Sex Pistols release 'Never Mind the Bollocks'?",
+      "Answers": ["1976", "1977", "1978", "1979"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French electronic artist created the album 'Oxygène' in 1976?",
+      "Answers": ["Jean-Michel Jarre", "Vangelis", "Klaus Schulze", "Kraftwerk"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does Bruce Springsteen's 'Born in the U.S.A.' actually criticize despite its patriotic sound?",
+      "Answers": ["American dream", "Vietnam War treatment of veterans", "Economic inequality", "Political corruption"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British musician was known as the 'Thin White Duke'?",
+      "Answers": ["Elton John", "David Bowie", "Rod Stewart", "Mick Jagger"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Nirvana release 'Nevermind', launching grunge into mainstream?",
+      "Answers": ["1990", "1991", "1992", "1993"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer was known for her chanson style and songs like 'Non, je ne regrette rien'?",
+      "Answers": ["Édith Piaf", "Juliette Gréco", "Yves Montand", "Charles Trenet"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does The Doors' song 'Light My Fire' metaphorically represent?",
+      "Answers": ["Love and passion", "Spiritual awakening", "Drug experience", "All of the above"],
+      "CorrectAnswerIndex": 3,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band released the concept album 'The Dark Side of the Moon' in 1973?",
+      "Answers": ["Led Zeppelin", "Pink Floyd", "Genesis", "Yes"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Elvis Presley make his first commercial recording at Sun Records?",
+      "Answers": ["1953", "1954", "1955", "1956"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French rap group released the influential album 'L'École du Micro d'Argent'?",
+      "Answers": ["NTM", "IAM", "MC Solaar", "Assassin"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What personal struggle does Johnny Cash's cover of 'Hurt' reflect?",
+      "Answers": ["Aging and mortality", "Drug addiction recovery", "Lost love", "Career disappointments"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British invasion band sang 'You Really Got Me' in 1964?",
+      "Answers": ["The Beatles", "The Rolling Stones", "The Kinks", "The Animals"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Michael Jackson release 'Thriller'?",
+      "Answers": ["1981", "1982", "1983", "1984"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer-songwriter wrote 'Amsterdam' and 'La Chanson des Vieux Amants'?",
+      "Answers": ["Jacques Brel", "Georges Brassens", "Charles Aznavour", "Léo Ferré"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does R.E.M.'s 'Losing My Religion' actually refer to?",
+      "Answers": ["Religious crisis", "Being at the end of one's rope", "Lost love", "Political disillusionment"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British punk band released 'London Calling' in 1979?",
+      "Answers": ["Sex Pistols", "The Damned", "The Clash", "Buzzcocks"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What year did Prince release his breakthrough album 'Purple Rain'?",
+      "Answers": ["1983", "1984", "1985", "1986"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Hard",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Beatles song was written about Paul McCartney's Old English Sheepdog?",
+      "Answers": ["Here Comes the Sun", "Good Day Sunshine", "Martha My Dear", "Blackbird"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who composed the score for the movie 'The Good, the Bad and the Ugly'?",
+      "Answers": ["John Williams", "Ennio Morricone", "Hans Zimmer", "Danny Elfman"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer had a hit with 'Joe le Taxi' at age 14?",
+      "Answers": ["Alizée", "Vanessa Paradis", "Mylène Farmer", "France Gall"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did Jimi Hendrix famously play with his teeth?",
+      "Answers": ["Bass guitar", "Electric guitar", "Harmonica", "Keyboard"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band had hits with 'Don't Stop Me Now' and 'We Will Rock You'?",
+      "Answers": ["Led Zeppelin", "Queen", "The Who", "Deep Purple"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who sang the original version of 'I Will Always Love You' before Whitney Houston?",
+      "Answers": ["Diana Ross", "Aretha Franklin", "Dolly Parton", "Tina Turner"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French electronic duo created 'One More Time' and 'Around the World'?",
+      "Answers": ["Justice", "Daft Punk", "Modjo", "Cassius"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What was Elvis Presley's first number-one hit in the US?",
+      "Answers": ["That's All Right", "Heartbreak Hotel", "Hound Dog", "Love Me Tender"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British guitarist is known for 'Layla' and 'Tears in Heaven'?",
+      "Answers": ["Jimmy Page", "Eric Clapton", "Jeff Beck", "David Gilmour"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who wrote the musical 'West Side Story'?",
+      "Answers": ["Andrew Lloyd Webber", "Stephen Sondheim", "Leonard Bernstein", "Cole Porter"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer was famous for 'Comme d'habitude', later adapted as 'My Way'?",
+      "Answers": ["Claude François", "Sacha Distel", "Charles Aznavour", "Michel Sardou"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What city is considered the birthplace of jazz?",
+      "Answers": ["Chicago", "New York", "New Orleans", "Memphis"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'Stairway to Heaven' and 'Kashmir'?",
+      "Answers": ["Deep Purple", "Black Sabbath", "Led Zeppelin", "Rainbow"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who is known as the 'King of Pop'?",
+      "Answers": ["Elvis Presley", "Michael Jackson", "Prince", "Stevie Wonder"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French rapper is known for the album 'Prose Combat'?",
+      "Answers": ["IAM", "MC Solaar", "Booba", "Oxmo Puccino"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What decade saw the rise of disco music?",
+      "Answers": ["1960s", "1970s", "1980s", "1990s"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band had a hit with 'Don't Look Back in Anger'?",
+      "Answers": ["Blur", "Oasis", "Radiohead", "Coldplay"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who composed 'Rhapsody in Blue'?",
+      "Answers": ["Duke Ellington", "George Gershwin", "Irving Berlin", "Cole Porter"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer performed 'La Bohème' and 'She'?",
+      "Answers": ["Jacques Brel", "Charles Aznavour", "Yves Montand", "Gilbert Bécaud"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did Miles Davis primarily play?",
+      "Answers": ["Saxophone", "Trumpet", "Piano", "Trombone"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British singer had hits with 'Your Song' and 'Rocket Man'?",
+      "Answers": ["David Bowie", "Elton John", "Rod Stewart", "George Michael"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who wrote 'Blowin' in the Wind' and 'Like a Rolling Stone'?",
+      "Answers": ["Neil Young", "Bob Dylan", "Leonard Cohen", "Paul Simon"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French band had international success with 'Moon Safari'?",
+      "Answers": ["Justice", "Air", "Phoenix", "Modjo"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What genre did Johnny Cash primarily perform before his later years?",
+      "Answers": ["Rock", "Blues", "Country", "Folk"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'My Generation' and 'Behind Blue Eyes'?",
+      "Answers": ["The Kinks", "The Who", "The Animals", "The Yardbirds"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who is considered the 'Queen of Soul'?",
+      "Answers": ["Diana Ross", "Aretha Franklin", "Gladys Knight", "Tina Turner"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer was known for 'Le Poinçonneur des Lilas'?",
+      "Answers": ["Serge Gainsbourg", "Boris Vian", "Léo Ferré", "Georges Brassens"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What city is known as the 'Music City'?",
+      "Answers": ["Memphis", "Nashville", "Austin", "New Orleans"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band released 'Paranoid' and 'Iron Man'?",
+      "Answers": ["Led Zeppelin", "Deep Purple", "Black Sabbath", "Judas Priest"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who sang 'I Can't Get No Satisfaction'?",
+      "Answers": ["The Beatles", "The Rolling Stones", "The Kinks", "The Animals"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer had a hit with 'Voyage Voyage'?",
+      "Answers": ["Mylène Farmer", "Desireless", "Jeanne Mas", "Indochine"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What decade did punk rock emerge?",
+      "Answers": ["1960s", "1970s", "1980s", "1990s"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British singer was known as 'Ziggy Stardust'?",
+      "Answers": ["Marc Bolan", "David Bowie", "Gary Glitter", "Roxy Music"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who composed 'The Four Seasons'?",
+      "Answers": ["Bach", "Mozart", "Vivaldi", "Beethoven"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer performed 'Non, je ne regrette rien'?",
+      "Answers": ["Brigitte Bardot", "Édith Piaf", "Yves Montand", "Juliette Gréco"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did Louis Armstrong primarily play?",
+      "Answers": ["Saxophone", "Piano", "Trumpet", "Clarinet"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'Waterloo Sunset' and 'Lola'?",
+      "Answers": ["The Beatles", "The Kinks", "The Animals", "The Zombies"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who had a hit with 'Purple Haze' and 'All Along the Watchtower'?",
+      "Answers": ["Eric Clapton", "Jimmy Page", "Jimi Hendrix", "Jeff Beck"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French composer wrote 'Boléro'?",
+      "Answers": ["Claude Debussy", "Maurice Ravel", "Erik Satie", "Gabriel Fauré"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What city is considered the birthplace of country music?",
+      "Answers": ["Memphis", "Nashville", "Austin", "Atlanta"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band released 'Bohemian Rhapsody'?",
+      "Answers": ["The Beatles", "Led Zeppelin", "Queen", "The Who"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who sang 'Respect' and 'Think'?",
+      "Answers": ["Diana Ross", "Gladys Knight", "Aretha Franklin", "Tina Turner"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer was known for 'L'Aigle Noir'?",
+      "Answers": ["Françoise Hardy", "Barbara", "Brigitte Fontaine", "Anne Sylvestre"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What decade saw the British Invasion of American music charts?",
+      "Answers": ["1950s", "1960s", "1970s", "1980s"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British singer had hits with 'Space Oddity' and 'Heroes'?",
+      "Answers": ["Marc Bolan", "David Bowie", "Gary Numan", "Peter Gabriel"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Who wrote 'Yesterday' and 'Hey Jude'?",
+      "Answers": ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Medium",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Beatles album features the song 'Here Comes the Sun'?",
+      "Answers": ["Revolver", "Sgt. Pepper's", "Abbey Road", "Let It Be"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What nationality was Freddie Mercury, lead singer of Queen?",
+      "Answers": ["British", "American", "Indian", "Iranian"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer was known as 'The Little Sparrow'?",
+      "Answers": ["Brigitte Bardot", "Édith Piaf", "Catherine Deneuve", "Françoise Hardy"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "How many members were in The Beatles?",
+      "Answers": ["3", "4", "5", "6"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American singer was known as 'The King of Rock and Roll'?",
+      "Answers": ["Chuck Berry", "Elvis Presley", "Jerry Lee Lewis", "Little Richard"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did John Lennon primarily play?",
+      "Answers": ["Bass", "Drums", "Guitar", "Piano"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'We Will Rock You'?",
+      "Answers": ["The Beatles", "Led Zeppelin", "Queen", "The Rolling Stones"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does 'DJ' stand for?",
+      "Answers": ["Dance Jockey", "Disc Jockey", "Digital Jockey", "Dancing Judge"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French electronic duo wore robot helmets?",
+      "Answers": ["Justice", "Air", "Daft Punk", "Phoenix"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What city is known as the home of the blues?",
+      "Answers": ["Chicago", "New York", "Los Angeles", "Boston"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Rolling Stones song features the lyrics 'I can't get no satisfaction'?",
+      "Answers": ["Paint It Black", "Satisfaction", "Angie", "Brown Sugar"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What genre of music did Bob Marley primarily perform?",
+      "Answers": ["Jazz", "Blues", "Reggae", "Rock"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Beatles song starts with 'Yesterday, all my troubles seemed so far away'?",
+      "Answers": ["Hey Jude", "Let It Be", "Yesterday", "Help!"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What was Elvis Presley's middle name?",
+      "Answers": ["Aaron", "Andrew", "Albert", "Anthony"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer sang 'La Vie en Rose'?",
+      "Answers": ["Brigitte Bardot", "Édith Piaf", "Yves Montand", "Charles Aznavour"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "How many strings does a standard guitar have?",
+      "Answers": ["4", "5", "6", "7"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'Stairway to Heaven'?",
+      "Answers": ["The Beatles", "Queen", "Led Zeppelin", "The Who"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does 'LP' stand for in music?",
+      "Answers": ["Long Play", "Large Piece", "Limited Production", "Live Performance"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American singer was known as 'The Queen of Pop'?",
+      "Answers": ["Whitney Houston", "Madonna", "Mariah Carey", "Janet Jackson"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did Ray Charles primarily play?",
+      "Answers": ["Guitar", "Saxophone", "Piano", "Trumpet"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Beatles member was known as 'The Quiet Beatle'?",
+      "Answers": ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What genre did Johnny Cash primarily perform?",
+      "Answers": ["Rock", "Jazz", "Country", "Blues"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which French singer performed 'Non, je ne regrette rien'?",
+      "Answers": ["Françoise Hardy", "Édith Piaf", "Brigitte Bardot", "Sylvie Vartan"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "How many keys are on a standard piano?",
+      "Answers": ["76", "88", "92", "96"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British singer sang 'Your Song' and 'Candle in the Wind'?",
+      "Answers": ["David Bowie", "Elton John", "Rod Stewart", "Phil Collins"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What does 'CD' stand for?",
+      "Answers": ["Compact Disc", "Computer Disc", "Clear Disc", "Circular Disc"],
+      "CorrectAnswerIndex": 0,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which American singer was known as 'The King of Pop'?",
+      "Answers": ["Elvis Presley", "Michael Jackson", "Prince", "Stevie Wonder"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What instrument did Bob Dylan primarily play?",
+      "Answers": ["Piano", "Drums", "Guitar", "Harmonica"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which Beatles album is known as 'The White Album'?",
+      "Answers": ["Abbey Road", "Revolver", "The Beatles", "Sgt. Pepper's"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What genre of music originated in New Orleans?",
+      "Answers": ["Blues", "Jazz", "Country", "Rock"],
+      "CorrectAnswerIndex": 1,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "Which British band sang 'Bohemian Rhapsody'?",
+      "Answers": ["The Beatles", "Led Zeppelin", "Queen", "Pink Floyd"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    },
+    {
+      "Text": "What was the first name of composer Mozart?",
+      "Answers": ["Johann", "Ludwig", "Wolfgang", "Franz"],
+      "CorrectAnswerIndex": 2,
+      "Difficulty": "Easy",
+      "Category": "Musique"
+    }
+  ]
+}
