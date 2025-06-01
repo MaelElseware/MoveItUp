@@ -47,9 +47,6 @@ namespace TriviaExercise
             InitializeComponent();
             InitializeSystemTray();
 
-            OptionsPanel.Visibility = Visibility.Collapsed;
-            ToggleOptionsTextBlock.Text = "Show options ▼";
-
             discordRPC = new DiscordRichPresence();
 
             // Initialize timer management
@@ -482,21 +479,47 @@ namespace TriviaExercise
             StatusTextBox.ScrollToEnd();
         }
 
-        private void ToggleOptionsTextBlock_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        // Handle Home menu button click
+        private void HomeMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            if (OptionsPanel.Visibility == Visibility.Visible)
-            {
-                // Hide options
-                OptionsPanel.Visibility = Visibility.Collapsed;
-                ToggleOptionsTextBlock.Text = "Show options ▼";
-            }
-            else
-            {
-                // Show options
-                OptionsPanel.Visibility = Visibility.Visible;
-                ToggleOptionsTextBlock.Text = "Hide options ▲";
-                MainScrollView.ScrollToTop();
-            }
+            ShowHomePanel();
+        }
+
+        // Handle Options menu button click
+        private void OptionsMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowOptionsPanel();
+        }
+
+
+        // Show the Home panel and update menu button states
+        private void ShowHomePanel()
+        {
+            // Show home content, hide options content
+            HomePanel.Visibility = Visibility.Visible;
+            OptionsPanel.Visibility = Visibility.Collapsed;
+
+            // Update menu button states
+            HomeMenuButton.Tag = "Active";
+            OptionsMenuButton.Tag = null;
+
+            // Scroll to top
+            MainScrollView.ScrollToTop();
+        }
+
+        // Show the Options panel and update menu button states
+        private void ShowOptionsPanel()
+        {
+            // Hide home content, show options content
+            HomePanel.Visibility = Visibility.Collapsed;
+            OptionsPanel.Visibility = Visibility.Visible;
+
+            // Update menu button states
+            HomeMenuButton.Tag = null;
+            OptionsMenuButton.Tag = "Active";
+
+            // Scroll to top
+            MainScrollView.ScrollToTop();
         }
 
         private void SoundsEnabledCheckBox_CheckedChanged(object sender, RoutedEventArgs e)

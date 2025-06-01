@@ -65,6 +65,49 @@
             </Setter>
         </Style>
 
+        <!-- Modern Menu Button Style -->
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="Margin" Value="0,-5,0,7"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                CornerRadius="0">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <!-- Active indicator line -->
+                                <Border x:Name="ActiveIndicator" 
+                                        Height="2" 
+                                        Background="#3498DB" 
+                                        Margin="0,4,0,0"
+                                        Visibility="Collapsed"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#3498DB"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="#2980B9"/>
+                            </Trigger>
+                            <!-- Use Tag to indicate if this is the active menu -->
+                            <Trigger Property="Tag" Value="Active">
+                                <Setter Property="Foreground" Value="#3498DB"/>
+                                <Setter TargetName="ActiveIndicator" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!-- Modern GroupBox Style -->
         <Style x:Key="ModernGroupBox" TargetType="GroupBox">
             <Setter Property="Background" Value="White"/>
@@ -520,6 +563,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -539,8 +583,22 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Modern Horizontal Menu -->
+                <Border Grid.Row="1" BorderBrush="Transparent" 
+                        BorderThickness="1" CornerRadius="2" Margin="0,0,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="HomeMenuButton" Content="Home" 
+                                Style="{StaticResource MenuButton}"
+                                Tag="Active"
+                                Click="HomeMenuButton_Click"/>
+                        <Button x:Name="OptionsMenuButton" Content="Options" 
+                                Style="{StaticResource MenuButton}"
+                                Click="OptionsMenuButton_Click"/>
+                    </StackPanel>
+                </Border>
+
                 <!-- Control Buttons -->
-                <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
+                <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" 
                         BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="StartButton" Content="Start Timer" Width="110" Height="35" 
@@ -556,86 +614,61 @@
                 </Border>
 
                 <!-- Scrollable Content Area -->
-                <ScrollViewer x:Name="MainScrollView" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
+                <ScrollViewer x:Name="MainScrollView" Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource SimpleScrollViewer}" VerticalContentAlignment="Stretch" VerticalAlignment="Top" >
                     <StackPanel>
 
-                        <!-- Player Progress -->
-                        <GroupBox Header="Player Progress" Style="{StaticResource NoNameModernGroupBox}" Margin="0,0,0,5" BorderBrush="#BFE0E0E0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="457*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                        <!-- HOME CONTENT -->
+                        <StackPanel x:Name="HomePanel" Visibility="Visible">
+                            <!-- Player Progress -->
+                            <GroupBox Header="Player Progress" Style="{StaticResource NoNameModernGroupBox}" Margin="0,0,0,5" BorderBrush="#BFE0E0E0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="457*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
 
-                                <!-- Main Status -->
-                                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,7" Grid.Column="1" Width="Auto">
-                                    <TextBlock x:Name="PlayerTitleTextBlock" 
-                                               Text="Level 1 | Knowledge Seeker | 0 pts" 
-                                               Margin="0,-4,0,-2"
-                                               FontSize="15" FontWeight="Thin" 
-                                               Foreground="#2C3E50" FontFamily="Ink Free" Width="Auto"/>
+                                    <!-- Main Status -->
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,7" Grid.Column="1" Width="Auto">
+                                        <TextBlock x:Name="PlayerTitleTextBlock" 
+                                                   Text="Level 1 | Knowledge Seeker | 0 pts" 
+                                                   Margin="0,-4,0,-2"
+                                                   FontSize="15" FontWeight="Thin" 
+                                                   Foreground="#2C3E50" FontFamily="Ink Free" Width="Auto"/>
+                                    </StackPanel>
+
+                                    <!-- Category Details -->
+                                    <Border Grid.Row="1" Background="#F8F9FA" BorderBrush="#E9ECEF" 
+                                            BorderThickness="1" CornerRadius="4" Padding="10" Grid.ColumnSpan="2">
+                                        <ScrollViewer MaxHeight="120" VerticalScrollBarVisibility="Auto">
+                                            <TextBlock x:Name="CategoryProgressTextBlock" 
+                                                       Text="Category progress loading..."
+                                                       FontSize="11" FontFamily="Consolas"
+                                                       TextWrapping="Wrap"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Timer Status -->
+                            <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
+                                    BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
+                                <StackPanel>
+                                    <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
+                                               Margin="0,0,0,0" Text="Timer not running" Foreground="#2C3E50" TextAlignment="Center"/>
+                                    <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
+                                               Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#27AE60" TextAlignment="Center"/>
+                                    <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 
+                                               Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22" TextAlignment="Center"/>
                                 </StackPanel>
+                            </Border>
+                        </StackPanel>
 
-                                <!-- Category Details -->
-                                <Border Grid.Row="1" Background="#F8F9FA" BorderBrush="#E9ECEF" 
-                                        BorderThickness="1" CornerRadius="4" Padding="10" Grid.ColumnSpan="2">
-                                    <ScrollViewer MaxHeight="120" VerticalScrollBarVisibility="Auto">
-                                        <TextBlock x:Name="CategoryProgressTextBlock" 
-                                                   Text="Category progress loading..."
-                                                   FontSize="11" FontFamily="Consolas"
-                                                   TextWrapping="Wrap"/>
-                                    </ScrollViewer>
-                                </Border>
-                            </Grid>
-                        </GroupBox>
-
-                        <!-- Timer Status -->
-                        <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" 
-                                BorderThickness="1" CornerRadius="8" Padding="7" Margin="0,-2,0,6">
-                            <StackPanel>
-                                <TextBlock x:Name="NextQuestionTextBlock" FontWeight="SemiBold" 
-                                           Margin="0,0,0,0" Text="Timer not running" Foreground="#2C3E50" TextAlignment="Center"/>
-                                <TextBlock x:Name="NextDrinkTextBlock" FontWeight="SemiBold" 
-                                           Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#27AE60" TextAlignment="Center"/>
-                                <TextBlock x:Name="ProgressCooldownTextBlock" FontWeight="SemiBold" 
-                                           Margin="0,0,0,0" Text="" Visibility="Collapsed" Foreground="#E67E22" TextAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-
-                        <!-- Toggle Options with Soft Gray Line -->
-                        <Border 
-                                BorderBrush="#E9ECEF" 
-                                BorderThickness="0,2,0,2" 
-                                Margin="0,-5,0,8">
-                            <StackPanel Orientation="Horizontal" 
-                                        HorizontalAlignment="Center"
-                                        x:Name="ToggleOptionsLink"
-                                        Cursor="Hand"
-                                        MouseLeftButtonDown="ToggleOptionsTextBlock_MouseLeftButtonDown">
-                                <TextBlock x:Name="ToggleOptionsTextBlock" 
-                                           Text="Show options ▼" 
-                                           FontSize="13" 
-                                           FontWeight="Medium"
-                                           Foreground="#007ACC"
-                                           VerticalAlignment="Center"
-                                           TextDecorations="None"/>
-                                <StackPanel.Style>
-                                    <Style TargetType="StackPanel">
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Opacity" Value="0.8"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </StackPanel.Style>
-                            </StackPanel>
-                        </Border>
-
-                        <StackPanel x:Name="OptionsPanel" Visibility="Visible">
+                        <!-- OPTIONS CONTENT -->
+                        <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
                             <!-- Timer Settings -->
                             <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
                                 <StackPanel>
