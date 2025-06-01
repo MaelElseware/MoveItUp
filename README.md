@@ -13,7 +13,8 @@ The app also features an inactivity checker (mouse and keyboard input) which wil
 
 ![AppScreenshot](https://github.com/user-attachments/assets/f61e4ac5-7af9-4abc-b3fd-52fabf9c6f4d)
 ![AppScreenshot2](https://github.com/user-attachments/assets/d36d4a39-8ec1-48d0-8bed-4f2db85d9659)
-![AppScreenshot3](https://github.com/user-attachments/assets/5ad5b947-33e1-4a2d-ab36-799217fa051a)
+![AppScreen3](https://github.com/user-attachments/assets/ccb753e1-5cb4-404d-a3b2-f806bc775e36)
+
 
 *The different windows of the app, progress tracking, and category statistics*
 
