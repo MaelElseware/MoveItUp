@@ -124,6 +124,7 @@ namespace TriviaExercise
         private void OnPreQuestionAlertTriggered(object sender, TimerEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine($"OnPreQuestionAlertTriggered called - SoundsEnabled: {appSettings.SoundsEnabled}");
+            if(timerWasPausedByInactivity || timerWasPausedBySchedule) { return; }
 
             if (appSettings.SoundsEnabled)
             {
@@ -277,7 +278,7 @@ namespace TriviaExercise
 
                     // Format with consistent spacing for alignment
                     // Icon(2) + Name(18) + Score(8) + Difficulty(8) = aligned columns
-                    string formattedLine = $"{icon}  {name,-16} {progress.Score,-3}pts      {difficulty,-6}";
+                    string formattedLine = $"{icon}  {name,-18} {difficulty,-16}{progress.Score,-4}pts";
                     categoryDetails.Add(formattedLine);
                 }
             }
@@ -815,7 +816,7 @@ namespace TriviaExercise
 
                 stopTimerItem.Visible = isTimerRunning;
                 startTimerItem.Visible = !isTimerRunning;
-                resetTimerItem.Visible = isTimerRunning; // Only show reset when timer is running
+                resetTimerItem.Visible = isTimerRunning && !timerWasPausedBySchedule && !timerWasPausedByInactivity; // Only show reset when timer is running
 
                 // Update text to show current status
                 if (isTimerRunning && !timerWasPausedBySchedule && !timerWasPausedByInactivity)
@@ -837,11 +838,11 @@ namespace TriviaExercise
                 }
                 else if (isTimerRunning && timerWasPausedBySchedule)
                 {
-                    startTimerItem.Text = "Timer Paused (out of schedule)";
+                    stopTimerItem.Text = "Timer Paused (out of schedule)";
                 }
                 else if (isTimerRunning && timerWasPausedByInactivity)
                 {
-                    startTimerItem.Text = "Timer Paused (inactivity)";
+                    stopTimerItem.Text = "Timer Paused (inactivity)";
                 }
                 else
                 {
@@ -1663,12 +1664,33 @@ namespace TriviaExercise
 
         private void OnScheduleBecameActive()
         {
-            if (!timerWasPausedBySchedule) return;
+            if (!timerWasPausedBySchedule)
+            {
+                // Even if we weren't previously paused by schedule, we might need to update display
+                StatusTextBox.Text += "\n📅 Schedule became active";
+                return;
+            }
 
             timerWasPausedBySchedule = false;
 
-            // Reset timers instead of just resuming to start fresh interval
-            timerManager.ResetAll();
+            // Resume timers first if they're paused, then reset them
+            if (timerManager.QuestionTimer != null)
+            {
+                if (timerManager.QuestionTimer.IsPaused)
+                {
+                    timerManager.QuestionTimer.Resume();
+                }
+                timerManager.QuestionTimer.Reset();
+            }
+
+            if (timerManager.DrinkTimer != null)
+            {
+                if (timerManager.DrinkTimer.IsPaused)
+                {
+                    timerManager.DrinkTimer.Resume();
+                }
+                timerManager.DrinkTimer.Reset();
+            }
 
             // Restart pre-question alert if needed
             if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
@@ -1676,7 +1698,7 @@ namespace TriviaExercise
                 StartPreQuestionAlert();
             }
 
-            StatusTextBox.Text += "\n📅 Schedule became active - timers reset and restarted";
+            StatusTextBox.Text += "\n📅 Schedule became active - timers resumed and reset with fresh intervals";
             discordRPC?.SetActivity("Idle");
         }
 
@@ -1718,7 +1740,8 @@ namespace TriviaExercise
         {
             if (isLoadingSettings) return;
 
-            if (int.TryParse(ScheduleStartHourTextBox.Text, out int hour) && hour >= 0 && hour <= 23)
+            double hour = AppSettings.TimeStringToDecimalHour(ScheduleStartHourTextBox.Text);
+            if (hour >= 0 && hour <= 23.99)
             {
                 UpdateScheduleSettings();
                 SaveApplicationSettings();
@@ -1729,7 +1752,8 @@ namespace TriviaExercise
         {
             if (isLoadingSettings) return;
 
-            if (int.TryParse(ScheduleEndHourTextBox.Text, out int hour) && hour >= 0 && hour <= 23)
+            double hour = AppSettings.TimeStringToDecimalHour(ScheduleEndHourTextBox.Text);
+            if (hour >= 0 && hour <= 23.99)
             {
                 UpdateScheduleSettings();
                 SaveApplicationSettings();
@@ -1743,18 +1767,12 @@ namespace TriviaExercise
             bool onlyBetweenHours = OnlyBetweenHoursCheckBox.IsChecked == true;
             bool onlyWeekdays = OnlyWeekdaysCheckBox.IsChecked == true;
 
-            int startHour = 9; // Default
-            int endHour = 17;   // Default
+            double startHour = AppSettings.TimeStringToDecimalHour(ScheduleStartHourTextBox.Text);
+            double endHour = AppSettings.TimeStringToDecimalHour(ScheduleEndHourTextBox.Text);
 
-            if (int.TryParse(ScheduleStartHourTextBox.Text, out int parsedStart) && parsedStart >= 0 && parsedStart <= 23)
-            {
-                startHour = parsedStart;
-            }
-
-            if (int.TryParse(ScheduleEndHourTextBox.Text, out int parsedEnd) && parsedEnd >= 0 && parsedEnd <= 23)
-            {
-                endHour = parsedEnd;
-            }
+            // Validate the hours
+            if (startHour < 0 || startHour > 23.99) startHour = 9.0;
+            if (endHour < 0 || endHour > 23.99) endHour = 17.0;
 
             scheduleHelper.UpdateSettings(onlyBetweenHours, startHour, endHour, onlyWeekdays);
 
@@ -1765,8 +1783,11 @@ namespace TriviaExercise
         private void ApplyScheduleSettingsToUI()
         {
             OnlyBetweenHoursCheckBox.IsChecked = appSettings.OnlyBetweenHoursEnabled;
-            ScheduleStartHourTextBox.Text = appSettings.ScheduleStartHour.ToString();
-            ScheduleEndHourTextBox.Text = appSettings.ScheduleEndHour.ToString();
+
+            // Display the hours in a user-friendly format
+            ScheduleStartHourTextBox.Text = appSettings.ScheduleStartHour.ToString("0.##");
+            ScheduleEndHourTextBox.Text = appSettings.ScheduleEndHour.ToString("0.##");
+
             OnlyWeekdaysCheckBox.IsChecked = appSettings.OnlyWeekdaysEnabled;
 
             // Enable/disable hour textboxes based on checkbox state
@@ -1779,22 +1800,21 @@ namespace TriviaExercise
             appSettings.OnlyBetweenHoursEnabled = OnlyBetweenHoursCheckBox.IsChecked == true;
             appSettings.OnlyWeekdaysEnabled = OnlyWeekdaysCheckBox.IsChecked == true;
 
-            if (int.TryParse(ScheduleStartHourTextBox.Text, out int startHour))
-            {
-                appSettings.ScheduleStartHour = Math.Max(0, Math.Min(23, startHour));
-            }
+            double startHour = AppSettings.TimeStringToDecimalHour(ScheduleStartHourTextBox.Text);
+            double endHour = AppSettings.TimeStringToDecimalHour(ScheduleEndHourTextBox.Text);
 
-            if (int.TryParse(ScheduleEndHourTextBox.Text, out int endHour))
-            {
-                appSettings.ScheduleEndHour = Math.Max(0, Math.Min(23, endHour));
-            }
+            appSettings.ScheduleStartHour = Math.Max(0, Math.Min(23.99, startHour));
+            appSettings.ScheduleEndHour = Math.Max(0, Math.Min(23.99, endHour));
         }
 
         private void UpdateTimerDisplayWithSchedule()
         {
+            // Get current schedule status directly from helper (don't rely only on pause flags)
+            bool isScheduleEnabled = scheduleHelper?.IsScheduleEnabled == true;
+            bool isWithinSchedule = isScheduleEnabled ? scheduleHelper.IsWithinSchedule : true;
+
             // Check if timer is paused due to schedule
-            bool isPausedBySchedule = timerWasPausedBySchedule &&
-                                     scheduleHelper?.IsScheduleEnabled == true;
+            bool isPausedBySchedule = timerWasPausedBySchedule && isScheduleEnabled;
 
             // Check if timer is paused due to inactivity
             bool isPausedByInactivity = timerWasPausedByInactivity &&
@@ -1805,6 +1825,7 @@ namespace TriviaExercise
             {
                 if (isPausedBySchedule)
                 {
+                    // Don't show normal countdown when paused by schedule
                     var timeUntilNext = scheduleHelper.GetTimeUntilNextActiveSchedule();
                     if (timeUntilNext.HasValue)
                     {
@@ -1820,12 +1841,30 @@ namespace TriviaExercise
                 {
                     NextQuestionTextBlock.Text = "⏸️ Timer paused (user inactive)";
                 }
+                else if (isScheduleEnabled && !isWithinSchedule)
+                {
+                    // We're outside schedule but timer hasn't been paused yet by the schedule monitor
+                    // Don't show countdown, just show that we're waiting for schedule to become active
+                    NextQuestionTextBlock.Text = "📅 Waiting for schedule to become active...";
+                }
                 else
                 {
+                    // Timer is active and we're within schedule (or no schedule restrictions)
                     var timeUntilNext = questionTimer.NextTriggerTime - DateTime.Now;
                     if (timeUntilNext.TotalSeconds > 0)
                     {
-                        NextQuestionTextBlock.Text = $"Next question in: {FormatTimeSpan(timeUntilNext)}";
+                        string timeText = FormatTimeSpan(timeUntilNext);
+
+                        // Show schedule info if enabled
+                        if (isScheduleEnabled)
+                        {
+                            string scheduleStatus = isWithinSchedule ? "✅" : "⚠️";
+                            NextQuestionTextBlock.Text = $"Next question in: {timeText} {scheduleStatus}";
+                        }
+                        else
+                        {
+                            NextQuestionTextBlock.Text = $"Next question in: {timeText}";
+                        }
                     }
                     else
                     {
@@ -1846,6 +1885,12 @@ namespace TriviaExercise
                     NextDrinkTextBlock.Text = isPausedBySchedule ?
                         "📅 Drink reminder paused (schedule)" :
                         "⏸️ Drink reminder paused (inactive)";
+                    NextDrinkTextBlock.Visibility = Visibility.Visible;
+                }
+                else if (isScheduleEnabled && !isWithinSchedule)
+                {
+                    // Same logic for drink timer - don't show countdown when outside schedule
+                    NextDrinkTextBlock.Text = "📅 Drink reminder waiting for schedule";
                     NextDrinkTextBlock.Visibility = Visibility.Visible;
                 }
                 else
@@ -1887,6 +1932,9 @@ namespace TriviaExercise
             {
                 ProgressCooldownTextBlock.Visibility = Visibility.Collapsed;
             }
+
+            // Update tray icon tooltip if available
+            UpdateTrayIconTooltip();
         }
 
         // ========================== ACTIVITY MONITORING STUFF ==========================

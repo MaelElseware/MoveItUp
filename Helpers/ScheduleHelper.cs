@@ -13,10 +13,10 @@ namespace TriviaExercise.Helpers
         private bool isInitialized = false;
         private bool wasWithinSchedulePreviously = true;
 
-        // Schedule settings
+        // Schedule settings - UPDATED TO SUPPORT DECIMAL HOURS
         public bool OnlyBetweenHoursEnabled { get; set; } = false;
-        public int StartHour { get; set; } = 9;   // 9 AM
-        public int EndHour { get; set; } = 17;    // 5 PM
+        public double StartHour { get; set; } = 9.0;   // 9:00 AM (can be 9.5 for 9:30)
+        public double EndHour { get; set; } = 17.0;    // 5:00 PM (can be 17.5 for 5:30)
         public bool OnlyWeekdaysEnabled { get; set; } = false;
 
         // Events
@@ -29,10 +29,10 @@ namespace TriviaExercise.Helpers
 
         public ScheduleHelper()
         {
-            // Check schedule every minute
+            // Check schedule every 10 seconds for reasonably responsive detection
             scheduleCheckTimer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromMinutes(1)
+                Interval = TimeSpan.FromSeconds(10)
             };
             scheduleCheckTimer.Tick += ScheduleCheckTimer_Tick;
         }
@@ -55,7 +55,7 @@ namespace TriviaExercise.Helpers
             scheduleCheckTimer.Start();
             isInitialized = true;
 
-            Debug.WriteLine($"Schedule monitoring started - Hours: {(OnlyBetweenHoursEnabled ? $"{StartHour}:00-{EndHour}:00" : "Any")}, " +
+            Debug.WriteLine($"Schedule monitoring started - Hours: {(OnlyBetweenHoursEnabled ? $"{AppSettings.DecimalHourToTimeString(StartHour)}-{AppSettings.DecimalHourToTimeString(EndHour)}" : "Any")}, " +
                           $"Days: {(OnlyWeekdaysEnabled ? "Weekdays only" : "All days")}");
         }
 
@@ -66,18 +66,18 @@ namespace TriviaExercise.Helpers
             Debug.WriteLine("Schedule monitoring stopped");
         }
 
-        public void UpdateSettings(bool onlyBetweenHoursEnabled, int startHour, int endHour, bool onlyWeekdaysEnabled)
+        public void UpdateSettings(bool onlyBetweenHoursEnabled, double startHour, double endHour, bool onlyWeekdaysEnabled)
         {
             bool wasWithinSchedule = IsWithinSchedule;
             bool wasEnabled = IsScheduleEnabled;
 
             OnlyBetweenHoursEnabled = onlyBetweenHoursEnabled;
-            StartHour = Math.Max(0, Math.Min(23, startHour));
-            EndHour = Math.Max(0, Math.Min(23, endHour));
+            StartHour = Math.Max(0, Math.Min(23.99, startHour));
+            EndHour = Math.Max(0, Math.Min(23.99, endHour));
             OnlyWeekdaysEnabled = onlyWeekdaysEnabled;
 
-            // Ensure start hour is before end hour
-            if (StartHour >= EndHour)
+            // Ensure start hour is before end hour (with small tolerance for decimals)
+            if (Math.Abs(StartHour - EndHour) < 0.01)
             {
                 EndHour = (StartHour + 1) % 24;
             }
@@ -85,7 +85,7 @@ namespace TriviaExercise.Helpers
             bool nowEnabled = IsScheduleEnabled;
             bool nowWithinSchedule = IsWithinSchedule;
 
-            Debug.WriteLine($"Schedule settings updated - Hours: {(OnlyBetweenHoursEnabled ? $"{StartHour}:00-{EndHour}:00" : "Any")}, " +
+            Debug.WriteLine($"Schedule settings updated - Hours: {(OnlyBetweenHoursEnabled ? $"{AppSettings.DecimalHourToTimeString(StartHour)}-{AppSettings.DecimalHourToTimeString(EndHour)}" : "Any")}, " +
                           $"Days: {(OnlyWeekdaysEnabled ? "Weekdays only" : "All days")}");
 
             // Handle monitoring state changes
@@ -163,9 +163,9 @@ namespace TriviaExercise.Helpers
             // Check hour restriction
             if (OnlyBetweenHoursEnabled)
             {
-                int currentHour = now.Hour;
+                double currentHour = now.Hour + (now.Minute / 60.0);
 
-                // Handle normal case (e.g., 9-17)
+                // Handle normal case (e.g., 9.0-17.5)
                 if (StartHour < EndHour)
                 {
                     if (currentHour < StartHour || currentHour >= EndHour)
@@ -173,7 +173,7 @@ namespace TriviaExercise.Helpers
                         return false;
                     }
                 }
-                // Handle overnight case (e.g., 22-6)
+                // Handle overnight case (e.g., 22.5-6.0)
                 else if (StartHour > EndHour)
                 {
                     if (currentHour < StartHour && currentHour >= EndHour)
@@ -209,9 +209,9 @@ namespace TriviaExercise.Helpers
             if (OnlyBetweenHoursEnabled)
             {
                 if (!string.IsNullOrEmpty(status)) status += ", ";
-                status += $"Hours: {StartHour:D2}:00-{EndHour:D2}:00";
+                status += $"Hours: {AppSettings.DecimalHourToTimeString(StartHour)}-{AppSettings.DecimalHourToTimeString(EndHour)}";
 
-                if (!IsTimeWithinHours(now.Hour))
+                if (!IsTimeWithinHours(now.Hour + (now.Minute / 60.0)))
                 {
                     status += " (Currently outside hours - INACTIVE)";
                 }
@@ -220,7 +220,7 @@ namespace TriviaExercise.Helpers
             return status;
         }
 
-        private bool IsTimeWithinHours(int currentHour)
+        private bool IsTimeWithinHours(double currentHour)
         {
             if (!OnlyBetweenHoursEnabled) return true;
 
@@ -266,18 +266,18 @@ namespace TriviaExercise.Helpers
                 }
 
                 // If we're checking today and it's past the end hour, try tomorrow
-                if (daysAhead == 0 && OnlyBetweenHoursEnabled && now.Hour >= EndHour)
+                if (daysAhead == 0 && OnlyBetweenHoursEnabled && (now.Hour + now.Minute / 60.0) >= EndHour)
                 {
                     continue;
                 }
 
                 // Set the start hour for this date
                 DateTime candidateTime = OnlyBetweenHoursEnabled ?
-                    checkDate.AddHours(StartHour) :
+                    GetDateTimeFromDecimalHour(checkDate, StartHour) :
                     checkDate; // If no hour restriction, any time is fine
 
                 // If this is today and we're before the start hour, use the start hour
-                if (daysAhead == 0 && OnlyBetweenHoursEnabled && now.Hour < StartHour)
+                if (daysAhead == 0 && OnlyBetweenHoursEnabled && (now.Hour + now.Minute / 60.0) < StartHour)
                 {
                     return candidateTime;
                 }
@@ -296,7 +296,28 @@ namespace TriviaExercise.Helpers
                 nextMonday = nextMonday.AddDays(7); // If today is Monday, get next Monday
             }
 
-            return OnlyBetweenHoursEnabled ? nextMonday.AddHours(StartHour) : nextMonday;
+            return OnlyBetweenHoursEnabled ? GetDateTimeFromDecimalHour(nextMonday, StartHour) : nextMonday;
+        }
+
+        /// <summary>
+        /// Convert decimal hour to DateTime on a specific date
+        /// </summary>
+        /// <param name="date">The date</param>
+        /// <param name="decimalHour">Hour in decimal format (e.g., 9.5 for 9:30)</param>
+        /// <returns>DateTime with the specified time</returns>
+        private DateTime GetDateTimeFromDecimalHour(DateTime date, double decimalHour)
+        {
+            int hours = (int)Math.Floor(decimalHour);
+            int minutes = (int)Math.Round((decimalHour - hours) * 60);
+
+            // Handle edge case where rounding gives us 60 minutes
+            if (minutes >= 60)
+            {
+                hours++;
+                minutes = 0;
+            }
+
+            return date.Date.AddHours(hours).AddMinutes(minutes);
         }
 
         public void Dispose()

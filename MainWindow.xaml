@@ -708,20 +708,22 @@
                             <!-- Schedule Settings -->
                             <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDCDEE" Margin="0,0,0,5">
                                 <StackPanel>
-                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,7" ToolTip="Restrict timer to only run between specific hours of the day">
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,7" ToolTip="Restrict timer to only run between specific hours of the day. Supports decimal hours (e.g., 9.5 = 9:30)">
                                         <CheckBox x:Name="OnlyBetweenHoursCheckBox" Content="Only between hours:" Width="140"
                                                   VerticalAlignment="Center" Margin="0,0,0,0" 
                                                   Checked="OnlyBetweenHoursCheckBox_CheckedChanged" 
                                                   Unchecked="OnlyBetweenHoursCheckBox_CheckedChanged"/>
-                                        <TextBox x:Name="ScheduleStartHourTextBox" Text="9" Width="50" Height="25" 
+                                        <TextBox x:Name="ScheduleStartHourTextBox" Text="9" Width="60" Height="25" 
                                                  Style="{StaticResource ModernTextBox}"
                                                  VerticalAlignment="Center" TextChanged="ScheduleStartHourTextBox_TextChanged" 
-                                                 MaxLength="2"/>
+                                                 MaxLength="4"
+                                                 ToolTip="Start hour (supports decimals: 9 = 9:00, 9.5 = 9:30, 9.25 = 9:15)"/>
                                         <TextBlock Text=" - " VerticalAlignment="Center" Margin="5,0,5,0" Foreground="#FF565555"/>
-                                        <TextBox x:Name="ScheduleEndHourTextBox" Text="17" Width="50" Height="25" 
+                                        <TextBox x:Name="ScheduleEndHourTextBox" Text="17" Width="60" Height="25" 
                                                  Style="{StaticResource ModernTextBox}"
                                                  VerticalAlignment="Center" TextChanged="ScheduleEndHourTextBox_TextChanged" 
-                                                 MaxLength="2"/>
+                                                 MaxLength="4"
+                                                 ToolTip="End hour (supports decimals: 17 = 17:00, 17.5 = 17:30, 17.75 = 17:45)"/>
                                         <TextBlock Text="(24h format)" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                                     </StackPanel>
 

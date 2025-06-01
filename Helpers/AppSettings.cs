@@ -43,10 +43,10 @@ namespace TriviaExercise.Helpers
             public ActivityBehavior ActivityMonitoringBehavior { get; set; } = ActivityBehavior.PauseOnly;
             public uint InactivityThresholdMinutes { get; set; } = 5; // Reset timer after 5 minutes of inactivity
 
-            // Schedule settings - NEW PROPERTIES
+            // Schedule settings - UPDATED TO SUPPORT DECIMAL HOURS
             public bool OnlyBetweenHoursEnabled { get; set; } = true;
-            public int ScheduleStartHour { get; set; } = 9;  // 9 AM
-            public int ScheduleEndHour { get; set; } = 17;   // 5 PM
+            public double ScheduleStartHour { get; set; } = 9.0;  // 9:00 AM (can be 9.5 for 9:30)
+            public double ScheduleEndHour { get; set; } = 17.0;   // 5:00 PM (can be 17.5 for 5:30)
             public bool OnlyWeekdaysEnabled { get; set; } = true;
         }
 
@@ -134,22 +134,27 @@ namespace TriviaExercise.Helpers
             else if (settings.InactivityThresholdMinutes > 1440) // Max 24 hours
                 settings.InactivityThresholdMinutes = 1440;
 
-            // Validate schedule settings
+            // Validate schedule settings - UPDATED FOR DECIMAL HOURS
             if (settings.ScheduleStartHour < 0)
                 settings.ScheduleStartHour = 0;
-            else if (settings.ScheduleStartHour > 23)
-                settings.ScheduleStartHour = 23;
+            else if (settings.ScheduleStartHour > 23.99) // Max 23:59 (23.98333...)
+                settings.ScheduleStartHour = 23.99;
 
             if (settings.ScheduleEndHour < 0)
                 settings.ScheduleEndHour = 0;
-            else if (settings.ScheduleEndHour > 23)
-                settings.ScheduleEndHour = 23;
+            else if (settings.ScheduleEndHour > 23.99) // Max 23:59
+                settings.ScheduleEndHour = 23.99;
 
-            // Ensure start hour is different from end hour
-            if (settings.ScheduleStartHour == settings.ScheduleEndHour)
+            // Ensure start hour is different from end hour (with small tolerance for decimals)
+            if (Math.Abs(settings.ScheduleStartHour - settings.ScheduleEndHour) < 0.01)
             {
                 settings.ScheduleEndHour = (settings.ScheduleStartHour + 1) % 24;
             }
+
+            // Round to minute precision (avoid excessive decimal places)
+            // This preserves user input like 13.4 while limiting precision to practical levels
+            settings.ScheduleStartHour = Math.Round(settings.ScheduleStartHour, 2);
+            settings.ScheduleEndHour = Math.Round(settings.ScheduleEndHour, 2);
 
             // Validate data folder path if set
             if (!string.IsNullOrEmpty(settings.DataFolderPath))
@@ -169,6 +174,76 @@ namespace TriviaExercise.Helpers
                     settings.DataFolderPath = string.Empty;
                 }
             }
+        }
+
+        /// <summary>
+        /// Convert decimal hour to time string (e.g., 9.5 -> "9:30", 17.25 -> "17:15", 13.4 -> "13:24")
+        /// </summary>
+        /// <param name="decimalHour">Hour in decimal format</param>
+        /// <returns>Time string in HH:MM format</returns>
+        public static string DecimalHourToTimeString(double decimalHour)
+        {
+            int hours = (int)Math.Floor(decimalHour);
+            double fractionalHour = decimalHour - hours;
+            int minutes = (int)Math.Round(fractionalHour * 60);
+
+            // Handle edge case where rounding gives us 60 minutes
+            if (minutes >= 60)
+            {
+                hours++;
+                minutes = 0;
+            }
+
+            // Ensure hours don't exceed 23
+            if (hours >= 24)
+            {
+                hours = 23;
+                minutes = 59;
+            }
+
+            return $"{hours:D2}:{minutes:D2}";
+        }
+
+        /// <summary>
+        /// Convert time string to decimal hour (e.g., "9:30" -> 9.5, "17:15" -> 17.25)
+        /// </summary>
+        /// <param name="timeString">Time string in HH:MM format or decimal format</param>
+        /// <returns>Hour in decimal format</returns>
+        public static double TimeStringToDecimalHour(string timeString)
+        {
+            if (string.IsNullOrWhiteSpace(timeString))
+                return 0;
+
+            // Normalize decimal separator - replace comma with period for consistent parsing
+            string normalizedString = timeString.Replace(',', '.');
+
+            // Try to parse as decimal with invariant culture (always uses period as decimal separator)
+            if (double.TryParse(normalizedString, System.Globalization.NumberStyles.Float,
+                              System.Globalization.CultureInfo.InvariantCulture, out double directDecimal))
+            {
+                return Math.Max(0, Math.Min(23.99, directDecimal));
+            }
+
+            // Try to parse as HH:MM format
+            if (timeString.Contains(":"))
+            {
+                var parts = timeString.Split(':');
+                if (parts.Length == 2 &&
+                    int.TryParse(parts[0], out int hours) &&
+                    int.TryParse(parts[1], out int minutes))
+                {
+                    double result = hours + (minutes / 60.0);
+                    return Math.Max(0, Math.Min(23.99, result));
+                }
+            }
+
+            // Try one more time with current culture as fallback
+            if (double.TryParse(timeString, out double culturalDecimal))
+            {
+                return Math.Max(0, Math.Min(23.99, culturalDecimal));
+            }
+
+            return 0; // Fallback for invalid input
         }
 
         /// <summary>
@@ -226,7 +301,7 @@ namespace TriviaExercise.Helpers
                 if (settings.OnlyBetweenHoursEnabled)
                 {
                     if (scheduleInfo != "Schedule: ") scheduleInfo += ", ";
-                    scheduleInfo += $"{settings.ScheduleStartHour:D2}:00-{settings.ScheduleEndHour:D2}:00";
+                    scheduleInfo += $"{DecimalHourToTimeString(settings.ScheduleStartHour)}-{DecimalHourToTimeString(settings.ScheduleEndHour)}";
                 }
                 scheduleInfo += " | ";
             }
