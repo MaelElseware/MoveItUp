@@ -2001,21 +2001,13 @@ namespace TriviaExercise
 
             if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseAndReset)
             {
-                if (totalInactiveMinutes >= appSettings.InactivityThresholdMinutes)
-                {
-                    timerManager.ResetAll();
-                    StatusTextBox.Text += $"\n🔄 Welcome back! Timers reset after {totalInactiveMinutes} minutes away";
+                timerManager.ResetAll();
+                StatusTextBox.Text += $"\n🔄 Welcome back! Timers reset after {totalInactiveMinutes} minutes away";
 
-                    // Restart pre-question alert if needed
-                    if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
-                    {
-                        StartPreQuestionAlert();
-                    }
-                }
-                else
+                // Restart pre-question alert if needed
+                if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
                 {
-                    timerManager.ResumeAll();
-                    StatusTextBox.Text += $"\n▶️ Timers resumed - you were away for {totalInactiveMinutes} minutes";
+                    StartPreQuestionAlert();
                 }
             }
             else if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseOnly)
