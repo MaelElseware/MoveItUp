@@ -278,7 +278,7 @@ namespace TriviaExercise
 
                     // Format with consistent spacing for alignment
                     // Icon(2) + Name(18) + Score(8) + Difficulty(8) = aligned columns
-                    string formattedLine = $"{icon}  {name,-18} {difficulty,-16}{progress.Score,-4}pts";
+                    string formattedLine = $"{icon}  {name,-16} {difficulty,-16}{progress.Score,-4}pts";
                     categoryDetails.Add(formattedLine);
                 }
             }
