@@ -715,7 +715,7 @@
       "Difficulty": "Hard"
     },
     {
-      "Text": "Which rendering technique simulates subsurface light scattering for realistic skin/organic materials?",
+      "Text": "Which rendering technique simulates light behavior for realistic skin/organic materials?",
       "Answers": ["Phong shading", "Subsurface scattering", "Ambient occlusion", "Fresnel reflection"],
       "CorrectAnswerIndex": 1,
       "Difficulty": "Hard"
@@ -740,7 +740,7 @@
     },
     {
       "Text": "Which algorithm is commonly used for real-time ambient occlusion?",
-      "Answers": ["SSAO (Screen Space Ambient Occlusion)", "Ray tracing", "Light mapping", "Shadow volumes"],
+      "Answers": ["SSAO", "Ray tracing", "Light mapping", "Shadow volumes"],
       "CorrectAnswerIndex": 0,
       "Difficulty": "Hard"
     },

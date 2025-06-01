@@ -394,7 +394,7 @@
     },
     {
       "Text": "In which year was 'The Wizard of Oz' released?",
-      "Answers": ["1938", "1939", "1940", "1941"],
+      "Answers": ["1937", "1939", "1941", "1944"],
       "CorrectAnswerIndex": 1,
       "Difficulty": "Medium",
       "Category": "Cinema"

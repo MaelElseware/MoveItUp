@@ -116,7 +116,7 @@
     },
     {
       "Text": "Which blood type is known as the universal donor?",
-      "Answers": ["A", "B", "AB", "O"],
+      "Answers": [ "A+", "O+", "B-", "O-" ],
       "CorrectAnswerIndex": 3,
       "Difficulty": "Easy"
     },
@@ -124,7 +124,7 @@
       "Text": "What is the main component of chromosomes?",
       "Answers": ["Protein", "Fat", "DNA", "Sugar"],
       "CorrectAnswerIndex": 2,
-      "Difficulty": "Easy"
+      "Difficulty": "Medium"
     },
     {
       "Text": "Which animal changes color to blend with its surroundings?",
@@ -580,12 +580,6 @@
     {
       "Text": "What is the term for the study of the structure and function of tissues?",
       "Answers": ["Anatomy", "Histology", "Physiology", "Pathology"],
-      "CorrectAnswerIndex": 1,
-      "Difficulty": "Hard"
-    },
-    {
-      "Text": "Which type of RNA carries amino acids to the ribosome?",
-      "Answers": ["mRNA", "tRNA", "rRNA", "snRNA"],
       "CorrectAnswerIndex": 1,
       "Difficulty": "Hard"
     },
