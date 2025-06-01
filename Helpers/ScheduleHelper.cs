@@ -11,6 +11,7 @@ namespace TriviaExercise.Helpers
     {
         private DispatcherTimer scheduleCheckTimer;
         private bool isInitialized = false;
+        private bool wasWithinSchedulePreviously = true;
 
         // Schedule settings
         public bool OnlyBetweenHoursEnabled { get; set; } = false;
@@ -50,6 +51,7 @@ namespace TriviaExercise.Helpers
                 return;
             }
 
+            wasWithinSchedulePreviously = IsWithinSchedule; // Initialize with current state
             scheduleCheckTimer.Start();
             isInitialized = true;
 
@@ -126,7 +128,6 @@ namespace TriviaExercise.Helpers
         {
             if (!IsScheduleEnabled) return;
 
-            bool wasWithinSchedulePreviously = true; // Assume we start in schedule
             bool isCurrentlyWithinSchedule = CheckIfCurrentTimeIsWithinSchedule();
 
             if (wasWithinSchedulePreviously != isCurrentlyWithinSchedule)
@@ -142,7 +143,7 @@ namespace TriviaExercise.Helpers
                     ScheduleBecameInactive?.Invoke();
                 }
 
-                wasWithinSchedulePreviously = isCurrentlyWithinSchedule;
+                wasWithinSchedulePreviously = isCurrentlyWithinSchedule; // Update the field
             }
         }
 

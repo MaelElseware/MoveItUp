@@ -808,7 +808,7 @@ namespace TriviaExercise
                 resetTimerItem.Visible = isTimerRunning; // Only show reset when timer is running
 
                 // Update text to show current status
-                if (isTimerRunning)
+                if (isTimerRunning && !timerWasPausedBySchedule && !timerWasPausedByInactivity)
                 {
                     var timeUntilNext = timerManager.QuestionTimer.NextTriggerTime - DateTime.Now;
                     if (timeUntilNext.TotalSeconds > 0)
@@ -824,6 +824,14 @@ namespace TriviaExercise
                         stopTimerItem.Text = "Stop Timer (due now)";
                         resetTimerItem.Text = "Reset Timer (restart countdown)";
                     }
+                }
+                else if (isTimerRunning && timerWasPausedBySchedule)
+                {
+                    startTimerItem.Text = "Timer Paused (out of schedule)";
+                }
+                else if (isTimerRunning && timerWasPausedByInactivity)
+                {
+                    startTimerItem.Text = "Timer Paused (inactivity)";
                 }
                 else
                 {
