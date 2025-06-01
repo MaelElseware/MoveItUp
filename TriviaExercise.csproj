@@ -91,6 +91,7 @@
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\MathQuestionGenerator.cs" />
     <Compile Include="Helpers\PlayerProgressSystem.cs" />
+    <Compile Include="Helpers\ScheduleHelper.cs" />
     <Compile Include="Helpers\SoundHelper.cs" />
     <Compile Include="Helpers\StartupHelper.cs" />
     <Compile Include="Helpers\TimerHelpers.cs" />

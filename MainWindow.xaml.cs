@@ -22,6 +22,9 @@ namespace TriviaExercise
         private TimerManager timerManager;
         private DispatcherTimer displayUpdateTimer;
 
+        private ScheduleHelper scheduleHelper;
+        private bool timerWasPausedBySchedule = false;
+
         // What's going on
         private bool isQuestionActive = false;
         private bool isExerciseActive = false;
@@ -83,6 +86,13 @@ namespace TriviaExercise
 
         private void OnQuestionTimerTriggered(object sender, TimerEventArgs e)
         {
+            // Don't show question if outside schedule
+            if (scheduleHelper?.IsScheduleEnabled == true && !scheduleHelper.IsWithinSchedule)
+            {
+                StatusTextBox.Text += "\n📅 Question skipped - outside schedule";
+                return;
+            }
+
             // Don't show question if one is already active or exercise is running
             if (isQuestionActive || isExerciseActive)
             {
@@ -161,6 +171,7 @@ namespace TriviaExercise
             }
 
             InitializeActivityMonitoring();
+            InitializeScheduleMonitoring();
 
             // Auto-start the timer when the app launches
             StartButton_Click(null, null);
@@ -208,6 +219,9 @@ namespace TriviaExercise
             // Apply activity monitoring settings
             SetActivityBehaviorFromSettings();
             InactivityThresholdTextBox.Text = appSettings.InactivityThresholdMinutes.ToString();
+
+            // Apply Scheduling
+            ApplyScheduleSettingsToUI();
 
             // Apply Discord Rich Presence setting
             DiscordRichPresenceCheckBox.IsChecked = appSettings.DiscordRichPresenceEnabled;
@@ -293,7 +307,7 @@ namespace TriviaExercise
 
         private void DisplayUpdateTimer_Tick(object sender, EventArgs e)
         {
-            UpdateTimerDisplay();
+            UpdateTimerDisplayWithSchedule();
         }
 
         private void UpdateTimerDisplay()
@@ -971,6 +985,7 @@ namespace TriviaExercise
             if (!LoadTriviaData())
                 return;
 
+
             if (!int.TryParse(IntervalTextBox.Text, out int interval) || interval <= 0)
             {
                 StatusTextBox.Text += "\nPlease enter a valid interval in minutes.";
@@ -997,6 +1012,30 @@ namespace TriviaExercise
             if (appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled)
             {
                 activityMonitor?.StartMonitoring();
+            }
+
+            // Start schedule monitoring and check if we need to pause immediately
+            if (scheduleHelper?.IsScheduleEnabled == true)
+            {
+                scheduleHelper.StartMonitoring();
+
+                // If we're currently outside schedule, pause the timers immediately
+                if (!scheduleHelper.IsWithinSchedule)
+                {
+                    timerManager.PauseAll();
+                    timerWasPausedBySchedule = true;
+
+                    var timeUntilNext = scheduleHelper.GetTimeUntilNextActiveSchedule();
+                    if (timeUntilNext.HasValue)
+                    {
+                        string timeText = FormatCooldownTime(timeUntilNext.Value);
+                        StatusTextBox.Text += $"\n📅 Timer started but paused (outside schedule - will resume in {timeText})";
+                    }
+                    else
+                    {
+                        StatusTextBox.Text += "\n📅 Timer started but paused (outside schedule)";
+                    }
+                }
             }
 
             // Start all timers
@@ -1031,6 +1070,9 @@ namespace TriviaExercise
             // Stop all timers cleanly
             timerManager.StopAll();
             activityMonitor?.StopMonitoring();
+
+            scheduleHelper?.StopMonitoring();
+            timerWasPausedBySchedule = false;
 
             // Reset activity state
             timerWasPausedByInactivity = false;
@@ -1472,6 +1514,8 @@ namespace TriviaExercise
                     appSettings.InactivityThresholdMinutes = inactivityThreshold;
                 }
 
+                SaveScheduleSettings();
+
                 appSettings.DrinkReminderEnabled = DrinkReminderCheckBox.IsChecked == true;
                 appSettings.StartMinimized = StartMinimizedCheckBox.IsChecked == true;
                 appSettings.DiscordRichPresenceEnabled = DiscordRichPresenceCheckBox.IsChecked == true;
@@ -1555,6 +1599,252 @@ namespace TriviaExercise
                 discordRPC?.SetActivity("Idle");
             };
             exerciseWindow.Show();
+        }
+
+        // ========================== SCHEDULING (hours-day) ==========================
+        private void InitializeScheduleMonitoring()
+        {
+            scheduleHelper = new ScheduleHelper();
+            scheduleHelper.ScheduleBecameActive += OnScheduleBecameActive;
+            scheduleHelper.ScheduleBecameInactive += OnScheduleBecameInactive;
+
+            // Apply current settings
+            scheduleHelper.UpdateSettings(
+                appSettings.OnlyBetweenHoursEnabled,
+                appSettings.ScheduleStartHour,
+                appSettings.ScheduleEndHour,
+                appSettings.OnlyWeekdaysEnabled
+            );
+
+            StatusTextBox.Text += $"\n📅 Schedule monitoring initialized: {scheduleHelper.GetScheduleStatus()}";
+        }
+
+        private void OnScheduleBecameActive()
+        {
+            if (!timerWasPausedBySchedule) return;
+
+            timerWasPausedBySchedule = false;
+
+            // Reset timers instead of just resuming to start fresh interval
+            timerManager.ResetAll();
+
+            // Restart pre-question alert if needed
+            if (appSettings.SoundsEnabled && appSettings.PreQuestionAlertMinutes > 0)
+            {
+                StartPreQuestionAlert();
+            }
+
+            StatusTextBox.Text += "\n📅 Schedule became active - timers reset and restarted";
+            discordRPC?.SetActivity("Idle");
+        }
+
+        private void OnScheduleBecameInactive()
+        {
+            if (timerManager.AnyTimerActive)
+            {
+                timerManager.PauseAll();
+                timerWasPausedBySchedule = true;
+
+                StatusTextBox.Text += "\n📅 Schedule became inactive - timers paused";
+                discordRPC?.SetActivity("Off Schedule", "Outside work hours");
+            }
+        }
+
+        // UI event handlers
+        private void OnlyBetweenHoursCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            bool isEnabled = OnlyBetweenHoursCheckBox.IsChecked == true;
+
+            // Enable/disable the hour textboxes
+            ScheduleStartHourTextBox.IsEnabled = isEnabled;
+            ScheduleEndHourTextBox.IsEnabled = isEnabled;
+
+            UpdateScheduleSettings();
+            SaveApplicationSettings();
+        }
+
+        private void OnlyWeekdaysCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+            UpdateScheduleSettings();
+            SaveApplicationSettings();
+        }
+
+        private void ScheduleStartHourTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            if (int.TryParse(ScheduleStartHourTextBox.Text, out int hour) && hour >= 0 && hour <= 23)
+            {
+                UpdateScheduleSettings();
+                SaveApplicationSettings();
+            }
+        }
+
+        private void ScheduleEndHourTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            if (int.TryParse(ScheduleEndHourTextBox.Text, out int hour) && hour >= 0 && hour <= 23)
+            {
+                UpdateScheduleSettings();
+                SaveApplicationSettings();
+            }
+        }
+
+        private void UpdateScheduleSettings()
+        {
+            if (scheduleHelper == null) return;
+
+            bool onlyBetweenHours = OnlyBetweenHoursCheckBox.IsChecked == true;
+            bool onlyWeekdays = OnlyWeekdaysCheckBox.IsChecked == true;
+
+            int startHour = 9; // Default
+            int endHour = 17;   // Default
+
+            if (int.TryParse(ScheduleStartHourTextBox.Text, out int parsedStart) && parsedStart >= 0 && parsedStart <= 23)
+            {
+                startHour = parsedStart;
+            }
+
+            if (int.TryParse(ScheduleEndHourTextBox.Text, out int parsedEnd) && parsedEnd >= 0 && parsedEnd <= 23)
+            {
+                endHour = parsedEnd;
+            }
+
+            scheduleHelper.UpdateSettings(onlyBetweenHours, startHour, endHour, onlyWeekdays);
+
+            string status = scheduleHelper.GetScheduleStatus();
+            StatusTextBox.Text += $"\n📅 Schedule updated: {status}";
+        }
+
+        private void ApplyScheduleSettingsToUI()
+        {
+            OnlyBetweenHoursCheckBox.IsChecked = appSettings.OnlyBetweenHoursEnabled;
+            ScheduleStartHourTextBox.Text = appSettings.ScheduleStartHour.ToString();
+            ScheduleEndHourTextBox.Text = appSettings.ScheduleEndHour.ToString();
+            OnlyWeekdaysCheckBox.IsChecked = appSettings.OnlyWeekdaysEnabled;
+
+            // Enable/disable hour textboxes based on checkbox state
+            ScheduleStartHourTextBox.IsEnabled = appSettings.OnlyBetweenHoursEnabled;
+            ScheduleEndHourTextBox.IsEnabled = appSettings.OnlyBetweenHoursEnabled;
+        }
+
+        private void SaveScheduleSettings()
+        {
+            appSettings.OnlyBetweenHoursEnabled = OnlyBetweenHoursCheckBox.IsChecked == true;
+            appSettings.OnlyWeekdaysEnabled = OnlyWeekdaysCheckBox.IsChecked == true;
+
+            if (int.TryParse(ScheduleStartHourTextBox.Text, out int startHour))
+            {
+                appSettings.ScheduleStartHour = Math.Max(0, Math.Min(23, startHour));
+            }
+
+            if (int.TryParse(ScheduleEndHourTextBox.Text, out int endHour))
+            {
+                appSettings.ScheduleEndHour = Math.Max(0, Math.Min(23, endHour));
+            }
+        }
+
+        private void UpdateTimerDisplayWithSchedule()
+        {
+            // Check if timer is paused due to schedule
+            bool isPausedBySchedule = timerWasPausedBySchedule &&
+                                     scheduleHelper?.IsScheduleEnabled == true;
+
+            // Check if timer is paused due to inactivity
+            bool isPausedByInactivity = timerWasPausedByInactivity &&
+                                       appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled;
+
+            var questionTimer = timerManager.QuestionTimer;
+            if (questionTimer?.IsActive == true)
+            {
+                if (isPausedBySchedule)
+                {
+                    var timeUntilNext = scheduleHelper.GetTimeUntilNextActiveSchedule();
+                    if (timeUntilNext.HasValue)
+                    {
+                        string timeText = FormatCooldownTime(timeUntilNext.Value);
+                        NextQuestionTextBlock.Text = $"📅 Timer paused (outside schedule - resumes in {timeText})";
+                    }
+                    else
+                    {
+                        NextQuestionTextBlock.Text = "📅 Timer paused (outside schedule)";
+                    }
+                }
+                else if (isPausedByInactivity)
+                {
+                    NextQuestionTextBlock.Text = "⏸️ Timer paused (user inactive)";
+                }
+                else
+                {
+                    var timeUntilNext = questionTimer.NextTriggerTime - DateTime.Now;
+                    if (timeUntilNext.TotalSeconds > 0)
+                    {
+                        NextQuestionTextBlock.Text = $"Next question in: {FormatTimeSpan(timeUntilNext)}";
+                    }
+                    else
+                    {
+                        NextQuestionTextBlock.Text = "Question due now!";
+                    }
+                }
+            }
+            else
+            {
+                NextQuestionTextBlock.Text = "Timer not running";
+            }
+
+            var drinkTimer = timerManager.DrinkTimer;
+            if (drinkTimer?.IsActive == true)
+            {
+                if (isPausedBySchedule || isPausedByInactivity)
+                {
+                    NextDrinkTextBlock.Text = isPausedBySchedule ?
+                        "📅 Drink reminder paused (schedule)" :
+                        "⏸️ Drink reminder paused (inactive)";
+                    NextDrinkTextBlock.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    var timeUntilDrink = drinkTimer.NextTriggerTime - DateTime.Now;
+                    if (timeUntilDrink.TotalSeconds > 0)
+                    {
+                        NextDrinkTextBlock.Text = $"Next drink reminder in: {FormatTimeSpan(timeUntilDrink)}";
+                        NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        NextDrinkTextBlock.Text = "Drink reminder due now!";
+                        NextDrinkTextBlock.Visibility = Visibility.Visible;
+                    }
+                }
+            }
+            else
+            {
+                NextDrinkTextBlock.Visibility = Visibility.Collapsed;
+            }
+
+            // Update progress cooldown display
+            if (playerProgress != null)
+            {
+                var (canUpdate, timeUntilNext) = PlayerProgressSystem.CanUpdateProgress(playerProgress);
+                if (!canUpdate)
+                {
+                    string timeDisplay = FormatCooldownTime(timeUntilNext);
+                    ProgressCooldownTextBlock.Text = $"Progress locked for: {timeDisplay}";
+                    ProgressCooldownTextBlock.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    ProgressCooldownTextBlock.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                ProgressCooldownTextBlock.Visibility = Visibility.Collapsed;
+            }
         }
 
         // ========================== ACTIVITY MONITORING STUFF ==========================
@@ -1726,6 +2016,8 @@ namespace TriviaExercise
             activityMonitor?.Dispose();
             notifyIcon?.Dispose();
             discordRPC?.Dispose();
+            scheduleHelper?.Dispose();
+
             base.OnClosing(e);
         }
     }

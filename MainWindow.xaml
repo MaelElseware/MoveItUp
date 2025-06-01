@@ -71,7 +71,6 @@
             <Setter Property="Foreground" Value="#666666"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="15,0"/>
-            <Setter Property="Margin" Value="0,-5,0,7"/>
             <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="Template">
@@ -585,7 +584,7 @@
 
                 <!-- Modern Horizontal Menu -->
                 <Border Grid.Row="1" BorderBrush="Transparent" 
-                        BorderThickness="1" CornerRadius="2" Margin="0,0,0,0">
+                        BorderThickness="1" CornerRadius="2" Margin="0,-5,0,7">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="HomeMenuButton" Content="Home" 
                                 Style="{StaticResource MenuButton}"
@@ -647,7 +646,7 @@
                                             <TextBlock x:Name="CategoryProgressTextBlock" 
                                                        Text="Category progress loading..."
                                                        FontSize="11" FontFamily="Consolas"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap" HorizontalAlignment="Left"/>
                                         </ScrollViewer>
                                     </Border>
                                 </Grid>
@@ -697,6 +696,36 @@
                                              Style="{StaticResource ModernTextBox}" VerticalAlignment="Center" 
                                              TextChanged="PreQuestionAlertTextBox_TextChanged" />
                                         <TextBlock Text="minutes before" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+
+                            <!-- Schedule Settings -->
+                            <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF0E68C" Margin="0,0,0,5">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,7" ToolTip="Restrict timer to only run between specific hours of the day">
+                                        <CheckBox x:Name="OnlyBetweenHoursCheckBox" Content="Only between hours:" Width="140"
+                                                  VerticalAlignment="Center" Margin="0,0,0,0" 
+                                                  Checked="OnlyBetweenHoursCheckBox_CheckedChanged" 
+                                                  Unchecked="OnlyBetweenHoursCheckBox_CheckedChanged"/>
+                                        <TextBox x:Name="ScheduleStartHourTextBox" Text="9" Width="50" Height="25" 
+                                                 Style="{StaticResource ModernTextBox}"
+                                                 VerticalAlignment="Center" TextChanged="ScheduleStartHourTextBox_TextChanged" 
+                                                 MaxLength="2"/>
+                                        <TextBlock Text=" - " VerticalAlignment="Center" Margin="5,0,5,0" Foreground="#FF565555"/>
+                                        <TextBox x:Name="ScheduleEndHourTextBox" Text="17" Width="50" Height="25" 
+                                                 Style="{StaticResource ModernTextBox}"
+                                                 VerticalAlignment="Center" TextChanged="ScheduleEndHourTextBox_TextChanged" 
+                                                 MaxLength="2"/>
+                                        <TextBlock Text="(24h format)" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" ToolTip="Restrict timer to only run during weekdays (Monday to Friday)">
+                                        <CheckBox x:Name="OnlyWeekdaysCheckBox" Content="Only during weekdays" 
+                                                  Checked="OnlyWeekdaysCheckBox_CheckedChanged" 
+                                                  Unchecked="OnlyWeekdaysCheckBox_CheckedChanged" 
+                                                  Margin="0,0,0,0"/>
+                                        <TextBlock Text="(Monday - Friday)" VerticalAlignment="Center" Margin="10,-2,0,0" Foreground="#FF565555"/>
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>

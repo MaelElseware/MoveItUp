@@ -42,6 +42,12 @@ namespace TriviaExercise.Helpers
             // Activity monitoring settings
             public ActivityBehavior ActivityMonitoringBehavior { get; set; } = ActivityBehavior.PauseOnly;
             public uint InactivityThresholdMinutes { get; set; } = 5; // Reset timer after 5 minutes of inactivity
+
+            // Schedule settings - NEW PROPERTIES
+            public bool OnlyBetweenHoursEnabled { get; set; } = true;
+            public int ScheduleStartHour { get; set; } = 9;  // 9 AM
+            public int ScheduleEndHour { get; set; } = 17;   // 5 PM
+            public bool OnlyWeekdaysEnabled { get; set; } = true;
         }
 
         /// <summary>
@@ -128,6 +134,23 @@ namespace TriviaExercise.Helpers
             else if (settings.InactivityThresholdMinutes > 1440) // Max 24 hours
                 settings.InactivityThresholdMinutes = 1440;
 
+            // Validate schedule settings
+            if (settings.ScheduleStartHour < 0)
+                settings.ScheduleStartHour = 0;
+            else if (settings.ScheduleStartHour > 23)
+                settings.ScheduleStartHour = 23;
+
+            if (settings.ScheduleEndHour < 0)
+                settings.ScheduleEndHour = 0;
+            else if (settings.ScheduleEndHour > 23)
+                settings.ScheduleEndHour = 23;
+
+            // Ensure start hour is different from end hour
+            if (settings.ScheduleStartHour == settings.ScheduleEndHour)
+            {
+                settings.ScheduleEndHour = (settings.ScheduleStartHour + 1) % 24;
+            }
+
             // Validate data folder path if set
             if (!string.IsNullOrEmpty(settings.DataFolderPath))
             {
@@ -194,12 +217,27 @@ namespace TriviaExercise.Helpers
         /// <returns>Human-readable settings summary</returns>
         public static string GetSettingsSummary(Settings settings)
         {
+            string scheduleInfo = "";
+            if (settings.OnlyBetweenHoursEnabled || settings.OnlyWeekdaysEnabled)
+            {
+                scheduleInfo = "Schedule: ";
+                if (settings.OnlyWeekdaysEnabled)
+                    scheduleInfo += "Weekdays";
+                if (settings.OnlyBetweenHoursEnabled)
+                {
+                    if (scheduleInfo != "Schedule: ") scheduleInfo += ", ";
+                    scheduleInfo += $"{settings.ScheduleStartHour:D2}:00-{settings.ScheduleEndHour:D2}:00";
+                }
+                scheduleInfo += " | ";
+            }
+
             return $"Question Interval: {settings.QuestionIntervalMinutes}min | " +
                    $"Drink Reminder: {(settings.DrinkReminderEnabled ? $"{settings.DrinkIntervalMinutes}min" : "Off")} | " +
                    $"Exercise: {settings.ExerciseDifficulty} | " +
                    $"Discord: {(settings.DiscordRichPresenceEnabled ? "On" : "Off")} | " +
                    $"Sounds: {(settings.SoundsEnabled ? "On" : "Off")} | " +
                    $"Activity Monitor: {settings.ActivityMonitoringBehavior} | " +
+                   scheduleInfo +
                    $"Start Minimized: {(settings.StartMinimized ? "Yes" : "No")}";
         }
     }
