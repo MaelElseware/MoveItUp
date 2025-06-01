@@ -590,7 +590,10 @@
                                 Style="{StaticResource MenuButton}"
                                 Tag="Active"
                                 Click="HomeMenuButton_Click"/>
-                        <Button x:Name="OptionsMenuButton" Content="Options" 
+                        <Button x:Name="TimerMenuButton" Content="Timer" 
+                                Style="{StaticResource MenuButton}"
+                                Click="TimerMenuButton_Click"/>
+                        <Button x:Name="OptionsMenuButton" Content="Settings" 
                                 Style="{StaticResource MenuButton}"
                                 Click="OptionsMenuButton_Click"/>
                     </StackPanel>
@@ -666,10 +669,10 @@
                             </Border>
                         </StackPanel>
 
-                        <!-- OPTIONS CONTENT -->
-                        <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
-                            <!-- Timer Settings -->
-                            <GroupBox Header="Timer Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
+                        <!-- TIMER SETTINGS CONTENT -->
+                        <StackPanel x:Name="TimerPanel" Visibility="Collapsed">
+                            <!-- Timer Intervals -->
+                            <GroupBox Header="Timer Intervals" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDE2F0" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="At which interval question (and thus exercises) will pop ?">
                                         <TextBlock Text="Exercise Interval " VerticalAlignment="Center" Width="140" />
@@ -701,7 +704,7 @@
                             </GroupBox>
 
                             <!-- Schedule Settings -->
-                            <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF0E68C" Margin="0,0,0,5">
+                            <GroupBox Header="Schedule Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFCDCDEE" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,7" ToolTip="Restrict timer to only run between specific hours of the day">
                                         <CheckBox x:Name="OnlyBetweenHoursCheckBox" Content="Only between hours:" Width="140"
@@ -730,25 +733,8 @@
                                 </StackPanel>
                             </GroupBox>
 
-                            <!-- Exercise Settings -->
-                            <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
-                                <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
-                                    <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
-                                    <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
-                                          Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
-                                          ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                                          SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
-                                        <ComboBoxItem Content="Easy" Tag="Easy"/>
-                                        <ComboBoxItem Content="Medium" Tag="Medium"/>
-                                        <ComboBoxItem Content="Hard" Tag="Hard"/>
-                                        <ComboBoxItem Content="Match Question" Tag="MatchQuestion" IsSelected="True"/>
-                                        <ComboBoxItem Content="Mixed (Random)" Tag="Mixed"/>
-                                    </ComboBox>
-                                </StackPanel>
-                            </GroupBox>
-
                             <!-- Inactivity Monitoring Settings -->
-                            <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFEEF0CD" Margin="0,0,0,5">
+                            <GroupBox Header="Inactivity Monitoring" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF0E5CD" Margin="0,0,0,5">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6" ToolTip="Determines what happens to the timer when you are inactive (past the inactivity threshold) ?">
                                         <TextBlock Text="Behavior:" VerticalAlignment="Center" Width="140"/>
@@ -769,6 +755,26 @@
                              TextChanged="InactivityThresholdTextBox_TextChanged" />
                                         <TextBlock Text="minutes" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#FF565555"/>
                                     </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+
+                        <!-- SETTINGS CONTENT -->
+                        <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
+                            <!-- Exercise Settings -->
+                            <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFE8E6F9" Margin="0,0,0,5">
+                                <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
+                                    <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
+                                    <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
+                                          Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
+                                          ItemContainerStyle="{StaticResource ModernComboBoxItem}"
+                                          SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
+                                        <ComboBoxItem Content="Easy" Tag="Easy"/>
+                                        <ComboBoxItem Content="Medium" Tag="Medium"/>
+                                        <ComboBoxItem Content="Hard" Tag="Hard"/>
+                                        <ComboBoxItem Content="Match Question" Tag="MatchQuestion" IsSelected="True"/>
+                                        <ComboBoxItem Content="Mixed (Random)" Tag="Mixed"/>
+                                    </ComboBox>
                                 </StackPanel>
                             </GroupBox>
 

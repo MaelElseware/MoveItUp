@@ -505,6 +505,10 @@ namespace TriviaExercise
             ShowOptionsPanel();
         }
 
+        private void TimerMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTimerPanel();
+        }
 
         // Show the Home panel and update menu button states
         private void ShowHomePanel()
@@ -512,11 +516,29 @@ namespace TriviaExercise
             // Show home content, hide options content
             HomePanel.Visibility = Visibility.Visible;
             OptionsPanel.Visibility = Visibility.Collapsed;
+            TimerPanel.Visibility = Visibility.Collapsed;
 
             // Update menu button states
             HomeMenuButton.Tag = "Active";
             OptionsMenuButton.Tag = null;
+            TimerMenuButton.Tag = null;
 
+            // Scroll to top
+            MainScrollView.ScrollToTop();
+        }
+
+        private void ShowTimerPanel()
+        {
+            // Show home content, hide options content
+            HomePanel.Visibility = Visibility.Collapsed;
+            OptionsPanel.Visibility = Visibility.Collapsed;
+            TimerPanel.Visibility = Visibility.Visible;
+
+            // Update menu button states
+            TimerMenuButton.Tag = "Active";
+            OptionsMenuButton.Tag = null;
+            HomeMenuButton.Tag = null;
+            
             // Scroll to top
             MainScrollView.ScrollToTop();
         }
@@ -527,10 +549,12 @@ namespace TriviaExercise
             // Hide home content, show options content
             HomePanel.Visibility = Visibility.Collapsed;
             OptionsPanel.Visibility = Visibility.Visible;
+            TimerPanel.Visibility = Visibility.Collapsed;
 
             // Update menu button states
             HomeMenuButton.Tag = null;
             OptionsMenuButton.Tag = "Active";
+            TimerMenuButton.Tag = null;
 
             // Scroll to top
             MainScrollView.ScrollToTop();
