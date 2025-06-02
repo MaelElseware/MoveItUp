@@ -86,6 +86,13 @@ namespace TriviaExercise
                 return;
             }
 
+            // Don't show question if user is inactive and timer is paused
+            if (timerWasPausedByInactivity && appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled)
+            {
+                StatusTextBox.Text += "\n⏸️ Question skipped - user inactive";
+                return;
+            }
+
             // Don't show question if one is already active or exercise is running
             if (isQuestionActive || isExerciseActive)
             {
@@ -1842,27 +1849,30 @@ namespace TriviaExercise
                                        appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled;
 
             var questionTimer = timerManager.QuestionTimer;
-            if (questionTimer?.IsActive == true)
+
+            // IMPORTANT: Check for paused states BEFORE checking IsActive
+            // Because paused timers will show IsActive = false
+            if (isPausedBySchedule)
             {
-                if (isPausedBySchedule)
+                // Don't show normal countdown when paused by schedule
+                var timeUntilNext = scheduleHelper.GetTimeUntilNextActiveSchedule();
+                if (timeUntilNext.HasValue)
                 {
-                    // Don't show normal countdown when paused by schedule
-                    var timeUntilNext = scheduleHelper.GetTimeUntilNextActiveSchedule();
-                    if (timeUntilNext.HasValue)
-                    {
-                        string timeText = FormatCooldownTime(timeUntilNext.Value);
-                        NextQuestionTextBlock.Text = $"📅 Timer paused (outside schedule - resumes in {timeText})";
-                    }
-                    else
-                    {
-                        NextQuestionTextBlock.Text = "📅 Timer paused (outside schedule)";
-                    }
+                    string timeText = FormatCooldownTime(timeUntilNext.Value);
+                    NextQuestionTextBlock.Text = $"📅 Timer paused (outside schedule - resumes in {timeText})";
                 }
-                else if (isPausedByInactivity)
+                else
                 {
-                    NextQuestionTextBlock.Text = "⏸️ Timer paused (user inactive)";
+                    NextQuestionTextBlock.Text = "📅 Timer paused (outside schedule)";
                 }
-                else if (isScheduleEnabled && !isWithinSchedule)
+            }
+            else if (isPausedByInactivity)
+            {
+                NextQuestionTextBlock.Text = "⏸️ Timer paused (user inactive)";
+            }
+            else if (questionTimer?.IsActive == true)
+            {
+                if (isScheduleEnabled && !isWithinSchedule)
                 {
                     // We're outside schedule but timer hasn't been paused yet by the schedule monitor
                     // Don't show countdown, just show that we're waiting for schedule to become active
@@ -1895,7 +1905,16 @@ namespace TriviaExercise
             }
             else
             {
-                NextQuestionTextBlock.Text = "Timer not running";
+                // Only show "Timer not running" if it's actually not running (not just paused)
+                if (questionTimer == null)
+                {
+                    NextQuestionTextBlock.Text = "Timer not running";
+                }
+                else
+                {
+                    // Timer exists but is not active - could be stopped manually
+                    NextQuestionTextBlock.Text = "Timer stopped";
+                }
             }
 
             var drinkTimer = timerManager.DrinkTimer;
@@ -1931,7 +1950,16 @@ namespace TriviaExercise
             }
             else
             {
-                NextDrinkTextBlock.Visibility = Visibility.Collapsed;
+                // Check if drink timer is paused by inactivity
+                if (isPausedByInactivity && drinkTimer != null && appSettings.DrinkReminderEnabled)
+                {
+                    NextDrinkTextBlock.Text = "⏸️ Drink reminder paused (inactive)";
+                    NextDrinkTextBlock.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    NextDrinkTextBlock.Visibility = Visibility.Collapsed;
+                }
             }
 
             // Update progress cooldown display

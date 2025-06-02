@@ -6,12 +6,14 @@ namespace TriviaExercise.Helpers
     /// <summary>
     /// Base class for all application timers with common functionality
     /// </summary>
+
     public abstract class BaseTimer : IDisposable
     {
         protected DispatcherTimer timer;
         protected TimeSpan interval;
         protected DateTime nextTriggerTime;
         protected bool isDisposed;
+        protected TimeSpan remainingTimeWhenPaused = TimeSpan.Zero;
 
         public string Name { get; protected set; }
         public bool IsActive => timer?.IsEnabled == true;
@@ -41,9 +43,14 @@ namespace TriviaExercise.Helpers
 
         protected virtual void OnTimerTick(object sender, EventArgs e)
         {
-            if (IsPaused) return;
+            // If this was a resume with remaining time, restore the normal interval
+            if (timer.Interval != interval)
+            {
+                timer.Interval = interval;
+                System.Diagnostics.Debug.WriteLine($"Timer '{Name}' restored to normal interval: {interval}");
+            }
 
-            // Update next trigger time
+            // Update next trigger time for next normal interval
             CalculateNextTriggerTime();
 
             // Fire the event
@@ -70,10 +77,11 @@ namespace TriviaExercise.Helpers
 
         public virtual void Deactivate()
         {
-            if (!IsActive) return;
+            if (!IsActive && !IsPaused) return;
 
             timer.Stop();
             IsPaused = false;
+            remainingTimeWhenPaused = TimeSpan.Zero;
 
             OnStateChanged(TimerState.Inactive);
             System.Diagnostics.Debug.WriteLine($"Timer '{Name}' deactivated.");
@@ -83,32 +91,59 @@ namespace TriviaExercise.Helpers
         {
             if (!IsActive || IsPaused) return;
 
+            // CRITICAL FIX: Actually stop the underlying DispatcherTimer
+            timer.Stop();
             IsPaused = true;
+
+            // Store how much time was remaining when we paused
+            var timeRemaining = nextTriggerTime - DateTime.Now;
+            if (timeRemaining < TimeSpan.Zero) timeRemaining = TimeSpan.Zero;
+
+            remainingTimeWhenPaused = timeRemaining;
+
             OnStateChanged(TimerState.Paused);
-            System.Diagnostics.Debug.WriteLine($"Timer '{Name}' paused.");
+            System.Diagnostics.Debug.WriteLine($"Timer '{Name}' paused with {timeRemaining.TotalSeconds:F1}s remaining.");
         }
 
         public virtual void Resume()
         {
-            if (!IsActive || !IsPaused) return;
+            if (!IsPaused) return;
 
             IsPaused = false;
+
+            // Resume with the remaining time, or full interval if no remaining time stored
+            var resumeInterval = remainingTimeWhenPaused > TimeSpan.Zero ?
+                remainingTimeWhenPaused : interval;
+
+            // Update next trigger time based on remaining time
+            nextTriggerTime = DateTime.Now.Add(resumeInterval);
+
+            // Temporarily set the timer interval to the remaining time
+            timer.Interval = resumeInterval;
+            timer.Start();
+
+            remainingTimeWhenPaused = TimeSpan.Zero; // Clear the stored time
+
             OnStateChanged(TimerState.Active);
-            System.Diagnostics.Debug.WriteLine($"Timer '{Name}' resumed.");
+            System.Diagnostics.Debug.WriteLine($"Timer '{Name}' resumed. Will trigger in {resumeInterval.TotalSeconds:F1}s at {nextTriggerTime}");
         }
 
         public virtual void Reset()
         {
             bool wasActive = IsActive;
+            bool wasPaused = IsPaused;
 
-            if (wasActive)
+            if (wasActive || wasPaused)
             {
                 timer.Stop();
             }
 
+            IsPaused = false;
+            remainingTimeWhenPaused = TimeSpan.Zero;
+            timer.Interval = interval; // Restore normal interval
             CalculateNextTriggerTime();
 
-            if (wasActive)
+            if (wasActive || wasPaused)
             {
                 timer.Start();
             }
@@ -123,8 +158,9 @@ namespace TriviaExercise.Helpers
                 throw new ArgumentException("Interval must be positive", nameof(newInterval));
 
             bool wasActive = IsActive;
+            bool wasPaused = IsPaused;
 
-            if (wasActive)
+            if (wasActive || wasPaused)
             {
                 Deactivate();
             }
@@ -135,6 +171,12 @@ namespace TriviaExercise.Helpers
             if (wasActive)
             {
                 Activate();
+            }
+            else if (wasPaused)
+            {
+                // If it was paused, reactivate and then pause again
+                Activate();
+                Pause();
             }
 
             System.Diagnostics.Debug.WriteLine($"Timer '{Name}' interval updated to {newInterval}");
