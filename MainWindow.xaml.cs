@@ -1701,6 +1701,20 @@ namespace TriviaExercise
 
             timerWasPausedBySchedule = false;
 
+            // CRITICAL : Check if user is currently inactive before resuming timers
+            if (appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled &&
+                activityMonitor != null &&
+                !activityMonitor.IsUserActive)
+            {
+                // User is still inactive, so don't resume timers yet
+                // Set the inactivity flag so the activity monitor knows timers should start when user becomes active
+                timerWasPausedByInactivity = true;
+
+                StatusTextBox.Text += "\n📅 Schedule became active but user is inactive - timers will resume when user becomes active";
+                discordRPC?.SetActivity("Away", "Schedule active but user inactive");
+                return;
+            }
+
             // Resume timers first if they're paused, then reset them
             if (timerManager.QuestionTimer != null)
             {
