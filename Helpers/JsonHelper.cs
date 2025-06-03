@@ -11,7 +11,6 @@ namespace TriviaExercise.Helpers
 {
     internal class JsonHelper
     {
-
         static public string CreateSampleJsonFilesIfNotExist(string questionsPath, string exercisesPath)
         {
             string ResultString = null;
@@ -85,7 +84,7 @@ namespace TriviaExercise.Helpers
                 }
             }
 
-            // Create sample exercises.json (unchanged)
+            // Create sample exercises.json with image support
             if (!File.Exists(exercisesPath))
             {
                 var sampleExercises = new ExercisesData
@@ -97,28 +96,30 @@ namespace TriviaExercise.Helpers
                             Description = "Great job! Stand up and do 5 jumping jacks!",
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Easy,
-                            Category = "Cardio"
+                            Category = "Cardio",
+                            ImageFileName = "JumpingJacks.png" // Example image
                         },
                         new Exercise
                         {
                             Description = "Excellent! Take 10 deep breaths and stretch your arms above your head.",
                             DurationSeconds = 30,
                             Difficulty = DifficultyLevel.Easy,
-                            Category = "Stretching"
+                            Category = "Stretching",
                         },
                         new Exercise
                         {
                             Description = "Well done! Do 10 push-ups or wall push-ups if needed.",
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Medium,
-                            Category = "Strength"
+                            Category = "Strength",
                         },
                         new Exercise
                         {
                             Description = "Perfect! Hold a plank position for as long as you can.",
                             DurationSeconds = 60,
                             Difficulty = DifficultyLevel.Medium,
-                            Category = "Strength"
+                            Category = "Strength",
+                            ImageFileName = "Plank.png" // Example image
                         },
                         new Exercise
                         {
@@ -126,13 +127,14 @@ namespace TriviaExercise.Helpers
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Hard,
                             Category = "Cardio"
+                            // No image for this one - demonstrates optional nature
                         },
                         new Exercise
                         {
                             Description = "Amazing! Run in place for 2 minutes at high intensity.",
                             DurationSeconds = 120,
                             Difficulty = DifficultyLevel.Hard,
-                            Category = "Cardio"
+                            Category = "Cardio",
                         }
                     },
                     WrongAnswerExercises = new List<Exercise>
@@ -142,21 +144,22 @@ namespace TriviaExercise.Helpers
                             Description = "Oops! Walk around your room 3 times to get those brain cells moving.",
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Easy,
-                            Category = "Mental Break"
+                            Category = "Mental Break",
                         },
                         new Exercise
                         {
                             Description = "Not quite! Do some gentle neck rolls and shoulder shrugs.",
                             DurationSeconds = 45,
                             Difficulty = DifficultyLevel.Easy,
-                            Category = "Stretching"
+                            Category = "Stretching",
                         },
                         new Exercise
                         {
                             Description = "Close, but not quite! Do 15 squats to boost your energy.",
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Medium,
-                            Category = "Strength"
+                            Category = "Strength",
+                            ImageFileName = "Squats.png" // Example image
                         },
                         new Exercise
                         {
@@ -164,20 +167,22 @@ namespace TriviaExercise.Helpers
                             DurationSeconds = 90,
                             Difficulty = DifficultyLevel.Medium,
                             Category = "Cardio"
+                            // No image for this one
                         },
                         new Exercise
                         {
-                            Description = "Tough question! Do 30 mountain climbers to reset your focus.",
+                            Description = "Tough question! Do 20 high knee jacks to reset your focus.",
                             DurationSeconds = null,
                             Difficulty = DifficultyLevel.Hard,
-                            Category = "Cardio"
+                            Category = "Cardio",
+                            ImageFileName = "HighKneeJack.png" // Example image
                         },
                         new Exercise
                         {
                             Description = "No worries! Take a 2-minute mindful breathing break.",
                             DurationSeconds = 120,
                             Difficulty = DifficultyLevel.Hard,
-                            Category = "Mental Break"
+                            Category = "Mental Break",
                         }
                     }
                 };
@@ -187,6 +192,9 @@ namespace TriviaExercise.Helpers
                     string json = JsonConvert.SerializeObject(sampleExercises, Formatting.Indented);
                     File.WriteAllText(exercisesPath, json);
                     ResultString += $"Created sample exercises file at: {exercisesPath}\n";
+
+                    // Also create the Illustrations folder and add a note about images
+                    CreateIllustrationsFolder();
                 }
                 catch (Exception ex)
                 {
@@ -194,6 +202,54 @@ namespace TriviaExercise.Helpers
                 }
             }
             return ResultString;
+        }
+
+        /// <summary>
+        /// Create the Illustrations folder and add a readme file
+        /// </summary>
+        private static void CreateIllustrationsFolder()
+        {
+            try
+            {
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string illustrationsPath = Path.Combine(baseDirectory, "Illustrations");
+
+                if (!Directory.Exists(illustrationsPath))
+                {
+                    Directory.CreateDirectory(illustrationsPath);
+
+                    // Create a readme file explaining the image requirements
+                    string readmePath = Path.Combine(illustrationsPath, "README.txt");
+                    string readmeContent = @"Exercise Illustrations Folder
+=============================
+
+This folder should contain PNG images for exercises.
+
+Image Requirements:
+- Format: PNG files only
+- Recommended size: 1200x1000 pixels (width x height)
+- File naming: Use descriptive names matching the ImageFileName in exercises.json
+
+Example images referenced in the sample exercises.json:
+- Plank.png
+- HighKneeJack.png
+- Squats.png
+- JumpingJacks.png
+
+Images will be displayed at a maximum size of 240x200 pixels in the exercise window,
+maintaining aspect ratio.
+
+If an image file is not found, an error message will be displayed instead.
+";
+
+                    File.WriteAllText(readmePath, readmeContent);
+                    System.Diagnostics.Debug.WriteLine($"Created Illustrations folder and README at: {illustrationsPath}");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error creating Illustrations folder: {ex.Message}");
+            }
         }
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="Helpers\AppSettings.cs" />
     <Compile Include="Helpers\CategoryHelper.cs" />
     <Compile Include="Helpers\DiscordRichPresence.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\MathQuestionGenerator.cs" />
     <Compile Include="Helpers\PlayerProgressSystem.cs" />
@@ -215,6 +216,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Illustrations\HighKneeJack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustrations\LeanStretch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustrations\Plank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustrations\SkiHops.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MoveItUp.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

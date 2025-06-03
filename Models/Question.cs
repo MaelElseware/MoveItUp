@@ -38,6 +38,7 @@ namespace TriviaExercise.Models
         public int? DurationSeconds { get; set; }
         public DifficultyLevel Difficulty { get; set; } = DifficultyLevel.Easy;
         public string Category { get; set; } // Optional: e.g., "Stretching", "Cardio", "Mental Break"
+        public string ImageFileName { get; set; } // Optional image file name (should end with .png)
     }
 
     // For questions.json files

@@ -1034,6 +1034,18 @@ namespace TriviaExercise
                 DataFolderPathTextBox.Text = appSettings.DataFolderPath;
             }
 
+            // Ensure Illustrations folder exists
+            bool illustrationsCreated = ImageHelper.EnsureIllustrationsDirectoryExists();
+            if (illustrationsCreated)
+            {
+                string illustrationsPath = ImageHelper.GetIllustrationsDirectory();
+                if (Directory.Exists(illustrationsPath) && Directory.GetFiles(illustrationsPath, "*.png").Length == 0)
+                {
+                    StatusTextBox.Text += $"\n📷 Illustrations folder ready: {illustrationsPath}";
+                    StatusTextBox.Text += "\n💡 Place PNG exercise images in the Illustrations folder to enhance exercises";
+                }
+            }
+
             string sourceDirectory = DataFolderPathTextBox.Text;
             string questionsPath = Path.Combine(sourceDirectory, "Questions_GeneralCulture.json");
             string exercisesPath = Path.Combine(sourceDirectory, "exercises.json");
@@ -1044,6 +1056,7 @@ namespace TriviaExercise
                 StatusTextBox.Text += $"\n{result}";
             }
         }
+
 
         private void UpdateLoadedFilesDisplay()
         {
@@ -1069,6 +1082,10 @@ namespace TriviaExercise
             }
             LoadedFilesTextBlock.Text += $" - {ExerciseFileStatus}";
 
+            // Add image system status
+            string imageStatus = ImageHelper.GetImageSystemStatus();
+            LoadedFilesTextBlock.Text += $" - {imageStatus.Split('\n')[0]}"; // Only first line for compact display
+
             // Build detailed info for status log
             string detailedInfo = $"Found {questionFiles.Length} question file(s)";
             if (questionFiles.Length > 0)
@@ -1083,7 +1100,32 @@ namespace TriviaExercise
                 }
             }
 
-            detailedInfo += ExerciseFileStatus;
+            detailedInfo += ExerciseFileStatus + "\n";
+
+            // Add detailed image system info to status log
+            detailedInfo += ImageHelper.GetImageSystemStatus();
+
+            // Add available images count to detailed log
+            var availableImages = ImageHelper.GetAvailableImages();
+            if (availableImages.Length > 0)
+            {
+                detailedInfo += $"\nAvailable exercise images: {availableImages.Length}\n";
+                if (availableImages.Length <= 10) // Show individual images if not too many
+                {
+                    foreach (var image in availableImages)
+                    {
+                        detailedInfo += $"  📷 {image}\n";
+                    }
+                }
+                else
+                {
+                    detailedInfo += $"  (showing first 10 of {availableImages.Length})\n";
+                    for (int i = 0; i < 10; i++)
+                    {
+                        detailedInfo += $"  📷 {availableImages[i]}\n";
+                    }
+                }
+            }
 
             // Add the detailed info to status log
             StatusTextBox.Text += $"\n{detailedInfo}\n";
