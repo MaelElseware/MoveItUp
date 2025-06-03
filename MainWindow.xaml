@@ -765,7 +765,7 @@
                         </StackPanel>
 
                         <!-- SETTINGS CONTENT -->
-                        <StackPanel x:Name="OptionsPanel" Visibility="Visible">
+                        <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
                             <!-- Exercise Settings -->
                             <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
