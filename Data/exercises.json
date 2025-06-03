@@ -1,7 +1,7 @@
 {
   "CorrectAnswerExercises": [
     {
-      "Description": "Great job! Stand up and do 5 jumping jacks!",
+      "Description": "Great job! Stand up and lean to stretch 5 times on each side !",
       "DurationSeconds": null,
       "Difficulty": 0,
       "Category": "Cardio"
@@ -26,13 +26,13 @@
     },
     {
       "Description": "Outstanding! Do 15 squats - you've earned this challenge!",
-      "DurationSeconds": 90,
+      "DurationSeconds": 45,
       "Difficulty": 2,
       "Category": "Cardio"
     },
     {
-      "Description": "Amazing! Run in place for 2 minutes at good intensity.",
-      "DurationSeconds": 120,
+      "Description": "Amazing! Run in place for 1 minutes at good intensity.",
+      "DurationSeconds": 60,
       "Difficulty": 2,
       "Category": "Cardio"
     }
@@ -51,7 +51,7 @@
       "Category": "Stretching"
     },
     {
-      "Description": "Close, but not quite! Do 15 squats to boost your energy.",
+      "Description": "Close, but not quite! Do 10 jumping jacks to boost your energy.",
       "DurationSeconds": null,
       "Difficulty": 1,
       "Category": "Strength"
@@ -63,13 +63,13 @@
       "Category": "Cardio"
     },
     {
-      "Description": "Tough question! Do 30 mountain climbers to reset your focus.",
-      "DurationSeconds": null,
+      "Description": "Tough question! Do 20 heigh knee jacks as a reward !",
+      "DurationSeconds": 75,
       "Difficulty": 2,
       "Category": "Cardio"
     },
     {
-      "Description": "No worries! Jump 10 times standing on one leg then switch legs and do it again !",
+      "Description": "No worries! Jump 10 times on each side (total 20) as if you were wearing skies (ski hops) !",
       "DurationSeconds": 90,
       "Difficulty": 2,
       "Category": "Mental Break"
