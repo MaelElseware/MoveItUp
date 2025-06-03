@@ -307,6 +307,27 @@ namespace TriviaExercise.Helpers
                 return false;
             }
         }
+        private static string GetExerciseDifficultyDisplayString(ExerciseDifficultyMode mode)
+        {
+            switch (mode)
+            {
+                case ExerciseDifficultyMode.Easy:
+                    return "Easy";
+                case ExerciseDifficultyMode.Medium:
+                    return "Medium";
+                case ExerciseDifficultyMode.Hard:
+                    return "Hard";
+                case ExerciseDifficultyMode.Mixed:
+                    return "Mixed";
+                case ExerciseDifficultyMode.Increasing:
+                    return "Increasing";
+                case ExerciseDifficultyMode.Decreasing:
+                    return "Decreasing";
+                case ExerciseDifficultyMode.MatchQuestion:
+                default:
+                    return "Match Question";
+            }
+        }
 
         /// <summary>
         /// Get settings summary for display
@@ -335,9 +356,12 @@ namespace TriviaExercise.Helpers
                 (settings.ShowDrinkReminderWindow ? "" : " (sound only)") :
                 "Off";
 
+            // Updated exercise difficulty display to handle new modes
+            string exerciseDifficultyInfo = GetExerciseDifficultyDisplayString(settings.ExerciseDifficulty);
+
             return $"Question Interval: {settings.QuestionIntervalMinutes}min | " +
                    $"Drink Reminder: {drinkInfo} | " +
-                   $"Exercise: {settings.ExerciseDifficulty} | " +
+                   $"Exercise: {exerciseDifficultyInfo} | " +
                    $"Discord: {(settings.DiscordRichPresenceEnabled ? "On" : "Off")} | " +
                    $"Sounds: {(settings.SoundsEnabled ? "On" : "Off")} | " +
                    $"Activity Monitor: {settings.ActivityMonitoringBehavior} | " +

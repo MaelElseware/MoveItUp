@@ -771,14 +771,16 @@
                                 <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
                                     <TextBlock Text="Difficulty:" VerticalAlignment="Center" Width="140"/>
                                     <ComboBox x:Name="ExerciseDifficultyComboBox" Width="200" Height="25"
-                                          Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
-                                          ItemContainerStyle="{StaticResource ModernComboBoxItem}"
-                                          SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
+                                      Style="{StaticResource ModernComboBox}" VerticalAlignment="Center"
+                                      ItemContainerStyle="{StaticResource ModernComboBoxItem}"
+                                      SelectionChanged="ExerciseDifficultyComboBox_SelectionChanged">
                                         <ComboBoxItem Content="Easy" Tag="Easy"/>
                                         <ComboBoxItem Content="Medium" Tag="Medium"/>
                                         <ComboBoxItem Content="Hard" Tag="Hard"/>
                                         <ComboBoxItem Content="Match Question" Tag="MatchQuestion" IsSelected="True"/>
                                         <ComboBoxItem Content="Mixed (Random)" Tag="Mixed"/>
+                                        <ComboBoxItem Content="Time Increasing" Tag="Increasing"/>
+                                        <ComboBoxItem Content="Time Decreasing" Tag="Decreasing"/>
                                     </ComboBox>
                                 </StackPanel>
                             </GroupBox>

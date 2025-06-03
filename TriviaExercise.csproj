@@ -126,6 +126,7 @@
     <Compile Include="Helpers\ScheduleHelper.cs" />
     <Compile Include="Helpers\SoundHelper.cs" />
     <Compile Include="Helpers\StartupHelper.cs" />
+    <Compile Include="Helpers\TimeBasedDifficultyHelper.cs" />
     <Compile Include="Helpers\TimerHelpers.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="QuestionWindow.xaml.cs">

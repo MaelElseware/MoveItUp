@@ -19,6 +19,8 @@ namespace TriviaExercise
         private PlayerProgress playerProgress;
         private Random random = new Random();
 
+        private ScheduleHelper scheduleHelper;
+
         private static bool ShowAnswerByDefault = false;
         // control default answer display
         private bool showAnswersDuringDelay = false;
@@ -36,27 +38,32 @@ namespace TriviaExercise
         // and exercise
         public event EventHandler<ExerciseRequestedEventArgs> ExerciseRequested;
 
-        public QuestionWindow(Question question, TriviaData triviaData, ExerciseDifficultyMode exerciseDifficultyMode, PlayerProgress playerProgress)
+        public QuestionWindow(Question question, TriviaData triviaData, ExerciseDifficultyMode exerciseDifficultyMode, PlayerProgress playerProgress, ScheduleHelper scheduleHelper)
         {
             InitializeComponent();
             this.question = question;
             this.triviaData = triviaData;
             this.exerciseDifficultyMode = exerciseDifficultyMode;
             this.playerProgress = playerProgress;
+            this.scheduleHelper = scheduleHelper;
             this.showAnswersDuringDelay = ShowAnswerByDefault || question.Category == QuestionCategory.Math;
             LoadQuestion();
             StartTimer();
         }
 
         // Backward compatibility constructor (for existing code that doesn't specify progress)
-        public QuestionWindow(Question question, TriviaData triviaData, ExerciseDifficultyMode exerciseDifficultyMode)
-            : this(question, triviaData, exerciseDifficultyMode, null)
+        public QuestionWindow(Question question, TriviaData triviaData, ExerciseDifficultyMode exerciseDifficultyMode, PlayerProgress playerProgress)
+            : this(question, triviaData, exerciseDifficultyMode, playerProgress, null)
         {
         }
 
-        // Backward compatibility constructor (for existing code that doesn't specify exercise difficulty)
+        public QuestionWindow(Question question, TriviaData triviaData, ExerciseDifficultyMode exerciseDifficultyMode)
+            : this(question, triviaData, exerciseDifficultyMode, null, null)
+        {
+        }
+
         public QuestionWindow(Question question, TriviaData triviaData)
-            : this(question, triviaData, ExerciseDifficultyMode.MatchQuestion, null)
+            : this(question, triviaData, ExerciseDifficultyMode.MatchQuestion, null, null)
         {
         }
 
@@ -483,20 +490,24 @@ namespace TriviaExercise
 
         private DifficultyLevel GetTargetExerciseDifficulty(DifficultyLevel questionDifficulty)
         {
-            switch (exerciseDifficultyMode)
+            // Get schedule information
+            bool isScheduleEnabled = scheduleHelper?.IsScheduleEnabled == true;
+            double startHour = 0.0;
+            double endHour = 23.99;
+
+            if (scheduleHelper != null)
             {
-                case ExerciseDifficultyMode.Easy:
-                    return DifficultyLevel.Easy;
-                case ExerciseDifficultyMode.Medium:
-                    return DifficultyLevel.Medium;
-                case ExerciseDifficultyMode.Hard:
-                    return DifficultyLevel.Hard;
-                case ExerciseDifficultyMode.Mixed:
-                    return DifficultyLevel.Mixed;
-                case ExerciseDifficultyMode.MatchQuestion:
-                default:
-                    return questionDifficulty;
+                startHour = scheduleHelper.StartHour;
+                endHour = scheduleHelper.EndHour;
             }
+
+            // Use the TimeBasedDifficultyHelper to calculate the difficulty
+            return TimeBasedDifficultyHelper.GetExerciseDifficulty(
+                exerciseDifficultyMode,
+                questionDifficulty,
+                startHour,
+                endHour,
+                isScheduleEnabled);
         }
 
         private List<Exercise> GetNearbyDifficultyExercises(List<Exercise> exercises, DifficultyLevel targetDifficulty)

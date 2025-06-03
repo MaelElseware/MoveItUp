@@ -1232,6 +1232,10 @@ namespace TriviaExercise
                         return ExerciseDifficultyMode.Hard;
                     case "Mixed":
                         return ExerciseDifficultyMode.Mixed;
+                    case "Increasing":
+                        return ExerciseDifficultyMode.Increasing;
+                    case "Decreasing":
+                        return ExerciseDifficultyMode.Decreasing;
                     case "MatchQuestion":
                     default:
                         return ExerciseDifficultyMode.MatchQuestion;
@@ -1252,6 +1256,10 @@ namespace TriviaExercise
                     return "Hard";
                 case ExerciseDifficultyMode.Mixed:
                     return "Mixed (Random)";
+                case ExerciseDifficultyMode.Increasing:
+                    return "Increasing (Easy→Hard)";
+                case ExerciseDifficultyMode.Decreasing:
+                    return "Decreasing (Hard→Easy)";
                 case ExerciseDifficultyMode.MatchQuestion:
                 default:
                     return "Match Question";
@@ -1419,7 +1427,8 @@ namespace TriviaExercise
                     isQuestionActive = true;
                     discordRPC?.SetActivity("In Question", $"Answering {CategoryHelper.GetCategoryDisplayName(question.Category)} question");
 
-                    var questionWindow = new QuestionWindow(question, triviaData, selectedExerciseDifficulty, playerProgress);
+                    // Pass schedule information to the question window
+                    var questionWindow = new QuestionWindow(question, triviaData, selectedExerciseDifficulty, playerProgress, scheduleHelper);
                     questionWindow.QuestionAnswered += OnQuestionAnswered;
                     questionWindow.ExerciseRequested += OnExerciseRequested;
 
@@ -1431,6 +1440,13 @@ namespace TriviaExercise
                     };
 
                     questionWindow.Show();
+
+                    // Log time-based difficulty info if applicable
+                    string timeDifficultyInfo = GetCurrentTimeDifficultyInfo();
+                    if (!string.IsNullOrEmpty(timeDifficultyInfo))
+                    {
+                        StatusTextBox.Text += $"\n⏰ {timeDifficultyInfo}";
+                    }
                 }
             }
         }
@@ -1639,6 +1655,23 @@ namespace TriviaExercise
                     }
                 }
             }
+        }
+        private string GetCurrentTimeDifficultyInfo()
+        {
+            var selectedDifficulty = GetSelectedExerciseDifficulty();
+
+            if (selectedDifficulty == ExerciseDifficultyMode.Increasing ||
+                selectedDifficulty == ExerciseDifficultyMode.Decreasing)
+            {
+                bool isScheduleEnabled = scheduleHelper?.IsScheduleEnabled == true;
+                double startHour = isScheduleEnabled ? appSettings.ScheduleStartHour : 0.0;
+                double endHour = isScheduleEnabled ? appSettings.ScheduleEndHour : 23.99;
+
+                return TimeBasedDifficultyHelper.GetTimeBasedDifficultyDescription(
+                    selectedDifficulty, startHour, endHour, isScheduleEnabled);
+            }
+
+            return string.Empty;
         }
 
         // method to save current settings
@@ -2262,7 +2295,9 @@ namespace TriviaExercise
         Medium,
         Hard,
         Mixed,
-        MatchQuestion
+        MatchQuestion,
+        Increasing,  // Easy -> Medium -> Hard throughout the day
+        Decreasing   // Hard -> Medium -> Easy throughout the day
     }
 
     // Event args for question answered
