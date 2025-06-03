@@ -216,6 +216,7 @@ namespace TriviaExercise
             // Apply drink reminder settings
             DrinkReminderCheckBox.IsChecked = appSettings.DrinkReminderEnabled;
             DrinkIntervalTextBox.Text = appSettings.DrinkIntervalMinutes.ToString();
+            ShowDrinkWindowCheckBox.IsChecked = appSettings.ShowDrinkReminderWindow;
 
             // Apply start minimized setting
             StartMinimizedCheckBox.IsChecked = appSettings.StartMinimized;
@@ -474,6 +475,25 @@ namespace TriviaExercise
         private void DrinkReminderCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             if (isLoadingSettings) return;
+
+            bool hasSoundFeedback = appSettings.SoundsEnabled;
+            bool hasWindowFeedback = ShowDrinkWindowCheckBox.IsChecked == true;
+            if (!hasSoundFeedback && !hasWindowFeedback)
+            {
+                // Show error message
+                System.Windows.MessageBox.Show(
+                    "⚠️ Drink reminders won't be very effective!\n\n" +
+                    "You have disabled both:\n" +
+                    "• Sound effects (in Settings)\n" +
+                    "• Reminder window display\n\n" +
+                    "Please enable at least one option so you can actually notice the reminders.",
+                    "Drink Reminder Configuration Issue",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                DrinkReminderCheckBox.IsChecked = false;
+            }
+
             if (DrinkReminderCheckBox.IsChecked == true)
             {
                 if (timerManager.QuestionTimer?.IsActive == true) // Only start if main timer is running
@@ -736,13 +756,48 @@ namespace TriviaExercise
 
         private void ShowDrinkReminder()
         {
+            // Don't show drink reminder if outside schedule
+            if (scheduleHelper?.IsScheduleEnabled == true && !scheduleHelper.IsWithinSchedule)
+            {
+                StatusTextBox.Text += "\n📅 Drink reminder skipped - outside schedule";
+                return;
+            }
+
+            bool soundPlayed = false;
+            bool windowShown = false;
+
+            // Play sound if enabled
             if (appSettings.SoundsEnabled)
             {
                 SoundHelper.PlayDrinkReminder();
+                soundPlayed = true;
             }
 
-            System.Windows.MessageBox.Show("💧 Time to drink some water! Stay hydrated! 💧",
-                "Drink Reminder", MessageBoxButton.OK, MessageBoxImage.Information);
+            // Show window if enabled
+            if (appSettings.ShowDrinkReminderWindow)
+            {
+                var drinkReminderWindow = new DrinkReminderWindow();
+                drinkReminderWindow.Show();
+                windowShown = true;
+            }
+
+            // Log what happened
+            if (soundPlayed && windowShown)
+            {
+                StatusTextBox.Text += "\n💧 Drink reminder: sound + window shown";
+            }
+            else if (soundPlayed)
+            {
+                StatusTextBox.Text += "\n💧 Drink reminder: sound only";
+            }
+            else if (windowShown)
+            {
+                StatusTextBox.Text += "\n💧 Drink reminder: window only (no sound)";
+            }
+            else
+            {
+                StatusTextBox.Text += "\n💧 Drink reminder triggered (no sound/window - check settings!)";
+            }
         }
 
         // ================================== TRAY =========================================
@@ -1316,7 +1371,7 @@ namespace TriviaExercise
                 Question question = null;
 
                 // 10% chance to generate a math question instead of using file questions
-                bool generateMathQuestion = random.Next(100) < 10;
+                bool generateMathQuestion = random.Next(100) < 15;
 
                 if (generateMathQuestion)
                 {
@@ -1476,6 +1531,38 @@ namespace TriviaExercise
             SaveApplicationSettings();
         }
 
+        private void ShowDrinkWindowCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            if (isLoadingSettings) return;
+
+            // Check if drink reminders are enabled and user is disabling all feedback
+            if (DrinkReminderCheckBox.IsChecked == true)
+            {
+                bool hasSoundFeedback = appSettings.SoundsEnabled;
+                bool hasWindowFeedback = ShowDrinkWindowCheckBox.IsChecked == true;
+
+                if (!hasSoundFeedback && !hasWindowFeedback)
+                {
+                    // Show error message
+                    System.Windows.MessageBox.Show(
+                        "⚠️ Drink reminders won't be very effective!\n\n" +
+                        "You have disabled both:\n" +
+                        "• Sound effects (in Settings)\n" +
+                        "• Reminder window display\n\n" +
+                        "Please enable at least one option so you can actually notice the reminders.",
+                        "Drink Reminder Configuration Issue",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                    ShowDrinkWindowCheckBox.IsChecked = false; //can't set the reminder
+                }
+                else 
+                {
+                    SaveApplicationSettings();
+                }
+            }           
+        }
+
         private void StartupCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             bool isChecked = StartupCheckBox.IsChecked == true;
@@ -1587,6 +1674,7 @@ namespace TriviaExercise
                 SaveScheduleSettings();
 
                 appSettings.DrinkReminderEnabled = DrinkReminderCheckBox.IsChecked == true;
+                appSettings.ShowDrinkReminderWindow = ShowDrinkWindowCheckBox.IsChecked == true;
                 appSettings.StartMinimized = StartMinimizedCheckBox.IsChecked == true;
                 appSettings.DiscordRichPresenceEnabled = DiscordRichPresenceCheckBox.IsChecked == true;
                 appSettings.SoundsEnabled = SoundsEnabledCheckBox.IsChecked == true;

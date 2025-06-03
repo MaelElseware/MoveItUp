@@ -39,6 +39,9 @@ namespace TriviaExercise.Helpers
             public bool SoundsEnabled { get; set; } = true;
             public double PreQuestionAlertMinutes { get; set; } = 1; // 1 minute default
 
+            // Drink reminder settings
+            public bool ShowDrinkReminderWindow { get; set; } = true; // NEW: Show the drink reminder window
+
             // Activity monitoring settings
             public ActivityBehavior ActivityMonitoringBehavior { get; set; } = ActivityBehavior.PauseOnly;
             public uint InactivityThresholdMinutes { get; set; } = 5; // Reset timer after 5 minutes of inactivity
@@ -326,8 +329,14 @@ namespace TriviaExercise.Helpers
                 scheduleInfo += " | ";
             }
 
+            // Updated drink reminder info to include window setting
+            string drinkInfo = settings.DrinkReminderEnabled ?
+                $"{settings.DrinkIntervalMinutes}min" +
+                (settings.ShowDrinkReminderWindow ? "" : " (sound only)") :
+                "Off";
+
             return $"Question Interval: {settings.QuestionIntervalMinutes}min | " +
-                   $"Drink Reminder: {(settings.DrinkReminderEnabled ? $"{settings.DrinkIntervalMinutes}min" : "Off")} | " +
+                   $"Drink Reminder: {drinkInfo} | " +
                    $"Exercise: {settings.ExerciseDifficulty} | " +
                    $"Discord: {(settings.DiscordRichPresenceEnabled ? "On" : "Off")} | " +
                    $"Sounds: {(settings.SoundsEnabled ? "On" : "Off")} | " +

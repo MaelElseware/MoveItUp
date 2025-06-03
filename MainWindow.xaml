@@ -765,7 +765,7 @@
                         </StackPanel>
 
                         <!-- SETTINGS CONTENT -->
-                        <StackPanel x:Name="OptionsPanel" Visibility="Collapsed">
+                        <StackPanel x:Name="OptionsPanel" Visibility="Visible">
                             <!-- Exercise Settings -->
                             <GroupBox Header="Exercise Settings" Style="{StaticResource ModernGroupBox}" BorderBrush="#BFF3E6D9" Margin="0,0,0,5">
                                 <StackPanel Orientation="Horizontal" ToolTip="Exercise Difficulty depending on how much you want to activate your body">
@@ -793,6 +793,10 @@
                                           Margin="0,0,0,8"
                                           Checked="SoundsEnabledCheckBox_CheckedChanged"
                                           Unchecked="SoundsEnabledCheckBox_CheckedChanged" ToolTip="enable or disable all sound effects started via the app."/>
+                                    <CheckBox x:Name="ShowDrinkWindowCheckBox" Content="💧 Show drink reminder window" ToolTip="If unchecked, will hide the drink window, you will only get the sound (unless deactivated which kills the whole purpose)."
+                                              Margin="0,0,0,8" 
+                                              Checked="ShowDrinkWindowCheckBox_CheckedChanged" 
+                                              Unchecked="ShowDrinkWindowCheckBox_CheckedChanged"/>
                                     <CheckBox x:Name="StartMinimizedCheckBox" Content="Start minimized to system tray" 
                                           Margin="0,0,0,8"
                                           Checked="StartMinimizedCheckBox_CheckedChanged"
