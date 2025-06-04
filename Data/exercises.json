@@ -11,7 +11,8 @@
       "Description": "Excellent! Get up, take 10 deep breaths and stretch your arms above your head.",
       "DurationSeconds": 30,
       "Difficulty": 0,
-      "Category": "Stretching"
+      "Category": "Stretching",
+      "ImageFileName": "Stetching.png"
     },
     {
       "Description": "Well done! Do 5 push-ups or wall push-ups if needed.",

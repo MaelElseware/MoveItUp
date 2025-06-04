@@ -219,7 +219,9 @@
     <Content Include="Illustrations\HighKneeJack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Illustrations\JumpingJacks.png" />
+    <Content Include="Illustrations\JumpingJacks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Illustrations\LeanStretch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -229,7 +231,12 @@
     <Content Include="Illustrations\SkiHops.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Illustrations\Squats.png" />
+    <Content Include="Illustrations\Squats.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustrations\Stretching.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MoveItUp.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
