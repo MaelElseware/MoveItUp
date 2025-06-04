@@ -1571,8 +1571,8 @@ namespace TriviaExercise
         {
             Hide();
             notifyIcon.Visible = true;
-            notifyIcon.ShowBalloonTip(3000, "Move It Up !",
-                "App minimized to system tray. Double-click to restore.", ToolTipIcon.Info);
+            /*notifyIcon.ShowBalloonTip(3000, "Move It Up !",
+                "App minimized to system tray. Double-click to restore.", ToolTipIcon.Info);*/
         }
 
         protected override void OnStateChanged(EventArgs e)
