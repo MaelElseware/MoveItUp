@@ -234,6 +234,9 @@
     <Content Include="Illustrations\Squats.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Illustrations\Squats_T.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Illustrations\Stretching.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
