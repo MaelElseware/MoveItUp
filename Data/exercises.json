@@ -5,14 +5,14 @@
       "DurationSeconds": null,
       "Difficulty": 0,
       "Category": "Stretching",
-      "ImageFileName": "LeanStetch.png"
+      "ImageFileName": "LeanStetch_T.png"
     },
     {
       "Description": "Excellent! Get up, take 10 deep breaths and stretch your arms above your head.",
       "DurationSeconds": 30,
       "Difficulty": 0,
       "Category": "Stretching",
-      "ImageFileName": "Stetching.png"
+      "ImageFileName": "Stetching_T.png"
     },
     {
       "Description": "Well done! Do 5 push-ups or wall push-ups if needed.",
@@ -59,7 +59,7 @@
       "DurationSeconds": null,
       "Difficulty": 1,
       "Category": "Cardio",
-      "ImageFileName": "JumpingJacks.png"
+      "ImageFileName": "JumpingJacks_T.png"
     },
     {
       "Description": "Try again next time! March in place for 90 seconds.",
@@ -79,7 +79,7 @@
       "DurationSeconds": 90,
       "Difficulty": 2,
       "Category": "Cardio",
-      "ImageFileName": "SkiHops.png"
+      "ImageFileName": "SkiHops_T.png"
     }
   ]
 }
