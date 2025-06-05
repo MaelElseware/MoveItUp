@@ -1862,15 +1862,15 @@ namespace TriviaExercise
                 return;
             }
 
+            bool wasSchedulePaused = timerWasPausedBySchedule;
             timerWasPausedBySchedule = false;
 
-            // CRITICAL : Check if user is currently inactive before resuming timers
+            // Check if user is currently inactive before resuming timers
             if (appSettings.ActivityMonitoringBehavior != ActivityBehavior.Disabled &&
                 activityMonitor != null &&
                 !activityMonitor.IsUserActive)
             {
                 // User is still inactive, so don't resume timers yet
-                // Set the inactivity flag so the activity monitor knows timers should start when user becomes active
                 timerWasPausedByInactivity = true;
 
                 StatusTextBox.Text += "\n📅 Schedule became active but user is inactive - timers will resume when user becomes active";
@@ -2204,6 +2204,17 @@ namespace TriviaExercise
             uint totalInactiveMinutes = activityMonitor.GetCurrentIdleTimeMinutes();
             timerWasPausedByInactivity = false;
 
+            // Check if we're currently within schedule before resuming
+            if (scheduleHelper?.IsScheduleEnabled == true && !scheduleHelper.IsWithinSchedule)
+            {
+                // We're outside schedule hours, so don't resume timers yet
+                timerWasPausedBySchedule = true;
+                StatusTextBox.Text += $"\n🔍 User became active after {totalInactiveMinutes} minutes, but outside schedule - timers remain paused";
+                discordRPC?.SetActivity("Off Schedule", "User active but outside work hours");
+                return;
+            }
+
+            // logic for resuming/resetting timers
             if (appSettings.ActivityMonitoringBehavior == ActivityBehavior.PauseAndReset)
             {
                 timerManager.ResetAll();

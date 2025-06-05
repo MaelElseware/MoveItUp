@@ -4,65 +4,215 @@
         Title="Exercise Time!" MaxHeight="600" Width="500"
         SizeToContent="Height"
         WindowStartupLocation="CenterScreen" 
+        Background="Transparent"
         Topmost="True"
-        ResizeMode="NoResize">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
-        <TextBlock x:Name="ResultTextBlock" Grid.Row="0" 
-                   FontSize="18" FontWeight="Bold" 
-                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+    <Window.Resources>
+        <!-- Custom Title Bar Button Style -->
+        <Style x:Key="TitleBarButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="46"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E5E5E5"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-        <TextBlock x:Name="ExerciseTextBlock" Grid.Row="1" 
-                   FontSize="14" 
-                   TextWrapping="Wrap" 
-                   HorizontalAlignment="Center" 
-                   TextAlignment="Center"
-                   Margin="0,0,0,20"/>
+        <!-- Close Button Style (Red on hover with rounded corner) -->
+        <Style x:Key="CloseButton" TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="0,8,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E81123"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#C50E1F"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-        <!-- Image display area -->
-        <Border x:Name="ImageBorder" Grid.Row="2" 
-                BorderBrush="#E0E0E0" 
-                BorderThickness="1" 
-                CornerRadius="8" 
-                Margin="0,0,0,15"
-                Visibility="Collapsed">
-            <Grid>
-                <Image x:Name="ExerciseImage" 
-                       Stretch="Uniform"
-                       MaxHeight="400"
-                       MaxWidth="480"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+        <!-- Done Button Style (Green, similar to the modern button style) -->
+        <Style x:Key="DoneButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#27AE60"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" 
+                                Background="#27AE60"
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#229954"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#1E8449"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
-                <!-- Fallback text when image fails to load -->
-                <TextBlock x:Name="ImageErrorText"
-                          Text="Image not available"
-                          FontStyle="Italic"
-                          Foreground="#999999"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Visibility="Collapsed"/>
+    <!-- Main window container with custom title bar -->
+    <Border Background="White" CornerRadius="8" BorderThickness="1" BorderBrush="#E0E0E0">
+        <Border.Effect>
+            <DropShadowEffect Color="#40000000" BlurRadius="10" ShadowDepth="3" Opacity="0.4"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <!-- Custom title bar height -->
+                <RowDefinition Height="*"/>
+                <!-- Main content -->
+            </Grid.RowDefinitions>
+
+            <!-- Custom Title Bar -->
+            <Border Grid.Row="0" Background="#F8F9FA" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" CornerRadius="8,8,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <!-- Left padding -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- App icon -->
+                        <ColumnDefinition Width="10"/>
+                        <!-- Icon padding -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Title -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Window controls -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- App Icon -->
+                    <TextBlock Grid.Column="1" Text="💪" FontSize="14" VerticalAlignment="Center"/>
+
+                    <!-- Window Title -->
+                    <TextBlock Grid.Column="3" Text="Exercise Time!" 
+                               FontSize="12" FontWeight="SemiBold" 
+                               Foreground="#2C3E50" 
+                               VerticalAlignment="Center"/>
+
+                    <!-- Window Control Buttons -->
+                    <StackPanel Grid.Column="4" Orientation="Horizontal">
+                        <!-- Close Button -->
+                        <Button x:Name="CloseButton" 
+                                Style="{StaticResource CloseButton}"
+                                Content="&#xE8BB;" 
+                                ToolTip="Close"
+                                Click="CloseButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Row="1" Margin="20,5,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="ResultTextBlock" Grid.Row="0" 
+                           FontSize="18" FontWeight="Bold" 
+                           HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+                <TextBlock x:Name="ExerciseTextBlock" Grid.Row="1" 
+                           FontSize="14" 
+                           TextWrapping="Wrap" 
+                           HorizontalAlignment="Center" 
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <!-- Image display area -->
+                <Border x:Name="ImageBorder" Grid.Row="2" 
+                        BorderBrush="#E0E0E0" 
+                        BorderThickness="1" 
+                        CornerRadius="8" 
+                        Margin="0,0,0,15"
+                        Visibility="Collapsed">
+                    <Grid>
+                        <Image x:Name="ExerciseImage" 
+                               Stretch="Uniform"
+                               MaxHeight="400"
+                               MaxWidth="480"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                        <!-- Fallback text when image fails to load -->
+                        <TextBlock x:Name="ImageErrorText"
+                                  Text="Image not available"
+                                  FontStyle="Italic"
+                                  Foreground="#999999"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+                <!-- Timer display (only visible when exercise has duration) -->
+                <TextBlock x:Name="TimerTextBlock" Grid.Row="3" 
+                           FontSize="24" FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           Visibility="Collapsed"
+                           Margin="0,0,0,15"/>
+
+                <Button x:Name="DoneButton" Grid.Row="4" 
+                        Content="I'm Done! 👍" Width="140" Height="40" 
+                        Style="{StaticResource DoneButton}"
+                        HorizontalAlignment="Center" 
+                        Click="DoneButton_Click"/>
             </Grid>
-        </Border>
-
-        <!-- Timer display (only visible when exercise has duration) -->
-        <TextBlock x:Name="TimerTextBlock" Grid.Row="3" 
-                   FontSize="24" FontWeight="Bold" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   Visibility="Collapsed"
-                   Margin="0,0,0,15"/>
-
-        <Button x:Name="DoneButton" Grid.Row="4" 
-                Content="I'm Done!" Width="120" Height="35" 
-                HorizontalAlignment="Center" 
-                Click="DoneButton_Click"/>
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

@@ -80,18 +80,27 @@ namespace TriviaExercise
             // Clear and populate answer buttons
             AnswersPanel.Children.Clear();
 
+            // Define the styles for each answer option
+            string[] styleNames = { "AnswerAButton", "AnswerBButton", "AnswerCButton", "AnswerDButton" };
+            char[] answerLetters = { 'A', 'B', 'C', 'D' };
+
             for (int i = 0; i < question.Answers.Count && i < 4; i++)
             {
                 var button = new Button
                 {
-                    Content = $"{(char)('A' + i)}. {question.Answers[i]}",
-                    Height = 40,
-                    Margin = new Thickness(0, 5, 0, 5),
+                    Content = $"{answerLetters[i]}. {question.Answers[i]}",
+                    Height = 45,
+                    Margin = new Thickness(0, 3, 0, 3),
                     HorizontalAlignment = HorizontalAlignment.Stretch,
-                    HorizontalContentAlignment = HorizontalAlignment.Left,
-                    Padding = new Thickness(10, 0, 10, 0),
-                    Tag = i
+                    Tag = i // Store the answer index
                 };
+
+                // Apply the appropriate style based on the answer index
+                if (i < styleNames.Length)
+                {
+                    Style buttonStyle = (Style)FindResource(styleNames[i]);
+                    button.Style = buttonStyle;
+                }
 
                 button.Click += AnswerButton_Click;
                 AnswersPanel.Children.Add(button);
