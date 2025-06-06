@@ -1577,8 +1577,9 @@ namespace TriviaExercise
 
         protected override void OnStateChanged(EventArgs e)
         {
-            if (WindowState == WindowState.Minimized && timerManager.QuestionTimer?.IsActive == true)
+            if (WindowState == WindowState.Minimized && StartButton.IsEnabled == false)
             {
+                // only avoid minimizing to tray when the start button hasn't been pressed !
                 MinimizeToTray();
             }
             base.OnStateChanged(e);
