@@ -234,6 +234,9 @@
     <Content Include="Illustrations\Plank.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Illustrations\Plank_T.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Illustrations\SkiHops.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -250,6 +253,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Illustrations\Stretching_T.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Illustrations\Walking.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MoveItUp.ico">

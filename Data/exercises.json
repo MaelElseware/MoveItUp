@@ -25,7 +25,7 @@
       "DurationSeconds": 60,
       "Difficulty": 1,
       "Category": "Strength",
-      "ImageFileName": "Plank.png"
+      "ImageFileName": "Plank_T.png"
     },
     {
       "Description": "Outstanding! Do 15 squats - you've earned this challenge!",
@@ -38,7 +38,8 @@
       "Description": "Amazing! Run in place for 1 minutes at good intensity.",
       "DurationSeconds": 60,
       "Difficulty": 2,
-      "Category": "Cardio"
+      "Category": "Cardio",
+      "ImageFileName": "Walking.png"
     }
   ],
   "WrongAnswerExercises": [
@@ -46,7 +47,8 @@
       "Description": "Oops! Walk around your room 5 times to get those brain cells moving.",
       "DurationSeconds": 45,
       "Difficulty": 0,
-      "Category": "Mental Break"
+      "Category": "Mental Break",
+      "ImageFileName": "Walking.png"
     },
     {
       "Description": "Not quite! Do get up and jump 5 times.",
@@ -65,7 +67,8 @@
       "Description": "Try again next time! March in place for 90 seconds.",
       "DurationSeconds": 90,
       "Difficulty": 1,
-      "Category": "Cardio"
+      "Category": "Cardio",
+      "ImageFileName": "Walking.png"
     },
     {
       "Description": "Tough question! Do 20 heigh knee jacks as a reward !",
