@@ -5,41 +5,42 @@
       "DurationSeconds": null,
       "Difficulty": 0,
       "Category": "Stretching",
-      "ImageFileName": "LeanStetch_T.png"
+      "ImageFileName": "LeanStetch.png"
     },
     {
       "Description": "Excellent! Get up, take 10 deep breaths and stretch your arms above your head.",
       "DurationSeconds": 30,
       "Difficulty": 0,
       "Category": "Stretching",
-      "ImageFileName": "Stetching_T.png"
+      "ImageFileName": "Stetching.png"
     },
     {
       "Description": "Well done! Do 5 push-ups or wall push-ups if needed.",
       "DurationSeconds": null,
       "Difficulty": 1,
-      "Category": "Strength"
+      "Category": "Strength",
+      "ImageFileName": "PushUps.png"
     },
     {
       "Description": "Perfect! Hold a plank position for as long as you can.",
       "DurationSeconds": 60,
       "Difficulty": 1,
       "Category": "Strength",
-      "ImageFileName": "Plank_T.png"
+      "ImageFileName": "Plank.png"
     },
     {
       "Description": "Outstanding! Do 15 squats - you've earned this challenge!",
       "DurationSeconds": 45,
       "Difficulty": 2,
       "Category": "Cardio",
-      "ImageFileName": "Squats_T.png"
+      "ImageFileName": "Squats.png"
     },
     {
       "Description": "Amazing! Run in place for 1 minutes at good intensity.",
       "DurationSeconds": 60,
       "Difficulty": 2,
       "Category": "Cardio",
-      "ImageFileName": "Walking.png"
+      "ImageFileName": "Running.png"
     }
   ],
   "WrongAnswerExercises": [
@@ -54,21 +55,22 @@
       "Description": "Not quite! Do get up and jump 5 times.",
       "DurationSeconds": 30,
       "Difficulty": 0,
-      "Category": "Cardio"
+      "Category": "Cardio",
+      "ImageFileName": "Jumping.png"
     },
     {
       "Description": "Close, but not quite! Do 10 jumping jacks to boost your energy.",
       "DurationSeconds": null,
       "Difficulty": 1,
       "Category": "Cardio",
-      "ImageFileName": "JumpingJacks_T.png"
+      "ImageFileName": "JumpingJacks.png"
     },
     {
       "Description": "Try again next time! March in place for 90 seconds.",
       "DurationSeconds": 90,
       "Difficulty": 1,
       "Category": "Cardio",
-      "ImageFileName": "Walking.png"
+      "ImageFileName": "Running.png"
     },
     {
       "Description": "Tough question! Do 20 heigh knee jacks as a reward !",
